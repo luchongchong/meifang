@@ -1,0 +1,358 @@
+/*general start*/
+body, p, blockquote, figure, hr, h1, h2, h3, h4, h5, h6, ul, menu, ol, dl, dd, fieldset, input[type=radio], input[type=checkbox], input[type=range], pre, xmp, plaintext, listing {
+    margin: 0;
+}
+ul, menu, ol, legend, fieldset, input, input[type=password], input[type=search], isindex, textarea, input[type=hidden], input[type=image], input[type=file], input[type=radio], input[type=checkbox], input[type=range], input[type=button], input[type=submit], input[type=reset], button {
+    padding: 0;
+}
+input[type=search], input[type=button], input[type=submit], input[type=reset] {
+    -webkit-appearance: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 400;
+}
+cite, var, address, em, i {
+    font-style: normal;
+}
+strong {
+    font-weight: 400;
+}
+a:-webkit-any-link {
+    text-decoration: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset, iframe {
+    border: 0;
+}
+ol, ul {
+    list-style: none;
+}
+input, textarea, select, button {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    margin: 0;
+}
+input:focus, textarea:focus, select:focus{
+    outline:none;
+}
+select, button, input {
+    color: inherit;
+}
+html {
+    -webkit-text-size-adjust: none;
+}
+html{
+	font-size:100px;
+}
+/* iphone 6 */
+@media (min-device-width : 37.05rem) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2){
+    html{font-size: 117.187.05rem;}
+}
+/* iphone6 plus */
+@media (min-device-width : 4.14rem) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio : 3){
+    html{font-size: 129.37.05rem;}
+}
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font: 14px/1.5 Arial, "Microsoft Yahei";
+    min-width: 320px;
+    max-width: 750px;
+	margin: 0 auto;
+    position: relative;
+	overflow-x: hidden;
+	line-height: 1.6;
+	color: #232323;
+    background-color: #edeef0;
+}
+a,a:visited {
+    color: inherit;
+}
+@media only all and (max-width: 640px) {
+    /* styles for iPhone/Android landscape (and really narrow browser windows) */
+    body, input, textarea {
+        font-size: 14px;
+    }
+}
+
+em {
+	font-style: normal;
+}
+.fl{float: left;}
+.fr{float: right;}
+.cle {
+	zoom:1;
+}
+.cle::after {
+ content: " ";
+ display: block;
+ clear: both;
+ visibility: hidden;
+ line-height: 0;
+ height: 0;
+}
+
+.ell{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*icon font*/
+@font-face {
+	font-family: "iconfont";
+	src: url('font/iconfont.eot'); 
+	src: url('font/iconfont.eot?#iefix') format('embedded-opentype'),
+		url('font/iconfont.woff') format('woff'),
+		url('font/iconfont.ttf') format('truetype'),
+		url('font/iconfont.svg#iconfont') format('svg'); 
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.t_r { text-align: right;}
+.t_l { text-align: left;}
+.hidden{display: none;}
+
+/***************/
+header{
+    position: relative;
+    width: 100%;
+	min-width: 320px;
+	max-width: 750px;
+	margin: 0 auto;    
+    height: .4rem; 
+    line-height: .4rem;
+    padding: .05rem 0;
+    background-color: #c52121;
+    color: #fff;
+}
+header .iconfont{
+    font-size: .15rem;
+    line-height: .4rem;
+}
+header h1{
+    position: relative;
+    line-height: .3rem;
+    height: .3rem;
+    text-align: center;
+    font-size: .2rem;
+    font-weight: normal;
+    padding-left: .62rem;
+    padding-right: .62rem;
+}
+header .i-back,
+header .user{
+    position: absolute;
+    left: .1rem;
+    top: 0;
+    font-size: .15rem;
+    z-index: 9;
+}
+header .user i.iconfont{ margin-right: .08rem;}
+header .category{
+    position: absolute;
+    right: .05rem;
+    top: 0;
+    font-size: .15rem;
+    z-index: 9;
+    background-color: transparent;
+}
+header .category i.iconfont{ margin-left: .02rem;}
+
+header .search-form{
+    width: 100%;
+}
+header .search-form input[type="text"]{
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    color: #8d8b8d;
+    font-size: .14rem;
+    height: .3rem;
+    line-height: .3rem;
+    border-radius: 3px;
+    padding-left: .28rem;
+    border: 0 none;
+}
+header .search-form i.iconfont{
+    position: absolute;
+    left: .68rem;
+    top: 0;
+    line-height: .3rem;
+    color: #8d8b8d;
+    font-size: .18rem;
+}
+
+.mb_footer{ margin-bottom: .52rem;}
+footer {
+    position: fixed;
+    bottom: 0;
+    display: -webkit-box;
+    width: 100%;
+    min-width: 320px;
+    max-width: 750px;
+    text-align: center;
+    background-color: #ebe9e9;
+    z-index: 999;
+    line-height: 1.2;
+    border-top: 1px solid #929191;
+    border-bottom: 1px solid #929191;
+}
+footer .footer-item{
+    display: block;
+    padding: .05rem 0;
+    -webkit-box-flex: 1;
+    width: 1%;
+    text-align: center;
+    color: #929191;
+    font-size: .12rem;
+}
+footer .footer-item i{
+    display: block;
+    font-size: .22rem;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+}
+footer .footer-item.active{
+    color: #c52021;
+}
+
+/* form common start */
+input[type="text"], input[type="password"] {
+    border: 1px solid #686767;
+    padding: .05rem;
+    line-height: 1;
+    background-color: #fff;
+}
+form select {
+    width: 100%;
+    height: .45rem;
+    border: 0;
+    padding: .1rem .15rem;
+    background-color: #fff;
+}
+form .single {
+    display: block;
+}
+form .single .key {
+    width: 100%;
+}
+form .single .val {
+    -webkit-box-flex: 0;
+    width: 100%;
+}
+.options {
+    display: -webkit-box;
+}
+.options .btn {
+    display: block;
+    color: #fff;
+    background-color: #a20101;
+    border: 0;
+    text-align: center;
+    vertical-align: middle;
+    height: .45rem;
+    line-height: .45rem;
+    font-size: .18rem;
+    -webkit-box-flex: 1;
+    -webkit-user-select: none;
+}
+/*******/
+
+
+.js-txt-empty .empty{
+    position: absolute;
+    bottom: 0;
+    right: .1rem;
+    display: block;
+    width: 0;
+    height: .3rem;
+    cursor: pointer;
+    background-size: .18rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.js-txt-empty .empty.show{
+    width: .18rem;
+    background-image: url(../images/icon_empty.png);
+}
+
+
+/**
+    下拉加载的的css样式
+**/
+#wrapper {
+    top:45px; bottom:48px; left:0;
+    width:100%;
+    overflow:auto;
+}
+
+
+/**
+ *
+ * 下拉样式 Pull down styles
+ *
+ */
+#pullDown, #pullUp {
+    height:40px;
+    line-height:40px;
+    padding:5px 10px;
+    border-bottom:1px solid #ccc;
+    font-weight:bold;
+    font-size:14px;
+}
+#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+    display:block; float:left;
+    width:40px; height:40px;
+    background:url(../img/pull-icon@2x.png) 0 0 no-repeat;
+    -webkit-background-size:40px 80px; background-size:40px 80px;
+    -webkit-transition-property:-webkit-transform;
+    -webkit-transition-duration:250ms;  
+}
+#pullDown .pullDownIcon {
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+#pullUp .pullUpIcon  {
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullDown.flip .pullDownIcon {
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullUp.flip .pullUpIcon {
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+
+#pullDown.loading .pullDownIcon, #pullUp.loading .pullUpIcon {
+    background-position:0 100%;
+    -webkit-transform:rotate(0deg) translateZ(0);
+    -webkit-transition-duration:0ms;
+
+    -webkit-animation-name:loading;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes loading {
+    from { -webkit-transform:rotate(0deg) translateZ(0); }
+    to { -webkit-transform:rotate(360deg) translateZ(0); }
+}

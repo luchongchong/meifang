@@ -1,0 +1,56 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>{$page_title}</title>
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<link rel="stylesheet" type="text/css" href="themesmobile/68ecshopcom_mobile/css/public.css">
+<link rel="stylesheet" type="text/css" href="themesmobile/68ecshopcom_mobile/css/user.css">
+<script type="text/javascript" src="themesmobile/68ecshopcom_mobile/js/jquery.js"></script>
+{insert_scripts files='jquery.json.js,transport.js'}
+{insert_scripts files='common.js,utils.js'}
+</head>
+<body style="background: #f4f2f3">
+<!----------------------------------header----------------------------------->
+<div class="tab_nav">
+  <div class="header">
+    <div class="h-left"><a class="sb-back" href="javascript:history.back(-1)" title="返回"></a></div>
+    <div class="h-mid">物流详情</div>
+    <div class="h-right">
+      <aside class="top_bar">
+        <div onClick="show_menu();$('#close_btn').addClass('hid');" id="show_more"><a href="javascript:;"></a> </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- #BeginLibraryItem "/library/up_menu.lbi" --><!-- #EndLibraryItem --> <!--弹出菜单-->
+
+<div class="smart-result">
+{if $order.invoice_no}
+<div><span id="result-comname" class="smart-result-comname">{$order.shipping_name}</span><span id="result-kuaidinum" class="smart-result-kuaidinum">{$order.invoice_no}&nbsp;</span></div>
+{/if}
+<table id="queryResult" cellpadding="0" cellspacing="0" width="100%">
+  <tbody>
+  	{if $kuaidi_list}
+    {foreach from=$kuaidi_list item=list name=name}
+    <tr class="{if $smarty.foreach.name.first}first-line{/if} {if $smarty.foreach.name.index % 2 eq 0}odd{else}even{/if}">
+      <td class="col1"><span class="result-date">{$list.time}</span></td>
+      <td class="colstatus"></td>
+      <td class="col2"><span>{$list.context}</span></td>
+    </tr>
+     {/foreach}
+ {else}
+    <tr>
+    	<td colspan="2" align="center";>正在查询...</td>
+    </tr>
+    {/if}
+  </tbody>
+</table>
+</div>
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

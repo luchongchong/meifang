@@ -1,0 +1,41 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $pager && $pager.page_count gt 1}
+<section class="list-pagination">
+  <div class="pagenav-wrapper">
+    <div class="pagenav-content">
+      <div class="pagenav" id="J_PageNav">
+        {if $pager.page_first}
+        <div class="p-first p-gray">
+          <a href="{$pager.page_first}{if $category}#list{/if}">{$lang.page_first}</a>
+        </div>
+        {/if}
+        <div class="p-prev p-gray">
+          <a {if $pager.page_prev}href="{$pager.page_prev}{if $category}#list{/if}"{/if}>{$lang.page_prev}</a>
+        </div>
+        {if $pager.page_count neq 1}
+        <div class="pagenav-cur">
+          <div class="pagenav-text">
+            <span>
+              {foreach from=$pager.page_number key=key item=item}{if $pager.page eq $key}{$key}{/if} {/foreach}/{$pager.page_count}
+            </span> <i></i>
+          </div>
+          <select class="pagenav-select" onchange="location.href=this.options[this.selectedIndex].value;">
+            {foreach from=$pager.page_number key=key item=item}
+            <option {if $pager.page eq $key}selected="selected"{/if} value="{$item}{if $category}#list{/if}">第{$key}页</option>
+            {/foreach}
+          </select>
+        </div>
+        {/if}
+        <div class="p-next">
+          <a  {if $pager.page_next}href="{$pager.page_next}"{/if}>{$lang.page_next}</a>
+        </div>
+        {if $pager.page_last}
+        <div class="p-end">
+          <a href="{$pager.page_last}{if $category}#list{/if}">{$lang.page_last}</a>
+        </div>
+        {/if}
+      </div>
+    </div>
+  </div>
+</section>
+{/if}

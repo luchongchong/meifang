@@ -1,0 +1,341 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title>首页</title>
+
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/style_new.css" /><!--样式-->
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/animate.min.css" /><!--样式-->
+
+<script type="text/javascript" src="themesmobile/js/jquery-1.12.4.min.js"></script><!--jQ库-->
+<script type="text/javascript" src="themesmobile/js/swiper-3.3.1.jquery.min.js"></script><!--手机轮播库-->
+<script type="text/javascript" src="themesmobile/js/auto-size.js"></script><!--设置字体大小-->
+</head>
+
+<body>
+	<div class="mobile_wrap bj1 ohei">
+		<div class="center_top fixed">
+        	<a href="./user.php" class="fl"><img src="themesmobile/mobile/img/ico0.png" alt="">个人中心</a>
+           <form action="searchfor.php" class="search-form" id="search">
+                <div class="search">
+                   <input name="keywords" id="keywordfoot" type="text">
+                    <button></button>
+                </div>
+                <a href="javascript:void(0)" onclick="return check('keywordfoot')" class="fr">搜索</a>
+
+           </form>
+        </div>
+        <div class="back1"></div>
+        
+        <div class="banner">
+        <div class="bann swiper-container">
+            <ul class="swiper-wrapper">
+
+
+                        {foreach from=$wap_index_ad item=ad name=wap_index_ad}
+
+                            <li class="swiper-slide"><a href="{$ad.url}"><img src="{$ad.image}"></a></li>
+
+                        {/foreach}
+            </ul>
+         </div>
+         <div class="cirl">
+                <ul>
+                    <li class="acti"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+          </div>
+        </div><!--banner-->
+        <div class="list_ico dt">
+        	<ul>
+        		<li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=45">
+                    	<img src="themesmobile/mobile/img/ico9.png" alt="">
+                       	<p>墙纸</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=46">
+                    	<img src="themesmobile/mobile/img/ico10.png" alt="">
+                       	<p>墙画</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=47">
+                    	<img src="themesmobile/mobile/img/ico11.png" alt="">
+                       	<p>无缝墙布</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=43">
+                    	<img src="themesmobile/mobile/img/ico12.png" alt="">
+                       	<p>窗帘</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=48">
+                    	<img src="themesmobile/mobile/img/ico13.png" alt="">
+                       	<p>软包</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=161">
+                    	<img src="themesmobile/mobile/img/ico14.png" alt="">
+                       	<p>装饰画</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=50">
+                    	<img src="themesmobile/mobile/img/ico15.png" alt="">
+                       	<p>硅藻泥</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=51">
+                    	<img src="themesmobile/mobile/img/ico16.png" alt="">
+                       	<p>辅料</p>
+                    </a>
+                </li>
+        	</ul>
+        </div>
+        <div class="explosion">
+        	<h2><i></i><img src="themesmobile/mobile/img/ico22.png" alt=""><span>temai <img class="im0" src="themesmobile/mobile/img/ico24.png" alt=""></span><a href="../search.php?intro=hot">... 更多&gt;&gt;</a></h2>
+
+            <div class="conleft">
+                <a href="http://www.mfmb58.com/mobile/goods.php?id=2432">
+            	<img width="100%" src="themesmobile/mobile/img/img9.jpg" alt=""> </a>
+                <div class="Price">
+                	<p>热销价<var>￥119.00</var></p>
+                    <span style="display:none"><a href="#"><img src="themesmobile/mobile/img/ico17.png" alt=""></a><a href="#"><img src="themesmobile/mobile/img/ico20-3.png" alt=""></a></span>
+                </div>
+            </div>
+
+            <div class="conright">
+            	<div class="box1">
+                    <a href="http://www.mfmb58.com/mobile/goods.php?id=2440">
+                	<img width="100%" src="themesmobile/mobile/img/img10.jpg" alt="">
+                    </a>
+
+                    <div class="Price">
+                        <p>热销价<var>￥119.00</var></p>
+                        <span style="display:none"><a href="#"><img src="themesmobile/mobile/img/ico17.png" alt=""></a><a href="#"><img src="themesmobile/mobile/img/ico20-3.png" alt=""></a></span>
+                    </div>
+                </div>
+                <div class="box2">
+                	<li>
+
+                        <a href="http://www.mfmb58.com/mobile/goods.php?id=2434">
+                    	<img  width="100%" src="themesmobile/mobile/img/img11.jpg" alt="">
+                        </a>
+
+                        <div class="Price">
+                            <p>热销价<var>￥119.00</var></p>
+                            <span style="display:none"><a href="#"><img src="themesmobile/mobile/img/ico17.png" alt=""></a><a href="#"><img src="themesmobile/mobile/img/ico20-3.png" alt=""></a></span>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.mfmb58.com/mobile/goods.php?id=2441">
+                        <img  width="100%" src="themesmobile/mobile/img/img11.jpg" alt="">
+                        </a>
+                        <div class="Price">
+                            <p>热销价<var>￥119.00</var></p>
+                            <span style="display:none"><a href="#"><img src="themesmobile/mobile/img/ico17.png" alt=""></a><a href="#"><img src="themesmobile/mobile/img/ico20-3.png" alt=""></a></span>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="Sale dt">
+        <h2><i></i><img src="themesmobile/mobile/img/ico21.png" alt=""><span>temai</span><a href="../search.php?intro=new">... 更多>></a></h2>
+
+        	<ul>
+        	<!-- 美美特卖 -->
+        	   {foreach from=$hot_goods key=k item=hot_goods}
+	            <a href="{$hot_goods.url}">
+        		<li>
+                	<div class="pict">
+                    	<img src="{$hot_goods.goods_img}">
+                        <span>{$hot_goods.name}</span>
+                    </div>
+                    <p>{$hot_goods.shop_price}</p>
+                </li>
+                  </a>
+             {/foreach}
+
+        	</ul>
+        </div>
+        <!--墙纸系列 -->
+
+        <div class="pict_img">
+            <a href="http://www.mfmb58.com/mobile/searchfor.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IuWimee6uCI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0ODA5MTkzNzY7fQ==">
+        	<img src="themesmobile/mobile/img/img5.jpg" alt="">
+            </a>
+        </div>
+        
+        <div class="pro_list dt">
+        	<div class="main_pic">
+                <a href="http://www.mfmb58.com/mobile/goods.php?id=2439">
+            	<img src="themesmobile/mobile/img/img6.jpg" alt="">
+                </a>
+            </div>
+
+            <ul>
+            {foreach from=$qiangzhi_goods key=k item=qiangzhi_goods}
+                	<li>
+                     	<a href="{$qiangzhi_goods.url}" class="">
+                        <div class="pict">
+                            <img src="{$qiangzhi_goods.goods_img}" alt="">
+                            
+                        </div>
+                        <div class="text">
+                            <p>{$qiangzhi_goods.name}</p>
+                                <font color="red">{$qiangzhi_goods.shop_price}</font>
+                                <div style="float:right;display:none">
+                                    <a href="{$qiangzhi_goods.url}"><img src="themesmobile/mobile/img/ico20-0.png" alt=""></a>
+                                    <a href="{$qiangzhi_goods.url}" class="line"><img src="themesmobile/mobile/img/ico20-1.png" alt=""></a>
+                                    <a href="{$qiangzhi_goods.url}"><img src="themesmobile/mobile/img/ico20-2.png" alt=""></a>
+                                </div>
+                        </div>
+                         </a>
+                    </li>
+            {/foreach}
+
+            </ul>
+        </div>
+         <!--窗帘系列 -->
+         <div class="pict_img">
+            <a href="http://www.mfmb58.com/mobile/searchfor.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6Iueql%2bW4mCI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0ODA5MTk0ODY7fQ==">
+        	<img src="themesmobile/mobile/img/chuanlian.jpg" alt="">
+            </a>
+        </div>
+ <div class="pro_list dt">
+        	<div class="main_pic">
+                <a href="http://www.mfmb58.com/mobile/goods.php?id=3095">
+            	<img src="themesmobile/mobile/img/qinxinriji.jpg" alt="">
+                </a>
+            </div>
+
+            <ul>
+            {foreach from=$chuanlian_goods key=k item=chuanlian_goods}
+                	<li>
+                     	<a href="{$chuanlian_goods.url}" class="">
+                        <div class="pict">
+                            <img src="{$chuanlian_goods.goods_img}" alt="">
+                        </div>
+                        <div class="text">
+                            <p>{$chuanlian_goods.name}</p>
+                                <font color="red">{$chuanlian_goods.shop_price}</font>
+                                <div style="float:right;display:none">
+                                    <a href="{$chuanlian_goods.url}"><img src="themesmobile/mobile/img/ico20-0.png" alt=""></a>
+                                    <a href="{$chuanlian_goods.url}" class="line"><img src="themesmobile/mobile/img/ico20-1.png" alt=""></a>
+                                    <a href="{$chuanlian_goods.url}"><img src="themesmobile/mobile/img/ico20-2.png" alt=""></a>
+                                </div>
+                        </div>
+                         </a>
+                    </li>
+            {/foreach}
+
+            </ul>
+        </div>
+
+         <!--软包系列 -->
+          <div class="pict_img">
+            <a href="http://www.mfmb58.com/mobile/searchfor.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6Iui9r%2bWMhSI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0ODA5MTk1MzA7fQ==">
+                	<img src="themesmobile/mobile/img/ruanbao.jpg" alt="">
+            </a>
+            </div>
+ <div class="pro_list dt">
+        	<div class="main_pic">
+                <a href="http://www.mfmb58.com/mobile/goods.php?id=3305">
+            	<img src="themesmobile/mobile/img/shehua.jpg" alt="">
+                </a>
+            </div>
+
+            <ul>
+            {foreach from=$ruanbao_goods key=k item=ruanbao_goods}
+                	<li>
+                     	<a href="{$ruanbao_goods.url}" class="">
+                        <div class="pict">
+                            <img src="{$ruanbao_goods.goods_img}" alt="">
+                        </div>
+                        <div class="text">
+                            <p>{$ruanbao_goods.name}</p>
+                                <font color="red">{$ruanbao_goods.shop_price}</font>
+                                <div style="float:right;display:none">
+                                    <a href="{$ruanbao_goods.url}"><img src="themesmobile/mobile/img/ico20-0.png" alt=""></a>
+                                    <a href="{$ruanbao_goods.url}" class="line"><img src="themesmobile/mobile/img/ico20-1.png" alt=""></a>
+                                    <a href="{$ruanbao_goods.url}"><img src="themesmobile/mobile/img/ico20-2.png" alt=""></a>
+                                </div>
+                        </div>
+                         </a>
+                    </li>
+            {/foreach}
+
+            </ul>
+        </div>
+
+         <!--猜 你 喜 欢  -->
+         <div class="pict_img">
+                         	<img src="themesmobile/mobile/img/like.jpg" alt="">
+         </div>
+<div class="pro_list dt">
+
+
+            <ul>
+            {foreach from=$like_goods key=k item=like_goods}
+                	<li>
+                     	<a href="{$like_goods.url}" class="">
+                        <div class="pict">
+                            <img src="{$like_goods.goods_img}" alt="">
+                        </div>
+                        <div class="text">
+                            <p>{$like_goods.name}</p>
+                                <font color="red">{$like_goods.shop_price}</font>
+                                <div style="float:right;display:none">
+                                    <a href="{$like_goods.url}"><img src="themesmobile/mobile/img/ico20-0.png" alt=""></a>
+                                    <a href="{$like_goods.url}" class="line"><img src="themesmobile/mobile/img/ico20-1.png" alt=""></a>
+                                    <a href="{$like_goods.url}"><img src="themesmobile/mobile/img/ico20-2.png" alt=""></a>
+                                </div>
+                        </div>
+                         </a>
+                    </li>
+            {/foreach}
+
+            </ul>
+        </div>
+
+    </div><!--mobile_wrap-->
+
+
+    <div class="back"></div>
+    <div class="bottom fixed">
+        <ul>
+            <li class="acti"><a href="./index.php"><div class="pic"><i><img width="25%" src="themesmobile/mobile/img/ico4.png" alt=""></i></div><p>美美商城</p></a></li>
+            <li><a href="./flow.php"><div class="pic"><i><img width="25%" src="themesmobile/mobile/img/ico5.png" alt=""></i></div><p>购物车</p></a></li>
+            <li><a href="./category.php"><div class="pic"><i><img width="25%" src="themesmobile/mobile/img/ico6.png" alt=""></i></div><p>产品分类</p></a></li>
+            <li><a href="./points.php"><div class="pic"><i><img width="25%" src="themesmobile/mobile/img/ico7.png" alt=""></i></div><p>积分商城</p></a></li>
+            <li><a href="./experience.php?act=default"><div class="pic"><i><img width="25%" src="themesmobile/mobile/img/ico8.png" alt=""></i></div><p>全国门店</p></a></li>
+            
+        </ul>
+    </div>
+
+</body>
+<script type="text/javascript" src="themesmobile/js/type.js"></script><!--封装函数-->
+<script>
+downslide(".banner .cirl  ul li.acti",".banner .cirl  ul li","acti",".bann");
+function check(Id){
+	var strings = document.getElementById(Id).value;
+	if(strings.replace(/(^\s*)|(\s*$)/g, "").length == 0){
+		return false;
+	}
+	//return true;
+	$('#search').submit();
+}
+</script>
+</html>

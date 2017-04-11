@@ -1,0 +1,302 @@
+Apr 29 19:48:58  [debug] fake_id=
+Apr 29 19:48:58  [debug] SELECT * FROM`MeifangDB`.`ecs_weixin_user`WHERE fake_id="" and fake_id!=""
+Apr 29 19:49:13  [debug] fake_id=
+Apr 29 19:49:13  [debug] SELECT * FROM`MeifangDB`.`ecs_weixin_user`WHERE fake_id="" and fake_id!=""
+Apr 29 19:51:05  [debug] code=0413r7cr1IKC9t095zar1hi9cr13r7cV
+Apr 29 19:51:05  [debug] array (
+  'id' => '1',
+  'title' => '美房test',
+  'token' => 'meifang',
+  'appid' => 'wx12fe2a76e0305e26',
+  'appsecret' => '44ca72a6645775c369b0a092ef981054 ',
+  'followmsg' => '感谢你的关注',
+  'helpmsg' => 'helpmsg',
+  'bindmsg' => '恭喜您绑定成功！',
+  'bonustype' => '0',
+  'bonustype2' => '0',
+  'buynotice' => '1',
+  'sendnotice' => '1',
+  'access_token' => 'Ei_poK3HjwNxmcHLpNDb9NZNpqBgwAbkPXoabQZyiGKbiyf8NV9iyDA2YOUa2kpb7bMcw1HQe2EITfuGoL2i5VKbnWq2jCseybS1GfFWMIbWynvnLZY_lopBVXDIp7dWJDIfAHAMGL',
+  'expire_in' => '0',
+  'buymsg' => '恭喜你订单提交成功！',
+  'sendmsg' => '您购买的商品（订单号：$order_sn）已经发货请注意查收！快递号：$shoping_code',
+  'reg_type' => '1',
+  'reg_notice' => '请填写你的邮箱和密码，使用+分割。',
+  'wap_url' => '',
+  'auto_reply' => '测试自动回复',
+  'dateline' => '1461650487',
+)
+Apr 29 19:51:21  [debug] fake_id=
+Apr 29 19:51:21  [debug] SELECT * FROM`MeifangDB`.`ecs_weixin_user`WHERE fake_id="" and fake_id!=""
+Apr 29 19:51:21  [debug] code=0413r7cr1IKC9t095zar1hi9cr13r7cV
+Apr 29 19:51:21  [debug] array (
+  'id' => '1',
+  'title' => '美房test',
+  'token' => 'meifang',
+  'appid' => 'wx12fe2a76e0305e26',
+  'appsecret' => '44ca72a6645775c369b0a092ef981054 ',
+  'followmsg' => '感谢你的关注',
+  'helpmsg' => 'helpmsg',
+  'bindmsg' => '恭喜您绑定成功！',
+  'bonustype' => '0',
+  'bonustype2' => '0',
+  'buynotice' => '1',
+  'sendnotice' => '1',
+  'access_token' => 'Ei_poK3HjwNxmcHLpNDb9NZNpqBgwAbkPXoabQZyiGKbiyf8NV9iyDA2YOUa2kpb7bMcw1HQe2EITfuGoL2i5VKbnWq2jCseybS1GfFWMIbWynvnLZY_lopBVXDIp7dWJDIfAHAMGL',
+  'expire_in' => '0',
+  'buymsg' => '恭喜你订单提交成功！',
+  'sendmsg' => '您购买的商品（订单号：$order_sn）已经发货请注意查收！快递号：$shoping_code',
+  'reg_type' => '1',
+  'reg_notice' => '请填写你的邮箱和密码，使用+分割。',
+  'wap_url' => '',
+  'auto_reply' => '测试自动回复',
+  'dateline' => '1461650487',
+)
+Apr 29 19:51:36  [debug] fake_id=
+Apr 29 19:51:36  [debug] SELECT * FROM`MeifangDB`.`ecs_weixin_user`WHERE fake_id="" and fake_id!=""
+Apr 29 19:55:29  [debug] code=001P30Bm0mrf5g14vGzm0fqWAm0P30BF
+Apr 29 19:55:29  [debug] array (
+  'id' => '1',
+  'title' => '美房test',
+  'token' => 'meifang',
+  'appid' => 'wx12fe2a76e0305e26',
+  'appsecret' => '44ca72a6645775c369b0a092ef981054 ',
+  'followmsg' => '感谢你的关注',
+  'helpmsg' => 'helpmsg',
+  'bindmsg' => '恭喜您绑定成功！',
+  'bonustype' => '0',
+  'bonustype2' => '0',
+  'buynotice' => '1',
+  'sendnotice' => '1',
+  'access_token' => 'Ei_poK3HjwNxmcHLpNDb9NZNpqBgwAbkPXoabQZyiGKbiyf8NV9iyDA2YOUa2kpb7bMcw1HQe2EITfuGoL2i5VKbnWq2jCseybS1GfFWMIbWynvnLZY_lopBVXDIp7dWJDIfAHAMGL',
+  'expire_in' => '0',
+  'buymsg' => '恭喜你订单提交成功！',
+  'sendmsg' => '您购买的商品（订单号：$order_sn）已经发货请注意查收！快递号：$shoping_code',
+  'reg_type' => '1',
+  'reg_notice' => '请填写你的邮箱和密码，使用+分割。',
+  'wap_url' => '',
+  'auto_reply' => '测试自动回复',
+  'dateline' => '1461650487',
+)
+Apr 29 19:55:29  [debug] array (
+  'errcode' => 41002,
+  'errmsg' => 'appid missing, hints: [ req_id: YS6cYa0929ns83 ]',
+)
+Apr 29 19:55:45  [debug] fake_id=
+Apr 29 19:55:45  [debug] SELECT * FROM`MeifangDB`.`ecs_weixin_user`WHERE fake_id="" and fake_id!=""
+Apr 29 19:55:45  [debug] code=001P30Bm0mrf5g14vGzm0fqWAm0P30BF
+Apr 29 19:55:45  [debug] array (
+  'id' => '1',
+  'title' => '美房test',
+  'token' => 'meifang',
+  'appid' => 'wx12fe2a76e0305e26',
+  'appsecret' => '44ca72a6645775c369b0a092ef981054 ',
+  'followmsg' => '感谢你的关注',
+  'helpmsg' => 'helpmsg',
+  'bindmsg' => '恭喜您绑定成功！',
+  'bonustype' => '0',
+  'bonustype2' => '0',
+  'buynotice' => '1',
+  'sendnotice' => '1',
+  'access_token' => 'Ei_poK3HjwNxmcHLpNDb9NZNpqBgwAbkPXoabQZyiGKbiyf8NV9iyDA2YOUa2kpb7bMcw1HQe2EITfuGoL2i5VKbnWq2jCseybS1GfFWMIbWynvnLZY_lopBVXDIp7dWJDIfAHAMGL',
+  'expire_in' => '0',
+  'buymsg' => '恭喜你订单提交成功！',
+  'sendmsg' => '您购买的商品（订单号：$order_sn）已经发货请注意查收！快递号：$shoping_code',
+  'reg_type' => '1',
+  'reg_notice' => '请填写你的邮箱和密码，使用+分割。',
+  'wap_url' => '',
+  'auto_reply' => '测试自动回复',
+  'dateline' => '1461650487',
+)
+Apr 29 19:55:45  [debug] array (
+  'errcode' => 41002,
+  'errmsg' => 'appid missing, hints: [ req_id: IcMbya0945ns43 ]',
+)
+Apr 29 19:56:00  [debug] fake_id=
+Apr 29 19:56:00  [debug] SELECT * FROM`MeifangDB`.`ecs_weixin_user`WHERE fake_id="" and fake_id!=""
+Apr 29 20:07:27  [debug] code=041zc1mA0IkZhb2n0elA0SfVlA0zc1mK
+Apr 29 20:07:27  [debug] array (
+  'id' => '1',
+  'title' => '美房test',
+  'token' => 'meifang',
+  'appid' => 'wx12fe2a76e0305e26',
+  'appsecret' => '44ca72a6645775c369b0a092ef981054 ',
+  'followmsg' => '感谢你的关注',
+  'helpmsg' => 'helpmsg',
+  'bindmsg' => '恭喜您绑定成功！',
+  'bonustype' => '0',
+  'bonustype2' => '0',
+  'buynotice' => '1',
+  'sendnotice' => '1',
+  'access_token' => 'Ei_poK3HjwNxmcHLpNDb9NZNpqBgwAbkPXoabQZyiGKbiyf8NV9iyDA2YOUa2kpb7bMcw1HQe2EITfuGoL2i5VKbnWq2jCseybS1GfFWMIbWynvnLZY_lopBVXDIp7dWJDIfAHAMGL',
+  'expire_in' => '0',
+  'buymsg' => '恭喜你订单提交成功！',
+  'sendmsg' => '您购买的商品（订单号：$order_sn）已经发货请注意查收！快递号：$shoping_code',
+  'reg_type' => '1',
+  'reg_notice' => '请填写你的邮箱和密码，使用+分割。',
+  'wap_url' => '',
+  'auto_reply' => '测试自动回复',
+  'dateline' => '1461650487',
+)
+Apr 29 20:11:16  [debug] code=0119VhCh2P26vN0kY4Ah28ehCh29VhC2
+Apr 29 20:11:16  [debug] array (
+  'id' => '1',
+  'title' => '美房test',
+  'token' => 'meifang',
+  'appid' => 'wx12fe2a76e0305e26',
+  'appsecret' => '44ca72a6645775c369b0a092ef981054 ',
+  'followmsg' => '感谢你的关注',
+  'helpmsg' => 'helpmsg',
+  'bindmsg' => '恭喜您绑定成功！',
+  'bonustype' => '0',
+  'bonustype2' => '0',
+  'buynotice' => '1',
+  'sendnotice' => '1',
+  'access_token' => 'Ei_poK3HjwNxmcHLpNDb9NZNpqBgwAbkPXoabQZyiGKbiyf8NV9iyDA2YOUa2kpb7bMcw1HQe2EITfuGoL2i5VKbnWq2jCseybS1GfFWMIbWynvnLZY_lopBVXDIp7dWJDIfAHAMGL',
+  'expire_in' => '0',
+  'buymsg' => '恭喜你订单提交成功！',
+  'sendmsg' => '您购买的商品（订单号：$order_sn）已经发货请注意查收！快递号：$shoping_code',
+  'reg_type' => '1',
+  'reg_notice' => '请填写你的邮箱和密码，使用+分割。',
+  'wap_url' => '',
+  'auto_reply' => '测试自动回复',
+  'dateline' => '1461650487',
+)
+Apr 29 20:11:32  [debug] fake_id=
+Apr 29 20:11:32  [debug] SELECT * FROM`MeifangDB`.`ecs_weixin_user`WHERE fake_id="" and fake_id!=""
+Apr 29 20:11:32  [debug] code=0119VhCh2P26vN0kY4Ah28ehCh29VhC2
+Apr 29 20:11:32  [debug] array (
+  'id' => '1',
+  'title' => '美房test',
+  'token' => 'meifang',
+  'appid' => 'wx12fe2a76e0305e26',
+  'appsecret' => '44ca72a6645775c369b0a092ef981054 ',
+  'followmsg' => '感谢你的关注',
+  'helpmsg' => 'helpmsg',
+  'bindmsg' => '恭喜您绑定成功！',
+  'bonustype' => '0',
+  'bonustype2' => '0',
+  'buynotice' => '1',
+  'sendnotice' => '1',
+  'access_token' => 'Ei_poK3HjwNxmcHLpNDb9NZNpqBgwAbkPXoabQZyiGKbiyf8NV9iyDA2YOUa2kpb7bMcw1HQe2EITfuGoL2i5VKbnWq2jCseybS1GfFWMIbWynvnLZY_lopBVXDIp7dWJDIfAHAMGL',
+  'expire_in' => '0',
+  'buymsg' => '恭喜你订单提交成功！',
+  'sendmsg' => '您购买的商品（订单号：$order_sn）已经发货请注意查收！快递号：$shoping_code',
+  'reg_type' => '1',
+  'reg_notice' => '请填写你的邮箱和密码，使用+分割。',
+  'wap_url' => '',
+  'auto_reply' => '测试自动回复',
+  'dateline' => '1461650487',
+)
+Apr 29 20:11:47  [debug] fake_id=
+Apr 29 20:11:47  [debug] SELECT * FROM`MeifangDB`.`ecs_weixin_user`WHERE fake_id="" and fake_id!=""
+Apr 29 20:12:55  [debug] code=041tUguX1MHMe81mI2uX1OAfuX1tUguw
+Apr 29 20:12:55  [debug] array (
+  'id' => '1',
+  'title' => '美房test',
+  'token' => 'meifang',
+  'appid' => 'wx12fe2a76e0305e26',
+  'appsecret' => '44ca72a6645775c369b0a092ef981054 ',
+  'followmsg' => '感谢你的关注',
+  'helpmsg' => 'helpmsg',
+  'bindmsg' => '恭喜您绑定成功！',
+  'bonustype' => '0',
+  'bonustype2' => '0',
+  'buynotice' => '1',
+  'sendnotice' => '1',
+  'access_token' => 'Ei_poK3HjwNxmcHLpNDb9NZNpqBgwAbkPXoabQZyiGKbiyf8NV9iyDA2YOUa2kpb7bMcw1HQe2EITfuGoL2i5VKbnWq2jCseybS1GfFWMIbWynvnLZY_lopBVXDIp7dWJDIfAHAMGL',
+  'expire_in' => '0',
+  'buymsg' => '恭喜你订单提交成功！',
+  'sendmsg' => '您购买的商品（订单号：$order_sn）已经发货请注意查收！快递号：$shoping_code',
+  'reg_type' => '1',
+  'reg_notice' => '请填写你的邮箱和密码，使用+分割。',
+  'wap_url' => '',
+  'auto_reply' => '测试自动回复',
+  'dateline' => '1461650487',
+)
+Apr 29 20:12:55  [debug] true
+Apr 29 20:13:10  [debug] fake_id=
+Apr 29 20:13:10  [debug] SELECT * FROM`MeifangDB`.`ecs_weixin_user`WHERE fake_id="" and fake_id!=""
+Apr 29 20:13:10  [debug] code=041tUguX1MHMe81mI2uX1OAfuX1tUguw
+Apr 29 20:13:10  [debug] array (
+  'id' => '1',
+  'title' => '美房test',
+  'token' => 'meifang',
+  'appid' => 'wx12fe2a76e0305e26',
+  'appsecret' => '44ca72a6645775c369b0a092ef981054 ',
+  'followmsg' => '感谢你的关注',
+  'helpmsg' => 'helpmsg',
+  'bindmsg' => '恭喜您绑定成功！',
+  'bonustype' => '0',
+  'bonustype2' => '0',
+  'buynotice' => '1',
+  'sendnotice' => '1',
+  'access_token' => 'Ei_poK3HjwNxmcHLpNDb9NZNpqBgwAbkPXoabQZyiGKbiyf8NV9iyDA2YOUa2kpb7bMcw1HQe2EITfuGoL2i5VKbnWq2jCseybS1GfFWMIbWynvnLZY_lopBVXDIp7dWJDIfAHAMGL',
+  'expire_in' => '0',
+  'buymsg' => '恭喜你订单提交成功！',
+  'sendmsg' => '您购买的商品（订单号：$order_sn）已经发货请注意查收！快递号：$shoping_code',
+  'reg_type' => '1',
+  'reg_notice' => '请填写你的邮箱和密码，使用+分割。',
+  'wap_url' => '',
+  'auto_reply' => '测试自动回复',
+  'dateline' => '1461650487',
+)
+Apr 29 20:13:11  [debug] true
+Apr 29 20:13:26  [debug] fake_id=
+Apr 29 20:13:26  [debug] SELECT * FROM`MeifangDB`.`ecs_weixin_user`WHERE fake_id="" and fake_id!=""
+Apr 29 20:14:11  [debug] code=041fik6F0oSZD62rbc8F0zXi6F0fik6r
+Apr 29 20:14:11  [debug] array (
+  'id' => '1',
+  'title' => '美房test',
+  'token' => 'meifang',
+  'appid' => 'wx12fe2a76e0305e26',
+  'appsecret' => '44ca72a6645775c369b0a092ef981054 ',
+  'followmsg' => '感谢你的关注',
+  'helpmsg' => 'helpmsg',
+  'bindmsg' => '恭喜您绑定成功！',
+  'bonustype' => '0',
+  'bonustype2' => '0',
+  'buynotice' => '1',
+  'sendnotice' => '1',
+  'access_token' => 'Ei_poK3HjwNxmcHLpNDb9NZNpqBgwAbkPXoabQZyiGKbiyf8NV9iyDA2YOUa2kpb7bMcw1HQe2EITfuGoL2i5VKbnWq2jCseybS1GfFWMIbWynvnLZY_lopBVXDIp7dWJDIfAHAMGL',
+  'expire_in' => '0',
+  'buymsg' => '恭喜你订单提交成功！',
+  'sendmsg' => '您购买的商品（订单号：$order_sn）已经发货请注意查收！快递号：$shoping_code',
+  'reg_type' => '1',
+  'reg_notice' => '请填写你的邮箱和密码，使用+分割。',
+  'wap_url' => '',
+  'auto_reply' => '测试自动回复',
+  'dateline' => '1461650487',
+)
+Apr 29 20:14:27  [debug] fake_id=
+Apr 29 20:14:27  [debug] SELECT * FROM`MeifangDB`.`ecs_weixin_user`WHERE fake_id="" and fake_id!=""
+Apr 29 20:14:27  [debug] code=041fik6F0oSZD62rbc8F0zXi6F0fik6r
+Apr 29 20:14:27  [debug] array (
+  'id' => '1',
+  'title' => '美房test',
+  'token' => 'meifang',
+  'appid' => 'wx12fe2a76e0305e26',
+  'appsecret' => '44ca72a6645775c369b0a092ef981054 ',
+  'followmsg' => '感谢你的关注',
+  'helpmsg' => 'helpmsg',
+  'bindmsg' => '恭喜您绑定成功！',
+  'bonustype' => '0',
+  'bonustype2' => '0',
+  'buynotice' => '1',
+  'sendnotice' => '1',
+  'access_token' => 'Ei_poK3HjwNxmcHLpNDb9NZNpqBgwAbkPXoabQZyiGKbiyf8NV9iyDA2YOUa2kpb7bMcw1HQe2EITfuGoL2i5VKbnWq2jCseybS1GfFWMIbWynvnLZY_lopBVXDIp7dWJDIfAHAMGL',
+  'expire_in' => '0',
+  'buymsg' => '恭喜你订单提交成功！',
+  'sendmsg' => '您购买的商品（订单号：$order_sn）已经发货请注意查收！快递号：$shoping_code',
+  'reg_type' => '1',
+  'reg_notice' => '请填写你的邮箱和密码，使用+分割。',
+  'wap_url' => '',
+  'auto_reply' => '测试自动回复',
+  'dateline' => '1461650487',
+)
+Apr 29 20:14:43  [debug] fake_id=
+Apr 29 20:14:43  [debug] SELECT * FROM`MeifangDB`.`ecs_weixin_user`WHERE fake_id="" and fake_id!=""
+Apr 29 20:28:51  [debug] https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx12fe2a76e0305e26&secret=44ca72a6645775c369b0a092ef981054 &code=031UFx7x1DZJy505tQ6x1sir7x1UFx7N&grant_type=authorization_code
+Apr 29 20:29:07  [debug] https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx12fe2a76e0305e26&secret=44ca72a6645775c369b0a092ef981054 &code=031UFx7x1DZJy505tQ6x1sir7x1UFx7N&grant_type=authorization_code
+Apr 29 20:31:24  [debug] https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx12fe2a76e0305e26&secret=44ca72a6645775c369b0a092ef981054&code=041UB2Up0gLKSc16OOUp0At8Up0UB2Ux&grant_type=authorization_code
+Apr 29 20:31:34  [debug] https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx12fe2a76e0305e26&secret=44ca72a6645775c369b0a092ef981054&code=041YldMH1HAUob0qwYMH1S6hMH1YldMy&grant_type=authorization_code

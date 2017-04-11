@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/meifang/!svn/ver/909/trunk/03_Source/mobile/includes/modules/payment/WxpayAPI_php_v3/cert
+END
+apiclient_key.pem
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/meifang/!svn/ver/909/trunk/03_Source/mobile/includes/modules/payment/WxpayAPI_php_v3/cert/apiclient_key.pem
+END
+apiclient_cert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/meifang/!svn/ver/909/trunk/03_Source/mobile/includes/modules/payment/WxpayAPI_php_v3/cert/apiclient_cert.pem
+END

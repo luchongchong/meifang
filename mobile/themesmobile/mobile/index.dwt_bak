@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>美美商城</title>
+    <meta name="keywords" content=" " />
+    <meta name="description" content=" " />
+    <meta property="og:type" content="game">
+    <meta property="og:title" content="美房美邦">
+    <meta property="og:image" content=" ">
+    <meta property="og:description" content="美房美邦">
+    <link rel="apple-touch-icon" href="../favicon.ico" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-tap-highlight" content="no">
+	<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/common.css">
+	<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/swiper.css">
+	<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/index.css">
+	<!--<script src="themesmobile/js/iscroll.js"></script> -->
+</head>
+<body>
+    <header>
+    <a href="./user.php" class="user"><i class="iconfont">&#xe612;</i>我</a>
+    <h1>
+        <form action="searchfor.php" class="search-form">
+            <i class="iconfont" onclick="return check('keywordfoot')">&#xe600;</i>
+            <input name="keywords" id="keywordfoot" type="text">
+        </form>
+    </h1>
+    <a href="category.php" class="category">分类<i class="iconfont">&#xe602;</i></a>
+</header>
+	<section class="banner">
+	    <div class="swiper-container" id="banner">
+			<div class="swiper-wrapper">
+    			{foreach from=$wap_index_ad item=ad name=wap_index_ad}          
+    				<div class="swiper-slide"><a href="{$ad.url}"><img src="{$ad.image}"></a> </div>
+    			{/foreach}
+			</div>
+	    	<div class="banner-page"></div>
+	    </div>
+	</section>
+	<div class="index-box">
+		<div class="hd">
+			<span class="tit">新品推荐</span>
+			<span>共找到{$new_goods_nums}件商品</span>
+			<a href="../search.php?intro=new" class="more">更多 <i class="iconfont">&#xe60b;</i></a>
+		</div>
+		{if $new_goods}
+		<ul class="pro_box cle" id="baoKuan">
+		{foreach from=$new_goods key=k item=new_goods_list}
+			<li>
+                <a href="{$new_goods_list.url}" class="">
+				<img src="{$new_goods_list.thumb}" alt="">
+				<img src="themesmobile/mobile/img/i_hot.png" class="icon_bao">
+				<div class="info">
+					<p class="desc">{$new_goods_list.name}</p>
+					<p class="price">{$new_goods_list.shop_price}</p>
+				</div>
+				</a>
+			</li>
+		{/foreach}
+		</ul>
+	  {/if}
+	</div>
+	<!-- 热卖 -->
+	<div class="index-box">
+		<div class="hd">
+			<span class="tit">明星热卖</span>
+			<span>共找到{$hot_goods_nums}件商品</span>
+			<a href="../search.php?intro=hot" class="more">更多 <i class="iconfont">&#xe60b;</i></a>
+		</div>
+		{if $hot_goods}
+		<ul class="pro_box cle" id="baoKuan">
+    		{foreach from=$hot_goods key=k item=hot_goods}
+    			<li>
+    				<a href="{$hot_goods.url}" class="">
+                    <img src="{$hot_goods.thumb}" alt="">
+                    <img src="themesmobile/mobile/img/i_hot.png" class="icon_bao">
+                    <div class="info">
+                    <p class="desc">{$hot_goods.name}</p>
+                    <p class="price">{$hot_goods.shop_price}</p>
+                </div>
+                </a>
+    			</li>
+    		{/foreach}
+		</ul>
+		{/if}
+	</div>
+	<!-- 
+	<div class="index-box">
+		<div class="hd">
+			<span class="tit">样本</span>
+			<span>共找到{$sample_goods_nums}件商品</span>
+			<a href="../sample.php?intro=sample" class="more">更多 <i class="iconfont">&#xe60b;</i></a>
+		</div>
+		{if $sample_goods}
+		<ul class="pro_box cle" id="baoKuan">
+    		{foreach from=$sample_goods key=k item=sample}
+    			<li>
+    				<a href="{$sample.url}" class="">
+                    <img src="{$sample.thumb}" alt="">
+                    <img src="themesmobile/mobile/img/i_hot.png" class="icon_bao">
+                    <div class="info">
+                    <p class="desc">{$sample.name}</p>
+                    <p class="price">{$sample.shop_price}</p>
+                    </div>
+                    </a>
+    			</li>
+    		{/foreach}
+		</ul>
+		{/if}
+	</div>
+	-->
+	<!-- 空间 -->
+	<div class="kongjian mb_footer" >
+        <div id="wrapper">
+            <div id="scroller">
+                <div class="hd">
+                <ul id='qiehuan'>
+                    {if $categories_list_place}
+                        {foreach from=$categories_list_place key=k item=list_place}
+                          {if $list_place.name eq '儿童房'}
+                             <li id="a" class="active">{$list_place.name}</li>
+                          {/if}
+                        {/foreach}
+                    {/if}
+                    {if $goods_type_child}
+                     {foreach from=$goods_type_child key=k item=child_list}
+                        <li value="{$child_list.id}">{$child_list.name}</li>
+                     {/foreach}
+                    {/if}
+                </ul>
+                <div class="bg"></div>
+            </div>
+           <!-- #BeginLibraryItem "/library/goods_list.lbi" --><!-- #EndLibraryItem -->
+           </div>
+	</div>
+   
+    <footer class="footer">
+        <a class="footer-item" href="./index.php">
+            <i class="iconfont">&#xe605;</i>
+            <p>美美商城</p>
+        </a>
+        <a class="footer-item" href="./flow.php">
+            <i class="iconfont">&#xe614;</i>
+            <p>购物车</p>
+        </a>
+        <a class="footer-item" href="./tem.php?act=mstj">
+            <i class="iconfont">&#xe603;</i>
+            <p>名师推荐</p>
+        </a>
+        <a class="footer-item" href="./points.php">
+            <i class="iconfont">&#xe607;</i>
+            <p>积分商城</p>
+        </a>
+        <a class="footer-item" href="./experience.php?act=default">
+            <i class="iconfont">&#xe60e;</i>
+            <p>全国门店</p>
+        </a>
+    </footer>
+    <script src="themesmobile/js/config.js"></script>
+	<script src="themesmobile/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="themesmobile/js/loadHtml.js"></script>
+	<script src="themesmobile/js/lib/template.min.js"></script>
+	<script src="themesmobile/mobile/dist/swiper.min.js"></script>
+    <script src="themesmobile/js/plug.js"></script>
+    <script src="themesmobile/js/global.js"></script>
+	<script src="themesmobile/js/worldunion.js"></script>
+    <script type="text/javascript" src="themesmobile/js/ectouch.js"></script>
+    <script type="text/javascript" src="themesmobile/js/jquery.more.js"></script>
+
+    <script type="text/javascript">
+        extension_code={$extension_code};
+        jQuery(function($){
+            $("#J_ItemList").more({'address': 'index.php?extension_code='+'00'+'&baioji={$biaoji}&act=asynclist&category={$category}&brand={$brand_id}&filter_attr={$filter_attr}&page={$pager.page}&sort={$pager.sort}&order={$pager.order}', 'spinner_code':'<div style="text-align:center; margin:10px;"><img src="{$ectouch_themes}/images/loader.gif" /></div>'},
+                                    $('#qiehuan'));
+ 		 $('#J_ItemList').more({'address': 'index.php?extension_code='+extension_code+'&baioji={$biaoji}&act=asynclist&category={$category}&brand={$brand_id}&filter_attr={$filter_attr}&page={$pager.page}&sort={$pager.sort}&order={$pager.order}', 'spinner_code':'<div style="text-align:center; margin:10px;"><img src="{$ectouch_themes}/images/loader.gif" /></div>'})
+          $(window).scroll(function () {
+                if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                    $('.get_more').click();
+                }
+            });
+        });
+    </script>
+<script>
+    $(function(){
+        var w, banner_h;
+        w = $(window).width()>750 ? 750 : $(window).width();
+        $('#banner, #banner img, #banner .banner-page').width(w);
+        setTimeout(function(){
+            banner_h = $('#banner img').height();
+            $('#banner').height(banner_h);
+        }, 300);
+    })
+
+    var mySwiper = new Swiper('#banner',{
+        autoplay : 5000,
+        pagination: '.banner-page',
+        loop:true,
+        grabCursor: true,
+        paginationElementClass:'page-switch',
+        paginationActiveClass:'page-active',
+        paginationClickable: true
+    });
+</script>
+</body>
+</html>

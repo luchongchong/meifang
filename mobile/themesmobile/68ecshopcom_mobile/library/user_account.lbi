@@ -1,0 +1,28 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <!--#资金管理-->
+<script type="text/javascript">
+		{foreach from=$lang.account_js item=item key=key}
+			var {$key} = "{$item}";
+		{/foreach}
+	</script>
+<div class="Funds">
+ <!-- {if $action eq "account_detail"} -->
+		<!--{foreach from=$account_log item=item}-->
+        	<ul>
+		<li><strong>{$lang.process_time}</strong><span>{$item.change_time}</span></li>
+        <li><strong>{$lang.surplus_pro_type}</strong><span>{$item.type}</span></li>
+        <li><strong>{$lang.money}</strong><span style=" color:#F60">{$item.amount}</span></li>
+        <li><strong>{$lang.change_desc}</strong><span>{$item.short_change_desc}</span></li>
+        </ul>
+		<!--{/foreach}-->
+	
+	<!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+	<!-- {/if} -->
+	<div class="funds_dot">{$lang.current_surplus}<font style=" color:#F30">{$surplus_amount}</font></div>
+ </div>
+
+<script type="text/javascript">
+{foreach from=$lang.account_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>

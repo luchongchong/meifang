@@ -1,0 +1,124 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ {insert_scripts files='region.js'}
+            <script type="text/javascript">
+              region.isAdmin = false;
+              {foreach from=$lang.flow_js item=item key=key}
+              var {$key} = "{$item}";
+              {/foreach}
+              {literal}
+              onload = function() {
+                if (!document.all)
+                {
+                  document.forms['theForm'].reset();
+                }
+              }
+              {/literal}
+            </script>
+            
+ <!-- {foreach from=$consignee_list item=consignee key=sn} -->
+ {if !$consignee.consignee}
+         
+<section class="innercontent"><label class="title">{$lang.add_address}</label></section>  {/if}
+
+
+<div class="address_add_content">
+  <form action="user.php" method="post" name="theForm" onsubmit="return checkConsignee(this)">
+	<ul>
+       <li>
+    	  <input type="text" name="consignee" value="{$consignee.consignee|escape}" id="consignee_{$sn}"  placeholder="{$lang.consignee_name}"/>
+		</li>
+         <li>
+    	  <input type="email" name="email" value="{$consignee.email|escape}" id="email_{$sn}"  placeholder="{$lang.email_address}" maxlength="20"/>
+			</li>     
+    	
+            <li>
+
+          <select name="country" id="selCountries_{$sn}" onchange="regionChanged(this, 1, 'selProvinces_{$sn}')" style="display:none;">
+		<option value="0">{$lang.please_select}{$name_of_region[0]}</option>
+					 <!-- {foreach from=$country_list item=country name=name} -->
+                      <option value="{$country.region_id}" {if $smarty.foreach.name.first}selected{/if}>{$country.region_name}</option>
+                      <!-- {/foreach} -->
+		</select>
+          
+          
+    		<select name="province" id="selProvinces_{$sn}" onchange="region.changed(this, 2, 'selCities_{$sn}')" class="province_select" >
+                     <option value="0">{$lang.please_select}{$name_of_region[1]}</option>
+                      <!-- {foreach from=$province_list.$sn item=province} -->
+                      <option value="{$province.region_id}" {if $consignee.province eq $province.region_id}selected{/if}>{$province.region_name}</option>
+                      <!-- {/foreach} -->
+                    </select>
+         
+	             <select name="city" id="selCities_{$sn}" onchange="region.changed(this, 3, 'selDistricts_{$sn}')">
+                   <option value="0">{$lang.please_select}{$name_of_region[2]}</option>
+                      <!-- {foreach from=$city_list.$sn item=city} -->
+                      <option value="{$city.region_id}" {if $consignee.city eq $city.region_id}selected{/if}>{$city.region_name}</option>
+                      <!-- {/foreach} -->
+                    </select>
+        	</li>
+    		<li>
+              <select name="district" id="selDistricts_{$sn}" {if !$district_list.$sn}style="display:none"{/if}>
+                      <option value="0">{$lang.please_select}{$name_of_region[3]}</option>
+                      <!-- {foreach from=$district_list.$sn item=district} -->
+                      <option value="{$district.region_id}" {if $consignee.district eq $district.region_id}selected{/if}>{$district.region_name}</option>
+                      <!-- {/foreach} -->
+                    </select>
+           </li>
+            
+
+        
+           <li>
+    		 <input type="text"  name="address" value="{$consignee.address|escape}" id="address_{$sn}"  placeholder="{$lang.detailed_address}"/>
+	        </li>
+           <li>
+		 <input type="tel" name="tel" value="{$consignee.tel|escape}" id="tel_{$sn}"  placeholder="{$lang.phone}"/>
+	        </li>
+            <li>
+		  <input type="tel" name="mobile" value="{$consignee.mobile|escape}" id="mobile_{$sn}"  placeholder="{$lang.backup_phone}"/>
+	        </li>
+    		<li>
+    		 <input type="text" name="zipcode" value="{$consignee.zipcode|escape}" id="zipcode_{$sn}"  placeholder="{$lang.postalcode}"/>
+	        </li>
+            	<li>
+    		   <input type="text" name="sign_building" value="{$consignee.sign_building|escape}" id="sign_building_{$sn}"  placeholder="{$lang.sign_building}"/>
+	        </li>
+            	<li>
+    		   <input type="text" name="best_time" value="{$consignee.best_time|escape}" id="best_time_{$sn}"  placeholder="{$lang.deliver_goods_time}"/>
+	        </li>
+    	
+        	
+            
+    	</ul>
+            
+    {if $consignee.consignee && $consignee.email}
+                  <div class="field submit-btn">
+				<input type="submit" value="{$lang.confirm_edit}"  class="c-btn-oran-big1"/>
+                </div>
+				<a href="javascript:void(0);" onclick="if (confirm('{$lang.confirm_drop_address}'))location.href='user.php?act=drop_consignee&id={$consignee.address_id}'"  class="c-btn-hui-big"/>{$lang.drop}</a>
+				{else}
+                  <div class="field submit-btn">
+				<input type="submit" value="{$lang.add_address}"  class="c-btn-oran-big1" style="margin-top:30px; "/>
+                </div>
+				{/if}
+				<input type="hidden" name="act" value="act_edit_address">
+				<input type="hidden" name="address_id" value="{$consignee.address_id}">
+
+    </form>
+</div>
+
+{/foreach}
+
+
+
+ 
+
+
+<script type="text/javascript">
+{foreach from=$lang.flow_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+{literal}
+onload = function() {
+	if(!document.all){document.forms['theForm'].reset();}
+}
+{/literal}
+</script>

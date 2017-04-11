@@ -1,0 +1,323 @@
+.center_top{
+    height: 0.71rem;
+    background: #c52121;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+.fixed{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+}
+#header{
+    height: 0.71rem;
+    background-color: #c52121;
+    position: relative;
+    top: 0;
+    z-index: 2;
+}
+#header .search{
+    float: left;
+    width: 4.06rem;
+    height: 0.38rem;
+    background: #fff;
+    border-radius: 0.1rem;
+    margin-left: 0.55rem;
+    margin-top: 0.16rem;
+    overflow: hidden;
+}
+#header a{
+    font-size: 0.23rem;
+}
+#header a.fl{
+    color: #fff;
+    margin-left: 5%;
+    margin-top: 0.24rem;
+}
+#header a.fl img{
+    margin-right: 0.08rem;
+    vertical-align: middle;
+    margin-top: -0.05rem;
+    width: 0.3rem;
+}
+#header .search{
+    float: left;
+    width: 4.06rem;
+    height: 0.38rem;
+    background: #fff;
+    border-radius: 0.1rem;
+    margin-left: 0.55rem;
+    margin-top: 0.16rem;
+    overflow: hidden;
+}
+#header .search input {
+    border: none;
+    width: 3.3rem;
+    margin-left: 0.1rem;
+    float: left;
+    height: 0.3rem;
+    margin-top: 0.04rem;
+    font-size: 0.22rem;
+}
+#header .search button{
+    width: 0.24rem;
+    height: 0.2rem;
+    background: url(../img/ico1.png) center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    margin-right: 0.14rem;
+    margin-top: 0.08rem;
+    float: right;
+}
+#header a.fr{
+    color: #fff;
+    margin-right: 5%;
+    margin-top: 0.24rem;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+
+.w1020{
+	position: relative;
+}
+.yang_filter{
+	border-bottom: 1px solid #e0e1e1;
+	font-size: 15px;
+	margin: 0 auto;
+}
+.yang_filter li.yang_attr{
+	float: left;
+	
+}
+.yang_filter li.yang_attr .attr_key{
+	float: left;
+	line-height: 40px;
+	margin-right: 5px;
+}
+.yang_filter li.yang_attr .sel .iconfont{ 
+	font-size: 26px;
+	line-height: 42px;
+	color: #3e3a39;
+}
+.yang_filter li.yang_attr .sel li{ background-color: #fff;}
+.yang_filter li.yang_attr #filter1,
+.yang_filter li.yang_attr #filter2,
+.yang_filter li.yang_attr #filter3{z-index: 5}
+
+.content{
+	min-height: 600px;
+}
+.yang_list{
+	width: 780px;
+	margin: 36px auto;
+}
+.yang_list li{
+	float: left;
+	width: 185px;
+	margin: 5px;
+	text-align: center;
+}
+.yang_list li a{
+	display: block;
+	border: 1px solid #f7f7f7;
+}
+.yang_list li a:hover{
+	border-color: #c52021;
+}
+.yang_list li a img{
+	display: block;
+	width: 183px;
+	height: 165px;
+}
+.yang_list li a .name{
+	color: #595757;
+	font-size: 12px;
+}
+.yang_list li a .price{ font-size: 18px; color: #000;}
+.yang_list li a .price em{ color: #c52021;}
+/***********************/
+.yang_detail{
+	width: 886px;
+	border: 1px solid #c9caca;
+	margin: 0 auto;
+}
+.yang_detail .yang_hd{
+	position: relative;
+	border-bottom: 1px #d5d6d6 dashed;
+	font-size: 28px;
+	color: #000;
+	height: 62px;
+	line-height: 62px;
+	padding-left: 35px;
+}
+.yang_detail .yang_hd .buy{
+	position: absolute;
+	right: 35px;
+	top: 0;
+	font-weight: bolder;
+
+}
+.yang_detail .condition{
+	font-size: 24px;
+	line-height: 36px;
+	margin-top: 20px;
+}
+.yang_detail .condition li{
+	width: 260px;
+	padding-left: 35px;
+	float: left;
+}
+.yang_detail .desc{
+	width: 816px;
+	text-indent: 2em;
+	font-size: 24px;
+	margin: 5px auto 20px;
+}
+
+.yang_detail .show_img{
+	width: 750px;
+	margin: 0 auto 20px;
+	position: relative;
+}
+
+.yang_detail .show_img .pic-show img{
+    width: 750px;
+    height: 540px;
+}
+.yang_detail .show_img .small-pic{
+    position: relative;
+    width: 750px;
+    height: 172px;
+    margin-top: 20px;
+}
+.yang_detail .show_img .small-pic .show_min_img{
+    position: relative;
+    width: 750px;
+    height: 172px;
+    overflow: hidden;
+}
+.yang_detail .show_img a.iconfont{
+    position: absolute;
+    bottom: 0;
+    display: block;
+    height: 172px;
+    width: 50px;
+    line-height: 172px;
+    color: #c9caca;
+    z-index: 2;
+    cursor: pointer;
+    font-size: 50px;
+}
+.yang_detail .show_img a:hover{ color: #333;}
+.yang_detail .show_img .prev{ left: 0; margin-left: -50px;}
+.yang_detail .show_img .next{ right: 0; margin-right: -50px;}
+.yang_detail .show_img .small-pic ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2000em;
+    margin-left: -20.6px;
+}
+.yang_detail .show_img .small-pic li{
+    float: left;
+    width: 172px;
+    margin-left: 20.6px;
+}
+.yang_detail .show_img .small-pic img{
+    width: 170px;
+    height: 170px;
+    border: 1px solid #fff;
+}
+.yang_detail .show_img .small-pic li.active img{
+    border-color: #9f9f9f;
+}
+.detail-main{
+	width: 750px;
+	margin: 40px auto;
+}
+.detail-main .detail-hd{
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    font-size: 22px;
+}
+.detail-main .detail-hd a{
+    display: block;
+    float: left;
+    padding-left: 25px;
+    padding-right: 25px;
+    vertical-align: middle;
+    color: #fff;
+    vertical-align: top;
+    background-color: #333;
+}
+.detail-hd a.active{
+    background-color: #333;
+    color: #fff;
+}
+.detail-hd a:hover{
+    color:#ddd;
+}
+.detail-bd .pro-parameter{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 750px;
+}
+.detail-bd .pro-parameter li{
+    float: left;
+    margin-left: 40px;
+    padding-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 22px;
+}
+.detail-main .detail-bd .main-box img{
+    margin: 0 auto;
+    width: 750px;
+}
+ul.pro_box {
+    width: 100%;
+    /*padding: .1rem .05rem 0;*/
+    margin-left: -0.5rem;
+	margin-top: 1rem;
+}
+.cle {
+    zoom: 1;
+}
+ul.pro_box li {
+    float: left;
+    width: 36%;
+    padding-left: 2rem;
+    padding-right: 0.05rem;
+    padding-bottom: .1rem;
+}
+ul.pro_box li img {
+    width: 100%;
+}
+ul.pro_box li a {
+    position: relative;
+    display: block;
+}
+.kongjian ul.pro_box li .info {
+    height: .24rem;
+    font-size: .16rem;
+    background-color: #3e3a39;
+    color: #f7f8f8;
+    padding: .02rem;
+}
+.cle::after {
+    content: " ";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}

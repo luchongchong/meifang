@@ -1,0 +1,37 @@
+<!--{if $orders}-->
+<div class="order_list">
+     
+      <!--{foreach from=$orders item=item}-->
+       <div id="OrderList" class="ord_list">
+       <a href="user.php?act=order_detail&order_id={$item.order_id}" class="lnk" >
+       <h2><img src="themesmobile/68ecshopcom_mobile/images/dianpu.png">状态：<span>{$item.order_status}</span></h2>
+       <h3>订单编号：{$item.order_sn}</h3>
+       {foreach from=$item.goods item=list}
+       <dl class="dingdan">
+       <dt><img src="{$list.goods_thumb}"></dt>
+       <dd><p>{$list.goods_name|truncate:60:"..."}</p><span>{$list.goods_price}&nbsp;x&nbsp;{$list.goods_number}</span></dd>
+       </dl>
+       {/foreach}
+        </a>
+        
+        <ul>
+         <li>总价<strong>：{$item.total_fee}</strong> </li>
+         <li>{$item.handler}</li>
+        </ul>
+        
+        </div>
+        <!--{/foreach}--> 
+      
+<div style="background:#FFF;">
+{include file='library/pages.lbi'} 
+</div>
+</div>
+<!--{else}-->
+<div id="list_0_0" class="alertText font12">{$lang.order_empty}</div>
+<!--{/if}--> 
+
+<script type="text/javascript">
+{foreach from=$lang.merge_order_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>

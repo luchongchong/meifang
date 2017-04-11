@@ -1,0 +1,223 @@
+footer.footer a:nth-child(3){ color: #c52021;}
+.teacher-list {
+	padding: .1rem .05rem;
+}
+.teacher-list ul li{
+	width: 50%;
+	padding: .05rem;
+	float: left;
+}
+.teacher-list ul li .teacher-box{
+	border: 1px solid #b0afaf;
+	padding: 0;
+}
+.teacher-list .teacher-box a{
+	display: block;
+	width: 100%;
+	border-bottom: 1px solid #e2e0e0;
+}
+.teacher-list .teacher-box img,
+.teacher-list .teacher-box .name{
+	width: 100%;
+}
+.teacher-list .teacher-box .name{
+	display: block;
+	color: #4a88fa;
+	font-size: .16rem;
+	padding: .03rem .05rem;
+}
+.teacher-list .teacher-box .other{
+	padding-left: .05rem;
+}
+.teacher-list .teacher-box .other span{
+	display: inline-block;
+	vertical-align: middle;
+	padding-right: .1rem;
+	font-size: .12rem;
+	color: #959799;
+	line-height: 2;
+}
+.teacher-list .teacher-box .other .iconfont{
+	color: #c9caca;
+	margin-right: .02rem;
+}
+/************/
+
+.teacher_hd{
+	display: -webkit-box;
+}
+.teacher_hd li{
+    -webkit-box-flex: 1;
+	width: 1%;
+	font-size: .15rem;
+	height: .36rem;
+  	line-height: .36rem;
+	background-color: #4c4c4c;
+	color: #fff;
+	text-align: center;
+}
+.teacher_hd li.active{
+	background-color: #eeeded;
+	color: #be000a;
+}
+.design-list li{
+    box-shadow: 0 -2px 5px #cbcaca, 0 2px 5px #cbcaca;
+	margin-top: .1rem;
+}
+.design-list li a{
+	display: block;
+	display: -webkit-box;
+}
+.design-list li .img-box{
+    -webkit-box-flex: 1;
+	width: 1%;
+	padding-left: .04rem; 
+	padding-right: .04rem; 
+}
+.design-list li .img-box img{
+	width: 100%;
+}
+.design-list li .info{
+    -webkit-box-flex: 1;
+	width: 1%;
+	padding:0 .06rem;
+}
+.design-list li .info .name{
+	color: #b0251e;
+	font-size: .15rem;
+}
+.design-list li .info .designer{
+	color: #939395;
+	font-size: .15rem;
+	line-height: 1.1;
+  	padding-bottom: .05rem;
+}
+.design-list li .info .intro{
+	color: #939395;
+	font-size: .12rem;
+	line-height: .16rem;
+	height: .65rem;
+	overflow: hidden;
+}
+.design-list li .info .intro span{ font-size: .15rem;}
+/********tea-PLU***********/
+.banner .swiper-container {
+	position: relative;
+	height: 273px;
+	/*width: 640px;*/
+}
+.banner .swiper-slide{
+	position: relative;
+}
+.banner .swiper-slide img{ width: 100%;}
+.banner .swiper-slide .txt{
+	position: absolute;
+	bottom: 0;
+	padding: .1rem .15rem .2rem;
+	background-color: rgba(0, 0, 0, .45);
+	color: #fff;
+}
+.banner .swiper-slide .txt p{
+	font-size: .12rem;
+	line-height: .15rem;
+	height: .45rem;
+	overflow: hidden;
+}
+.banner-page {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+}
+.banner-page .page-switch {
+  display: inline-block;
+  width: .1rem;
+  height: .1rem;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 0 .03rem;
+  cursor: pointer;
+  text-indent: 2000em;
+  overflow: hidden;
+}
+.banner-page .page-active { background-color: #030303;}
+
+.item-list{
+	table-layout: fixed;  
+	width: 100%;
+	margin-top: .1rem;
+}
+.item-list tr{
+	margin-top: .04rem;
+}
+.item-list th,
+.item-list td{
+	padding: .1rem .05rem;
+	background-color: #fff;
+	border-top: .05rem solid #eeeded;
+	border-bottom: .05rem solid #eeeded;
+}
+.item-list .bg_tra td{ 
+	color: #909191;
+	background-color: transparent;
+}
+.item-list td .checkbox{
+	margin: auto;
+	width: .14rem;
+	height: .14rem;
+	background-image: url(../img/tea_check.png);
+	background-repeat: no-repeat;
+	background-size: 200%;
+	background-position: 0 -.14rem;
+}
+.item-list td .checkbox.checked{
+	background-position: 0 0;
+}
+.item-list .bg_tra td .checkbox{
+	background-position: -.14rem 0;
+}
+
+.item-list td .count-box{
+    position: relative;
+    text-align: center;
+    padding-left: .2rem;
+    padding-right: .2rem;
+    width: .7rem;
+    margin: 0 auto;
+}
+.item-list td .count-box label{
+    position: absolute;
+    width: .2rem;
+    height: .22rem;
+    color: #3c3d3d;
+    cursor: pointer;
+}
+.item-list td .count-box label i{ 
+	font-size: 12px; 
+	color: #909191;
+}
+.item-list td .count-box label.edit i{
+	color: #000;
+}
+.item-list td .count-box .intype-text{
+    height: .22rem;
+    width: .3rem;
+    padding: 0 .03rem;
+    text-align: center;
+}
+.item-list td .count-box label.subtract{
+    left: 0;
+}
+.item-list td .count-box label.add{
+    right: 0;
+}
+.options .btn{
+	border-radius: 0;
+	font-weight: bolder;
+	font-size: .2rem;
+}
+.options .btn i.iconfont{
+	font-size: .2rem;
+}

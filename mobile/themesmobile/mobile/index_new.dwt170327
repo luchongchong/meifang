@@ -1,0 +1,351 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title>环保墙纸_卧室墙纸【美房美邦官网】</title>
+<meta name="Keywords" content="环保墙纸,卧室墙纸" />
+<meta name="Description" content="美房美邦以全方位的优质产品点缀居家生活，主要从事开发、生产和销售环保墙纸、墙布、窗帘、软包、装饰画、硅藻泥、辅料等居室美化产品达10余年之久，最让人贴心满意的服务；做只做最专业的卧室墙纸；我们的规模遍布全国；公司以诚信赢得信任，以理念引领时代！以创新布局未来！做未来卧室墙纸消费者行业第一品牌！创新线上O2O新型模式领跑者！三年实现万家店，美房美邦必将成为广大家庭用户最喜欢的环保墙纸品牌！" />
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/style_new.css" /><!--样式-->
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/animate.min.css" /><!--样式-->
+
+<script type="text/javascript" src="themesmobile/js/jquery-1.12.4.min.js"></script><!--jQ库-->
+<script type="text/javascript" src="themesmobile/js/swiper-3.3.1.jquery.min.js"></script><!--手机轮播库-->
+<script type="text/javascript" src="themesmobile/js/auto-size.js"></script><!--设置字体大小-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?a4d4767bdb1cdc39506cd37cc378e84d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+
+<body>
+	<div class="mobile_wrap bj1 ohei">
+		<div class="center_top fixed">
+        	<a href="./user.php" class="fl" title="环保墙纸"><img src="themesmobile/mobile/img/ico0.png" alt="卧室墙纸">个人中心</a>
+           <form action="searchfor.php" class="search-form" id="search">
+                <div class="search">
+                   <input name="keywords" id="keywordfoot" type="text">
+                    <button></button>
+                </div>
+                <a href="javascript:void(0)" onclick="return check('keywordfoot')" class="fr">搜索</a>
+
+           </form>
+        </div>
+        <div class="back1"></div>
+        
+        <div class="banner">
+        <div class="bann swiper-container">
+            <ul class="swiper-wrapper">
+
+
+                        {foreach from=$wap_index_ad item=ad name=wap_index_ad}
+
+                            <li class="swiper-slide"><a href="{$ad.url}" title="环保墙纸"><img src="{$ad.image}"></a></li>
+
+                        {/foreach}
+            </ul>
+         </div>
+         <div class="cirl">
+                <ul>
+                    <li class="acti"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+          </div>
+        </div><!--banner-->
+        <div class="list_ico dt">
+        	<ul>
+        		<li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=45" title="环保墙纸">
+                    	<img src="themesmobile/mobile/img/ico9.png" alt="卧室墙纸">
+                       	<p>墙纸</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=46" title="环保墙纸">
+                    	<img src="themesmobile/mobile/img/ico10.png" alt="卧室墙纸">
+                       	<p>墙画</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=47" title="环保墙纸">
+                    	<img src="themesmobile/mobile/img/ico11.png" alt="卧室墙纸">
+                       	<p>无缝墙布</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=43" title="环保墙纸">
+                    	<img src="themesmobile/mobile/img/ico12.png" alt="卧室墙纸">
+                       	<p>窗帘</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=48" title="环保墙纸">
+                    	<img src="themesmobile/mobile/img/ico13.png" alt="卧室墙纸">
+                       	<p>软包</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=161" title="环保墙纸">
+                    	<img src="themesmobile/mobile/img/ico14.png" alt="卧室墙纸">
+                       	<p>装饰画</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=50" title="环保墙纸">
+                    	<img src="themesmobile/mobile/img/ico15.png" alt="卧室墙纸">
+                       	<p>硅藻泥</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="http://www.mfmb58.com/mobile/category.php?id=51" title="环保墙纸">
+                    	<img src="themesmobile/mobile/img/ico16.png" alt="卧室墙纸">
+                       	<p>辅料</p>
+                    </a>
+                </li>
+        	</ul>
+        </div>
+        <div class="explosion">
+        	<h2><i></i><img src="themesmobile/mobile/img/ico22.png" alt="卧室墙纸"><span>temai <img class="im0" src="themesmobile/mobile/img/ico24.png" alt="卧室墙纸"></span><a href="../search.php?intro=hot" title="环保墙纸">... 更多&gt;&gt;</a></h2>
+
+            <div class="conleft">
+                <a href="http://www.mfmb58.com/mobile/goods.php?id=3162" title="环保墙纸">
+            	<img width="100%" src="themesmobile/mobile/img/736332321509496558.jpg" alt="卧室墙纸"> </a>
+                <div class="Price">
+                	<p>热销价<var>￥79.00</var></p>
+                    <span style="display:none"><a href="http://www.mfmb58.com/mobile/ title="环保墙纸"><img src="themesmobile/mobile/img/ico17.png" alt="卧室墙纸"></a><a href="http://www.mfmb58.com/mobile/ title="环保墙纸"><img src="themesmobile/mobile/img/ico20-3.png" alt="卧室墙纸"></a></span>
+                </div>
+            </div>
+
+            <div class="conright">
+            	<div class="box1">
+                    <a href="http://www.mfmb58.com/mobile/goods.php?id=2439" title="环保墙纸">
+                	<img width="100%" src="themesmobile/mobile/img/255276407819995482.jpg" alt="卧室墙纸">
+                    </a>
+
+                    <div class="Price">
+                        <p>热销价<var>￥128.00</var></p>
+                        <span style="display:none"><a href="http://www.mfmb58.com/mobile/ title="环保墙纸"><img src="themesmobile/mobile/img/ico17.png" alt="卧室墙纸"></a><a href="http://www.mfmb58.com/mobile/ title="环保墙纸"><img src="themesmobile/mobile/img/ico20-3.png" alt="卧室墙纸"></a></span>
+                    </div>
+                </div>
+                <div class="box2">
+                	<li>
+
+                        <a href="http://www.mfmb58.com/mobile/goods.php?id=3449" title="环保墙纸">
+                    	<img  width="100%" src="themesmobile/mobile/img/757541023898340342.jpg" alt="卧室墙纸">
+                        </a>
+
+                        <div class="Price">
+                            <p>热销价<var>￥59.00</var></p>
+                            <span style="display:none"><a href="http://www.mfmb58.com/mobile/ title="环保墙纸"><img src="themesmobile/mobile/img/ico17.png" alt="卧室墙纸"></a><a href="http://www.mfmb58.com/mobile/ title="环保墙纸"><img src="themesmobile/mobile/img/ico20-3.png" alt="卧室墙纸"></a></span>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.mfmb58.com/mobile/goods.php?id=3176" title="环保墙纸">
+                        <img  width="100%" src="themesmobile/mobile/img/836813633724020124.jpg" alt="卧室墙纸">
+                        </a>
+                        <div class="Price">
+                            <p>热销价<var>￥99.00</var></p>
+                            <span style="display:none"><a href="http://www.mfmb58.com/mobile/ title="环保墙纸"><img src="themesmobile/mobile/img/ico17.png" alt="卧室墙纸"></a><a href="http://www.mfmb58.com/mobile/ title="环保墙纸"><img src="themesmobile/mobile/img/ico20-3.png" alt="卧室墙纸"></a></span>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="Sale dt">
+        <h2><i></i><img src="themesmobile/mobile/img/ico21.png" alt="卧室墙纸"><span>temai</span><a href="../search.php?intro=new" title="环保墙纸">... 更多>></a></h2>
+
+        	<ul>
+        	<!-- 美美特卖 -->
+        	   {foreach from=$hot_goods key=k item=hot_goods}
+	            <a href="{$hot_goods.url}" title="环保墙纸">
+        		<li>
+                	<div class="pict">
+                    	<img src="{$hot_goods.goods_img}">
+                        <span>{$hot_goods.name}</span>
+                    </div>
+                    <p>{$hot_goods.shop_price}</p>
+                </li>
+                  </a>
+             {/foreach}
+
+        	</ul>
+        </div>
+        <!--墙纸系列 -->
+
+        <div class="pict_img">
+            <a href="http://www.mfmb58.com/mobile/searchfor.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6IuWimee6uCI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0ODA5MTkzNzY7fQ==" title="环保墙纸">
+        	<img src="themesmobile/mobile/img/img5.jpg" alt="卧室墙纸">
+            </a>
+        </div>
+        
+        <div class="pro_list dt">
+        	<div class="main_pic">
+                <a href="http://www.mfmb58.com/mobile/goods.php?id=2439" title="环保墙纸">
+            	<img src="themesmobile/mobile/img/img6.jpg" alt="卧室墙纸">
+                </a>
+            </div>
+
+            <ul>
+            {foreach from=$qiangzhi_goods key=k item=qiangzhi_goods}
+                	<li>
+                     	<a href="{$qiangzhi_goods.url}" class="" title="环保墙纸">
+                        <div class="pict">
+                            <img src="{$qiangzhi_goods.goods_img}" alt="卧室墙纸">
+                            
+                        </div>
+                        <div class="text">
+                            <p>{$qiangzhi_goods.name}</p>
+                                <font color="red">{$qiangzhi_goods.shop_price}</font>
+                                <div style="float:right;display:none">
+                                    <a href="{$qiangzhi_goods.url}" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-0.png" alt="卧室墙纸"></a>
+                                    <a href="{$qiangzhi_goods.url}" class="line" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-1.png" alt="卧室墙纸"></a>
+                                    <a href="{$qiangzhi_goods.url}" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-2.png" alt="卧室墙纸"></a>
+                                </div>
+                        </div>
+                         </a>
+                    </li>
+            {/foreach}
+
+            </ul>
+        </div>
+         <!--窗帘系列 -->
+         <div class="pict_img">
+            <a href="http://www.mfmb58.com/mobile/searchfor.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6Iueql%2bW4mCI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0ODA5MTk0ODY7fQ==" title="环保墙纸">
+        	<img src="themesmobile/mobile/img/chuanlian.jpg" alt="卧室墙纸">
+            </a>
+        </div>
+ <div class="pro_list dt">
+        	<div class="main_pic">
+                <a href="http://www.mfmb58.com/mobile/goods.php?id=3095" title="环保墙纸">
+            	<img src="themesmobile/mobile/img/527488416753247364.jpg" alt="卧室墙纸">
+                </a>
+            </div>
+
+            <ul>
+            {foreach from=$chuanlian_goods key=k item=chuanlian_goods}
+                	<li>
+                     	<a href="{$chuanlian_goods.url}" class="" title="环保墙纸">
+                        <div class="pict">
+                            <img src="{$chuanlian_goods.goods_img}" alt="卧室墙纸">
+                        </div>
+                        <div class="text">
+                            <p>{$chuanlian_goods.name}</p>
+                                <font color="red">{$chuanlian_goods.shop_price}</font>
+                                <div style="float:right;display:none">
+                                    <a href="{$chuanlian_goods.url}" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-0.png" alt="卧室墙纸"></a>
+                                    <a href="{$chuanlian_goods.url}" class="line" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-1.png" alt="卧室墙纸"></a>
+                                    <a href="{$chuanlian_goods.url}" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-2.png" alt="卧室墙纸"></a>
+                                </div>
+                        </div>
+                         </a>
+                    </li>
+            {/foreach}
+
+            </ul>
+        </div>
+
+         <!--软包系列 -->
+          <div class="pict_img">
+            <a href="http://www.mfmb58.com/mobile/searchfor.php?encode=YToyOntzOjg6ImtleXdvcmRzIjtzOjY6Iui9r%2bWMhSI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE0ODA5MTk1MzA7fQ==" title="环保墙纸">
+                	<img src="themesmobile/mobile/img/ruanbao.jpg" alt="卧室墙纸">
+            </a>
+            </div>
+ <div class="pro_list dt">
+        	<div class="main_pic">
+                <a href="http://www.mfmb58.com/mobile/goods.php?id=3305" title="环保墙纸">
+            	<img src="themesmobile/mobile/img/837733992824978277.jpg" alt="卧室墙纸">
+                </a>
+            </div>
+
+            <ul>
+            {foreach from=$ruanbao_goods key=k item=ruanbao_goods}
+                	<li>
+                     	<a href="{$ruanbao_goods.url}" class="" title="环保墙纸">
+                        <div class="pict">
+                            <img src="{$ruanbao_goods.goods_img}" alt="卧室墙纸">
+                        </div>
+                        <div class="text">
+                            <p>{$ruanbao_goods.name}</p>
+                                <font color="red">{$ruanbao_goods.shop_price}</font>
+                                <div style="float:right;display:none">
+                                    <a href="{$ruanbao_goods.url}" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-0.png" alt="卧室墙纸"></a>
+                                    <a href="{$ruanbao_goods.url}" class="line" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-1.png" alt="卧室墙纸"></a>
+                                    <a href="{$ruanbao_goods.url}" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-2.png" alt="卧室墙纸"></a>
+                                </div>
+                        </div>
+                         </a>
+                    </li>
+            {/foreach}
+
+            </ul>
+        </div>
+
+         <!--猜 你 喜 欢  -->
+         <div class="pict_img">
+                         	<img src="themesmobile/mobile/img/like.jpg" alt="卧室墙纸">
+         </div>
+<div class="pro_list dt">
+
+
+            <ul>
+            {foreach from=$like_goods key=k item=like_goods}
+                	<li>
+                     	<a href="{$like_goods.url}" class="" title="环保墙纸">
+                        <div class="pict">
+                            <img src="{$like_goods.goods_img}" alt="卧室墙纸">
+                        </div>
+                        <div class="text">
+                            <p>{$like_goods.name}</p>
+                                <font color="red">{$like_goods.shop_price}</font>
+                                <div style="float:right;display:none">
+                                    <a href="{$like_goods.url}" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-0.png" alt="卧室墙纸"></a>
+                                    <a href="{$like_goods.url}" class="line" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-1.png" alt="卧室墙纸"></a>
+                                    <a href="{$like_goods.url}" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-2.png" alt="卧室墙纸"></a>
+                                </div>
+                        </div>
+                         </a>
+                    </li>
+            {/foreach}
+
+            </ul>
+        </div>
+
+    </div><!--mobile_wrap-->
+
+
+    <div class="back"></div>
+    <div class="bottom fixed">
+        <ul>
+            <li class="acti"><a href="./index.php" title="环保墙纸"><div class="pic"><i><img width="25%" src="themesmobile/mobile/img/ico4.png" alt="卧室墙纸"></i></div><p>美美商城</p></a></li>
+            <li><a href="./flow.php" title="环保墙纸"><div class="pic"><i><img width="25%" src="themesmobile/mobile/img/ico5.png" alt="卧室墙纸"></i></div><p>购物车</p></a></li>
+            <li><a href="./category.php" title="环保墙纸"><div class="pic"><i><img width="25%" src="themesmobile/mobile/img/ico6.png" alt="卧室墙纸"></i></div><p>产品分类</p></a></li>
+            <li><a href="./points.php" title="环保墙纸"><div class="pic"><i><img width="25%" src="themesmobile/mobile/img/ico7.png" alt="卧室墙纸"></i></div><p>积分商城</p></a></li>
+            <li><a href="./experience.php?act=default" title="环保墙纸"><div class="pic"><i><img width="25%" src="themesmobile/mobile/img/ico8.png" alt="卧室墙纸"></i></div><p>全国门店</p></a></li>
+            
+        </ul>
+    </div>
+
+</body>
+<script type="text/javascript" src="themesmobile/js/type.js"></script><!--封装函数-->
+<script>
+downslide(".banner .cirl  ul li.acti",".banner .cirl  ul li","acti",".bann");
+function check(Id){
+	var strings = document.getElementById(Id).value;
+	if(strings.replace(/(^\s*)|(\s*$)/g, "").length == 0){
+		return false;
+	}
+	//return true;
+	$('#search').submit();
+}
+</script>
+</html>

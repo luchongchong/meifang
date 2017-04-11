@@ -1,0 +1,10 @@
+<header>
+	<a href="./user.php" class="user"><i class="iconfont">&#xe612;</i>我</a>
+	<h1>
+		<form action="searchfor.php" class="search-form">
+			<i class="iconfont" onclick="return check('keywordfoot')">&#xe600;</i>
+			<input name="keywords" id="keywordfoot" type="text">
+		</form>
+	</h1>
+	<a href="category.php" class="category">分类<i class="iconfont">&#xe602;</i></a>
+</header>

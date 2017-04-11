@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>美美商城 </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link href="{$ectouch_themes}/images/touch-icon.png" rel="apple-touch-icon-precomposed" />
+<link href="{$ectouch_themes}/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="themesmobile/mobile/css/ectouch.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/conn.css">
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/mall.css">
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/yangben.css">
+<div class="JQ_include" src="themesmobile/mobile/include/meta.dwt"></div>
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/yangben/css/style.css" /><!--样式-->
+</head>
+<body>
+		<div class="center_top fixed">
+        	<a href="#" class="fl"><img src="themesmobile/img/ico0.png" alt="">个人中心</a>
+           <form action="searchfor.php" class="search-form" id="search">
+                          <div class="search">
+                             <input name="keywords" id="keywordfoot" type="text">
+                              <button></button>
+                          </div>
+                          <a href="javascript:void(0)" onclick="return check('keywordfoot')" class="fr">搜索</a>
+
+                     </form>
+        </div>
+  <!-- #BeginLibraryItem "/library/sample.lbi" --><!-- #EndLibraryItem -->
+</div>
+<script src="themesmobile/mobile/yangben/config.js"></script>
+<script src="themesmobile/mobile/yangben/lib/jquery-1.9.1.min.js"></script>
+<script src="themesmobile/mobile/yangben/lib/template.min.js"></script>
+<script src="themesmobile/mobile/yangben/loadHtml.js"></script>
+
+<script src="themesmobile/mobile/yangben/plug.js"></script>
+<script src="themesmobile/mobile/yangben/global.js"></script>
+<script src="themesmobile/mobile/yangben/worldunion.js"></script>
+<script src="themesmobile/mobile/yangben/yangben.js"></script>
+<script type="text/javascript" src="themesmobile/js/jquery.more sample.js"></script>
+
+  <script type="text/javascript">
+        var cat_id={$cat_id};
+        var style_id= {$style_id};
+        var material_id ={$material_id};
+        var origin ={$origin};
+        var price  ={$price};
+        jQuery(function($){
+            $("#J_ItemList").more({'address': 'sample.php?cat_id='+'00'+'&style_id='+'00'+'&material_id='+'00'+'&origin='+'00'+'&price='+'00'+'&baioji={$biaoji}&act=asynclist&category={$category}&brand={$brand_id}&filter_attr={$filter_attr}&page={$pager.page}&sort={$pager.sort}&order={$pager.order}', 'spinner_code':'<div style="text-align:center; margin:10px;"><img src="{$ectouch_themes}/images/loader.gif" /></div>'},
+                                    $('li'));
+         $('#J_ItemList').more({'address': 'sample.php?cat_id='+cat_id+'&style_id='+style_id+'&material_id='+material_id+'&origin='+origin+'&price='+price+'&baioji={$biaoji}&act=asynclist&category={$category}&brand={$brand_id}&filter_attr={$filter_attr}&page={$pager.page}&sort={$pager.sort}&order={$pager.order}', 'spinner_code':'<div style="text-align:center; margin:10px;"><img src="{$ectouch_themes}/images/loader.gif" /></div>'})
+          $(window).scroll(function () {
+                if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                    $('.get_more').click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

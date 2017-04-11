@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>美美商城</title>
+	<div class="JQ_include" src="themesmobile/mobile/include/meta.dwt"></div>
+
+	<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/common.css">
+	<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/swiper.css">
+	<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/my.css">
+</head>
+<body id='weixin_list'>
+	<header>
+		<a href="javascript:history.go(-1)" class="i-back iconfont">&#xe624;</a>
+		<h1>我的订单</h1>	
+	</header>
+	{if $orders}
+    {foreach from=$orders key=k item=order_list}
+	<section>
+		<dl class="order-list">
+			<dt class="flex-box">
+				<div class="store"> <i class="iconfont">&#xe627;</i>{$order_list.stor_name}专营店 &gt;</div>
+				<div class="state">{if $order_list.shipping_status eq '2'}交易成功{elseif $order_list.shipping_status eq '1'}<a href="./user.php?act=affirm_received&order_id={$order_list.order_id}">确认收货</a>{else}未发货{/if}</div>
+			</dt>
+			
+			{foreach from=$order_list.goods key=ke item=order_info}
+			<dd>
+				<div class="flex-box">
+					<div class="box-first">
+						<img src="{$order_info.goods_thumb}" alt="">
+					</div>
+					<div class="info">
+						
+					</div>
+					<div class="price">
+						<p class="cur-price">{$order_info.goods_price}</p>
+						<p class="mark-price">{$order_info.goods_price}</p>
+						<p class="num">x{$order_info.goods_number}</p>
+					</div>
+				</div>
+		    <dd>
+			{/foreach}
+			<dd>
+				<div class="flex-box">
+					<div class="options">
+					{if $order_list.is_comment eq 1}
+					   <a href="javascript:0" class="btn" style="background-color:#808080">我要评价</a>
+					{else}
+						<a href="./user.php?act=comment_add&&order_id={$order_list.order_id}" class="btn">我要评价</a>
+					{/if}
+					</div>
+					<div class="total">
+						<span>共计{$order_list.total}件商品</span>
+						<span>合计：<em>{$order_list.total_fee}</em></span>
+					</div>
+				</div>
+			</dd>
+			
+		</dl>
+		
+		
+	</section>
+	{/foreach}
+    {/if}
+
+
+    <script src="themesmobile/js/config.js"></script>
+    <script src="themesmobile/js/lib/jquery-1.9.1.min.js"></script>
+    <script src="themesmobile/js/loadHtml.js"></script>
+    <script src="themesmobile/js/lib/template.min.js"></script>
+    <script src="themesmobile/mobile/dist/swiper.min.js"></script>
+    <script src="themesmobile/js/plug.js"></script>
+    <script src="themesmobile/js/global.js"></script>
+    <script src="themesmobile/js/worldunion.js"></script>
+    <script type="text/javascript" src="themesmobile/js/jquery.more.js"></script>
+
+</body>
+</html>
+<script>   
+    $(document).ready(function () {
+    var page = 1;
+    var is_none = false;
+    $(window).scroll(function () {
+        if ($(document).scrollTop() >= $(document).height() - $(window).height()) {  
+            if(is_none)
+            {
+                return false;
+            }
+            page++;
+            $.get('./user.php?act=async_order_list&page='+page,function(res){
+                $('.sjjzz').hide();
+                if(res == false || res == null){
+                    $('#weixin_list').append('<section   class="sjjzz">数据全部加载完毕!</section>');
+                    is_none = true;
+                    $('.sjjzz').hide();
+                    return false;
+                }else{
+                    $('#weixin_list').append(res);
+                    $('#weixin_list').append('<section class="sjjzz"><td>数据加载中...</section>');
+                    $('.sjjzz').hide();
+                }
+           })
+       }    
+
+   });
+});
+</script>

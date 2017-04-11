@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>美美商城</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link href="themesmobile/mobile/img/touch-icon.png" rel="apple-touch-icon-precomposed" />
+<link href="themesmobile/mobile/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/common.css">
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/my.css">
+<link href="themesmobile/mobile/css/ectouch.css" rel="stylesheet" type="text/css" />
+<style>
+    input[type=radio] {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 0;
+    outline: 0 !important;
+    line-height: 20px;
+    color: #d8d8d8;
+}
+input[type=radio]:after {
+    content: "";
+    display:block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  text-align: center;
+  line-height: 14px;
+  font-size: 16px;
+  color: #fff;
+    border: 3px solid #ddd;
+    background-color: #fff;
+    box-sizing:border-box;
+}
+input[type=radio]:checked:after {
+    content: "L";
+    transform:matrix(-0.766044,-0.642788,-0.642788,0.766044,0,0);
+    -webkit-transform:matrix(-0.766044,-0.642788,-0.642788,0.766044,0,0);
+    border-color: #099414;
+    background-color: #099414;
+}
+</style>
+</head>
+<body>
+<header>
+        <a href="javascript:history.go(-1)" class="i-back iconfont"></a>
+        <h1>评价</h1>   
+    </header>
+<div id="tbh5v0">
+<form name="formPassword" action="user.php" method="post" onsubmit="return editPassword()">
+{if $store_info neq ''}
+<section>
+        <dl class="order-list" style="background-color:#edeef0">
+            <dt class="flex-box" style="width:80%;margin:auto;border:none">
+                <div class="store" style="width:40%;text-align:center"><img src="{$store_info.store_img}" alt=""><span>{$store_info.name}</span></div>
+                <div class="state" ><ul style="margin-top:30px;"><li><input type="radio" name="store_no" value="1" />&nbsp;&nbsp;好评</li><li><input type="radio" name="store_no" value="0"/>&nbsp;&nbsp;差评</li></ul></div>
+            </dt>
+            
+            <dd >
+                <div class="flex-box" style="width:80%;margin:auto">
+                   <textarea name="store_value" style="resize:none;margin: auto 10px;border: none;width: 100%;" placeholder="说点什么吧" name="user_note" cols="55" rows="6" class="B_blue"></textarea>
+                </div>
+            </dd>
+                    </dl>
+        
+        
+</section>
+{/if}
+<section style="margin-top:30px;">
+{if $construction_info neq ''}
+        <dl class="order-list" style="background-color:#edeef0">
+            <dt class="flex-box" style="width:80%;margin:auto;border:none">
+                <div class="store" style="width:100%;">{$construction_info.construction_name}</div>
+            </dt>
+            <dd style="width:80%;margin:auto">
+               <div class="store"<ul style="list-style: none;"><li style="float:left"><input type="radio" name="construction_no" value="1"  />&nbsp;&nbsp;好评</li><li style="float:right;margin-right:60px;"><input type="radio" name="construction_no" value="0"/>&nbsp;&nbsp;差评</li></ul></div> 
+            </dd>
+            <dd >
+                <div class="flex-box" style="width:80%;margin:auto">
+                   <textarea name="construction_value" style="resize:none;margin:auto 10px;border: none;width: 100%;" placeholder="说点什么吧" name="user_note" cols="55" rows="6" class="B_blue"></textarea>
+                </div>
+            </dd>
+        </dl>
+        {/if}
+        <dl>
+              <dd>
+                <input type="hidden" name="act" value="comment_insert">
+                <input type="hidden" name="back_act" value="./index.php">
+                <input type="hidden" name="order_id" value="{$order_id}"/>
+                <input type="hidden" name="store_id" value="{$store_info.store_id}"/>
+                <input type="hidden" name="construction_id" value="{$construction_info.construction_id}"/>
+                <input type="submit" name="submit" value="提交评价" style="height: 50px;font-size: 30px;line-height: 50px;" class="c-btn3">
+              </dd>
+        </dl>
+        
+</section>
+
+</form>
+</div>
+<div style="width:1px; height:1px; overflow:hidden">{foreach from=$lang.p_y item=pv}{$pv}{/foreach}</div>
+</body>
+</html>

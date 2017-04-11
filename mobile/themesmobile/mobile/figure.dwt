@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes;" />
+
+<!-- iOS 设备 begin -->
+<meta name="apple-mobile-web-app-title" content="标题">
+<!-- 添加到主屏后的标题（iOS 6 新增） -->
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta content="no" name="apple-touch-fullscreen">
+<meta content="yes" name="full-screen">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=yes,email=yes" name="format-detection">
+<meta content="address=no" name="format-detection">
+
+<title>美房门店1</title>
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/mendiancss/config.css">
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/mendiancss/ms1.css">
+<style type="text/css">
+  .banner{
+    font-size:initial;!important;
+}  
+.b-img{
+width:100% !important;
+}
+.bar-left{
+width:23% !important;
+float:left;
+margin-left:2%;
+}
+</style>
+
+
+</head>
+
+<body>
+
+	       <div class="top_bg">
+            <div class="jmy_bg">
+                <div class="my_nei">
+                <a href="javascript:history.go(-1)">
+                    <img src="themesmobile/mobile/img/1_03.png" width="10" height="17" alt="">
+                </a>
+                </div><!--my_nei-->
+            </div><!--jmy_bg-->
+
+            <div class="input_bg">
+                <div class="fdj"><img src="themesmobile/mobile/img/fangdajing.jpg" alt="" width="24" height="24"></div>
+                <input type="text" >
+                <div class="clear"></div>
+            </div><!--input_bg-->
+
+            <div class="cart_bg">
+                <span>分类</span>
+                <a href="category.php" class="category">
+                    <img src="themesmobile/mobile/img/1_06.png" width="20" height="15" alt="">
+                </a>
+            </div><!--cart_bg-->
+        </div><!--top_bg-->
+        <div class="banner1">
+            <img src="themesmobile/mobile/img/1_02.png">
+            <dl class="shop" style="top:15%;height:100%;">
+            {if $store_shop eq ''}
+                <dt><img src="themesmobile/mobile/img/03.png"></dt>
+            {else}
+                <dt style="height:71%;"><img src="{$store_shop}" style='height: 100%;'></dt>
+            {/if}
+                <dd>
+                    <h4>{$store_detail.name}美房美邦专营店</h4>
+                    <p>好评率：{$positive_feedback}%&nbsp;&nbsp;
+                    {if $positive_feedback gte '95' }
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_03.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_03.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_03.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_03.png">
+                    {elseif  $$positive_feedback gte '85'}
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_03.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_03.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_03.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_03.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_05.png">
+                    {elseif $positive_feedback gte '75'}
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_03.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_03.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_03.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_05.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_05.png">
+                    {elseif $positive_feedback gte '60'}
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_03.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_03.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_05.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_05.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_05.png">
+                    {elseif $positive_feedback lt '60'}
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_03.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_05.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_05.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_05.png">
+                    <img style="width:6%;margin-left: 2%;" src="themesmobile/mobile/img/2_05.png">
+                    {/if}</p>
+                    <P>电话：{$store_detail.tel}</P>
+                    <P>地址：{$store_detail.province}{$store_detail.city}{$store_detail.district}{$store_detail.address}</P>
+                    <P>门店编号：{$store_detail.shop_no}</P>
+                    <P>微信号：{$store_detail.shop_weixin}</P>
+                </dd>
+            </dl>
+        </div><!--banner1-->
+        <div class="banner">
+  		<div class="b-img" style="height:100px;">
+     
+            {foreach from=$store_shops item=img}
+                <a class="bar-left" href="" style="height:100%;width:25%;"><img src="{$img.store_shops}" style="height:100%;top:0;width:100%;"></a>
+            {/foreach}
+            
+        </div><!--b-img-->
+  		<!--<div class="b-list"></div>
+  		{foreach from=$store_shops item=img}
+  		    <a class="bar-left" href="#"><img src="{$img.store_shops}" ></a>
+        {/foreach}
+        <a href="#"><img src="themesmobile/mobile/img/1_14.png"></a>
+            <a href="#"><img src="themesmobile/mobile/img/1_16.png" style="margin-right:2%;"></a>-->
+        </div><!--banner-->
+	<div id="wrapper">
+	<div id="tab">
+	<ul id="tabList">
+    	<li>店员形象</li>
+		<li name='comment'>用户评价</li>
+		<li name='mendian'>施工团队</li>
+		<li>专项服务</li>
+        
+	</ul>
+	<div id="tabCont">
+		<div class="conts">
+		
+		  {foreach from=$assistant_list item=assistant}
+        	<dl class="pin1" style="margin-bottom:5%;">
+                <dt style="margin-top:2%;"><img src="{$assistant.shop_assistant}" style="height:80px;"></dt>
+                <dd class="one">
+                	<p>姓名：{$assistant.shop_name}</p>
+                    <p style="word-break:break-all; width:150px;">职称：{$assistant.shop_explain}</p>
+                    <p>技能：{$assistant.shop_skill}</p>
+                    
+                    
+                </dd>
+                <dd class="two" style="padding-right:15%;">
+                	<p>电话：{$assistant.shop_phone}</p>
+                    <p>微信号：{$assistant.shop_weixin}</p>
+                </dd>
+       	   </dl>
+       	   {/foreach}
+           
+           
+		</div><!--/conts-->	
+            <div class="conts" id="#weixin_list">
+           {foreach from=$comment_list.item item=comment}
+            <dl class="pin1" >
+                <dt><img src="{$comment.user_img}">
+                    <span class="weixin">{$comment.user_name}</span>
+                </dt>
+                <dd class="one" style="margin-left:5%;">
+                    <p>{$comment.content}</p>
+                    <P class="time">{$comment.add_time}</p>
+                </dd>
+           </dl>
+           {/foreach}
+           
+		</div><!--/conts-->
+        		<div class="conts" id="median_list">
+        		{foreach from=$construction_list.item item=construction}
+       			<dl class="pin1">
+                  <!-- <dt><a href="proList.html"><img src="imgs/pinpai_29.jpg" width="237" height="305"></a></dt>-->
+                    <dd class="one" style="color:#666;padding:2%;">{$construction.construction_name}&nbsp;&nbsp;&nbsp;<span style="font-size:0.5em;">好评率：{$construction.positive}%</span>
+                    {if $construction.positive gte '95' }
+                    <img src="themesmobile/mobile/img/2_03.png">
+                    <img src="themesmobile/mobile/img/2_03.png">
+                    <img src="themesmobile/mobile/img/2_03.png">
+                    <img src="themesmobile/mobile/img/2_03.png">
+                    <img src="themesmobile/mobile/img/2_03.png">
+                    {elseif  $construction.positive gte '85'}
+                    <img src="themesmobile/mobile/img/2_03.png">
+                    <img src="themesmobile/mobile/img/2_03.png">
+                    <img src="themesmobile/mobile/img/2_03.png">
+                    <img src="themesmobile/mobile/img/2_03.png">
+                    <img src="themesmobile/mobile/img/2_05.png">
+                    {elseif $construction.positive gte '75'}
+                    <img src="themesmobile/mobile/img/2_03.png">
+                    <img src="themesmobile/mobile/img/2_03.png">
+                    <img src="themesmobile/mobile/img/2_03.png">
+                    <img src="themesmobile/mobile/img/2_05.png">
+                    <img src="themesmobile/mobile/img/2_05.png">
+                    {elseif $construction.positive gte '65'}
+                    <img src="themesmobile/mobile/img/2_03.png">
+                    <img src="themesmobile/mobile/img/2_03.png">
+                    <img src="themesmobile/mobile/img/2_05.png">
+                    <img src="themesmobile/mobile/img/2_05.png">
+                    <img src="themesmobile/mobile/img/2_05.png">
+                    {elseif $construction.positive gte '60'}
+                    <img src="themesmobile/mobile/img/2_03.png">
+                    <img src="themesmobile/mobile/img/2_05.png">
+                    <img src="themesmobile/mobile/img/2_05.png">
+                    <img src="themesmobile/mobile/img/2_05.png">
+                    <img src="themesmobile/mobile/img/2_05.png">
+                    {/if}
+                    </dd>
+                    <!--<dd class="two"><a href="proList.html">来自意大利的时尚品牌</a></dd>-->
+                    
+       	        </dl>
+       	        {/foreach}
+       	   
+		</div><!--/conts-->
+        		<div class="conts">
+        	<dl class="pin1 onlyserver">
+                <dt><img src="themesmobile/mobile/img/3_03.png"></dt>
+                <dd class="one server" style="padding-left:0;">
+                    <h4 style="font-weight:normal;">7天无理由退货</h4>
+                    <P style="margin-top:0;">该商品支持 7 天无理由退货，自商品签收之日起 7 天内：</P>
+                    <P style="margin-top:0;">1、商品外包装完整，相关附（配）件齐全；（若有）要求吊牌完整；</P>
+                    <P style="margin-top:0;">2、商品无显著穿着、无洗涤、无沾染化妆品（如口红等）、无破损等痕迹；</P>
+                    <P style="margin-top:0;">可申请无理由退货，包邮商品需要买家承担退货邮费，非包邮商品需要买家承
+                    担发货和退货邮费</p>
+                </dd>
+                
+       	   </dl>
+            <dl class="pin1 onlyserver">
+                <dt><img src="themesmobile/mobile/img/3_06.png" ></dt>
+                <dd class="one server" >
+                    <h4 style="font-weight:normal;">消费者保障服务</h4>
+                    <P style="margin-top:0;">该卖家已缴纳 3000.0 元保证金。</P>
+                    <P style="margin-top:0;">在确认收货15天内，如有商品质量问题、描述不符或未收到货等，您有权申请
+退款或退货，来回邮费由卖家承担。</P>
+                    
+                </dd>
+                
+       	   </dl>
+    </div><!--/conts-->
+        		
+        		
+	</div><!--/tabCont-->
+</div><!--/tab-->
+</div><!--/wrapper-->
+
+	<script src="js/config.js"></script>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	
+	<script src="js/pro-detail.js"></script>
+    <script src="js/pinpai.js"></script>
+
+
+    
+
+</body>
+</html>
+<script>
+    $(function(){
+        $("#tabList li").click(function(){
+            var act='';
+            act  = $(this).attr("name");
+            var page = 1;
+            var is_none = false;
+          $(window).scroll(function () {
+            if ($(document).scrollTop() >= $(document).height() - $(window).height()) {  
+            if(is_none)
+            {
+                return false;
+            }
+            page++;
+            if(act == 'comment'){
+            $.get('./experience.php?act='+act+'_list&store_id={$store_id}&page='+page,function(res){
+                $('.sjjzz').hide();
+                if(res == false || res == null){
+                    $('#weixin_list').append('<dl class="sjjzz"><dt>数据全部加载完毕!</dt></dl></tr>');
+                    is_none = true;
+                    $('.sjjzz').hide();
+                    return false;
+                }else{
+                    $('#weixin_list').append(res);
+                    $('#weixin_list').append('<dlclass="sjjzz"><dt><td>数据加载中...</dt></dl></tr>');
+                    $('.sjjzz').hide();
+                }
+           })
+           }else{
+               $.get('./experience.php?act='+act+'_list&page='+page,function(res){
+                    $('.sjjzz').hide();
+                    if(res == false || res == null){
+                        $('#median_list').append('<dl class="sjjzz"><dt>数据全部加载完毕!</dt></dl></tr>');
+                        is_none = true;
+                        $('.sjjzz').hide();
+                        return false;
+                    }else{
+                        $('#median_list').append(res);
+                        $('#median_list').append('<dlclass="sjjzz"><dt><td>数据加载中...</dt></dl></tr>');
+                        $('.sjjzz').hide();
+                    }
+               })
+           }
+       }    
+             });
+        })
+    
+    })
+</script>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>美美商城</title>
+    <div class="JQ_include" src="include/meta.html"></div>
+
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/store.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="javascript:history.go(-1)" class="i-back iconfont">&#xe624;</a>
+        <h1>
+            <form action="" class="search-form">
+                <i class="iconfont">&#xe600;</i>
+                <input type="text">
+            </form>
+        </h1>
+        <a href="category.html" class="category">分类<i class="iconfont">&#xe602;</i></a>
+    </header>
+    <section>
+        <div class="store-hd">最新门店</div>
+        <div class="storelist">
+            <ul class="cle">
+                <li>
+                    <img src="img/store.jpg" alt="">
+                    <p>南京xxx店</p>
+                </li>
+                <li>
+                    <img src="img/store.jpg" alt="">
+                    <p>南京xxx店</p>
+                </li>
+            </ul>
+            <div class="more"><i class="iconfont">&#xe604;</i></div>
+        </div>
+    </section>
+    <section class="map mb_footer">
+        <div class="map-hd">全国范围<span>xx家门店可以使用（门店信息仅供参考）</span></div>
+        <div class="sel-address cle">
+            <div class="txt">所在地：</div>
+            <div id="provinceSelect" class="sel">
+                  <i class="iconfont">&#xe61a;</i>
+                  <label class="sel-skin">选择省份</label>
+                  <ul id="province">
+                  </ul>
+                  <input type="hidden" id="provinceInput">
+            </div>
+            <div id="citySelect" class="sel">
+                  <i class="iconfont">&#xe61a;</i>
+                  <label class="sel-skin">选择城市</label>
+                  <ul id="city">
+                  </ul>
+                  <input type="hidden" id="cityInput">
+            </div>
+            <div id="areaSelect" class="sel">
+                  <i class="iconfont">&#xe61a;</i>
+                  <label class="sel-skin">选择地区</label>
+                  <ul id="area">
+                  </ul>
+                  <input type="hidden" id="areaInput">
+            </div>
+        </div>
+        <div class="map-box" id="map"></div>
+        <ul class="store-list">
+            <li>
+                <span class="order">1</span>
+                <p> <a href="#">美房美邦徐汇店</a> </p>
+                <p class="txt">地址：上海市徐汇区宜山路5008号</p>
+                <p class="txt">电话：021-88888888</p>
+            </li>
+            <li>
+                <span class="order">2</span>
+                <p> <a href="#">美房美邦徐汇店</a> </p>
+                <p class="txt">地址：上海市徐汇区宜山路5008号</p>
+                <p class="txt">电话：021-88888888</p>
+            </li>
+        </ul>
+    </section>
+
+    <div class="JQ_include" src="include/footer.html"></div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/lib/jquery-1.9.1.min.js"></script>
+    <script src="loadHtml.js"></script>
+    <script src="../js/lib/template.min.js"></script>
+    <script src="../js/address.js"></script> 
+    <script src="js/plug.js"></script>
+    <script src="../js/global.js"></script>
+    <script src="../js/worldunion.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+    <script>
+    $(function (){
+        new myAddress("province");
+
+        //创建和初始化地图函数：
+        function initMap(){
+          createMap();//创建地图
+          setMapEvent();//设置地图事件
+          addMapControl();//向地图添加控件
+          addMapOverlay();//向地图添加覆盖物
+        }
+        function createMap(){ 
+          map = new BMap.Map("map"); 
+          map.centerAndZoom(new BMap.Point(121.460434,31.238693),13);
+        }
+        function setMapEvent(){
+          map.enableScrollWheelZoom();
+          map.enableKeyboard();
+          map.enableDragging();
+          map.enableDoubleClickZoom()
+        }
+        function addClickHandler(target,window){
+          target.addEventListener("click",function(){
+            target.openInfoWindow(window);
+          });
+        }
+        function addMapOverlay(){
+          var markers = [
+            {content:"上海火车站",title:"上海火车站",imageOffset: {width:-46,height:-21},position:{lat:31.255981,lng:121.463309}}
+          ];
+          for(var index = 0; index < markers.length; index++ ){
+            var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+            var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+              imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+            })});
+            var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+            var opts = {
+              width: 200,
+              title: markers[index].title,
+              enableMessage: false
+            };
+            var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+            marker.setLabel(label);
+            addClickHandler(marker,infoWindow);
+            map.addOverlay(marker);
+          };
+        }
+        //向地图添加控件
+        function addMapControl(){
+          var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+          scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+          map.addControl(scaleControl);
+          var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+          map.addControl(navControl);
+        }
+        var map;
+        initMap();
+    });
+    </script>
+</body>
+</html>

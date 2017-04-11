@@ -1,0 +1,207 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>体验店</title>
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link href="{$ectouch_themes}/css/style1.css"  rel="stylesheet" type="text/css">
+
+{insert_scripts files='jquery.js,transport.js,region.js'}
+<style>
+.sub_button{
+	width:96%;
+	margin-left:2%;
+	height:2.5rem;
+	background:#B32217 ;
+	border-radius:0.3rem;
+	color:white;
+	font-size: 1rem;
+	border:none;
+	display: block; 
+	margin-top: 1rem;
+}	
+.yuyue_box{
+	width:96%;
+	margin-left:2%;
+	background: white;
+	border-radius: 0.3rem;
+	border:none;
+	border:1px solid #D7D7D7;
+}
+.yuyue_box td{
+	padding-bottom:.8rem;
+	padding-left:.8rem;
+}
+.yuyue_box input{
+	height: 2rem;
+	border:1px solid #e5e5e5;
+}
+.yuyue_box select{
+	height: 2rem;
+	border:1px solid #e5e5e5;
+}
+</style>
+</head>
+<body style="background-color:#EBEDEF;">
+
+<div class="ty_adv">
+<img src="./../data/afficheimg/{$ad.ad_code}" style="width:100%; height:auto;">
+</div>
+<div class="yuyue_box kehu_box" style="margin-bottom:20px">
+	<p style="font-size:16px;margin-left:10px;margin-top:5px">门店列表</p>
+	<div class="info_box">
+      	<ul id="info">
+      	<!-- {foreach from=$userlist item=list} -->
+	       <div style="margin-top: 0px;"><li style="overflow:hidden">&nbsp;<a style="color:#010101">{$list.province}-{$list.city}-{$list.district}-{$list.address}</a></li></div>
+	    <!-- {/foreach} -->	
+    	</ul>
+    </div>
+</div>
+<script type="text/javascript">
+ /*抽奖的文本滚动*/
+	  $(function() {
+	  
+		//cache the bobao
+		var bobao = $("#info");
+		  
+		//wrap dt:dd pairs in divs
+		bobao.children().filter("li").each(function() {
+		  
+		  var dt = $(this),
+		    container = $("<div>");
+		  
+		  dt.next().appendTo(container);
+		  dt.prependTo(container);
+		  
+		  container.appendTo(bobao);
+		});
+				
+		//hide the scrollbar
+		bobao.css("overflow", "hidden");
+		
+		//animator function
+		function animator(currentItem) {
+		    
+		  //work out new anim duration
+		  var distance = currentItem.height();
+			duration = (distance + parseInt(currentItem.css("marginTop"))) / 0.025;
+
+		  //animate the first child of the bobao
+		  currentItem.animate({ marginTop: -distance }, duration, "linear", function() {
+		    
+			//move current item to the bottom
+			currentItem.appendTo(currentItem.parent()).css("marginTop", 0);
+
+			//recurse
+			animator(currentItem.parent().children(":first"));
+		  }); 
+		};
+		
+		//start the bobao
+		animator(bobao.children(":first"));
+				
+		//set mouseenter
+		bobao.mouseenter(function() {
+		  
+		  //stop current animation
+		  bobao.children().stop();
+		  
+		});
+		
+		//set mouseleave
+		bobao.mouseleave(function() {
+		          
+          //resume animation
+		  animator(bobao.children(":first"));
+		  
+		});
+	  });
+</script>
+<form action="experience.php" method="post" onsubmit="return js_supervise()">
+<table class="yuyue_box">
+<tr>
+	<td style="padding-top:.8rem;">选择区域</td>
+    <td style="padding-top:.8rem;"><select name="country" id="selCountries_{$sn}" onchange="region.changed(this, 1, 'selProvinces_{$sn}')" style="display:none;" >
+        <option value="0">国家</option>
+        <!-- {foreach from=$country_list item=country} -->
+        <option value="{$country.region_id}" {if $country.region_id==1}selected{/if}>{$country.region_name}</option>
+        <!-- {/foreach} -->
+        </select>
+        
+        <select name="province" id="selProvinces_{$sn}" onchange="region.changed(this, 2, 'selCities_{$sn}')">
+        <option value="0">省份</option>
+        <!-- {foreach from=$province_list item=province} -->
+        <option value="{$province.region_id}">{$province.region_name}</option>
+        <!-- {/foreach} -->
+        </select>
+        
+        <select name="city" id="selCities_{$sn}" onchange="region.changed(this, 3, 'selDistricts_{$sn}')">
+        <option value="0">市</option>
+        </select>
+        
+        <select name="district" id="selDistricts_{$sn}" style="display:none;" onchange="ajax_store(this.value)">
+        <option value="0">区</option>
+        </select>
+   </td>
+</tr>
+<tr><td>门店名称</td><td align="left" style=" padding-top:30px;"><div class="stor_list"></div></td></tr>
+<tr><td>姓名</td><td><input type="text" name="name" id="js_name"/></td></tr>
+<tr><td>手机号</td><td><input type="text" name="mobile" id="js_mobile" maxlength="11"/></td></tr>
+<tr>
+<td>预约时间</td>
+<td><input name="subscribe_time" type="date" id="subscribe_time"/></td>
+</tr>
+<input type="hidden" name="act" value="bespeak_exe" class="sub_button" />
+</table>
+<button type="hidden" name="act" value="bespeak_exe" class="sub_button" >提交</button>
+<script type="text/javascript" language="javascript">
+function ajax_store(id){
+	if(id!='0'){
+		$.get("./experience.php?act=store_list&id="+id,function(res){
+			$(".stor_list").html(res);
+		});	
+	}else{
+		$(".stor_list").html('');
+	}
+}
+
+function js_supervise(){
+	var store_id = $(':radio[name="store_id"]:checked').val(); 
+	var name = $("#js_name").val();
+	var mobile = $("#js_mobile").val();
+	var subscribe_time = $("#subscribe_time").val();
+
+	if(!store_id){
+		alert('请选择预约门店');
+		return false;
+	}
+	if(!name){
+		alert('姓名不能为空');
+		return false;
+	}
+	if(!mobile){
+		alert('手机号码不能为空');
+		return false;
+	}
+	if(!subscribe_time){
+		alert('预约时间不能为空');
+		return false;
+	}
+	if(mobile){
+		var len = mobile.length;
+		if(len!=11){
+			alert('手机号码格式不正确');
+			return false;
+		}
+	}
+	
+	return true;
+}
+
+</script>
+
+</form>
+</body>
+</html>

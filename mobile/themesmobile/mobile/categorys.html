@@ -1,0 +1,107 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title>产品分类</title>
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/style.css" /><!--样式-->
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/animate.min.css" /><!--样式-->
+<script type="text/javascript" src="themesmobile/mobile/js/jquery-1.12.4.min.js"></script><!--jQ库-->
+<script type="text/javascript" src="themesmobile/mobile/js/swiper-3.3.1.jquery.min.js"></script><!--手机轮播库-->
+<script type="text/javascript" src="themesmobile/mobile/js/auto-size.js"></script><!--设置字体大小-->
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/common.css">
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/pro.css">
+</head>
+
+<body>
+	<div class="mobile_wrap bj1 ohei">
+		<div class="center_top fixed">
+        	<a href="user.php" class="fl">
+        	<img src="themesmobile/mobile/img/ico0.png" alt="">个人中心</a>
+            <div class="search">
+            	<form action="searchfor.php" class="search-form">
+				<input type="text" name="keywords" id="keywordfoot" />
+			</form>
+            </div>
+            <a href="searchfor.php" class="fr">搜索</a>
+        </div>
+        <div class="back1"></div>
+        
+        <div class="main_layout dt">
+        	<div class="con_left">
+            	<ul>
+            		{foreach from=$categories key=k item=cat}
+            		{if $cat.cat_id ==$current_id}
+                    <li class="acti">
+                    {if $cat.url!=''}
+                    <a class="switchBtn switchBtn-album" href="./{$cat.url}">{$cat.name}</a>
+                    {else}
+                    <a class="switchBtn switchBtn-album" href="category.php?id={$cat.cat_id}">{$cat.name}</a>
+                    {/if}
+                    </li>
+                    {else}
+                    <li>
+                    {if $cat.url!=''}
+                    <a class="switchBtn switchBtn-album" href="./{$cat.url}">{$cat.name}</a>
+                    {else}
+                    <a class="switchBtn switchBtn-album" href="category.php?id={$cat.cat_id}">{$cat.name}</a>
+                    {/if}
+                    </li>                    
+                    {/if}
+                    {/foreach}
+            	</ul>
+            </div>
+            <div class="right_con">
+            	<div class="banner" style="width:100%;">
+                	<img src="themesmobile/mobile/img/img0.jpg" alt="">
+                </div>
+                <div class="type">
+                {foreach from=$rows key=k item=cat}
+                	<h2>
+                	<span>
+ 					{$cat.cat_name}
+                	</span>
+                	<a href="#">
+                	<img src="themesmobile/mobile/img/ico3.png" alt="">排行榜</a>
+                	</h2>
+                    <ul class="dt">
+                    {foreach from=$cat.cat_id key=k item=cats}
+                    <a href="categorys.php?act=fenlei&cat_id={$cats.cat_id}">
+                    	<li>
+                        	<div class="pictd">
+                            	<img src="../../images/fenlei/{$cats.type_img}" alt=""  height="100%" width="100%" >
+                            </div>
+                            <p>{$cats.cat_name}</p>
+                        </li>
+                      </a>
+                     {/foreach}   
+                    </ul>
+                    {/foreach}
+                </div>
+            </div>
+        </div>
+           
+    </div><!--mobile_wrap-->
+    
+    <div class="back"></div>
+    <div class="bottom fixed">
+        <ul>
+            <li class="acti"><a href="./index.php"><div class="pic"><i><img width="25%" src="themesmobile/mobile/img/ico4.png" alt=""></i></div><p>美美商城</p></a></li>
+            <li><a href="./flow.php"><div class="pic"><i><img width="25%" src="themesmobile/mobile/img/ico5.png" alt=""></i></div><p>购物车</p></a></li>
+            <li><a href="./category.php"><div class="pic"><i><img width="25%" src="themesmobile/mobile/img/ico6.png" alt=""></i></div><p>产品分类</p></a></li>
+            <li><a href="./points.php"><div class="pic"><i><img width="25%" src="themesmobile/mobile/img/ico7.png" alt=""></i></div><p>积分商城</p></a></li>
+            <li><a href="./experience.php?act=default"><div class="pic"><i><img width="25%" src="themesmobile/mobile/img/ico8.png" alt=""></i></div><p>全国门店</p></a></li>
+            
+        </ul>
+    </div>
+        
+</body>
+<script type="text/javascript" src="themesmobile/mobile/js/type.js"></script><!--封装函数-->
+<script>
+	imgauto(".bottom ul li .pic i img");
+	click_addname(".main_layout .con_left ul li","acti",0)
+</script>
+</html>

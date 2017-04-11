@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>美美商城</title>
+    <div class="JQ_include" src="include/meta.html"></div>
+
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+    <link href="css/pro.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="javascript:history.go(-1)" class="i-back iconfont">&#xe624;</a>
+        <h1>
+            <form action="" class="search-form">
+                <i class="iconfont">&#xe600;</i>
+                <input type="text">
+            </form>
+        </h1>
+        <a href="category.html" class="category">分类<i class="iconfont">&#xe602;</i></a>
+    </header>
+    <section class="bigtu">
+        <div class="swiper-container" id="bigtu">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"> <img src="img/temp_pro2_.jpg"> </div>
+                <div class="swiper-slide"> <img src="img/temp_pro2_.jpg"> </div>
+                <div class="swiper-slide"> <img src="img/temp_pro2_.jpg"> </div>
+            </div>
+            <div class="bigtu-page"></div>
+        </div>
+    </section>
+    <section class="info">
+        <div class="name">时尚简洁大方装饰</div>
+        <div class="price">
+            <p><span>本店价：<em class="cur"><i class="c-red">￥</i>69</em></span> <span class="mark">市场价：￥145.00</span></p> 
+            <p class="spare">节 &nbsp;&nbsp;省：￥76（4.8折）</p>
+        </div>
+        <div class="model">
+            <div class="select">
+                <div class="lab">型号</div>
+                <div class="type">蓝色碎花</div>
+                <i class="iconfont">&#xe626;</i>
+            </div>
+            <div class="con">
+                <ul class="cle">
+                    <li><span>XXXXXXX</span></li>
+                    <li class="active"><span>蓝色碎花</span></li>
+                    <li><span>XXXXXXX</span></li>
+                    <li><span>XXXXXXX</span></li>
+                    <li><span>XXXXXXX</span></li>
+                    <li><span>XXXXXXX</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="detail-main mb_footer">
+        <div class="detail-hd" id="detaiInfoHdBar">
+            <a href="javascript:;" class="active">商品详情</a>
+        </div>
+        <div class="detail-bd">
+            <ul class="pro-parameter clearfix">
+                <li>规格: 0.53*10</li>
+                <li>风格: 田园</li>
+            </ul>
+            <div class="main-box">
+                <img src="../img/temp.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <footer class="footer shoping">
+        <a class="footer-item add-cart" href="javascript:void(0)">
+            <i class="iconfont">&#xe617;</i>
+            <p>加入购物车</p>
+        </a>
+        <a class="footer-item" href="javascript:void(0)">
+            <p>立即购买</p>
+        </a>
+    </footer>
+    <script src="../js/config.js"></script>
+    <script src="../js/lib/jquery-1.9.1.min.js"></script>
+    <script src="dist/swiper.min.js"></script>
+    <script src="../js/lib/template.min.js"></script>
+    <script src="js/plug.js"></script>
+    <script src="../js/global.js"></script>
+    <script src="../js/worldunion.js"></script>
+    <script src="loadHtml.js"></script>
+<script>
+    $(function(){
+        var w, bigtu_h;
+        w = $(window).width()>750 ? 750 : $(window).width();
+        $('#bigtu, #bigtu img, #bigtu .bigtu-page').width(w);
+        setTimeout(function(){
+            bigtu_h = $('#bigtu img').height();
+            $('#bigtu, #bigtu .swiper-slide, #bigtu img').height(bigtu_h*516/750);
+        }, 300);
+    })
+
+    var mySwiper = new Swiper('#bigtu',{
+        autoplay : 5000,
+        pagination: '.bigtu-page',
+        loop:true,
+        grabCursor: true,
+        paginationElementClass:'page-switch',
+        paginationActiveClass:'page-active',
+        paginationClickable: true
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>美美商城</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link href="{$ectouch_themes}/images/touch-icon.png" rel="apple-touch-icon-precomposed" />
+<link href="{$ectouch_themes}/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/common.css">
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/swiper.css">
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/index.css">
+<link href="themesmobile/mobile/css/ectouch.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="themesmobile/mobile/js/jquery-1.4.4.min.js"></script>
+{insert_scripts files='transport.js,utils.js'}
+{insert_scripts files='jquery.json.js,common.js'}
+<style>
+.active {
+    margin-top:5px;
+    width: 98%;
+    margin-left:1%;
+    margin-bottum:0px;
+    height: .4rem;
+    line-height: .4rem;
+    padding: .05rem 0;
+    background-color: #a20101;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+    <header>
+        <a href="javascript:history.go(-1)" class="i-back iconfont">&#xe624;</a>
+        <h1>
+            {$lang.$intor}
+        </h1>   
+    </header>
+  <!-- #BeginLibraryItem "/library/search_goods_list.lbi" --><!-- #EndLibraryItem -->
+  {if $goods_list neq ''}
+  <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+  {/if}
+</div>
+<script type="text/javascript" src="themesmobile/js/lib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="themesmobile/js/jquery.more.js"></script>
+<script type="text/javascript" src="themesmobile/js/ectouch.js"></script>
+
+</body>
+</html>

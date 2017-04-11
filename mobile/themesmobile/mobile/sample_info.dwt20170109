@@ -1,0 +1,171 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title>样本展示</title>
+<link href="themesmobile/mobile/yangben/css/ectouch.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/yangben/css/style.css" /><!--样式-->
+<link rel="stylesheet" type="text/css" href="themesmobile/mobile/yangben/css/animate.min.css" /><!--样式-->
+<script type="text/javascript" src="themesmobile/mobile/yangben/js/jquery-1.12.4.min.js"></script><!--jQ库-->
+<script type="text/javascript" src="themesmobile/mobile/yangben/js/swiper-3.3.1.jquery.min.js"></script><!--手机轮播库-->
+<script type="text/javascript" src="themesmobile/mobile/yangben/js/auto-size.js"></script><!--设置字体大小-->
+{insert_scripts files='jquery.json.js,common.js'}
+</head>
+
+<body>
+	<div class="mobile_wrap bj1 ohei">
+		<div class="center_top fixed">
+        	<a href="#" class="fl"><img src="themesmobile/img/ico0.png" alt="">个人中心</a>
+           <form action="searchfor.php" class="search-form" id="search">
+                          <div class="search">
+                             <input name="keywords" id="keywordfoot" type="text">
+                              <button></button>
+                          </div>
+                          <a href="javascript:void(0)" onclick="return check('keywordfoot')" class="fr">搜索</a>
+
+                     </form>
+        </div>
+        <div class="back1"></div>
+        
+        <div class="Edition">
+        	<div class="img">
+            	<img src="{$goods.goods_thumb}" alt="" style="width:173px;height:173px;">
+            </div>
+            <div class="text">
+            	<b>版本编号：《{$goods_attr_list.version_number}》</b>
+                <p>工艺特点：{$goods_attr_list.technology}</p>
+                <strong>适用场所：{$goods_attr_list.place}</strong>
+            </div>
+        </div><!--Edition-->
+        <div class="introduce">
+        	<h2><i></i>版本介绍<span>jieshao</span></h2>
+            <div class="text">
+            	<p>{$goods_attr_list.intro}</p>
+            </div>
+        </div>
+        <div class="Exhibition">
+        	<h2><i></i>花型展示<span>zhanshi</span></h2>
+            <ul>
+            	<li>
+                	<div class="pict">
+                    	<img src="themesmobile/img/ico26.png" alt="">
+                    </div>
+                    <p>YS-200101</p>
+                </li>
+                <li>
+                	<div class="pict">
+                    	<img src="themesmobile/img/ico27.png" alt="">
+                    </div>
+                    <p>YS-200101</p>
+                </li>
+                <li>
+                	<div class="pict">
+                    	<img src="themesmobile/img/ico28.png" alt="">
+                    </div>
+                    <p>YS-200101</p>
+                </li>
+                
+                <li>
+                	<div class="pict">
+                    	<img src="themesmobile/img/ico26.png" alt="">
+                    </div>
+                    <p>YS-200101</p>
+                </li>
+                <li>
+                	<div class="pict">
+                    	<img src="themesmobile/img/ico27.png" alt="">
+                    </div>
+                    <p>YS-200101</p>
+                </li>
+                <li>
+                	<div class="pict">
+                    	<img src="themesmobile/img/ico28.png" alt="">
+                    </div>
+                    <p>YS-200101</p>
+                </li>
+                
+                <li>
+                	<div class="pict">
+                    	<img src="themesmobile/img/ico26.png" alt="">
+                    </div>
+                    <p>YS-200101</p>
+                </li>
+                <li>
+                	<div class="pict">
+                    	<img src="themesmobile/img/ico27.png" alt="">
+                    </div>
+                    <p>YS-200101</p>
+                </li>
+                <li>
+                	<div class="pict">
+                    	<img src="themesmobile/img/ico28.png" alt="">
+                    </div>
+                    <p>YS-200101</p>
+                </li>
+                
+                <li>
+                	<div class="pict">
+                    	<img src="themesmobile/img/ico26.png" alt="">
+                    </div>
+                    <p>YS-200101</p>
+                </li>
+                <li>
+                	<div class="pict">
+                    	<img src="themesmobile/img/ico27.png" alt="">
+                    </div>
+                    <p>YS-200101</p>
+                </li>
+                <li>
+                	<div class="pict">
+                    	<img src="themesmobile/img/ico28.png" alt="">
+                    </div>
+                    <p>YS-200101</p>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+        <div class="back">
+
+        </div>
+        {insert_scripts files='transport.js,utils.js'}
+          <div class="bottom fixed">
+                          <div class="option_zj" >
+                            <button type="button" class="btn buy radius5" onClick="addToCart_quick({$goods.goods_id})">立即购买</button>
+                        </div>
+            </div>
+        <div class="bottom fixed">
+            <ul>
+                <li class="acti"><a href="./index.php"><div class="pic"><i><img src="themesmobile/img/ico4.png" alt=""></i></div><p>美美商城</p></a></li>
+                <li><a href="./flow.php"><div class="pic"><i><img src="themesmobile/img/ico5.png" alt=""></i></div><p>购物车</p></a></li>
+                <li><a href="./category.php"><div class="pic"><i><img src="themesmobile/img/ico6.png" alt=""></i></div><p>产品分类</p></a></li>
+                <li><a href="./points.php"><div class="pic"><i><img src="themesmobile/img/ico7.png" alt=""></i></div><p>积分商城</p></a></li>
+                <li><a href="./experience.php?act=default"><div class="pic"><i><img src="themesmobile/img/ico8.png" alt=""></i></div><p>全国门店</p></a></li>
+                
+            </ul>
+    	</div>
+            
+    </div><!--mobile_wrap-->
+
+
+</body>
+<script type="text/javascript" src="themesmobile/mobile/yangben/js/type.js"></script><!--封装函数-->
+<script>
+	imgauto(".bottom ul li .pic i img");
+	function check(Id){
+    	var strings = document.getElementById(Id).value;
+    	if(strings.replace(/(^\s*)|(\s*$)/g, "").length == 0){
+    		return false;
+    	}
+    	//return true;
+    	$('#search').submit();
+    }
+</script>
+
+</html>

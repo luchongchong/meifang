@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>{$page_title}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link href="{$ectouch_themes}/images/touch-icon.png" rel="apple-touch-icon-precomposed" />
+<link href="{$ectouch_themes}/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="themesmobile/mobile/css/ectouch.css" rel="stylesheet" type="text/css" />
+<link href="themesmobile/mobile/css/css/style1.css"  rel="stylesheet" type="text/css">
+{* 包含脚本文件 *}
+{insert_scripts files='transport.js,common.js,user.js'}
+<script type="text/javascript" src="themesmobile/js/lib/jquery-1.4.4.min.js"></script>
+</head>
+
+<body>
+
+<div class="jifen-box" style=" margin:20px 10px 0px 10px;">
+<ul class="zongjifen">
+
+<li>
+<div class="fengexian">
+<p>订单总数</p>
+<span>{$order_num_4}</span></div>
+</li>
+
+<li>
+<div class="fengexian">
+<p>成交订单数</p>
+<span>{$order_num_1}</span></div>
+</li>
+
+<li>
+<div class="fengexian">
+<p>成交金额</p>
+<span>{$order_num_2}</span></div>
+</li>
+
+<li>
+<div class="fengexian">
+<p>收益金额</p>
+<span>{$order_num_3}</span></div>
+</li>
+</ul>
+<div class="clr"></div>
+</div>
+
+<section class="wrap order_list">
+  <section class="order_box padd1 radius10 single_item">
+  <table width="100%" border="0" cellpadding="5" cellspacing="0" class="ectouch_table">
+    <tr>
+        <td class="order_status" style="border-bottom:1px #CCCCCC dashed"></td>
+    </tr>
+    <tr>
+        <td class="order_content"></td>
+    </tr>
+    <tr>
+      <td class="order_handler"></td>
+    </tr>
+    <tr style="display:none;">
+        <td class="order_tracking"></td>
+    </tr>
+  </table>
+</section>
+<a href="javascript:;" style="text-align:center;" class="get_more"></a>
+</section>
+
+<script type="text/javascript" src="{$ectouch_themes}/js/jquery.more.js"></script>
+<script type="text/javascript">
+{foreach from=$lang.merge_order_js item=item key=key}
+    var {$key} = "{$item}";
+{/foreach}
+jQuery(function($){
+    $('.order_list').more({'address': 'user.php?act=async_order_list_c&user_id_c={$user_id_c}', amount: 5, 'spinner_code':'<div style="text-align:center; margin:10px;"><img src="{$ectouch_themes}/images/loader.gif" /></div>'})
+    $(window).scroll(function () {
+        if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+            $('.get_more').click();
+        }
+    });
+});
+</script>
+
+</body>
+</html>

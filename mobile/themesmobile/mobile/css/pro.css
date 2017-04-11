@@ -1,0 +1,205 @@
+.category{
+	background-color: #dfe0e2;
+}
+.category .hd{
+	display: -webkit-box;
+	border-top: 1px solid #4c4c4c;
+}
+.category .hd li{
+    -webkit-box-flex: 1;
+	width: 1%;
+	font-size: .15rem;
+	height: .36rem;
+  	line-height: .36rem;
+	background-color: #4c4c4c;
+	color: #fff;
+	text-align: center;
+	border-left: 1px solid #dfe0e2;
+}
+.category .hd li:first-child{ border-left: 0 none;}
+.category .hd li.active{
+	background-color: #dfe0e2;
+	color: #be000a;
+}
+.category .leftd{
+	position: absolute;
+	border-left: 2px solid #dfe0e2;
+	border-right: 2px solid #dfe0e2;
+	border-bottom: 1px solid #dfe0e2;
+}
+.category .leftd li{
+	border-left: .03rem solid #fff;
+	background-color: #fff;
+	color: #be000a;
+	padding: .17rem .1rem .17rem .07rem;
+	width: .32rem;
+  	line-height: 1.2;
+	font-size: .12rem;
+	margin-bottom: 1px;
+}
+.category .leftd li.active{
+	background-color: #dfe0e2;
+	border-left-color:  #be000a;
+}
+.category .pro_box {
+	float: right;
+	width: 100%;
+	padding-left: .36rem;
+}
+.category .pro_box li{
+	width: 33%;
+	padding: .03rem;
+	background-color: #dfe0e2;
+	float: left;
+}
+.category .pro_box li a{
+	display: block;
+	background-color: #fff;
+	padding: .03rem;
+	font-size: .13rem;
+}
+.category .pro_box li img{
+	width: 100%;
+}
+.category .pro_box li .name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/**************/
+.bigtu img{ width: 100%;}
+.bigtu-page {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  bottom:5px;
+  width: 100%;
+  z-index: 2;
+}
+.bigtu-page .page-switch {
+  display: inline-block;
+  width: .1rem;
+  height: .1rem;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: .6;
+  margin: 0 .03rem;
+  cursor: pointer;
+  text-indent: 2000em;
+  overflow: hidden;
+}
+.bigtu-page .page-active { background-color: #000;}
+
+.info{
+	color: #9fa0a0;
+}
+.info .name{
+	color: #3e3a39;
+	font-size: .16rem;
+	padding: 0 .1rem;
+}
+.info .price{
+	border-bottom: 2px solid #dddbdb;
+	padding: .05rem .1rem;
+}
+.info .price .cur{
+	font-size: .16rem;
+	color: #3e3a39;
+}
+.info .price .cur i{ color: #c52021;}
+.info .price .mark{
+	margin-left: .4rem;
+	text-decoration: line-through;
+}
+.info .model .select{
+	position: relative;
+	padding: 0 .1rem;
+	color: #3e3a39;
+	font-size: .15rem;
+}
+.info .model .select .iconfont{
+	position: absolute;
+	top: 0;
+	right: .1rem;
+	line-height: .2rem;
+	font-size: .22rem;
+}
+.info .model .select .type{
+	position: absolute;
+	right: .34rem;
+	top: 0;
+}
+.info .model .con{
+	padding: .1rem .05rem 0;
+	background-color: #dddbdb;
+}
+.info .model .con li{
+	float: left;
+	width: 33.3%;
+	margin-bottom: .1rem;
+}
+.info .model .con li span{
+	display: block;
+	width: 90%;
+	padding-left: .1rem;
+	padding-right: .1rem;
+	margin: 0 auto;
+	border: 2px solid #cecfcf;
+	background-color: #fff;
+	text-align: center;
+}
+.info .model .con li.active span{
+	border-color: #c83a3b;
+	color: #b0251e;
+}
+
+.detail-main .detail-hd{
+    width: 100%;
+    height: .3rem;
+    line-height: .3rem;
+    background-color: #333;
+    color: #fff;
+}
+.detail-main .detail-hd a{
+    display: block;
+    float: left;
+    padding-left: .1rem;
+    padding-right: .1rem;
+    vertical-align: middle;
+    vertical-align: top;
+}
+.detail-bd .pro-parameter{
+    padding-top: .1rem;
+    padding-bottom: .1rem;
+    width: 100%;
+}
+.detail-bd .pro-parameter li{
+    float: left;
+    margin-left: .1rem;
+    padding-right: .1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.detail-main .detail-bd .main-box img{
+	width: 100%;
+}
+footer.shoping {
+	border-top: 0 none;
+}
+footer.shoping .footer-item{
+	background-color: #fff;
+	color: #c52021;
+}
+footer.shoping .footer-item i,
+footer.shoping .footer-item p{
+	display: inline-block;
+}
+footer.shoping .footer-item i{ line-height: .2rem;}
+footer.shoping .footer-item p{ line-height: .3rem; font-size: .15rem;}
+footer.shoping .add-cart{
+	background-color: #c52021;
+	color: #fff;
+}

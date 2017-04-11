@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>美美商城</title>
+    <div class="JQ_include" src="themesmobile/mobile/include/meta.dwt"></div>
+
+    <link href="themesmobile/mobile/css/common.css" rel="stylesheet">
+    <link href="themesmobile/mobile/css/swiper.css" rel="stylesheet">
+    <link href="themesmobile/mobile/css/point.css" rel="stylesheet">
+</head>
+<body>
+    <section class="banner">
+        <div class="swiper-container" id="banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="javascript:void(0)"><img src="themesmobile/mobile/img/point.jpg"></a> </div>
+                <div class="swiper-slide"><a href="javascript:void(0)"><img src="themesmobile/mobile/img/point.jpg"></a></div>
+                <div class="swiper-slide"><a href="javascript:void(0)"><img src="themesmobile/mobile/img/point.jpg"></a></div>
+            </div>
+            <div class="banner-page"></div>
+        </div>
+    </section>
+    <ul class="gift-list mb_footer" id="giftsList">
+        <li>
+            <div class="list-01">
+                <a href="points-sub.html">
+                <span class="module-name">服饰</span>
+                </a>
+            </div>
+            <div class="list-02">
+                <a href="points-sub.html">
+                <span class="module-name">美妆</span>
+                </a>
+            </div>
+            <div class="list-03">
+                <a href="points-sub.html">
+                <span class="module-name">食品</span>
+                </a>
+            </div>
+        </li>
+        <li>
+            <div class="list-04">
+                <a href="points-sub.html">
+                <span class="module-name">饮品</span>
+                </a>
+            </div>
+            <div class="list-05">
+                <a href="points-sub.html">
+                <span class="module-name">电器</span>
+                </a>
+            </div>
+            <div class="list-00 offline">
+                <a href="points-sub.html">
+                <span class="module-name">日用品</span>
+                </a>
+            </div>
+        </li>
+        <li>
+            <div class="list-00 offline">
+                <a href="points-sub.html">
+                <span class="module-name">母婴</span>
+                </a>
+            </div>
+            <div class="list-00 offline">
+                <a href="points-sub.html">
+                <span class="module-name">玩具</span>
+                </a>
+            </div>
+            <div class="list-00 offline">
+                <a href="points-sub.html">
+                <span class="module-name">饰品</span>
+                </a>
+            </div>
+        </li>
+    </ul>
+    
+    <div class="JQ_include" src="themesmobile/mobile/include/footer.dwt"></div>
+
+    
+    
+    <script src="themesmobile/mobile/config.js"></script>
+    <script src="themesmobile/mobile/yangben/lib/jquery-1.9.1.min.js"></script>
+    <script src="themesmobile/mobile/yangben/lib/template.min.js"></script>
+    <script src="themesmobile/mobile/yangben/loadHtml.js"></script>
+    <script src="themesmobile/mobile/yangben/plug.js"></script>
+    <script src="themesmobile/mobile/yangben/global.js"></script>
+    <script src="themesmobile/mobile/yangben/worldunion.js"></script>
+    <script>
+        $(function(){
+            var w, banner_h;
+            w = $(window).width()>750 ? 750 : $(window).width();
+            $('#banner, #banner img, #banner .banner-page').width(w);
+            setTimeout(function(){
+                banner_h = $('#banner img').height();
+                $('#banner').height(banner_h);
+            }, 300);
+
+            var list_W = $("#giftsList > li > div").width();
+            $("#giftsList > li > div").height(list_W);
+            $("#giftsList").find(".module-name").width(list_W);
+            $(window).resize(function(){
+                list_W = $("#giftsList > li >div").width();
+                $("#giftsList > li >div").height(list_W);
+                $("#giftsList").find(".module-name").width(list_W);
+            });
+        })
+
+        var mySwiper = new Swiper('#banner',{
+            autoplay : 5000,
+            pagination: '.banner-page',
+            loop:true,
+            grabCursor: true,
+            paginationElementClass:'page-switch',
+            paginationActiveClass:'page-active',
+            paginationClickable: true
+        });
+        
+
+    </script>
+</body>
+</html>

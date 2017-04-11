@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>积分商城_美房美邦</title>
+    <meta name="keywords" content=" " />
+    <meta name="description" content=" " />
+    <meta property="og:type" content="game">
+    <meta property="og:title" content="美房美邦">
+    <meta property="og:image" content=" ">
+    <meta property="og:description" content="美房美邦">
+    <link rel="apple-touch-icon" href="../favicon.ico" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="themesmobile/exchange/bootstrap.min.css">
+    <link rel="stylesheet" href="themesmobile/exchange/photoswipe.css">
+    <link rel="stylesheet" type="text/css" href="themesmobile/exchange/ectouch.css"/>
+    <link rel="stylesheet" type="text/css" href="themesmobile/exchange/select2.css"/>
+
+    <link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/common.css">
+    <link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/swiper.css">
+    <link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/index.css">
+
+
+    <link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/common.css">
+    <link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/swiper.css">
+    <link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/index.css">
+
+    <!--<script src="themesmobile/js/iscroll.js"></script> -->
+    <script>
+        var ROOT_URL = "__ROOT__";
+        var GOODS_IMAGE = '';
+    </script>
+</head>
+<body>
+<div class="bd" style="margin-top: 88px;">
+    <div class="tempWrap" style="overflow:hidden; position:relative;"><ul style="width: 1920px; position: relative; overflow: hidden; padding: 0px; margin: 0px; transition-duration: 200ms; transform: translateX(1px);">
+        <li style="display: table-cell; vertical-align: top; width: 640px;"><img  style="width: 420px;" src="themesmobile/exchange/point.jpg" alt=""></li>
+    </ul></div>
+</div>
+<div class="con">
+    <div style=""></div>
+    <header class="Header clearfix fixed">
+        <a href="javascript:history.go(-1)" class="Return"><span></span></a>
+        <span class="Title">积分商城</span>
+
+    </header>
+
+    <div class="kongjian mb_footer" >
+        <div id="wrapper">
+            <div id="scroller">
+                <div class="hd">
+                    <ul id='qiehuan'>
+                        {if $goods_type_child}
+                        {foreach from=$goods_type_child key=k item=child_list}
+                        <li id="a" class="active" value="{$child_list.id}">{$child_list.name}</li>
+                        {/foreach}
+                        {/if}
+                        {if $categories_list_place}
+                        {foreach from=$categories_list_place key=k item=list_place}
+                        {if $list_place.name eq '儿童房'}
+                        <li >{$list_place.name}</li>
+                        {/if}
+                        {/foreach}
+                        {/if}
+
+                    </ul>
+                    <div class="bg"></div>
+                </div>
+                <!-- #BeginLibraryItem "/library/goods_list.lbi" --><!-- #EndLibraryItem -->
+            </div>
+        </div>
+
+        <footer class="footer">
+            <a class="footer-item" href="./index.php">
+                <i class="iconfont">&#xe605;</i>
+                <p>美美商城</p>
+            </a>
+            <a class="footer-item" href="./flow.php">
+                <i class="iconfont">&#xe614;</i>
+                <p>购物车</p>
+            </a>
+            <a class="footer-item" href="./tem.php?act=mstj">
+                <i class="iconfont">&#xe603;</i>
+                <p>名师推荐</p>
+            </a>
+            <a class="footer-item" href="./exchange.php" style="color: #c52021;">
+                <i class="iconfont">&#xe607;</i>
+                <p>积分商城</p>
+            </a>
+            <a class="footer-item" href="./experience.php?act=default">
+                <i class="iconfont">&#xe60e;</i>
+                <p>全国门店</p>
+            </a>
+        </footer>
+        <script src="themesmobile/js/config.js"></script>
+        <script src="themesmobile/js/lib/jquery-1.9.1.min.js"></script>
+        <script src="themesmobile/js/loadHtml.js"></script>
+        <script src="themesmobile/js/lib/template.min.js"></script>
+        <script src="themesmobile/mobile/dist/swiper.min.js"></script>
+        <script src="themesmobile/js/plug.js"></script>
+        <script src="themesmobile/js/global.js"></script>
+        <script src="themesmobile/js/worldunion.js"></script>
+        <script type="text/javascript" src="themesmobile/js/ectouch.js"></script>
+        <script type="text/javascript" src="themesmobile/js/jquery.more.js"></script>
+
+
+        <script type="text/javascript">
+            extension_code={$extension_code};
+            jQuery(function($){
+                $("#J_ItemList").more({'address': 'index.php?extension_code='+'00'+'&baioji={$biaoji}&act=asynclist&category={$category}&brand={$brand_id}&filter_attr={$filter_attr}&page={$pager.page}&sort={$pager.sort}&order={$pager.order}', 'spinner_code':'<div style="text-align:center; margin:10px;"><img src="{$ectouch_themes}/images/loader.gif" /></div>'},
+                        $('#qiehuan'));
+                $('#J_ItemList').more({'address': 'index.php?extension_code='+extension_code+'&baioji={$biaoji}&act=asynclist&category={$category}&brand={$brand_id}&filter_attr={$filter_attr}&page={$pager.page}&sort={$pager.sort}&order={$pager.order}', 'spinner_code':'<div style="text-align:center; margin:10px;"><img src="{$ectouch_themes}/images/loader.gif" /></div>'})
+                $(window).scroll(function () {
+                    if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                        $('.get_more').click();
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(function(){
+                var w, banner_h;
+                w = $(window).width()>750 ? 750 : $(window).width();
+                $('#banner, #banner img, #banner .banner-page').width(w);
+                setTimeout(function(){
+                    banner_h = $('#banner img').height();
+                    $('#banner').height(banner_h);
+                }, 300);
+            })
+
+            var mySwiper = new Swiper('#banner',{
+                autoplay : 5000,
+                pagination: '.banner-page',
+                loop:true,
+                grabCursor: true,
+                paginationElementClass:'page-switch',
+                paginationActiveClass:'page-active',
+                paginationClickable: true
+            });
+        </script>
+
+
+        <script type="text/javascript" src="themesmobile/js/jquery.cookie.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                var str = window.location.href;
+                str = str.substring(str.lastIndexOf("/") + 1);
+                if ($.cookie(str)) {
+
+                    $("html,body").animate({ scrollTop: $.cookie(str) }, 1000);
+                }
+                else {
+                }
+            })
+
+            $(window).scroll(function () {
+                var str = window.location.href;
+                str = str.substring(str.lastIndexOf("/") + 1);
+                var top = $(document).scrollTop();
+                $.cookie(str, top, { path: '/' });
+                return $.cookie(str);
+            })
+        </script>
+
+<script type="text/javascript">
+    get_asynclist("{:url('exchange/asynclist_list')}&page={$page}&sort={$sort}&order={$order}" , '__TPL__/images/loader.gif');
+</script>
+</body>
+</html>

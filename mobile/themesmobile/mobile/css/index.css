@@ -1,0 +1,132 @@
+
+/* ====index banner====*/
+.banner { margin-bottom: .1rem;}
+.banner .swiper-container {
+	position: relative;
+	height: 273px;
+	/*width: 640px;*/
+}
+.banner .swiper-slide img{ width: 100%;}
+.banner-page {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+}
+.banner-page .page-switch {
+  display: inline-block;
+  width: .1rem;
+  height: .1rem;
+  border-radius: 50%;
+  background-color: #a2a6ad;
+  opacity: .6;
+  margin: 0 .03rem;
+  cursor: pointer;
+  text-indent: 2000em;
+  overflow: hidden;
+}
+.banner-page .page-active { background-color: #4fbfa7;}
+
+/*********/
+.index-box .hd{
+	position: relative;
+	height: .3rem;
+	line-height: .25rem;
+	border-bottom: 2px solid #c52021;
+}
+.index-box .hd span{ 
+	display: inline-block;
+	font-size: .12rem;
+	color: #000;
+}
+.index-box .hd span.tit{
+	background-color: #c52021;
+	color: #fff;
+	padding: .02rem .05rem;
+	font-size: .18rem;
+	font-weight: bold;
+}
+.index-box .hd a.more{
+	position: absolute;
+	right: .1rem;
+	top: 0;
+	line-height: .36rem;
+	color: #c52021;
+}
+.index-box .hd a.more i{
+	display: inline-block;
+	vertical-align: middle;
+	font-size: .1rem;
+}
+ul.pro_box{
+	width: 100%;
+	padding: .1rem .05rem 0;
+}
+ul.pro_box li{
+	float: left;
+	width: 50%;
+	padding-left: .05rem;
+	padding-right: .05rem;
+	padding-bottom: .1rem;
+}
+ul.pro_box li a{
+    position: relative;
+	display: block;
+}
+ul.pro_box li img{ width: 100%;}
+ul.pro_box li img.icon_bao{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    width: .45rem;
+    height: .45rem;
+}
+ul.pro_box li .info{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .8);
+    text-align: center;
+    font-size: .12rem;
+    line-height: .2rem;
+    height: .4rem;
+    overflow: hidden;
+}
+ul.pro_box li .info .price{
+    font-size: .16rem;
+    color: #c52021;
+}
+
+.kongjian .hd{
+	position: relative;
+	font-size: .15rem;
+}
+.kongjian .hd ul{
+	display: -moz-box; 
+	display: -webkit-box;
+	display: box;
+	background-color: #232323;
+	color: #fff;
+}
+.kongjian .hd ul li{
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	width: 1%;
+	text-align: center;
+	height: .3rem;
+	line-height: .3rem;
+}
+.kongjian .hd ul li.active{
+	background-color: #c52021;
+}
+.kongjian ul.pro_box li .info{
+	height: .24rem;
+	font-size: .16rem;
+	background-color: #3e3a39;
+	color: #f7f8f8;
+	padding: .02rem;
+}

@@ -1,0 +1,171 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+3333333333
+
+ <div class="order_view mlr20 mb40 has_bottom_panel">
+      <div class="envelope_paper">
+        <div class="envelope_paper_bd">
+          <div class="envelope_paper_content">
+            <div class="box box_01 order_tit">
+              <ul>
+              
+                <li><strong>{$lang.detail_order_status}{$lang.colon}</strong><span class="order_status ">{$order.order_status}{$order.confirm_time}</span></li>
+                <li>
+
+                <strong>{$lang.goods_all_price}</strong>
+                
+                
+                 {if $order.extension_code eq "group_buy"}{$lang.gb_deposit}{/if}<strong>{$lang.colon}</strong><span class="price">{$order.formated_goods_amount}</span>&nbsp;{if $order.discount gt 0}
+            <strong>{$lang.discount}{$lang.colon}</strong><span class="order_status">{$order.formated_discount}</span>&nbsp;{/if}
+            {if $order.tax gt 0}
+            <strong>{$lang.tax}{$lang.colon}</strong><span class="order_status">{$order.formated_tax}</span>&nbsp;{/if}
+            {if $order.shipping_fee > 0}
+           <strong>{$lang.shipping_fee}{$lang.colon}</strong><span class="order_status">{$order.formated_shipping_fee}</span>&nbsp;{/if}
+            {if $order.insure_fee > 0}
+            <strong>{$lang.insure_fee}{$lang.colon}</strong><span class="order_status">{$order.formated_insure_fee}</span>&nbsp;{/if}
+            {if $order.pay_fee > 0}
+           <strong>{$lang.pay_fee}{$lang.colon}</strong><span class="order_status">{$order.formated_pay_fee}</span>&nbsp;{/if}
+            {if $order.pack_fee > 0}
+            <strong>{$lang.pack_fee}{$lang.colon}</strong><span class="order_status">{$order.formated_pack_fee}</span>&nbsp;{/if}
+            {if $order.card_fee > 0}
+            <strong>{$lang.card_fee}{$lang.colon}</strong><span class="order_status">{$order.formated_card_fee}</span>&nbsp;{/if}
+            {if $order.money_paid > 0}<strong>{$lang.order_money_paid}{$lang.colon}</strong><span class="order_status">{$order.formated_money_paid}</span>&nbsp;{/if}
+            {if $order.surplus > 0}<strong>{$lang.use_surplus}{$lang.colon}</strong><span class="order_status">{$order.formated_surplus}</span>&nbsp;{/if}
+            {if $order.integral_money > 0}<strong>{$lang.use_integral}{$lang.colon}</strong><span class="order_status">{$order.formated_integral_money}</span>&nbsp;{/if}
+            {if $order.bonus > 0}<strong>{$lang.use_bonus}{$lang.colon}</strong><span class="order_status">{$order.formated_bonus}</span>{/if}
+                </li>
+                <li><strong>{$lang.select_payment}{$lang.colon}</strong><span>{$order.pay_name}</span></li>
+                
+                <li><strong>应付总额</strong><span class="goods_amount">{$order.formated_order_amount}</span>{if $order.extension_code eq "group_buy"}{$lang.notice_gb_order_amount}{/if}</span></li>
+              </ul>
+            </div>
+            <div class="box box_04 express_info">
+              <div class="itmes"><a href="javascript:void(0);" class="lnk">
+                <ul>
+                  <li><strong>{$lang.detail_shipping_status}{$lang.colon}</strong><span>{$order.shipping_name}({$order.shipping_status})</span><span>{$order.shipping_time}</span></li>
+                  {if $order.invoice_no}<li><strong>{$lang.consignment}{$lang.colon}</strong><span class="invoice_no">{$order.invoice_no}</span></li>  {/if}
+                 </ul>
+                </a> </div>
+
+            </div>
+              <!--{if $virtual_card}--> <div class="box box_04 express_info">
+                <div class="itmes">
+               <ul style=" padding:20px 0px;">
+       
+          <li><strong>{$lang.virtual_card_info}：</strong>
+			<span>
+          <!--{foreach from=$virtual_card item=vgoods}-->
+            <!--{foreach from=$vgoods.info item=card}-->
+              <!--{if $card.card_sn}-->{$lang.card_sn}:<span style="color:red;">{$card.card_sn}</span><!--{/if}-->
+              <!--{if $card.card_password}-->{$lang.card_password}:<span style="color:red;">{$card.card_password}</span><!--{/if}-->
+              <!--{if $card.end_date}-->{$lang.end_date}:{$card.end_date}<!--{/if}--><br />
+            <!--{/foreach}-->
+          <!--{/foreach}-->
+       </span>
+     
+      </ul>
+        
+        </div></div>  <!--{/if}-->
+                 <div class="box box_04 express_info">
+                <div class="itmes">
+                <ul style=" padding:20px 0px;">
+        {if $iswei}
+    {if $order.pay_id eq 4}
+    <li >
+      <strong >{$lang.detail_pay_status}{$lang.colon}</strong>
+      <span >{$order.pay_status}{if $order.order_amount gt 0}<a href="weixinpay.php?oid={$order.order_id}" style=" color:#FF6699">微支付</a>{/if}<span>{$order.pay_time}</span></td>
+    </li>
+    {elseif $order.pay_id eq 5}
+    <li >
+      <strong>{$lang.detail_pay_status}{$lang.colon}</strong>
+      <span >{$order.pay_status}{if $order.order_amount gt 0}<a href="././pay/alipayapi.php?out_trade_no={$order.order_sn}&total_fee={$order.formated_order_amount_wap}" style="color:#FF6699">去支付宝支付</a>{/if}<span>{$order.pay_time}</span></span>
+    </li>
+    {/if}
+    {else}
+   <li >
+      <strong>{$lang.detail_pay_status}{$lang.colon}</strong>
+      <span>{$order.pay_status}{if $order.order_amount gt 0}<a href="././pay/alipayapi.php?out_trade_no={$order.order_sn}&total_fee={$order.formated_order_amount_wap}" style=" color:#FF6699">去支付宝支付</a>{/if}<span class="time">{$order.pay_time}</span></span>
+    </li>
+    {/if}
+
+
+
+                </ul>
+             </div>
+                
+                </div>
+            <div class="box box_02 order_info">
+              <ul>
+                
+                <li><strong>订单编号</strong><span class="order_id">5140908360173057</span></li>
+                  {if $order.exist_real_goods}
+                <li><strong>收货地址</strong><span class="address">{$order.address}{if $order.zipcode}({$lang.postalcode}{$lang.colon}{$order.zipcode}){/if}<br>
+                {/if}
+                  {$order.consignee} {$order.tel}</span></li>
+                   {if $order.exist_real_goods}
+                <li><strong>送货时间</strong><span class="best_time">{$order.best_time}</span></li>
+                 {/if}
+
+              </ul>
+            </div>
+            <div class="box box_02 order_info">
+              <ul >
+    {if $order.pack_name}
+    <li><strong>{$lang.use_pack}{$lang.colon}</strong><span>{$order.pack_name}</span></li>
+    {/if}
+    {if $order.card_name}
+    <li><strong>{$lang.use_card}{$lang.colon}</strong><span>{$order.card_name}</span></li>
+    {/if}
+    {if $order.card_message}
+    <li><strong>{$lang.bless_note}{$lang.colon}</strong><span>{$order.card_message}</span></li>
+    {/if}
+    {if $order.integral > 0}
+    <li><strong>{$lang.use_integral}{$lang.colon}</strong><span>{$order.integral}</span></li>
+    {/if}
+    {if $order.inv_payee && $order.inv_content}
+    <li><strong>{$lang.invoice_title}{$lang.colon}</strong><span>{$order.inv_payee}</span></li>
+    <li><strong>{$lang.invoice_content}{$lang.colon}</strong><span>{$order.inv_content}</span></li>
+    {/if}
+    {if $order.postscript}
+    <li><strong>{$lang.order_postscript}{$lang.colon}</strong><span>{$order.postscript}</span></li>
+    {/if}
+    {if $order.how_oos_name}
+    <li><strong>{$lang.booking_process}{$lang.colon}</strong><span>{$order.how_oos_name}</span></li>
+    {/if}
+  </ul>
+            </div>
+            <div class="box box_03">
+              <div class="list_order_tmp">
+                <ul>
+                    {foreach from=$goods_list item=goods name=goods_list}
+                    <li>
+                    <div class="items h_box">
+                      
+                      <div class="info">
+                        <p class="name">{if $goods.goods_id gt 0 && $goods.extension_code neq 'package_buy'} <a href="goods.php?id={$goods.goods_id}" class="" target="_blank">{$goods.goods_name}</a> <span class="extra_info"> {if $goods.goods_attr}{$goods.goods_attr}{/if}
+        {if $goods.is_shipping}<em class="carriage_free">{$lang.carriage_free}</em>{/if}
+        {if $goods.parent_id gt 0}<em class="accessories">{$lang.accessories}</em>{/if}
+        {if $goods.is_gift gt 0}<em class="largess">{$lang.largess}</em>{/if} </span> {elseif $goods.goods_id gt 0 && $goods.extension_code eq 'package_buy'} <span class="name">{$goods.goods_name}</span> <span class="package_goods_list">{foreach from=$goods.package_goods_list item=package_goods_list name=package_goods_list}<em>{$package_goods_list.goods_name}</em>{/foreach}</span> {else}
+        {$goods.goods_name}
+        {/if}</p>
+                        <div class="order_items">
+                          <div class="price_info"> <span class="sale_price">售价：{$goods.goods_price}</span><span class="num">数量：{$goods.goods_number}</span><span class="subtotal">小计：{$goods.subtotal}</span> </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="btns" style="display:none"> </div>
+                  </li>
+    {/foreach}
+            </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom_panel">
+        <div class="settle_panel">
+          <div class="goods_amount">
+            <div class="price"><span>应付总额:</span><strong>{$order.formated_order_amount}</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>

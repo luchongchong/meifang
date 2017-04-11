@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>美美商城</title>
+    <div class="JQ_include" src="themesmobile/mobile/include/meta.dwt"></div>
+    <link href="themesmobile/mobile/css/common.css" rel="stylesheet">
+    <link href="themesmobile/mobile/css/store.css" rel="stylesheet">
+    <link href="../js/calendar/calendar.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+     #main{height:120px;}
+    .demo{width: 100%;margin: 0 auto;clear: both;position: relative;border:1px solid #d3d3d3}
+    .bx_wrap {margin-left: 10px; margin-top:10px}
+    .bx_wrap ul img { border: 2px solid #ddd; }
+    .bx_wrap ul li{text-align:center}
+    .bx_wrap ul li a:hover{text-decoration:none; color:#f30}
+    .bx_wrap a.prev {width:20px;height:24px;line-height:24px;outline-style:none;outline-width: 0;position:absolute; top:45px; left:-2px; text-indent:-999em; background: url(themesmobile/mobile/img/arr_left.gif) no-repeat;}
+    .bx_wrap a.next {width:20px;height:24px;line-height:24px; left:626px;position: absolute;top:45px; text-indent:-999em; background:url(themesmobile/mobile/img/arr_right.gif) no-repeat;}
+    </style>
+    
+</head>
+<body>
+    <header>
+        <a href="javascript:history.go(-1)" class="i-back iconfont">&#xe624;</a>
+        <h1>
+            <form action="" class="search-form">
+                <i class="iconfont">&#xe600;</i>
+                <input type="text">
+            </form>
+        </h1>
+        <a href="category.html" class="category">分类<i class="iconfont">&#xe602;</i></a>
+    </header>
+    <section>
+    </section>
+    
+    <div style="height:200px; border:1px solid #222">
+        <section class="map mb_footer">
+        </section>
+        <div class="storelist">
+        <ul class="cle">
+            <li style="">
+                <img style="width:100px;height:100px;" src="{$store_shops[0].store_shops}"></img>
+            </li>
+            <li>
+                <span>{$store_detail.name}</span><br/>
+                <span>好评率:{$positive_feedback}%</span><br/>
+                <span>电话:{$store_detail.tel}</span><br/>
+                <span>地址:{$store_detail.city}{$store_detail.province}{$store_detail.district}{$store_detail.address}</span>
+                <br/><span>微信号:</span>
+            </li>
+            
+        </ul>
+        </div>
+    </div>
+
+    <div id="main">
+       <div class="demo">
+        <div class="bx_wrap">
+                <div class="bx_container">
+                 <ul id="demo2">
+                    {foreach from=$store_shops item=img}
+                    <li><a href="#"><img  alt="#" width="140" height="94" src="{$img.store_shops}"><br/></a></li>
+                    {/foreach}
+                  </ul>
+                </div>
+          </div>
+          </div>
+          <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        </div>
+    <div class="tab-div">
+        <div id="tabbar-div" >
+          <p style="padding:0;margin-left:-10px">
+            <span class="tab-front" id="general-tab" style="padding:5px;margin-left:-5px">店员形象</span>
+            <span class="tab-back" id="detail-tab" style="padding:5pxmargin-left:-5px">用户评价</span>
+            <span class="tab-back" id="mix-tab" style="padding:5px;margin-left:-5px">施工团队</span>
+            <span class="tab-back" id="gallery-tab" style="padding:5px;margin-left:-5px"> 专享服务</span>
+          </p>
+        </div>
+        <div id="tabbody-div">
+                <table width="90%" id="general-table" >
+                    {foreach from=$assistant_list item=assistant}
+                    <tr style="border-bottom:1px solid $fff">
+                        <td width="30%" style="margin-right:10px;"><img style="width:100%" src="{$assistant.shop_assistant}"></td>
+                        <td>&nbsp;&nbsp;<span>{$assistant.shop_explain}</span></td>
+                    </tr>
+                {/foreach}
+                </table>
+                <table width="90%" id="detail-table" style="display: none;">
+                {foreach from=$comment_list.item item=comment}
+                    <tr style="border-bottom:1px solid $fff">
+                        <td width="30%" style="margin-right:10px;"><img style="width:100%" src="{$comment.user_img}"></td>
+                        <td style="margin:0px;padding:0px;">&nbsp;&nbsp;<span >{$comment.content}</span><br/>&nbsp;&nbsp;<span >{$comment.add_time}</span></td>
+                    </tr>
+                {/foreach}
+                    <tr>
+                        <td colspan="2" style="text-align:center; padding-bottom:30px;">点击查看更多</td>
+                    </tr>
+                </table>
+               <table width="90%" id="mix-table"  style="display: none;">
+                {foreach from=$construction_list item=construction}
+                    <tr style="border-bottom:1px solid $fff">
+                        <td width="30%" style="margin-right:10px;"><span><a href="#">{$construction.construction_name}</a></span></td>
+                        <td style="margin:0px;padding:0px;">&nbsp;&nbsp;<span >好评率:</span></td>
+                    </tr>
+                {/foreach}
+                    <tr>
+                        <td colspan="2" style="text-align:center; padding-bottom:30px;">点击查看更多</td>
+                    </tr>
+                    
+               </table>
+                <table width="90%" id="gallery-table"  style="display: none;">
+                    {foreach from=$exclusive_list key=k item=exclusive}
+                        <tr style="border-bottom:1px solid $fff">
+                            <td style="margin:0px;padding:0px;"><span >{$k}:{$exclusive}</span></td>
+                        </tr>
+                    {/foreach}
+                    
+               </table>
+    </div>
+    <div class="JQ_include" src="themesmobile/mobile/include/footer.dwt"></div>
+    <script src="themesmobile/js/lib/jquery-1.9.1.min.js"></script>
+    <script src="themesmobile/js/config.js"></script>
+    <script src="themesmobile/mobile/dist/swiper.min.js"></script>
+    <script src="themesmobile/js/lib/template.min.js"></script>
+    <script src="themesmobile/js/plug.js"></script>
+    <script src="themesmobile/js/global.js"></script>
+    <script src="themesmobile/js/worldunion.js"></script>
+    <script src="themesmobile/js/loadHtml.js"></script>
+    <script type="text/javascript" src="../../js/utils.js"></script>
+    <script type="text/javascript" src="themesmobile/js/tab.js"></script>
+    <script type="text/javascript" src="themesmobile/js/validator.js"></script>
+    <script src="themesmobile/js/address.js"></script> 
+    <script src="themesmobile/mobile/js/bxCarousel.js"></script> 
+    <script type="text/javascript">
+    $(function(){
+        $('#demo1').bxCarousel({
+            display_num: 4, 
+            move: 1, 
+            auto: true, 
+            controls: false,
+            margin: 10,
+            auto_hover: true
+        });
+        $('#demo2').bxCarousel({
+            display_num: 4, 
+            move: 4,
+            margin: 10 
+        });
+    });
+    </script>
+</body>
+</html>

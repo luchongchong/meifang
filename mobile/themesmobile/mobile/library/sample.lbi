@@ -1,0 +1,73 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="w1020">
+    <!--<div class="yang_filter">
+        <ul class="clearfix">
+            <li class="yang_attr">
+                <div class="attr_key">产地：</div>
+                <div id="filter1" class="sel">
+                    <i class="iconfont">&#xe607;</i>
+                    <label class="sel-skin">请选择产地</label>
+                    <ul>
+                        <li id="0" name='origin' value="0">不限</li>
+                        {foreach from=$provite_list key=k item=provite}
+                         <li name='origin' {if $origin eq $provite.region_id} class="on" style="background-color: rgb(238, 238, 238);" {/if} value="{$provite.region_id}">{$provite.region_name}</li>
+                        {/foreach}
+                    </ul>
+                    <input type="hidden" id="input1">
+                </div>
+            </li>
+            {foreach from=$categories key=k item=cate}
+            <li class="yang_attr">
+                <div class="attr_key">{$cate.name}：</div>
+                <div id="filter{$cate.idr}" class="sel">
+                    <i class="iconfont">&#xe607;</i>
+                    <label class="sel-skin">请选择{$cate.name}</label>
+                    <ul>
+                        <li name="{$cate.tj_name}" value="0">不限</li>
+                        {foreach from=$cate.cat_id key=ke item=cate_info}
+                        
+                            <li name="{$cate.tj_name}" value="{$cate_info.id}">{$cate_info.name}</li>
+                        {/foreach}
+                    </ul>
+                    <input type="hidden" id="input2">
+                </div>
+            </li>
+           {/foreach}
+            <li class="yang_attr">
+                <div class="attr_key">价格：</div>
+                <div id="filter5" class="sel">
+                    <i class="iconfont">&#xe607;</i>
+                    <label class="sel-skin">请选择价格</label>
+                    <ul>
+                        <li id="0" name="price" value="0">不限</li>
+                        <li id="1" name="price" value="49">0-50</li>
+                        <li id="2" name="price" value="99">50-100</li>
+                        <li id="3" name="price" value="199">100-200</li>
+                        <li id="4" name="price" value="200">200以上</li>
+                    </ul>
+                    <input type="hidden" id="input3">
+                </div>
+            </li>
+
+        </ul>
+    </div>-->
+<div class="content">
+    <div class="srp album flex-f-row" id="J_ItemList" style="opacity:1;"> 
+    <ul  class="pro_box cle" id="baoKuan">
+        {foreach from=$sample_list key=k item=list}
+            <li>
+                <a href="sample_info.php?sample_id={$list.id}" class="">
+                <img src="{$list.thumb}" alt="">
+                <div class="info">
+                <p class="desc">{$list.name}</p>
+               
+                </div>
+            </a>
+            </li>
+        {/foreach}
+    </ul>
+    <div class="pro-inner"></div>
+    <a href="javascript:;" class="get_more"></a>
+    </div>
+</div>
+</div>

@@ -1,0 +1,145 @@
+body.my-wrap{ background-color: #fff;}
+.myhd {
+	position: relative;
+}
+.myhd .bg{
+	width: 100%;
+}
+.myhd .qr{
+	position: absolute;
+	width: 17.73%;
+	bottom: 8.4%;
+	left: 41.135%;
+	z-index: 2;
+}
+.hd-txt{ text-align: center;}
+
+.content{
+	width: 100%;
+	padding: .1rem;
+}
+.content .options{
+	margin-bottom: .15rem;
+	border: 1px solid #a6a6a6;
+	border-radius: 5px;
+    display: -webkit-box;
+    padding-top: .15rem;
+    padding-bottom: .15rem;
+}
+.content .options li{
+    -webkit-box-flex: 1;
+	border-left: 3px solid #d5d5d5;
+	text-align: center;
+	color: #c52021;
+	font-size: .12rem;
+}
+.content .options li:first-child{
+	border-left: 0 none;
+}
+.content .list{
+	border: 1px solid #a6a6a6;
+	border-radius: 5px;
+}
+.content .list li {
+	position: relative;
+	border-top: 1px solid #a6a6a6;
+    padding-top: .1rem;
+    padding-bottom: .1rem;
+    padding-left: .15rem;
+    font-size: .15rem;
+    line-height: .26rem;
+    color: #c52021;
+}
+.content .list li:first-child{
+	border-top: 0 none;
+}
+.content .list li i.iconfont{
+	display: inline-block;
+	font-size: .18rem;
+	margin-right: .1rem;
+}
+.content .list li .sign{
+	position: absolute;
+	right: .15rem;
+	top: .1rem;
+	width: .99rem;
+	background-color: #fed33f;
+	font-size: .12rem;
+    line-height: .26rem;
+	color: #fff;
+	border-radius: 5px;
+	text-align: center;
+}
+/*******my-order******/
+.flex-box{
+    display: -webkit-box;
+}
+.order-list {
+	background-color: #fff;
+	margin-top: .05rem;
+}
+.order-list .flex-box{
+	padding-top: .05rem;
+	padding-bottom: .05rem;
+}
+.order-list dt{
+	border-bottom: 1px solid #d5d5d5;
+}
+.order-list .store{
+	width: 80%;
+	padding-left: .15rem;
+	font-size: .15rem;
+	line-height: .3rem;
+	color: #737475;
+}
+.order-list .store i.iconfont{
+	font-size: .2rem;
+	margin-right: .05rem;
+}
+.order-list .state{
+	width: 20%;
+	text-align: right;
+	line-height: .3rem;
+	color: #a20101;
+	font-size: .12rem;
+	padding-right: .05rem;
+}
+.order-list .box-first{
+	width: 30%;
+	padding: 0 .05rem;
+}
+.order-list .box-first img{
+	width: 100%;
+}
+.order-list .info{
+	width: 53%;
+	color: #737475;
+}
+.order-list .price{
+	width: 19%;
+	color: #9ea0a1;
+	padding-right: .05rem;
+}
+.order-list .price p{
+	padding-right: .05rem;
+	text-align: right;
+}
+.order-list .price p.cur-price{ color: #474848;}
+.order-list .price p.mark-price{ text-decoration: line-through;}
+.order-list .price p.num{ font-size: .12rem;}
+.order-list .options{
+	width: 30%;
+	padding: 0 .05rem;
+}
+.order-list .options .btn{
+	font-size: .15rem;
+	height: .28rem;
+	line-height: .28rem;
+}
+.order-list .total{
+	width: 70%;
+	padding: 0 .05rem;
+	text-align: right;
+	line-height: .28rem;
+	color: #737475;
+}

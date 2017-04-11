@@ -1,0 +1,44 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="filter" style="position:static; top:0px; width:100%;">
+  <form method="GET" class="sort" name="listform">
+    <section>
+        <div>
+        <ul class="hd filter-inner">
+            {foreach from=$categories key=k item=cat}
+                {if $cat.id eq $parent_id}
+                 <li class="active"><a class="switchBtn switchBtn-album" href="./category.php?${$cat.tj_name}={$cat.id}">{$cat.name}</a></li>
+                {else}
+                 <li><a class="switchBtn switchBtn-album" href="./category.php?{$cat.tj_name}={$cat.id}" >{$cat.name}</a></li>
+                {/if}
+            {/foreach}
+           
+        </ul>
+        </div>
+        <div class="bd cle" id="nav">
+            <ul  class="leftd">
+                {foreach from=$children_list key=k item=chi}
+                    {if $chi.id eq $childre_id}
+                        <li  class="active qiehuan" name='{$chi.xz_name}' value={$chi.id}>{$chi.name}</li>
+                    {else} 
+                        <li class="qiehuan" name='{$chi.xz_name}' value={$chi.id}>{$chi.name}</li>
+                    {/if}
+                {/foreach}
+            </ul>
+            <div class="srp album flex-f-row" id="J_ItemList" style="opacity:1;"> 
+            <ul id="thelist" class="pro_box cle product flex_in single_item" id="baoKuan">
+                {foreach from=$goods_list key=k item=list}
+                <li>
+                    <a href="{$list.url}" class="">
+                        <img src="{$list.goods_thumb}" alt="">
+                        <p class="name">{$list.goods_name}</p>
+                    </a>
+                </li>
+                {/foreach}
+            </ul>
+            <div class="pro-inner"></div>
+            <a href="javascript:;" class="get_more"></a>
+            </div>
+        </div>
+    </section>
+  </form>
+</div>

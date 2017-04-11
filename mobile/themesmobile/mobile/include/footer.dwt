@@ -1,0 +1,22 @@
+<footer class="footer">
+    <a class="footer-item" href="./index.php">
+        <i class="iconfont">&#xe605;</i>
+        <p>美美商城</p>
+    </a>
+    <a class="footer-item" href="./flow.php">
+        <i class="iconfont">&#xe614;</i>
+        <p>购物车</p>
+    </a>
+    <a class="footer-item" href="./tem.php?act=mstj">
+        <i class="iconfont">&#xe603;</i>
+        <p>名师推荐</p>
+    </a>
+    <a class="footer-item" href="./exchange.php">
+        <i class="iconfont">&#xe607;</i>
+        <p>积分商城</p>
+    </a>
+    <a class="footer-item" href="./experience.php?act=default">
+        <i class="iconfont">&#xe60e;</i>
+        <p>全国门店</p>
+    </a>
+</footer>

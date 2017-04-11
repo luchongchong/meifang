@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>移动wap模板相关参数设置</title>
+<link href="{$file_url}/boot/css/bootstrap.css" type="text/css" rel="stylesheet" />
+<link href="{$file_url}/boot/css/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="{$file_url}/boot/js/jquery-1.9.0.js"></script>
+</head>
+
+<body>
+
+
+
+<div id="content">
+	
+    <h3>移动路径设置</h3>
+    
+    <p class="url1">移动端域名路径：{$mobile-url}</p>
+    
+  
+    <p class="url1">pc网站网站路径是：<span id="url2">{$pc_url}</span></p>
+   
+    
+    <form role="form" id="form">
+  		<div class="form-group">
+    		<label for="url">请输入pc网站完整域名路径(最后不要加反斜杠)</label>
+    		<input type="text" class="form-control" id="url" placeholder="pc域名路径">
+  		</div>
+   </form>
+   
+   <span id="submit-btn" class="btn btn-success">确认设置</span>
+
+	
+</div>
+
+<script type="text/javascript">
+	
+	$('#content').on('click','#submit-btn',function(){
+		
+		var url = $('#url').val();
+		
+		$.ajax({
+			
+			type:'POST',
+			url:'mobile-setting.php?act=insert',
+			data:'url='+url,
+			dataType:"json",
+			success: function(data){
+				
+				
+					
+					$('#url2').html(data.pc_url);
+					
+				
+				
+			}
+			
+		});
+	});
+	
+</script>
+
+</body>
+</html>

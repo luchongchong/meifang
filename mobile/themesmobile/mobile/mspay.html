@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<title>单品购买</title>
+	<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/config.css">
+	<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/ms1.css">
+	<link rel="stylesheet" href="themesmobile/mobile/css/styles.css" type="text/css">
+	<link rel="stylesheet" href="themesmobile/mobile/css/style.min.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="themesmobile/mobile/css/common.css">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>      
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>    
+	<![endif]	IE9以下的浏览器并不支持这些标签，也不能为这些标签进行添加样式。那么修复这个问题我们需要链接引用的文件	意思就是说如果用户IE浏览器的版本小于IE9，那么就会加载这两个js文件库，现在就可以使用这些新的标签，并且可以在这些标签上添加样式了-->
+	</head>
+	<style>
+	th{font-size:18px;} table{ border-collapse:collapse }
+	td,th{text-align: center; color:#5F6060;}tr{border-top:1px solid #ccc;}
+	.jian{padding:2px 5px 2px 3px}
+	.jia{padding:2px 3px 2px 5px;}
+	</style>
+	<body>
+		<header>
+		    <a href="javascript:history.go(-1)" class="i-back iconfont">&#xe624;</a>
+		    <h1>
+		        <form action="searchfor.php" class="search-form">
+		            <i class="iconfont" onclick="return check('keywordfoot')">&#xe600;</i>
+		            <input name="keywords" id="keywordfoot" type="text">
+		        </form>
+		    </h1>
+		    <a href="category.php" class="category">分类<i class="iconfont">&#xe602;</i></a>
+		</header>
+		<div>
+			<div class="mingssj"><a href="tem.php?act=mssj">名师设计</a></div>
+			<div class="danpgm"><a href="#">单品购买</a></div>
+			<div class="clear"></div>
+		</div>
+	<!--轮播图开始-->
+	
+		<div class="slider">
+		  <ul>
+		  <!--{if $imgpath}-->
+		   <!-- {foreach from=$imgpath item=id name=no}-->
+		    <li>
+		    	<a href="#" target="_blank"><img src="{$imgurl}{$id.imgpath}" alt="" width="300";height="300;"></a>
+		    	<div style="position: relative; height:88px;bottom:90px;color:#fff;font:14px 微软雅黑;background:#474646;opacity:0.5;padding: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$id.caption}
+		    	</div>
+		    </li>
+		   <!--{/foreach}--> 
+		  <!--{/if}-->
+		  </ul>
+	   </div>
+	
+	<!--轮播图结束-->
+		<div class="gwqd">
+				<table cellspacing="5" width="100%" style="font:13px 微软雅黑">
+					<tr height="43px">
+					<th></th>
+						<th>商品名</td>
+						<th>价格</td>
+						<th>数量</td>
+					</tr>
+			 <!--{if $shop}-->
+		    <!-- {foreach from=$shop item=id name=no}-->
+					<tr height="43px">
+						<td><input type="checkbox" name="goods_id" value="{$id.goods_id}" class="gds"></td>
+						<td>{$id.goods_name}</td>
+						<td>￥{$id.shop_price}</td>
+						<td><a href="javascript:;" class="jian">-</a>
+							 <input style="text-align:center;height:20px;width: 20px;font-size: 14px;" type="text" value="1" name="num" >
+							<a href="javascript:;" class="jia" goodsnumber="{$id.goods_number}">+</a></td>
+					</tr>
+			<!--{/foreach}--> 
+		    <!--{/if}-->
+		    	<tr height="43px">
+		    		<td><input type="checkbox" name="sjf" value="0" checked="checked" disabled="disabled"></td>
+		    		<td>设计费</td>
+		    		<td>￥20</td>
+		    		<td><a href="javascript:;" class="">-</a>
+							 <input style="text-align:center;height:20px;width: 20px;font-size: 14px;" type="text" value="1" name="num"  disabled="disabled">
+						<a href="javascript:;" class="" goodsnumber="{$id.goods_number}">+</a></td>
+		    	</tr>
+				</table>
+		</div>
+		<form action="tem.php?act=tem_pay" method="post" id="ChkFrom">
+		</form>
+	  <div class="zw"></div>
+	  <div class="mspay_bottom_bg">
+	  	<a href="javascript:;" style="font: bold 30px/60px 微软雅黑;color: #fff;" id="GoFrom"><div class="span_bg">去结算<img src="themesmobile/mobile/img/12.jpg" alt="" width="45" height="36"></div></a>
+	  </div>
+	  <script type="text/javascript" src="themesmobile/mobile/js/jquery-1.8.3.min.js"></script>
+	  <script type="text/javascript" src="themesmobile/mobile/js/yxMobileSlider.js"></script>
+	  <script>
+	    $(".slider").yxMobileSlider({width:640,height:520,during:3000})
+	    $(function(){
+	    $('.jian').click(function(){
+	   		var num = $(this).next().attr('value');
+	   		var newnum = num*1 - 1*1;
+	   		if(newnum < 1){
+	   			$(this).next().attr('value','1');
+	   		}else{
+	   			$(this).next().attr('value',newnum);
+	   		}
+	   	})
+
+
+	   	$('.jia').click(function(){
+	   		var num = $(this).prev().attr('value');
+	   		var goodsnumber = $(this).attr('goodsnumber');
+	   		var newnum = num*1 + 1*1;
+	   		if(newnum > goodsnumber){
+	   			$(this).prev().attr('value',goodsnumber);
+	   		}else{
+	   			$(this).prev().attr('value',newnum);
+	   		}
+	   	})
+
+	   	$('#GoFrom').click(function(){
+	   		var str ;
+	   		$('.gds').each(function(){
+	   			if($(this).attr('checked') == 'checked'){
+	   			$('#ChkFrom').append('<input type="hidden" value="'+$(this).parent().siblings().eq(2).children().eq(1).attr('value')+'" name="'+$(this).attr('value')+'">');
+	   			}
+	   		})
+	   		$('#ChkFrom').submit();
+	   	   })
+	    })
+	  </script>	
+
+	</body>
+</html>

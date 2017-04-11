@@ -1,0 +1,409 @@
+*
+{
+	margin:0px;
+	padding:0px;
+}
+a:link
+{
+	color:#000000; 
+	text-decoration:none;
+} 
+li
+{
+	list-style:none;
+}
+input
+{
+	font-size:18px;
+	outline:none;
+}
+body
+{
+	font-family:"微软雅黑";	
+}
+.top_bg
+{
+	width:100%;
+    height:50px;
+	background:#a81411;
+	overflow:hidden;
+}
+.jmy_bg
+{
+	width:18%;
+	height:50px;
+	float:left;
+	overflow:hidden;
+}
+.my_nei
+{
+	width:100%;
+	height:30px;
+	margin-top:10px;
+	overflow:hidden;
+}
+.my_nei span
+{
+	color:#fff;
+	position:relative;
+	top:-5px;
+	font:bold 16px/30px  微软雅黑;
+	margin-left:5px;
+}
+.my_nei img
+{
+	margin-top:5px;
+	margin-left:20px;
+}
+.input_bg
+{
+	width:60%;
+	height:40px;
+	float:left;
+	margin-top:5px;
+	overflow:hidden;
+}
+.input_bg input
+{
+	border:none;
+	width:80%;
+	height:100%;
+	float:left;
+	border-radius:0px 5px 5px 0px;
+	overflow:hidden;
+}
+.fdj
+{
+	width:20%; 
+	height:40px; 
+	background:blue;
+	float:left;
+	border-radius:5px 0px 0px 5px;
+	background:#fff;
+	border:none;
+	overflow:hidden;
+}
+.fdj img
+{
+	margin-top:9px;
+	margin-left:7px;
+}
+.cart_bg
+{
+	width:19%;
+	height:50px;
+	float:left; 
+	margin-left:2%;
+	overflow:auto;zoom:1;
+	
+	
+}
+.cart_bg span
+{
+	font:bold 16px/50px 微软雅黑;
+	color:#fff;
+}
+.cart_bg img
+{
+	
+	vaticla-align:center;
+}
+.banner1 img
+{
+	width:100%;margin-bottom:4%;
+}
+.banner
+{
+	
+	overflow:hidden; 
+	position:relative;
+	font-size:0;
+	border-bottom:3px solid #ccc;
+	padding-bottom:33%;
+}
+.b-img
+{
+	position:absolute; 
+	left:0; 
+	top:0;
+	overflow:auto;zoom:1;
+}
+.b-img a img
+{
+	display:block;
+	float:left;
+	width:22%;
+	margin-left:2%;
+}
+
+.bar-left
+{
+	 z-index:1;
+	 display:block;
+	 background:none;
+	 position:relative;
+}
+.bar-right
+{
+	 z-index:1; 
+	 display:block; 
+	 background:none; 
+	 position:relative;
+}
+.bar-left img
+{
+	 display:block; 
+	 width:10px; 
+	 height:21px; 
+	 position:absolute;
+	 top:40px;
+	 left:2px;
+}
+.bar-right img
+{
+	display:block; 
+	width:10px; 
+	height:21px; 
+	position:absolute;
+	top:40px; 
+	right:2px;
+}
+.bar-left .emcss
+{
+	 background-position:0px -10px;
+}
+.bar-right .emcss
+{
+	 background-position:-5px -10px;
+}
+div.banner1
+{
+	position:relative;
+}
+div.banner1 dl.shop
+{
+	position:absolute;
+	top:20%;
+	left:0;
+	overflow:auto;zoom:1;
+	
+}
+div.banner1 dl.shop dt img
+{
+	width:100%;
+	
+}
+div.banner1 dl.shop dt
+{
+	float:left;	
+	
+	width:44.5%;
+}
+div.banner1 dl.shop dd
+{
+	float:right;	
+	color:#fff;
+	width:52%;
+}
+div.banner1 dl.shop dd p
+{
+	font-size:0.5em;
+	margin-top:1%;
+	
+}
+div.banner1 dl.shop dd p img
+{
+	width:45%;
+	vertical-align:top;
+	
+	
+}
+#wrapper
+{
+	width:100%;
+	zoom:1;
+}
+#tab
+{
+	width:100%;
+	overflow:hidden;zoom:1;
+	margin-top:20px;
+}
+#tabList
+{
+	height:40px;
+}
+#tabList li
+{
+	float:left;
+	margin-left:1%;
+	color:#666;
+	text-align:center;
+	line-height:40px;
+	font-size:14px;
+	width:23%;
+	margin-right:1%;
+}
+#tabList li.current1
+{
+	border-bottom:5px solid #a81411;
+	color:#a81411;
+}
+#tabCont .conts
+{
+	overflow:hidden;zoom:1;
+	width:100%;
+	border-top:3px solid #ccc;
+}
+#tabCont .conts dl
+{
+	margin-top:2%;
+	overflow:hidden;
+}
+#tabCont .conts dl.pin2
+{
+	padding-top:2%;
+	border-top:3px solid #ccc;
+}
+#tabCont .conts dl dt
+{
+	float:left;
+	width:22%;
+	text-align:center;
+}
+#tabCont .conts dl dt span.weixin
+{
+	font-size:0.1em;
+		
+}
+#tabCont .conts dl dt img
+{
+	width:100%;
+	height:100%;
+}
+#tabCont .conts dl dd
+{
+	text-align:left;
+	float:left;
+}
+#tabCont .conts dl dd.one
+{
+	float:left;
+	padding-left:2%;
+	margin-top:2%;
+}
+#tabCont .conts dl dd.one img
+{
+	width:5%;
+	margin-left:2%;
+}
+#tabCont .conts dl dd.two
+{
+	float:right;
+	padding-right:1%;
+	margin-top:2%;
+}
+#tabCont .conts dl dd p
+{
+	color:#666;
+	font-size:0.6em;
+	margin-top:3%;
+}
+#tabCont .conts dl dd p.time
+{
+	margin-top:33%;
+	color:#999;
+}
+#tabCont .conts dl dt span.weixin
+{
+	font-size:8px;
+		
+}
+#tabCont .conts dl dd.server
+{
+	float:right;
+	padding-left:1%;
+	
+	width:85%;
+	
+	
+}
+#tabCont .conts dl dd.server p
+{
+	font-size:0.1em;
+}
+#tabCont .conts dl.onlyserver
+{	
+	overflow:auto;zoom:1;
+	
+}
+#tabCont .conts dl.onlyserver dt
+	{	
+		float:left;
+		margin-top:2%;
+		width:10%;
+		
+		
+	}
+#tabCont .conts dl.onlyserver dt img
+{	
+	float:left;
+	margin-left:1%;
+	
+	width:100%;
+		
+}
+/*选项卡*/
+@media screen and (max-width:320px){
+	
+	#tabCont .conts dl dt
+	{
+		float:left;
+		
+		width:16%;
+		
+	}
+	
+	#tabCont .conts dl dd p
+	{
+		
+		font-size:0.1em;
+		
+		
+	}
+	#tabCont .conts dl dd.one
+	{
+		
+		
+		margin-top:-2%;
+		padding-left:0.2%;
+		padding-top:0;
+		
+	}
+	
+	#tabCont .conts dl dd.two
+	{
+		margin-top:0;
+		padding-top:0;
+	}
+	#tabCont .conts dl dd p.time
+	{
+		margin-top:22%;
+		
+	}
+	#tabCont .conts dl dd.server p
+	{
+		font-size:8px;
+	}
+		
+}
+@media screen and (min-width:414px){
+	#tabCont .conts dl dd p
+	{
+		font-size:0.9em;
+		
+		
+		
+	}
+			
+}

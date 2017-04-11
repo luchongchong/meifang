@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $goods_list}
+ <form action="javascript:void(0)" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
+<ul class="pro_box cle product flex_in single_item" >
+<!--{foreach name=goods_list from=$goods_list item=goods_info}-->
+
+
+                <li>
+                {if $goods_info.is_sample==1}
+                    <a href="sample_info.php?id={$goods_info.goods_id}" class="">
+                    {else}
+                    <a href="{$goods_info.url}" class="">
+                    {/if}
+                    <img src="{$goods_info.goods_thumb}" alt="">
+                    <div style=" margin-bottom: 5px;font-size: 15px;">{$goods_info.goods_name}</div>
+                    <div >
+                        <ul>
+                            <li>{$goods_info.market_price}</li>
+                            <li><a class="footer-item add-cart" style="height:30px;text-align:center;line-height:30px;display: block;background-color:#c52021;color: #fff;font-size: .12rem;" href="javascript:void(0)" onClick="addToCart_quick({$goods_info.goods_id})"><p>立即购买</p></a>
+           </li>
+                        </ul>
+                   </div>
+                    </a>
+                </li>
+                <!--{/foreach}-->
+     </ul>
+
+</form>
+{else}
+<div class="new_prom2">
+<strong>抱歉没有了</strong>
+</div>
+{/if}

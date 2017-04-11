@@ -1,0 +1,55 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>{$page_title}</title>
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<link rel="stylesheet" type="text/css" href="themesmobile/68ecshopcom_mobile/css/public.css">
+<link rel="stylesheet" type="text/css" href="themesmobile/68ecshopcom_mobile/css/user.css">
+<script type="text/javascript" src="themesmobile/68ecshopcom_mobile/js/jquery.js"></script>
+{insert_scripts files='jquery.json.js,transport.js'}
+{insert_scripts files='common.js,utils.js'}
+
+	</head>
+<body style="background: rgb(235, 236, 237);">
+
+      <!----------------------------------header----------------------------------->
+      <header>
+      <div class="tab_nav">
+        <div class="header">
+          <div class="h-left"><a class="sb-back" href="javascript:history.back(-1)" title="返回"></a></div>
+          <div class="h-mid">{if $action eq 'profile'}个人设置{elseif  $action eq 'bonus'}我的红包{elseif $action eq 'order_list'}我的订单{elseif $action eq 'order_detail'}订单详情{elseif $action eq 'account_log' or $action eq 'account_deposit' or $action eq 'account_raply' or $action eq 'account_detail' or $action eq 'act_account' or $action eq 'pay'}资金管理{elseif $action eq 'address_list'}地址管理{elseif $action eq 'address'}地址管理{/if}</div>
+          <div class="h-right">
+            <aside class="top_bar">
+              <div onClick="show_menu();$('#close_btn').addClass('hid');" id="show_more"><a href="javascript:;"></a> </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+      </header>
+       	<!-- #BeginLibraryItem "/library/up_menu.lbi" --><!-- #EndLibraryItem --> <!--弹出菜单-->
+     
+<!--main-->        
+<div id="wrapper">
+  <div id="viewport">
+{if $action eq 'profile'}  {include file='library/user_welcome.lbi'}{/if}
+{if $action eq 'order_list'}  {include file='library/user_order_list.lbi'}{/if}
+{if $action eq 'bonus'}  {include file='library/user_bonus.lbi'}{/if}
+{if $action eq 'address_list'}  {include file='library/user_address_list.lbi'}{/if}
+{if $action eq 'order_detail'}{include file='library/user_order_detail.lbi'}{/if}
+
+{if $action eq 'address'}{include file='library/user_address.lbi'}{/if}
+
+{if $action eq "account_raply" || $action eq "account_log" || $action eq "act_account" || $action eq "account_deposit" || $action eq "account_detail"}{include file='library/user_account.lbi'}{/if}
+{if $action neq 'order_detail'}{if $action neq 'address_list'}{if $action neq 'address'}
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/footer_nav.lbi" --><!-- #EndLibraryItem -->
+{/if}{/if}{/if}
+</div>
+</div>
+
+</body>
+</html>

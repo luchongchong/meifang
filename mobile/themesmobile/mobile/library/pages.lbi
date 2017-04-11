@@ -1,0 +1,15 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $pager}
+<section class="list-pagination">
+    <div style="" class="pagenav-wrapper" id="J_PageNavWrap">
+      <div class="pagenav-content">
+        <div class="pagenav" id="J_PageNav">
+
+          <div class="p-prev p-gray"  style="height:30px;line-height:30px; text-align:center;"> <a href="{$pager.page_prev}">{$lang.page_prev}</a> </div>
+          
+         <div class="p-next" style="height:30px;line-height:30px; text-align:center;" > <a  href="{$pager.page_next}">{$lang.page_next}</a> </div>
+		</div>
+      </div>
+    </div>
+  </section>
+{/if}

@@ -1,0 +1,52 @@
+<div class="has_tab_box">
+		{if $bonus}{foreach from=$bonus item=item name=bonus}
+		<ul>
+				<li>
+					<span>{$lang.bonus_sn}</span>
+                    <em>{$item.bonus_sn|default:N/A}</em>
+                </li>
+                    <li>
+                <span>{$lang.bonus_name}</span>
+					<em>{$item.type_name}</em>
+                    </li>
+                     <li>
+                     <span>{$lang.bonus_amount}</span>
+					<em class="pice" style=" color:#F30;">{$item.type_money}</em>
+                    </li>
+                     <li>
+                     <span>{$lang.min_goods_amount}</span>
+					<em>{$item.min_goods_amount}</em>
+                    </li>
+                     <li>
+                     <span>{$lang.bonus_end_date}</span>
+					<em style=" color:#F90">{$item.use_enddate}</em>
+                    </li>
+                     <li>
+                     <span>{$lang.bonus_status}</span>
+					<em style=" color:#69C">{$item.status}</em>
+                    </li>
+				</ul>
+        	{/foreach}
+		{else}
+		<p class="empty">{$lang.user_bonus_empty}</p>
+		{/if}
+		{if $bonus}{include file='library/pages.lbi'}{/if}
+	<form name="addBouns" action="user.php" method="post" onSubmit="return addBonus()" class="add_bonus">
+     <section class="innercontent">
+     <h2>添加红包</h2>
+   <dl>
+   <dt>{$lang.bonus_number}{$lang.colon}</dt>
+   <dd><input type="text" name="bonus_sn" value="" id="bonus_sn" class="c-f-text" size="30" /></dd>
+   </dl>
+   <span style=" margin-top:10px; display:block">
+		<input type="submit" name="submit"  class="c_btn_oran" value="{$lang.add_user_bonus}" />
+        <input type="hidden" name="act" value="act_add_bonus"/>
+</span>
+    </section>
+    </form>
+</div>
+<script type="text/javascript">
+{foreach from=$lang.profile_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/meifang/!svn/ver/989/trunk/03_Source/mobile/includes/modules/payment/WxpayAPI_php_v3/lib
+END
+WxPay.Config.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/meifang/!svn/ver/914/trunk/03_Source/mobile/includes/modules/payment/WxpayAPI_php_v3/lib/WxPay.Config.php
+END
+WxPay.Notify.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/meifang/!svn/ver/989/trunk/03_Source/mobile/includes/modules/payment/WxpayAPI_php_v3/lib/WxPay.Notify.php
+END
+WxPay.Api.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/meifang/!svn/ver/989/trunk/03_Source/mobile/includes/modules/payment/WxpayAPI_php_v3/lib/WxPay.Api.php
+END
+WxPay.Data.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/meifang/!svn/ver/989/trunk/03_Source/mobile/includes/modules/payment/WxpayAPI_php_v3/lib/WxPay.Data.php
+END
+WxPay.Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/meifang/!svn/ver/910/trunk/03_Source/mobile/includes/modules/payment/WxpayAPI_php_v3/lib/WxPay.Exception.php
+END

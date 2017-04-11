@@ -1,0 +1,176 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="detail_top">
+<div class="lan">
+<dl>
+<dt class="dingdan_1"></dt>
+<dd><span>{$order.pay_status}&nbsp;&nbsp;&nbsp;&nbsp;卖家{$order.shipping_status}</span><br>
+    <span class="dingdanhao">{$lang.detail_order_sn}&nbsp;:&nbsp;{$lang.colon}{$order.order_sn}</span><br>
+    <span>{if $order.shipping_fee > 0}{$lang.shipping_fee}{$lang.colon}&nbsp;:{$order.formated_shipping_fee}{/if}</span>
+</dd>
+</dl>
+</div>
+<!--如果没有支付-支付方式-->
+{if $order.order_amount gt 0}
+<dl style="border-bottom:1px solid #eeeeee">
+<dt style=" position:absolute;" class="dingdan_2"></dt>
+<dd style=" margin-left:30px;"><span class="zhif">{$lang.select_payment}&nbsp;:&nbsp;{$lang.colon}{$order.pay_name}</span>
+	<span class="zhif">{$lang.order_amount}&nbsp;:&nbsp;{$lang.colon}{$order.formated_order_amount}</span>
+	<span class="zhif">{$order.pay_desc}</span>
+    <!--
+	{if $payment_list}
+		<div class="other_payment">
+        {$lang.change_payment}{$lang.colon}
+			<form name="payment" method="post" action="user.php">
+			
+				<select name="pay_id">
+				{foreach from=$payment_list item=payment}
+				<option value="{$payment.pay_id}">
+				{$payment.pay_name}({$lang.pay_fee}:{$payment.format_pay_fee})
+				</option>
+				{/foreach}
+				</select>
+				<input type="submit" value="{$lang.button_submit}" style="margin-top:30px;width:40%;"/>
+				<input type="hidden" name="act" value="act_edit_payment">
+				<input type="hidden" name="order_id" value="{$order.order_id}">
+			</form>
+		</div> 
+		{/if}
+      -->  
+         {if $iswei}
+                {if $order.pay_name == "微信支付"}
+<a href="./weixinpay.php?oid={$order.order_id}" class="zhifu" style=" color:#fff; font-size:16px;">微支付</a>
+                {elseif $order.pay_name == "支付宝"}
+                
+                      <a href="././pay/alipayapi.php?out_trade_no={$order.order_sn}&total_fee={$order.order_amount}" class="zhifu" style=" color:#fff; font-size:16px;">去支付宝支付</a>
+                       {else} 
+                {/if}
+                {else}
+				 <a href="././pay/alipayapi.php?out_trade_no={$order.order_sn}&total_fee={$order.order_amount}" class="zhifu" style=" color:#fff; font-size:16px;">去支付宝支付</a>
+                {/if}
+     
+        </dd>
+</dl>
+{/if}
+<!--收货信息-->
+<dl>
+<dt class="dingdan_3"></dt>
+<dd><h3>{$lang.consignee_name}&nbsp;:{$lang.colon}&nbsp;{$order.consignee}<em>{$order.tel}</em></h3>
+{if $order.exist_real_goods}
+<div class="adss">
+{$lang.detailed_address}{$lang.colon}&nbsp;:&nbsp;{$order.address}{if $order.zipcode}[{$lang.postalcode}{$lang.colon}{$order.zipcode}]{/if}
+</div>
+{/if}
+		</dd>
+</dl>
+<!--物流信息-->
+{if $kuaidi.context}
+<dl style="border-top:1px solid #eeeeee; margin-top:10px;">
+<dt class="dingdan_4"></dt>
+<dd><h3>物流信息</h3>
+<p>{if $kuaidi.context}{$kuaidi.context}{else}正在查询...{/if}</p>
+<strong>{if $kuaidi.time}{$kuaidi.time}{/if}</strong>
+
+		</dd>
+</dl>
+{/if}
+</div>
+
+<!---订单-->
+<div class="ord_list1">
+<h2><img src="themesmobile/68ecshopcom_mobile/images/dianpu.png">订单商品</h2>
+{foreach from=$goods_list item=goods name=goods_list}
+<div class="ord_dingdan">
+ <div class="ord_img"><img src="{$goods.goods_thumb}"></div>
+ <div class="ord_name">
+ <p>{if $goods.goods_id gt 0 && $goods.extension_code neq 'package_buy'}
+			<a href="goods.php?id={$goods.goods_id}" target="_blank">{$goods.goods_name|truncate:40:"..."}</a>
+			{elseif $goods.goods_id gt 0 && $goods.extension_code eq 'package_buy'}
+			<span class="name">{$goods.goods_name}</span>
+			<span class="package_goods_list">{foreach from=$goods.package_goods_list item=package_goods_list name=package_goods_list}<em>{$package_goods_list.goods_name}</em>{/foreach}</span>
+						{else}
+							{$goods.goods_name}
+						{/if}
+                        </p>
+    <span>
+								{if $goods.goods_attr}{$goods.goods_attr}{/if}
+								{if $goods.is_shipping}<em class="carriage_free">{$lang.carriage_free}</em>{/if}
+								{if $goods.parent_id gt 0}<em class="accessories">{$lang.accessories}</em>{/if}
+								{if $goods.is_gift gt 0}<em class="largess">{$lang.largess}</em>{/if}
+							</span>
+    <strong> {$goods.goods_price}&nbsp;x&nbsp;{$goods.goods_number}</strong>
+   </div>                     
+       </div>
+        <div class="xiaoji">小计：<strong>{$goods.subtotal}</strong></div>
+{/foreach}
+
+<!--价格信息--->
+<div class="jiage">
+						<p>{$lang.goods_all_price}
+						{if $order.extension_code eq "group_buy"}{$lang.gb_deposit}{/if}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_goods_amount}</span>
+						{if $order.discount gt 0}
+						- {$lang.discount}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_discount}</span>
+						{/if}
+						{if $order.tax gt 0}
+						+ {$lang.tax}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_tax}</span>
+						{/if}
+						{if $order.shipping_fee > 0}
+						+ {$lang.shipping_fee}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_shipping_fee}</span>
+						{/if}
+						{if $order.insure_fee > 0}
+						+ {$lang.insure_fee}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_insure_fee}</span>
+						{/if}
+						{if $order.pay_fee > 0}
+						+ {$lang.pay_fee}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_pay_fee}</span>
+						{/if}
+						{if $order.pack_fee > 0}
+						+ {$lang.pack_fee}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_pack_fee}</span>
+						{/if}
+						{if $order.card_fee > 0}
+						+ {$lang.card_fee}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_card_fee}</span>
+						{/if}
+						{if $order.money_paid > 0} - {$lang.order_money_paid}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_money_paid}</span>{/if}
+						{if $order.surplus > 0} - {$lang.use_surplus}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_surplus}</span>{/if}
+						{if $order.integral_money > 0} - {$lang.use_integral}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_integral_money}</span>{/if}
+						{if $order.bonus > 0} - {$lang.use_bonus}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_bonus}</span>{/if}</p>
+						<p>{$lang.order_amount}{$lang.colon}&nbsp;:&nbsp;<span class="price1">{$order.formated_order_amount}</span>{if $order.extension_code eq "group_buy"}{$lang.notice_gb_order_amount}{/if}</p>
+						
+					</div>
+</div>
+<!--其他信息-->  
+<section class="qita">
+	<div class="subNav">|&nbsp;其他信息</div>
+    <div class="navContent"> 
+    <ul>
+{if $order.shipping_id > 0}<li class="first">{$lang.shipping}{$lang.colon}&nbsp;:&nbsp;{$order.shipping_name}</li>{/if}
+			{if $order.pay_name}<li{if $order.shipping_id <= 0} class="first"{/if}>{$lang.payment}{$lang.colon}&nbsp;:&nbsp;{$order.pay_name}</li>{/if}
+			{if $order.pack_name}<li>{$lang.use_pack}{$lang.colon}&nbsp;:&nbsp;{$order.pack_name}</li>{/if}
+			{if $order.card_name}<li>{$lang.use_card}{$lang.colon}&nbsp;:&nbsp;{$order.card_name}</li>{/if}
+			{if $order.card_message}<li>{$lang.bless_note}{$lang.colon}&nbsp;:&nbsp;{$order.card_message}</li>{/if}
+			{if $order.integral > 0}<li>{$lang.use_integral}{$lang.colon}&nbsp;:&nbsp;{$order.integral}</li>{/if}
+			{if $order.inv_payee && $order.inv_content}
+				<li>{$lang.invoice_title}{$lang.colon}&nbsp;:&nbsp;{$order.inv_payee}</li>
+				<li>{$lang.invoice_content}{$lang.colon}&nbsp;:&nbsp;{$order.inv_content}</li>
+			{/if}
+			{if $order.postscript}<li>{$lang.order_postscript}{$lang.colon}&nbsp;:&nbsp;{$order.postscript}</li>{/if}
+			{if $order.how_oos_name}<li>{$lang.booking_process}{$lang.colon}&nbsp;:&nbsp;{$order.how_oos_name}</li>{/if}
+            </ul>
+       </div>      
+</section>
+<!--end--> 
+    
+<script type="text/javascript">
+$(function(){
+	$(".subNav").click(function(){
+		$(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd");
+		$(this).toggleClass("currentDt").siblings(".subNav").removeClass("currentDt");
+		$(this).next(".navContent").slideToggle(300).siblings(".navContent").slideUp(500);
+	})	
+})
+</script>
+<!--底部-->
+{if $kuaidi.context}
+<div style=" width:100%; height:50px;"></div>
+<div class="list_footer">
+<a href="kuaidi_list.php?order_id={$order.order_id}">查看物流</a>
+</div>
+{/if}

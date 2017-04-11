@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>美美商城</title>
+	<div class="JQ_include" src="include/meta.html"></div>
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/pro.css">
+</head>
+<body class="category">
+	<header>
+		<a href="javascript:history.go(-1)" class="i-back iconfont">&#xe624;</a>
+		<h1>
+			<form action="" class="search-form">
+				<i class="iconfont">&#xe600;</i>
+				<input type="text">
+			</form>
+		</h1>	
+	</header>
+	<section>
+		<ul class="hd">
+			<li class="active">场所</li>
+			<li>材质</li>
+			<li>风格</li>
+		</ul>
+		<div class="bd cle">
+			<ul class="leftd">
+				<li class="active">儿童房</li>
+				<li>婚房</li>
+				<li>卧室</li>
+				<li>书房</li>
+				<li>背景墙</li>
+			</ul>
+			<ul class="pro_box cle">
+				<li>
+					<a href="pro-detail.html" class="">
+						<img src="../img/temp_pro1.jpg" alt="">
+						<p class="name">605时尚简约605时尚简约</p>
+					</a>
+				</li>
+				<li>
+					<a href="pro-detail.html" class="">
+						<img src="../img/temp_pro1.jpg" alt="">
+						<p class="name">605时尚简约</p>
+					</a>
+				</li>
+				<li>
+					<a href="pro-detail.html" class="">
+						<img src="../img/temp_pro1.jpg" alt="">
+						<p class="name">605时尚简约</p>
+					</a>
+				</li>
+				<li>
+					<a href="pro-detail.html" class="">
+						<img src="../img/temp_pro1.jpg" alt="">
+						<p class="name">605时尚简约</p>
+					</a>
+				</li>
+				<li>
+					<a href="pro-detail.html" class="">
+						<img src="../img/temp_pro1.jpg" alt="">
+						<p class="name">605时尚简约</p>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="">
+						<img src="../img/temp_pro1.jpg" alt="">
+						<p class="name">605时尚简约</p>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="">
+						<img src="../img/temp_pro1.jpg" alt="">
+						<p class="name">605时尚简约</p>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="">
+						<img src="../img/temp_pro1.jpg" alt="">
+						<p class="name">605时尚简约</p>
+					</a>
+				</li>
+			</ul>
+			
+		</div>
+	</section>
+    <script src="../js/config.js"></script>
+	<script src="../js/lib/jquery-1.9.1.min.js"></script>
+	<script src="loadHtml.js"></script>
+	<script src="../js/lib/template.min.js"></script>
+	<script src="dist/swiper.min.js"></script>
+    <script src="js/plug.js"></script>
+    <script src="../js/global.js"></script>
+	<script src="../js/worldunion.js"></script>
+<script>
+	$(function(){
+		var w, banner_h, new_h;
+		w = $(window).width();
+		if(w < 750){
+			$('.swiper-container').width(w);
+			
+			$('#banner .swiper-slide img, #banner .banner-page').width(w);
+			setTimeout(function(){
+				banner_h = $('#banner .swiper-slide img').height();
+				$('#banner').height(banner_h);
+			},300)
+
+			$('#newShow .swiper-slide .modle, .new-page').width(w);
+			setTimeout(function(){
+				new_h = $('#newShow .swiper-slide .modle').height();
+				$('#newShow').height(new_h);
+			},300)
+		}
+	})
+
+	var mySwiper = new Swiper('#banner',{
+	  	autoplay : 5000,
+	    pagination: '.banner-page',
+	    loop:true,
+	    grabCursor: true,
+	    paginationElementClass:'page-switch',
+	    paginationActiveClass:'page-active',
+	    paginationClickable: true
+	});
+</script>
+</body>
+</html>

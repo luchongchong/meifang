@@ -1,0 +1,27 @@
+.bg_b5{
+	background-color:#d5d5d5;
+}
+.wel{
+	color: #767373;
+	padding: .05rem .1rem;
+	font-size: .12rem;
+}
+.login-form{
+	padding-left: .1rem;
+	padding-right: .1rem;
+}
+.login-form .items{
+	margin-bottom: .1rem;
+}
+.login-form .items input{
+	width: 100%;
+	border-color: #fff;
+}
+.login-form .options .btn {
+	background-color: #d04d4d;
+	padding-top: 0;
+	padding-bottom: 0;
+	height: .3rem;
+	line-height: .3rem;
+	font-size: .15rem;
+}

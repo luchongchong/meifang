@@ -1,0 +1,71 @@
+ {if $goods_list}
+  <form name="theForm" method="post" action="">
+ <div id="viewport" class="shouchang">
+        <ul id="favoriteList">
+          {foreach from=$goods_list item=goods name=goods_list}
+          <li>
+            
+              <div class="imgurl"><a href="{$goods.url}"><img src="{$goods.goods_thumb}"></a></div>
+              <a href="{$goods.url}">
+              <div class="order_info">
+                <dl>
+                  <dt>{$goods.goods_name}</dt>
+                  <dd>售价：<strong>{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</strong></dd>
+                </dl>
+              </div>
+              </a>
+              <div style="" class="dingdancaozuo" > <a href="user.php?act=delete_collection&collection_id={$goods.rec_id}"><img src="themesmobile/68ecshopcom_mobile/images/out.png"></a></div>
+          </li>
+        {/foreach}
+        </ul>
+</div>
+
+</form>
+{else}
+<div class="font12">{$lang.collection_empty}</div>
+{/if}
+{if $goods_list}
+<div style="background:#FFF; border-top:1px solid #eeeeee">
+{include file='library/pages.lbi'}
+</div>
+{/if} 
+<script language="JavaScript">
+	var elements = document.forms['theForm'].elements;
+	var url = '{$url}';
+	var u   = '{$user_id}';
+	/**
+	 * 生成代码
+	 */
+	function genCode()
+	{
+			// 检查输入
+			if (isNaN(parseInt(elements['goods_num'].value)))
+			{
+					alert('{$lang.goods_num_must_be_int}');
+					return;
+			}
+			if (elements['goods_num'].value < 1)
+			{
+					alert('{$lang.goods_num_must_over_0}');
+					return;
+			}
+
+			// 生成代码
+			var code = '\<script src=\"' + url + 'goods_script.php?';
+			code += 'need_image=' + elements['need_image'].value + '&';
+			code += 'goods_num=' + elements['goods_num'].value + '&';
+			code += 'arrange=' + elements['arrange'].value + '&';
+			code += 'charset=' + elements['charset'].value + '&u=' + u;
+			code += '\"\>\</script\>';
+			elements['code'].value = code;
+			elements['code'].select();
+			if (Browser.isIE)
+          {
+              window.clipboardData.setData("Text",code);
+          }
+      }
+			var compare_no_goods = "{$lang.compare_no_goods}";
+			var btn_buy = "{$lang.btn_buy}";
+			var is_cancel = "{$lang.is_cancel}";
+			var select_spe = "{$lang.select_spe}";
+  </script>

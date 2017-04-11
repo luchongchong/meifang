@@ -1,0 +1,267 @@
+footer.footer a:nth-child(5){
+	  color: #c52021;
+}
+.store-hd{
+	background-color: #4b4949;
+	font-size: .15rem;
+	color: #fff;
+	padding-left: .06rem;
+}
+.storelist { position:relative; background-color: #fff;}
+.storelist .more{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	width: 16%;
+	height: .46rem;
+	line-height: 1;
+	color: #3f3f3f;
+	text-align: center;
+	z-index: 2;
+}
+.storelist .more .iconfont{ font-size: .3rem;}
+.storelist ul li{
+	float: left;
+	width: 36.8%;
+	margin: .1rem .1rem .06rem;
+}
+.storelist ul li img{
+	width: 100%;
+}
+.storelist li p{
+	text-align: center;
+	font-size: .16rem;
+}
+
+.map{ background-color: #eae7e7;}
+.map-hd{
+	border-bottom: 1px solid #dddbdb;
+	padding-left: .1rem;
+}
+
+/*divselect*/
+.sel-address {margin-top: .1rem;}
+.sel-address .txt{
+	float: left;
+	display: inline-block;
+	padding-left: .08rem;
+}
+.sel{
+    position:relative; 
+    float:left;
+    width:25%; 
+    margin-left: 3px;
+    background-color: #fff;
+}
+.sel i{
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    color: #9fa0a0; 
+    font-size: 12px;
+}
+.sel label.sel-skin{
+    width: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    display:block; 
+    cursor:pointer;
+    position: relative;
+    z-index: 4;
+}
+.sel ul{
+	width: 100%;
+    border: 1px solid #ccc;
+    position:absolute; 
+    z-index:2; 
+    display:none;
+    background-color: #fff;
+    margin-top: -1px;
+    max-height: 240px;
+    overflow-y: auto; 
+}
+.sel ul li{
+  height: 34px; 
+  line-height: 34px;
+  padding-left: 4px;
+  padding-right: 4px;
+  cursor: pointer;
+}
+.map-box{
+	border: 1px solid #b0adac;
+	margin: .1rem auto;
+	width: 92%;
+	height: 240px;
+}
+.store-list li{
+	position: relative;
+	font-size: .18rem;
+}
+.store-list li .order{
+	position: absolute;
+	top: 0;
+	left: .14rem;
+}
+.store-list li p{
+	padding-left: .3rem;
+}
+.store-list li p a{ color: #036eb8;}
+.store-list li p.txt{
+	font-size: .12rem;
+	color: #9fa0a0;
+}
+
+
+
+
+
+
+
+
+/*
+ 标签部分的样式
+ */
+.tab-div {
+  background: #fff;
+  border: 1px solid #900;
+  margin: 0 0 10px 0;
+  padding: 1px;
+}
+#tabbar-div {
+  border-bottom: 2px solid red;
+  padding-left: 10px;
+  height: 40px;
+  line-height:40px;
+  padding-top: 1px;
+}
+
+#tabbar-div p {
+  margin: 2px 0 0 0;
+}
+
+.tab-front {
+  line-height: 20px;
+  padding: 4px 15px 4px 18px;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.tab-back {
+  line-height: 20px;
+  padding: 4px 15px 4px 18px;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.tab-hover {
+  color: #FFF;
+  background: #94C9D3;
+  line-height: 20px;
+  padding: 4px 15px 4px 18px;
+  border-right: 1px solid #FFF;
+  cursor: hand;
+  cursor: pointer;
+}
+
+#tabbody-div {
+  padding: 10px;
+  background: #FFF;
+}
+
+#tabbody-div img {
+  vertical-align: middle;
+}
+
+
+
+
+
+.imageRotation{
+    height:270px;
+    width:570px;
+    overflow:hidden;  /*--超出容器的所有元素都不可见--*/
+    position:relative;  /*--相对定位--*/
+    border:10px solid #eee;
+    bodrer-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    }
+/*-------------图片容器---------------*/
+.imageBox{
+    position:absolute;  /*--固定定位--*/
+    height:270px;
+    top:0px;
+    left:0px;
+    overflow:hidden;
+    }
+.imageBox img {
+    display:block;
+    height:270px;
+    width:570px;
+    float:left;
+    border:none;
+    }
+/*-------------标题容器---------------*/
+.titleBox{
+    position:absolute;  /*--固定定位--*/
+    bottom:0px;
+    width:570px;
+    height:40px;
+    overflow:hidden;
+    }
+.titleBox p{
+    position:absolute;   /*--固定定位--*/
+    bottom:-40px;
+    width:550px;
+    height:40px;
+    margin:0px;
+    padding:0px 10px;
+    line-height:40px;
+    z-index:1;
+    background-color:#000;
+    color:#fff;
+    font-family:"微软雅黑","yahei";
+    opacity:0.5;
+    -moz-opacity:0.5;
+    -webkit-opacity:0.5;
+    filter:alpha(opacity=50);
+    }
+.titleBox p span{
+    opacity:1;
+    -moz-opacity:1;
+    -webkit-opacity:1;
+    filter:alpha(opacity=100);
+    }
+.titleBox p.active{
+    bottom:0px;
+    }
+/*-------------图标容器---------------*/
+.icoBox{
+    position:absolute;  /*--固定定位--*/
+    bottom:14px;
+    right:15px;
+    width:76px;
+    height:12px;
+    text-align:center;
+    line-height:40px;
+    z-index:2;
+    }
+.icoBox span{
+    display:block;
+    float:left;
+    height:12px;
+    width:12px;
+    margin-left:3px;
+    overflow:hidden;
+    background:url("images/ico.png") 0px 0px no-repeat;
+    cursor:pointer;
+    }
+.icoBox span.active {
+    background-position:0px -12px;
+    cursor:default;
+    }

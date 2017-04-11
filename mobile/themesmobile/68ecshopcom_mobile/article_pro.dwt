@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>{$page_title}</title>
+	<meta name="Keywords" content="{$keywords}" />
+	<meta name="Description" content="{$description}" />
+
+<link rel="stylesheet" type="text/css" href="themesmobile/68ecshopcom_mobile/css/category.css">
+	<link rel="stylesheet" href="themesmobile/68ecshopcom_mobile/css/article.css">
+{insert_scripts files='common.js,utils.js'}
+
+	</head>
+<body >
+<div class="page-service-exchange">
+<div id="Cheader" style="">
+  <div id="header" class="header_03">
+    <div class="back"> <a href="./" class="arrow">首页</a> </div>
+    <div class="tit" style="">
+      <h3>文章详情</h3>
+    </div>
+    <div class="nav">
+      <ul>
+        <li class="cart"> <a href="flow.php">购物车</a> <span id="ECS_CARTINFO" class="ECS_CARTINFO">{insert name='cart_info'}</span> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="backlist"><a href="javascript:void(0)" class="b"><span>{$article.title|escape:html} </span></a></div>
+<div class="pagecontent">
+             {if $article.content}
+			{$article.content}
+			{else}
+			{$lang.content_empty}
+			{/if}
+</div>
+</div>
+
+  
+</body>
+</html>

@@ -1,0 +1,25 @@
+
+<div id="tbh5v0">
+<div id="user_wdpj_2">
+  {if $comment_list}
+		{foreach from=$comment_list item=message key=key name=message_list}
+            <div class="pingjia">
+            <dl>
+            <dt><img src="{$message.goods_thumb}"></dt>
+            <dd>{$message.cmt_name}</dd>
+            </dl>
+            <p class="pj">评价：{$message.content|escape}</p>
+           {if $message.reply_content}
+					<p class="hf">管理员回复：&nbsp;{$message.reply_content}</p>
+			{/if}
+            <div class="time">
+          {$message.formated_add_time}<a href="user.php?act=del_cmt&amp;id={$message.comment_id}" title="{$lang.drop}" onclick="if (!confirm('{$lang.confirm_remove_msg}')) return false;"><img src="themesmobile/68ecshopcom_mobile/images/out.png"></a>
+           </div>
+         </div>
+          {/foreach}
+		{include file='library/pages.lbi'}
+		{else}
+            <div class="font12">{$lang.no_comments}</div>
+            {/if}
+</div>
+</div>

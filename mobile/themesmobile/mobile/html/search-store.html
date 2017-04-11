@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>业务员系统</title>
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+</head>
+<body>
+<section class="container">
+    <form class="serach-form serach-store-form">
+        <div class="items js-txt-empty">
+            <i class="search_icon"></i>
+            <span class="val">
+                <input type="text" id="searchStore" placeholder="输入零售商名称">
+            </span>
+        </div>
+        <a href="shopkeeper-join.html" class="shopkeeper-join"></a>
+    </form>
+</section>
+<section>
+    <div class="box-tips serach-store-result">附近现有2家零售商</div>
+    <section class="container near-shop-list">
+        <ul class="base_list">
+            <li>
+                <div class="list_left">
+                    <div class="store-picture">
+                        <img src="../images/store-temp.jpg">
+                    </div>
+                    <div class="store-msg">
+                        <div class="name">天天来便利店</div>
+                        <!-- <div class="tel"><i></i><span>15335166666</span></div> -->
+                        <address class="address"> 应天大街文体路210号 </address>
+                    </div>
+                </div>
+                <div class="list_right">
+                    <div class="store-area">南京.建邺</div>
+                    <span class="distance"><i></i>588m</span>
+                </div>
+            </li>
+            <li>
+                <div class="list_left">
+                    <div class="store-picture">
+                        <img src="../images/store-temp.jpg">
+                    </div>
+                    <div class="store-msg">
+                        <div class="name">天天来便利店</div>
+                        <!-- <div class="tel"><i></i><span>15335166666</span></div> -->
+                        <address class="address"> 应天大街文体路210号 </address>
+                    </div>
+                </div>
+                <div class="list_right">
+                    <!-- <div class="store-area">南京.建邺</div> -->
+                    <span class="distance"><i></i>588m</span>
+                </div>
+            </li>
+            <li>
+                <div class="list_left">
+                    <div class="store-picture">
+                        <img src="../images/store-temp.jpg">
+                    </div>
+                    <div class="store-msg">
+                        <div class="name">天天来便利店</div>
+                        <!-- <div class="tel"><i></i><span>15335166666</span></div> -->
+                        <address class="address"> 应天大街文体路210号 </address>
+                    </div>
+                </div>
+                <div class="list_right">
+                    <!-- <div class="store-area">南京.建邺</div> -->
+                    <span class="distance"><i></i>588m</span>
+                </div>
+            </li>
+        </ul>
+    </section>
+</section>
+<section class="sidebar search-side">
+    <div class="box-tips">历史记录</div>
+    <ul class="search-history" id="searchHistory">
+        <li class="no-histoty"><img src="../images/no.png" /><p>暂无历史记录</p></li>
+    </ul>
+</section>
+
+<script src="../js/zepto.min.js"></script>
+<script src="../js/plug.js"></script>
+<script src="../js/global.js"></script>
+<script src="../js/search-store.js"></script>
+</body>
+</html>
