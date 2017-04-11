@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/1082/trunk/03_Source/weixinpay/WxPayPubHelper/cacert
+END
+apiclient_key.pem
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/meifang/!svn/ver/1082/trunk/03_Source/weixinpay/WxPayPubHelper/cacert/apiclient_key.pem
+END
+apiclient_cert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/meifang/!svn/ver/1082/trunk/03_Source/weixinpay/WxPayPubHelper/cacert/apiclient_cert.pem
+END
+apiclient_cert.p12
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/meifang/!svn/ver/1082/trunk/03_Source/weixinpay/WxPayPubHelper/cacert/apiclient_cert.p12
+END
+rootca.pem
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/meifang/!svn/ver/1082/trunk/03_Source/weixinpay/WxPayPubHelper/cacert/rootca.pem
+END
