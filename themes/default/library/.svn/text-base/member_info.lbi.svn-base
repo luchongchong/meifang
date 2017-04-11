@@ -1,0 +1,11 @@
+<div id="append_parent"></div>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $user_info}
+{$lang.hello}，<font class="f4_b">{$user_info.username}</font>, {$lang.welcome_return}！
+<a href="user.php">{$lang.user_center}</a>|
+ <a href="user.php?act=logout">{$lang.user_logout}</a>
+{else}
+ {$lang.welcome}&nbsp;&nbsp;&nbsp;&nbsp;
+    欢迎登陆美房美邦！<a href="./user.php?act=login" class="c-red">请登录</a>
+ <a href="./user.php?act=register">免费注册</a>
+{/if}

@@ -1,0 +1,244 @@
+*
+{
+	margin:0px;
+	padding:0px;
+}
+a:link
+{
+	
+	text-decoration:none;
+} 
+li
+{
+	list-style:none;
+}
+input
+{
+	font-size:18px;
+	outline:none;
+}
+body
+{
+	font-family:"微软雅黑";
+	font-size:14px;	
+}
+.top_bg
+{
+	width:100%;
+    
+	
+	overflow:hidden;
+}
+
+.mendian_contents
+{
+	width:1200px;
+	margin:0 auto;
+	margin-top:20px;
+	overflow:hidden;
+	zoom:1;
+	
+}
+.mendian_contents .left 
+{
+	width:191px;
+	text-align:center;
+	float:left;
+}
+.mendian_contents .left dl
+{
+	margin-top:10px;
+	
+}
+.mendian_contents .left dd 
+{
+	margin-top:10px;
+}
+.mendian_contents .right 
+{
+	
+	
+	float:left;
+	margin-left:10%;
+	
+}
+
+div.banner1
+{
+	
+	overflow:auto;
+	zoom:1;
+}
+div.banner1 dl.shop dd
+{
+	
+	float:left;
+	color:#999;
+	
+}
+div.banner1 .pro-hd-left
+{
+	
+	float:right;
+	
+	
+	
+	
+}
+
+
+div.banner1 dl.shop dd p
+{
+	font-size:14px;
+	margin-top:10%;
+	
+}
+div.banner1 dl.shop dd p img
+{
+	/*width:45%;*/
+	vertical-align:top;
+	
+	
+}
+#wrapper
+{
+	margin-top:20px;
+	width:850px;
+	zoom:1;
+	border:1px solid #ccc;
+	background:#f7f8f8;
+}
+#tab
+{
+	width:850px;
+	overflow:hidden;zoom:1;
+	/*margin-top:20px;*/
+}
+/*#tabList
+{
+	height:40px;
+}*/
+#tabList li
+{
+	float:left;
+	
+	color:#666;
+	text-align:center;
+	line-height:40px;
+	font-size:14px;
+	width:23%;
+	
+	border:1px solid #ccc;
+	border-top:0;
+	border-left:0;
+	
+}
+#tabList li.current1
+{
+	border-top:1px solid #a81411;
+	color:#a81411;
+}
+#tabCont .conts
+{
+	overflow:hidden;zoom:1;
+	width:99%;
+	
+	padding:5px;
+}
+#tabCont .conts dl
+{
+	margin-top:2%;
+	overflow:hidden;
+}
+#tabCont .conts dl.pin1
+{
+	padding-top:2%;
+	
+}
+#tabCont .conts dl.pin2
+{
+	padding-top:2%;
+	
+}
+#tabCont .conts dl dt
+{
+	float:left;
+	
+	text-align:center;
+}
+
+#tabCont .conts dl dt img
+{
+	padding:5px;
+	height:100%;
+}
+#tabCont .conts dl dd
+{
+	text-align:left;
+	float:left;
+}
+#tabCont .conts dl dd.one
+{
+	float:left;
+	padding-left:2%;
+	/*margin-top:2%;*/
+}
+#tabCont .conts dl dd.one p
+{
+	
+	
+	/*margin-left:20%;*/
+}
+#tabCont .conts dl dd.two
+{
+	float:left;
+	padding-left:5%;
+	/*margin-top:2%;*/
+}
+#tabCont .conts dl dd p
+{
+	color:#666;
+	
+	margin-top:3%;
+}
+#tabCont .conts dl dd p.time
+{
+	margin-top:33%;
+	color:#999;
+}
+#tabCont .conts dl dt span.weixin
+{
+	font-size:14px;
+		
+}
+#tabCont .conts dl dd.server
+{
+	float:right;
+	padding-left:1%;
+	/*margin-top:10%;*/
+	width:85%;
+	
+	
+}
+#tabCont .conts dl.onlyserver
+{	
+	overflow:auto;zoom:1;
+	
+}
+#tabCont .conts dl.onlyserver dt
+	{	
+		float:left;
+		/*margin-top:2%;*/
+		width:10%;
+		
+		
+	}
+#tabCont .conts dl.onlyserver dt img
+{	
+	float:left;
+	margin-left:1%;
+	
+	width:100%;
+		
+}
+/*选项卡*/

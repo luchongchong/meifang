@@ -1,0 +1,20 @@
+<div class="head">
+	<div class="w1200">
+		<div class="logo"><a href="index.php" id="logo"></a></div>
+		<div class="h-search-box">
+            <form id="searchForm" action="category.php" >
+                <div class="search-val">
+                	<i class="iconfont">&#xe600;</i>
+                    <input type="text" class="intype-text search-keyword" name="name" value="">
+                </div>
+                <input type="submit" class="search-btn" value="搜索">
+                <div id="keywordNew" class="search-hotwords">
+                    <a href="category.php?cat_id=4" target="_blank" class="c-red">儿童房</a><a href="category.php?cat_id=6" target="_blank" class=" ">卧室</a><a href="category.php?cat_id=24" target="_blank" class=" ">客厅</a><a href="category.php?cat_id=7" target="_blank" class=" ">书房</a>
+                </div>
+            </form>
+            <script>
+              
+            </script>
+        </div>
+	</div>
+</div>

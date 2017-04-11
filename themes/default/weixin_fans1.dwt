@@ -1,0 +1,238 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{$page_title}</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="./assets/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="./assets/css/admin.css">
+  <script src="./assets/js/jquery.min.js"></script>
+  {insert_scripts files="../js/utils.js,listtable.js"}
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+<!--head start -->
+<!-- #BeginLibraryItem "/library/head_user_c.lbi" --><!-- #EndLibraryItem -->
+<!--head end -->
+
+<!--menu start -->
+<!-- #BeginLibraryItem "/library/menu_user_c.lbi" --><!-- #EndLibraryItem -->
+<!--menu end -->
+
+  <!-- content start -->
+  <div class="admin-content ">
+    <div class="am-g am-padding">
+      <div class="am-u-md-10 am-u-md-push-2 am-u-lg-reset-order"><strong class="am-text-primary am-text-lg">我的小伙伴</strong></div>
+      <div class="am-u-md-2 am-u-md-pull-10 am-u-lg-reset-order"><a  href="./user_c.php?act=gain_rebate" style="display:none;"><button type="button" class="am-btn am-btn-success am-round">获取返利</button></a></div>
+    </div>
+    <div class="am-g am-padding">
+          <div class="am-u-sm-10 am-u-md-10">
+            <form action="user_c.php" class="am-form am-form-inline">
+              <div class="am-form-group am-form-icon">
+                <i class="am-icon-calendar"></i>
+                <input type="text" name="start_time" class="am-form-field am-input-sm" data-am-datepicker readonly placeholder="开始时间">
+              </div>
+              <div class="am-form-group am-form-icon">
+                <i class="am-icon-calendar"></i>
+                <input type="text" name="end_time" class="am-form-field am-input-sm" data-am-datepicker readonly placeholder="结束时间">
+              </div>
+              <style>
+                  .am-selected-btn {
+                      width: 120px;
+                    }
+                </style>
+              <div class="am-form-group ">                
+                  <select data-am-selected name="user_rank">
+                    <option value="">会员等级</option>
+                    <option value="pthy">普通会员</option>
+                    <option value="99">vip会员</option>
+
+                    {if $user_rank == 103}
+                    <option value="102">加盟商</option>
+                    {/if}
+
+                  </select>               
+              </div>  
+              <div class="am-form-group ">
+                <input type="text" name="user_name" class="am-form-field " placeholder="会员名或昵称" style="width:120px">
+              </div>
+              <input name="act" type="hidden" value="{$act_self}"/> 
+              <div class="am-form-group ">
+                <button type="submit" class="am-btn am-btn-success am-default">立即搜索</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding-xs am-text-center admin-content-list ">
+      <li><a href="#" class="am-text-success"><span class="am-icon-btn am-icon-user-md"></span><br/>会员总数<br/>{$num_21}</a></li>
+      {if $user_rank == 103}
+      <li><a href="#" class="am-text-warning"><span class="am-icon-btn am-icon-user-md"></span><br/>加盟商数目<br/>{$num_22}</a></li>
+      {/if}
+      <li><a href="#" class="am-text-danger"><span class="am-icon-btn am-icon-user-md"></span><br/>VIP会员数名<br/>{$num_23}</a></li>
+      <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>普通会员数名<br/>{$num_24}</a></li>
+    </ul>
+    <div class="am-g">
+      <div class="am-u-sm-12">
+        <table class="am-table am-table-bd am-table-striped admin-content-table">
+          <thead>
+          <tr>
+            <th>昵称</th>
+            <th>头像</th>
+            <th>会员名称</th>
+            <th>会员等级</th>
+            <th>性别</th>
+            <th>省份</th>
+            <th>城市</th>
+            <th>关注时间</th>
+            <th>下级会员数</th>
+            <th>操作</th>
+          </tr>
+          </thead>
+          <tbody>
+           {foreach from=$arr item=user key=k}
+            <tr>
+              <td >{$user.wx.nickname}</td>
+              <td >{if $user.wx.headimgurl}<img src="{$user.wx.headimgurl}" width="46" class="am-round"/>{/if}</td>
+              <td >{$user.user_name}</td>
+              <td >
+              {if $user.user_rank==99}
+              vip会员
+              {elseif $user.user_rank==102}
+              加盟商
+              {else}
+              普通会员
+              {/if}
+              </td>
+              <td >{if $user.wx.sex==1}男{elseif $user.wx.sex==2}女{else}保密{/if}</td>
+              <td >{$user.wx.province}</td>
+              <td >{$user.wx.city}</td>
+              <td >{$user.reg_time}</td>
+              <td >{$user.num_fans}</td>
+              <td >
+                    
+                    <button class="am-btn am-btn-default am-btn-xs" id="doc-prompt-toggle{$k}">会员管理</button>
+                   
+                      <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt{$k}">
+                        <div class="am-modal-dialog">
+                          <div class="am-modal-hd">会员名称修改</div>
+                          <div class="am-modal-hd"><p>昵称：{$user.nickname}</p><p>会员名称：{$user.user_name}</p></div>
+                          <div class="am-modal-bd">
+                            <input type="text" class="am-modal-prompt-input" placeholder="新会员名称" id="user_name{$k}">
+                          </div>
+                          <div class="am-modal-footer">
+                            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+                            <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+                          </div>
+                        </div>
+                    </div>                      
+              </td>
+              <!-- <td ><a href="./user_c.php?act=order_list_c&user_id_c={$user.user_id}&show_name={$user.user_name}"><button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 查看订单</button></a></td> -->
+            </tr>  
+            {/foreach}             
+          </tbody>
+        </table>
+          <div style="width:100%;float:right;display:block;">
+              <ul data-am-widget="pagination"class="am-pagination am-pagination-default" style="float:right;font-size:1.3rem;">
+                 {if $pager.page_prev neq ''}
+                  <li class="am-pagination-first ">
+                    <a href="{$pager.page_first}" class="">第一页</a>
+                  </li>
+                {/if}
+                  <li class="am-pagination-prev ">
+                    <a href="{$pager.page_prev}" class="">上一页</a>
+                  </li>
+
+
+                 {foreach from=$page_number item=pn key=k}
+
+                       <!--TODO -->
+                        <li class="">
+                          <a href="{$pn}" class="">{$k}</a>
+                        </li>
+
+                  {/foreach}
+
+                  <li class="am-pagination-next ">
+                    <a href="{$pager.page_next}" class="">下一页</a>
+                  </li>
+                {if $pager.page_next!=$pager.page_last }
+                  <li class="am-pagination-last ">
+                    <a href="{$pager.page_last}" class="">最末页</a>
+                  </li>
+                  {/if}
+              </ul>
+
+
+
+           <div>
+        <!-- #BeginLibraryItem "/library/pages_c_c.lbi" --><!-- #EndLibraryItem -->
+      </div>
+    </div>
+    
+    </div>
+  </div>
+  <!-- content end -->
+ 
+</div>
+
+<a class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<footer>
+  <hr>
+  <p class="am-padding-left am-text-center">©2015 MEIBANG.COM 所有设计和内容保留一切权利 沪ICP备xxx号</p>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="./assets/js/polyfill/rem.min.js"></script>
+<script src="./assets/js/polyfill/respond.min.js"></script>
+<script src="./assets/js/amazeui.legacy.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/amazeui.min.js"></script>
+<!--<![endif]-->
+<script src="./assets/js/app.js"></script>
+<script >
+{foreach from=$arr item=list key=k}
+  $(function() {
+  $('#doc-prompt-toggle{$k}').on('click', function() {
+    $('#my-prompt{$k}').modal({
+      relatedTarget: this,
+      onConfirm: function(e) {
+        var user_name = $('#user_name{$k}').val();
+        if(user_name == ''){
+          alert('请填写会员名！');
+          exit;
+        }else{
+          window.location = "user_c.php?act=user_name&id={$list.user_id}&user_name="+user_name;  
+        }
+                
+      },
+    });
+  });
+});
+{/foreach}
+
+</script>
+<script type="text/javascript">
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+</body>
+</html>

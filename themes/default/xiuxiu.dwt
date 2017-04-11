@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>美房美邦</title>
+<link rel="stylesheet" type="text/css" href="themes/default/css/mall.css">
+<link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+<style type="text/css">
+body
+{
+	
+}
+div.update
+	{
+		width:100%;
+		margin:0 auto;
+		background:#edebeb;
+	}
+div.up_head
+	{
+		position:relative;
+		width:1000px;
+		height:40px;
+		padding:10px;
+		margin:0 auto;
+		
+	}
+	div.search
+	{
+		position:absolute;
+		top:15px;
+		left:300px;
+	}
+	
+	div.search input
+	{
+		width:500px;
+		height:20px;
+		background-color:#edebeb;
+		border:0;	
+		color:#ccc;
+		
+		margin-bottom:20px;
+		border:1px solid #999;
+		
+		
+	}
+	div.search p.sou
+	{
+		position:relative;	
+	}
+	div.search p.sou img
+	{
+		position:absolute;
+		top:5px;
+		right:20px;
+	}
+	ul.head_ul
+	{
+		position:absolute;
+		top:15px;
+		left:180px;		
+	}
+	ul.head_ul li 
+	{	
+		float:left;
+		
+	}
+	ul.head_ul li a
+	{	
+		float:left;
+		display:block;
+		width:30px;
+		color:#000;
+		margin-left:20px;
+		text-align:center;
+	}
+	ul.head_ul li a:hover
+	{	
+		border-bottom:3px solid #000;
+	}
+	 p.zhuce
+	 {
+		 width:50px;
+		 background-color:#b0251e;
+		 text-align:center;
+		 position:absolute;
+		 top:15px;
+		 right:120px;
+		 color:#fff;
+		 padding:3px;
+	 }
+	 p.denglu
+	 {
+		 width:50px;
+		 border:1px solid #000;
+		 text-align:center;
+		 position:absolute;
+		 top:15px;
+		 right:30px;
+		 color:#000;
+		 padding:2px;
+	 }
+div.update_content
+{
+	background-color:#e0e0e0;
+	width:100%;
+}
+div.all
+{
+	width:1000px;
+	margin:0 auto;
+	background-color:#f7f8f8;
+}
+div.common
+{
+	
+	border:1px solid #ccc;
+	/*background-color:#f7f8f8;*/
+	height:500px;
+}
+p.shangchuan
+{
+	width:200px;
+	height:40px;
+	background-color:#c52021;
+	text-align:center;
+	margin:200px auto;
+	line-height:40px;
+	color:#fff;
+	font-size:16px;
+}
+form.sousuo
+{
+	
+	margin-top:20px;
+	margin-bottom:20px;
+	width:402px;
+	margin-left:10px;
+}
+form.sousuo input
+{
+	width:400px;
+	height:30px;
+	background-color:#f7f8f8;
+	border:0;
+	border:1px solid #ccc;
+	
+}
+form.sousuo select
+{
+	
+	background-color:#f7f8f8;
+	border:0;
+	border:1px solid #ccc;
+	
+}
+p.shuoming
+{
+	width:990px;
+	
+	border:1px solid #ccc;
+	height:400px;
+	margin:5px;
+}
+p.shuoming span
+{
+	padding-left:5px;
+	color:#999;
+}
+p.fabu span
+{
+	color:#fff;
+	width:70px;
+	height:30px;
+	border:1px solid #009a3e;
+	background:#009a3e;
+	text-align:center;
+	line-height:30px;	
+	margin:5px;
+	display:block;
+}
+.bottom_fabu
+{
+	overflow:auto;
+	zoom:1;
+}
+.bottom_fabu p
+{
+	float:left;
+}
+div.shouyi
+{
+	width:998px;
+	margin:10px auto;
+	height:50px;
+	background-color:#f7f8f8;
+}
+div.shouyi p
+{
+	padding-left:5px;
+	padding-top:5px;
+}
+</style>
+</head>
+
+<body  class="bg-f7 mall-wrap">
+<div class="update">
+    <div class="up_head">
+                <p style="margin-top:5px;"><img src="themes/default/img/tougao_03.png" width="139" height="18"></p>
+                <ul class="head_ul">
+                    <!--<li><a href="#">首页</a></li>-->
+                    <li><a href="#">发现</a></li>
+                    <li><a href="#">最新</a></li>
+                </ul>
+                <P class="zhuce">注册</P>
+                <P class="denglu">登录</P>
+                <div class="search">
+                    
+                    <P class="sou"> <input type="text" value="搜索你想要的" style="color:#666;padding-left:5px;">
+                    <img src="themes/default/img/tougao_06.png" width="12" height="12"></P>
+                   
+                </div><!--search-->
+                
+        </div><!--up_head-->
+</div><!--update-->
+<div class="update_content">
+<div class="all">
+	<div class="common">
+    	<p class="shangchuan">秀秀我的美家</p>
+    </div><!--common-->
+    
+    <form action="#" method="post" class="sousuo">
+    	<input type="text" placeholder="请输入墙纸名称" style="margin-bottom:10px;"></br>
+        <select>
+        	<option>宋体</option>
+        </select>
+        <select>
+        	<option>12</option>
+        </select>
+    </form>
+    
+    <P class="shuoming"><span>设计说明</span></P>
+  
+    <div class="bottom_fabu">
+        <P class="fabu"><span>发布</span></P>
+        
+        <!--<P style="margin-top:10px;"><input type="checkbox">有回复提醒我</P>-->
+    
+    </div><!--bottom_fabu-->
+    
+</div><!--all-->
+	<!--<div class="shouyi">
+    	<P>设计师收益说明：</P>
+        <p style="text-indent:2em;">设计师作品通过审核上线到商城，可享受该产品销售额的1%作为您的设计收益。</p>
+    </div><!--shouyi-->
+</div><!--update_content-->
+</body>
+</html>

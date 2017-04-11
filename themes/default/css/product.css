@@ -1,0 +1,385 @@
+/*****************产品列表********************/
+/* filter s*/
+.pro-filter {
+    margin-bottom: 24px;
+    border-left: 2px solid #c5c5c6;
+    border-right: 2px solid #c5c5c6;
+    font-size: 18px;
+    border-bottom: 1px solid #c3c3c4;
+}
+
+.pro-filter li:nth-child(odd){ background-color: #dcdddd; }
+.pro-filter li.pro-attr{
+    border-top: 1px solid #c3c3c4;
+    border-bottom: 1px solid #e0e0e0;
+    margin-top: -1px;
+}
+.pro-filter .pro-attr .attr-key{
+    width: 100px;
+    padding-left: 20px;
+    color: #9fa0a0;
+    line-height: 50px;
+}
+.pro-filter .pro-attr .attr-val a{
+    display: block;
+    position: relative;
+    float: left;
+    padding-right: 60px;
+    padding-left: 10px;
+    margin-left: 10px;
+    height: 32px;
+    line-height: 32px;
+    margin-top: 8px;
+    border: 1px solid transparent;
+}
+.pro-filter .pro-attr .attr-val li{
+    display: block;
+    position: relative;
+    float: left;
+    padding-right: 60px;
+    padding-left: 10px;
+    margin-left: 10px;
+    height: 32px;
+    line-height: 32px;
+    margin-top: 8px;
+    border: 1px solid transparent;
+}
+
+.pro-filter .pro-attr .attr-val li.on{
+    background-color: #c52021;
+    color: #fff;
+    border-color: #b5b5b6;
+    background-image: url(../img/filter_X.jpg);
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+.pro-filter .pro-attr .attr-val a.on{
+    background-color: #c52021;
+    color: #fff;
+    border-color: #b5b5b6;
+    background-image: url(../img/filter_X.jpg);
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+/* prolist-bd*/
+.prolist-bd{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+}
+.prolist-bd .pro-bd-bar{
+    position: relative;
+    margin-top: 20px;
+    font-size: 18px;
+    height: 32px;
+    line-height: 32px;
+}
+.prolist-bd .pro-bd-bar .page-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.prolist-bd .pro-bd-bar .page-btn span{
+    display: inline-block;
+    height: 30px;
+    width: 110px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #f7f8f8;
+    border: 1px solid #c5c5c6;
+    margin-left: -1px;
+    cursor: pointer;
+}
+.prolist-bd .pro-bd-bar .page-btn span:first-child{ color: #b5b5b6;}
+.prolist-bd .main .pro-box{
+    position: relative;
+    float: left;
+    margin: 20px 32px;
+    width: 304px;
+    border: 1px solid #b5b5b6;
+    background-color: #f7f8f8;
+    padding: 0 15px;
+}
+.prolist-bd .main li.hover{ background-color: #fff;}
+.prolist-bd .main .pro-box a{ 
+    display: block;
+    color: #333;
+}
+.prolist-bd .main .pro-box img{
+    width: 176px;
+    height: 176px;
+    margin: 8px;
+}
+.prolist-bd .main .pro-box p{ text-align: center;}
+.prolist-bd .main .pro-box p .price em{ color: #c52021; line-height: 2;}
+.prolist-bd .main .pro-box p .del-price{ 
+    text-decoration: line-through; 
+    color: #9fa0a0;
+    margin-left: 20px;
+}
+.prolist-bd .main .pro-box .parameter{
+    position: absolute;
+    right: 10px;
+    width: 110px;
+    top: 24px;
+    line-height: 32px;
+}
+/******************************商品详情********************************/
+/*detail start*/
+.prodetail-wrap .col-sub{
+    float: left;
+    margin: 0 20px;
+    width: 178px;
+}
+.prodetail-wrap .col-sub ul.cat-list{
+    border: 1px solid #d7d7d7;
+    background-color: #3e3a39;
+    color: #fff;
+    width: 176px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.prodetail-wrap .col-sub ul.cat-list a{ 
+    display: block;
+    width: 100%;
+    color:#fff;
+    font-size: 18px;
+    line-height: 2;
+}
+.prodetail-wrap .col-sub ul.cat-list a:hover{color: #ccc;}
+
+.prodetail-wrap .col-sub .view-list{
+    border-width: 2px 1px 1px;
+    border-style: solid;
+    border-color: #c52021 #c8c8c8 #c8c8c8; 
+    background-color: #f7f8f8;
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+.prodetail-wrap .col-sub .view-list h3{ 
+    line-height: 2.2;
+    text-align: center;
+    font-weight: normal;
+}
+.prodetail-wrap .col-sub .view-list li{
+    width: 150px;
+    margin: 0 auto 10px;
+}
+.prodetail-wrap .col-sub .view-list li img{
+    width: 100%;
+}
+.prodetail-wrap .col-sub .view-list li .name{
+    line-height: 30px;
+}
+.prodetail-wrap .col-sub .view-list li .price{
+    text-align: center;
+    border: 1px solid #d7d7d7;
+}
+
+.prodetail-wrap .col-main{
+    float: right;
+    width: 970px;
+}
+.pro-hd-left .pic-show img{
+    width: 360px;
+    height: 360px;
+}
+.pro-hd-left .small-pic{
+    position: relative;
+    width: 360px;
+    height: 66px;
+    overflow: hidden;
+}
+.pro-hd-left .small-pic a.iconfont{
+    position: absolute;
+    top: 0;
+    display: block;
+    background-color: #fff;
+    height: 66px;
+    width: 20px;
+    line-height: 66px;
+    color: #c9caca;
+    z-index: 2;
+    cursor: pointer;
+    font-size: 35px;
+}
+.pro-hd-left .small-pic a:hover{ color: #333;}
+.pro-hd-left .small-pic .prev{ left: 0;}
+.pro-hd-left .small-pic .next{ right: 0;}
+.pro-hd-left .small-pic ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 20px;
+}
+.pro-hd-left .small-pic li{
+    float: left;
+    width: 66px;
+    margin-left: 12px;
+}
+.pro-hd-left .small-pic img{
+    width: 64px;
+    height: 64px;
+    border: 1px solid #fff;
+}
+.pro-hd-left .small-pic li.active img{
+    border-color: #9f9f9f;
+}
+.pro-hd-desc{
+    margin-left: 22px;
+    width: 540px;
+    color: #666;
+    line-height: 2;
+}
+.pro-hd-desc .title{
+    font-size: 30px;
+    line-height: 60px;
+    padding-left: 10px;
+}
+.pro-hd-desc .pro-info{
+    border-top: 2px solid #e5e5e5;
+    border-bottom: 2px solid #e5e5e5;
+    padding: 10px;
+}
+.pro-hd-desc .pro-info p{
+    color: #9fa0a0;
+    font-size: 18px;
+}
+.pro-hd-desc p.price{ color: #333;}
+.pro-hd-desc p .market_price{
+    text-decoration: line-through;
+}
+.pro-model{
+    z-index: 6;
+    position: relative;
+    margin: -9px 0 29px -9px;
+    padding: 9px 0 0 9px;
+    border: 1px solid #FFF;
+    font-size: 18px;
+}
+.pro-model dl{ 
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.pro-model dl dt{
+    float: left;
+    margin-right: 5px;
+    color: #9fa0a0;
+    padding-left: 10px;
+}
+.pro-model dl dd{
+    overflow:hidden;
+    *zoom:1
+}
+.pro-model .tb-prop li{
+    float: left;
+    position: relative;
+    margin: 5px 15px 10px 0;
+    vertical-align: middle;
+    line-height: 20px;
+    background: #c9caca;
+}
+.pro-model .tb-prop li a{
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 3px 10px;
+    min-width: 10px;
+    _width: 10px;
+    text-align: center;
+    border: 1px solid #DCDCDC;
+    background: #f7f7f7;
+    color: #c9caca;
+}
+
+.pro-model .tb-prop li a:hover{
+    padding: 2px 9px;
+    color: #c9caca;
+    border:2px solid #c52021;
+}
+.pro-model .tb-prop li a:focus{
+    outline:0
+}
+.pro-model .tb-prop li i{
+    display:none
+}
+.pro-model .tb-prop .tb-selected a,
+.pro-model .tb-prop .tb-selected a:hover{
+    padding:2px 5px;
+    border:2px solid #c52021;
+}
+.pro-hd-desc .buy-action{
+    padding-top: 20px;
+    height: 130px;
+}
+.pro-hd-desc .buy-action .btn{
+    float: left;
+    width: 200px;
+    height: 62px;
+    border: 1px solid #c52021;
+    line-height: 62px;
+    text-align: center;
+    margin-right: 18px;
+    font-size: 22px;
+    -webkit-border-radius: 3px;
+         -o-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+.pro-hd-desc .buy-action .btn i.iconfont{
+    font-size: 30px;
+    margin-right: 10px;
+}
+.pro-hd-desc .buy-action .buynow{
+    background-color: #efefef;
+    color: #c52021;
+    border-color: #c9caca;
+}
+.addCartBtn:hover{background-color:#c52021;}
+.pro-hd-desc .buy-action .buynow:hover{
+    background-color: #ddd;
+}
+/* detail main*/
+.detail-main .detail-hd{
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    font-size: 22px;
+}
+.detail-main .detail-hd a{
+    display: block;
+    float: left;
+    padding-left: 25px;
+    padding-right: 25px;
+    vertical-align: middle;
+    color: #fff;
+    vertical-align: top;
+    background-color: #333;
+}
+.detail-hd a.active{
+    background-color: #333;
+    color: #fff;
+}
+.detail-hd a:hover{
+    color:#ddd;
+}
+.detail-bd .pro-parameter{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 970px;
+}
+.detail-bd .pro-parameter li{
+    float: left;
+    margin-left: 40px;
+    padding-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 22px;
+}
+.detail-main .detail-bd .main-box img{
+    margin: 0 auto;
+    width: 920px;
+}

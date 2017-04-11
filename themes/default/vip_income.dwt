@@ -1,0 +1,219 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>美房美邦</title>
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/shopping.css">
+    <link href="themes/default/css/style1.css"  rel="stylesheet" type="text/css">
+<script src="themes/default/js/jquery-1.9.1.min.js"></script>
+
+<style type="text/css">
+.window {
+width:240px;
+position:absolute;
+display:none;
+margin:-50px auto 0 -120px;
+padding:2px;
+top:0;
+left:50%;
+border-radius:0.6em;
+-webkit-border-radius:0.6em;
+-moz-border-radius:0.6em;
+background-color: rgba(255, 0, 0, 0.5);
+-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+-o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+font:14px/1.5 Microsoft YaHei,Helvitica,Verdana,Arial,san-serif;
+z-index:10;
+bottom: auto;
+}
+.window .content {
+overflow:auto;
+padding:10px;
+    color: #222222;
+    text-shadow: 0 1px 0 #FFFFFF;
+border-radius: 0 0 0.6em 0.6em;
+-webkit-border-radius: 0 0 0.6em 0.6em;
+-moz-border-radius: 0 0 0.6em 0.6em;
+}
+.window #txt {
+min-height:30px;font-size:20px; line-height:22px; color:#FFF; text-align:center;
+}
+</style>
+
+</head>
+
+<body>
+
+    <!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+    <!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+
+<!-- <div class="jifen-box" style=" margin:20px 10px 0px 10px;">
+<ul class="zongjifen">
+
+<li {if $user_rank != 103}style="width:33%;"{/if}>
+<div class="fengexian">
+<p>会员总数</p>
+<span>{$num_21}</span></div>
+</li>
+
+{if $user_rank == 103}
+<li {if $user_rank != 103}style="width:33%;"{/if}>
+<div class="fengexian">
+<p>加盟商</p>
+<span>{$num_22}</span></div>
+</li>
+{/if}
+
+<li {if $user_rank != 103}style="width:33%;"{/if}>
+<div class="fengexian">
+<p>vip</p>
+<span>{$num_23}</span></div>
+</li>
+
+<li {if $user_rank != 103}style="width:33%;"{/if}>
+<div class="fengexian">
+<p>普通会员</p>
+<span>{$num_24}</span></div>
+</li>
+</ul>
+<div class="clr"></div>
+</div> -->
+
+<div class="jifen-box" style=" margin:20px 10px 0px 10px;">
+<ul class="zongjifen">
+
+<li>
+<div class="fengexian">
+<p>订单总数</p>
+<span>{$count}</span></div>
+</li>
+
+<li>
+<div class="fengexian">
+<p>成交订单</p>
+<span>{$count}</span></div>
+</li>
+
+<li>
+<div class="fengexian">
+<p>成交金额</p>
+<span>{$total_money}</span></div>
+</li>
+
+<li>
+<div class="fengexian">
+<p>收益金额</p>
+<span>{$money}</span></div>
+</li>
+</ul>
+<div class="clr"></div>
+</div>
+
+<div class="jifen-box header_highlight" style=" margin:20px 10px 0px 10px;">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="integral_table">
+    <thead>
+    <tr>
+    <th>会员名</th>
+    <th>状态</th>
+    <th>说明</th>
+    <th>金额</th>
+    <th>操作</th>
+    <!-- <th>操作</th> -->
+    </tr>
+    </thead>
+    <tbody id="weixin_list">
+    
+    {foreach from=$arr item=user}
+    {if $user.user_money eq '0.00'}
+    
+    {else}       
+    <tr>
+    <td >{$user.username}</td>
+  	<td >{if $user.is_gain_rebate==1}已返{else}未返{/if}</td>
+  	<td >{$user.change_desc}</td>
+  	<td >{$user.user_money}</td>
+  	<td ><span class="am-icon-copy"></span> 查看订单</td>
+
+    </tr>
+    {/if}
+    {/foreach}
+    <tr>
+        <td align="center" colspan="5"><!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem --></td>
+    </tr>
+    </tbody>
+    </table>
+</div>
+ <div class="site_bottom w1290">
+    <div class="w1200 clearfix">
+        <table class="items1">
+            <tr>
+                <td class="tit">
+                    <div class="icon"></div>
+                    新手上路
+                </td>
+            </tr>
+            <tr>
+                <td><a href="">售后流程</a><a href="">购物流程</a></td>
+            </tr>
+            <tr>
+                <td><a href="">订购方式</a><a href="">隐私声明</a></td>
+            </tr>
+        </table>
+        <table class="items2">
+            <tr>
+                <td class="tit">
+                    <div class="icon"></div>
+                    会员中心
+                </td>
+            </tr>
+            <tr>
+                <td><a href="">资金管理</a><a href="./user.php?act=collection_list">我的收藏</a></td>
+            </tr>
+            <tr>
+                <td><a href="./user.php?act=order_list">我的订单</a></td>
+            </tr>
+        </table>
+        <table class="items3">
+            <tr>
+                <td class="tit">
+                    <div class="icon"></div>
+                    服务保证
+                </td>
+            </tr>
+            <tr>
+                <td><a href="">退换货原则</a><a href="">售后服务保证</a></td>
+            </tr>
+            <tr>
+                <td><a href="">产品质量保证</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="copyright">
+    &copy;2015 MEIBANG.COM 所有设计和内容保留一切权利 沪ICP备xxx号
+</div>
+    
+<script type="text/javascript" language="javascript">
+function gain_rebate(){
+	$.get("user.php?act=gain_rebate", function(result){
+		//alert(result);
+		if(result==1){
+			alert('获利成功');
+		}else if(result==2){
+			alert('无权限获利');
+		}else{
+			alert('无订单可获利');
+		}
+	});	
+}
+
+</script>
+
+</body>
+</html>

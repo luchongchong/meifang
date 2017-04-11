@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>美房美邦</title>
+	<link rel="icon" href="../favicon.ico" />
+    <meta name="keywords" content=" " />
+	<meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/shopping.css">
+    <style type="text/css">
+		body
+		{
+			background-color:#f7f8f8;
+		}
+    	div.contents
+		{
+			width:1300px;
+			margin:0 auto;
+			oveflow:auto;zoom:1;
+			
+		}
+		table.order
+		{
+			width:1200px;
+			text-align:center;	
+			margin:0 auto;
+			margin-top:20px;
+		}
+		table.order th
+		{
+			font-weight:bold;	
+		}
+		td.time
+		{
+			margin-top:50px;	
+		}
+		table.order td.comment
+		{
+			
+			background-color:#c52021;
+			border-radius:10px;
+			color:#fff;
+			width:50px;
+			cursor:pointer;
+			
+		}
+		form.wenben
+		{
+			
+			width:1200px;
+			overflow:hidden;zoom:1;
+			margin:0 auto;
+			margin-top:50px;
+			/*display:none;*/
+		}
+		form.wenben textarea
+		{
+			width:1100px;
+			height:120px;
+			text-align:center;
+			margin-left:8%;;
+			
+		}
+		p.zans
+		{
+			float:right;
+			width:290px;
+			
+			margin:20px;
+			overflow:auto;zoom:1;
+			
+			
+		}
+		p.zans img
+		{
+			float:left;
+			margin-left:60px;
+			
+			
+		}
+		p.zans span
+		{
+			border:1px solid #c52021;
+			background-color:#c52021;
+			border-radius:10px;
+			color:#fff;
+			padding:3px;
+			margin-left:40px;
+			font-size:16px;
+			display:block;
+			float:right;
+		}
+		
+    </style>
+ <script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+ <script type="text/javascript">
+ 	$(function(){
+		
+		$("form.wenben").hide();
+		$("td.comment").click(function(){
+			$("form.wenben").show();	
+		})	
+	})
+ </script> 	
+</head>
+<body class="shopping-cart-wrap">
+	<!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+    <!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+    <div class="contents">
+    	<h3 style="margin-left:180px;">我的订单</h3>
+        <table  border="0" class="order">
+              <tr>
+                <th scope="col">订单号</th>
+                <th scope="col">下单时间</th>
+                <th scope="col">订单总金额</th>
+                <th scope="col">订单状态</th>
+                <th scope="col">操作</th>
+              </tr>
+               <!--{foreach from=$orders item=item}-->
+              <tr>
+                <td class="time"><a href="user.php?act=order_detail&order_id={$item.order_id}" class="f6">{$item.order_sn}</a></td>
+                <td class="time">{$item.order_time}</td>
+                <td class="time">{$item.total_fee}</td>
+                <td class="time">{$item.order_status}</td>
+                <td class="comment">去评价</td>
+              </tr>
+              <!--{/foreach}-->
+              <tr>
+                <td align="center" colspan="5"><!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem --></td>
+              </tr>
+        </table>
+		<form action="#" method="post" class="wenben">
+        	<textarea></textarea>
+            <P class="zans"><img src="themes/default/img/zan1.png" width="22" height="30"><img src="themes/default/img/zan2.png" width="22" height="30"><span>发表评论</span></P>
+       	</form>
+        
+    </div><!--contents-->
+	<div class="JQ_include" src="themes/default/include/m_footer.dwt"></div>
+    <div class="JQ_include" src="themes/default/include/site_bottom.dwt"></div>
+
+    <script src="themes/default/js/config.js"></script>
+    <script src=themes/default/js/lib/template.min.js  "></script>
+    <script src="themes/default/js/loadHtml.js"></script>
+
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+    <script src="themes/default/js/worldunion.js"></script>
+    <script src="themes/default/js/mall-index.js"></script>
+
+
+</body>
+</html>

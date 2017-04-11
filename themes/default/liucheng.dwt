@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>美房美邦</title>
+	<link rel="icon" href="themes/default/favicon.ico" />
+    <meta name="keywords" content=" " />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+	<link rel="stylesheet" type="text/css" href="themes/default/css/mall.css">
+</head>
+<style type="text/css">
+	div.user
+	{
+		width:1200px;
+		margin:0 auto;
+		overflow:auto;zoom:1;
+	}
+	div.left
+	{
+		width:180px;
+		float:left;
+	}
+	p.Lp
+	{
+		border:1px solid #ccc;
+		width:168px;
+		height:18px;
+		background-color:#f7f8f8;
+		padding:5px 5px 5px 5px;
+		margin-top:10px;
+	}
+	p.Lp span
+	{
+		float:right;
+		margin-top:-20px;
+		padding-right:55px;
+	}
+	ul.order
+	{
+		border:1px solid #ccc;
+		width:168px;
+		background-color:#f7f8f8;
+		padding-top:5px ;
+		padding-bottom:5px;
+		margin-top:10px;
+	}
+	li.orcenter
+	{
+		/*border-bottom:1px solid #ccc;*/
+		background:url(themes/default/img/美美商城_文章列表_07.png) 140px 8px no-repeat;
+		padding-left:20px;
+		font-size:14px;
+		cursor:pointer;
+		
+		
+	}
+	li.myorder
+	{
+		width:105px;
+		margin:0 auto;
+		font-size:12px;
+		margin-top:10px;
+		color:#999;
+		background:url(themes/default/img/美美商城_文章列表_07.png) left no-repeat;
+		padding-left:10px;
+		
+	}
+	p.exit
+	{
+		background:#c52021 url(themes/default/img/user4.png) no-repeat;
+		text-align:center;
+		color:#FFF;
+		font-size:16px;
+		width:168px;
+		padding:5px 0px 5px 0px;
+		margin-top:10px;
+	}
+	div.right
+	{
+		float:right;
+		border:1px solid #ccc;
+		width:980px;
+		margin:10px auto 0  auto;
+		background-color:#f7f8f8;
+		padding:15px;
+		height:400px;
+	}
+	div.right p
+	{
+		margin-top:10px;
+		margin-bottom:50px;
+		color:#999;
+		font-size:12px;
+	}
+	p.gonggao
+	{
+		
+		border-top:1px solid #ccc;
+		height:25px;
+		line-height:25px;
+		padding:5px;
+		
+	}
+	
+	h2
+	{
+		font-weight:normal;
+	}
+	p.jifen span
+	{
+		border:1px solid #c52021;
+		background-color:#c52021;
+		color:#fff;
+		border-radius:15px;
+		margin-left:20px;
+		padding:2px 4px 2px 4px;
+	}
+</style>
+<script src="themes/default/js/jquery-1.8.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("li.orcenter").click(function(){
+			$(this).siblings("li.myorder").toggle();	   
+		 });
+		$("li.orcenter").toggle(function(){
+			$(this).css("background","url(themes/default/img/美美商城_文章列表_03.png) 140px 8px no-repeat");
+				
+		},function(){
+			$(this).css("background","url(themes/default/img/美美商城_文章列表_07.png) 140px 8px no-repeat");	
+			$(this).css('display','block');
+		})
+		  
+
+
+   })
+</script>
+<body class="bg-f7 mall-wrap">
+	<!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/m_nav.lbi" --><!-- #EndLibraryItem -->
+	<!-- dapei -->
+    <div class="user">
+		<p class="title">当前位置：<a href="index.html">首页</a>&nbsp;>&nbsp;<a href="#">售后流程</a></p><!--title-->
+        <div class="left">
+        	<!--<p class="Lp"><img src="themes/default/img/user1.png"><span>我的个人主页</span></p>-->
+           	<ul class="order">
+            	<li class="orcenter" style="background:url(themes/default/img/美美商城_文章列表_03.png) 140px 8px no-repeat;">新手上路</li>
+                <li class="myorder" >售后流程</li>
+                <li class="myorder" >购买流程</li>
+                <li class="myorder" >订购方式</li>
+                <li class="myorder" >隐私声明</li>
+            	
+            </ul>
+            <ul class="order">
+            	<li class="orcenter">会员中心</li>
+                <li class="myorder" style="display:none;">用户信息</li>
+                <li class="myorder" style="display:none;">我的收藏</li>
+                <li class="myorder" style="display:none;">我的小伙伴</li>
+                <li class="myorder" style="display:none;">我的收益</li>
+            	
+            </ul>
+            <ul class="order">
+            	<li class="orcenter" >服务保证</li>
+                <li class="myorder" style="display:none;">资金管理</li>
+               
+            	
+            </ul>
+             <ul class="order">
+            	<li class="orcenter">最新资询</li>
+                <li class="myorder" style="display:none;">资金管理</li>
+               
+            	
+            </ul>
+             <ul class="order">
+            	<li class="orcenter">招商中心</li>
+                <li class="myorder" style="display:none;"></li>
+               
+            	
+            </ul>
+            
+            <!--<P class="exit">安全退出</P>-->
+        </div><!--left-->
+       	<div class="right">
+        	<P><span style="font-size:16px;font-weight:bold;color:#c52021;">售后流程</span>&nbsp;&nbsp美房美邦/2009-05-18</P>
+            
+            <p class="gonggao">下一篇：<span style="color:#c52021;">购买流程</span></p>
+            
+        </div><!--right-->
+	</div>
+	
+	<div class="JQ_include" src="themes/default/include/m_footer.dwt"></div>
+	<div class="JQ_include" src="themes/default/include/site_bottom.dwt"></div>
+
+    <script src="themes/default/js/config.js"></script>
+	<script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+	<script src=themes/default/js/lib/template.min.js  "></script>
+	<script src="themes/default/js/loadHtml.js"></script>
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+	<script src="themes/default/js/worldunion.js"></script>
+	<script src="themes/default/js/mall-index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>美房美邦</title>
+	<link rel="icon" href="themes/default/favicon.ico" />
+    <meta name="keywords" content=" " />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+	<link rel="stylesheet" type="text/css" href="themes/default/css/mall.css">
+</head>
+<body class="bg-f7 mall-wrap">
+<!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/m_nav.lbi" --><!-- #EndLibraryItem -->
+	<!-- first-screen -->
+	<div class="first-screen">
+	    <div class="w1200 ">
+	        <div id="J_slide" class="slideBox">
+	            <ul class="items">
+	                <li><a href="themes/default/prolist/pro-detail.html"><img src="themes/default/img/temp_lunbo.png" /></a></li>
+	                <li><a href="themes/default/prolist/pro-detail.html"><img src="themes/default/img/temp_lunbo2.png" /></a></li>
+	                <li><a href="themes/default/prolist/pro-detail.html"><img src="themes/default/img/temp_lunbo3.png" /></a></li>
+	                <li><a href="themes/default/prolist/pro-detail.html"><img src="themes/default/img/temp_lunbo6.png" /></a></li>
+	            </ul>
+	        </div>
+	    </div>
+	</div>
+	<!-- 活动 爆款 -->
+	<div class="w1200 mt10">
+		<div class="bao_left">
+			<div class="box activity">
+				<dl>
+					<dt>最新活动</dt>
+					<dd><a href="#" style="color:#fff;">搭配大师</a></dd>
+                    <dd><a href="#" style="color:#fff;">墙纸大师</a></dd>
+                    <dd><a href="#" style="color:#fff;">美房美邦大讲堂</a></dd>
+					
+				</dl>
+			</div>
+			<div class="box mt10">
+				<a href=""><img src="themes/default/img/temp_bao.jpg" alt=""></a>
+			</div>
+			<div class="box name">
+				<p>
+					<img src="themes/default/img/i_bao.png" class="icon">
+					极限抢购1082卷
+				</p>
+			</div>
+		</div>
+		<div class="bao_right">
+			<div class="procon-box clearfix">
+				<div class="title">
+					爆款
+					<a href="#" class="more">更多爆款</a>
+				</div>
+				<div class="pro_box" id="baoKuan">
+				{foreach from=$hot_goods item=hot_list}
+					<div class="bao_pro">
+						<a href="{$hot_list.url}" class="">
+						<img src="{$hot_list.thumb}" alt="">
+						<img src="themes/default/img/i_hot.png" class="icon_bao">
+						<div class="info">
+							<p class="desc">{$hot_list.name}</p>
+							<p class="price">{$hot_list.shop_price}</p>
+						</div>
+						</a>
+					</div>
+				{/foreach}
+					
+				</div>
+			</div>
+			<div class="ad-con mt10">
+				<a href=""><img src="themes/default/img/ad.jpg" alt=""></a>
+			</div>
+		</div>
+	</div>
+	<!-- 分类展示 -->
+	<div class="floor w1200 procon-box mt10">
+			<div class="title clearfix">
+				<dl class="category-tags">
+				    
+					
+					{foreach from=$categories_list_place item=list}
+                    {if $list.name eq '儿童房'}
+                    <dd class="qiehuan1" data-mydata="{$list.id}">{$list.name}</dd>
+                    {else}
+                    <dd class="qiehuan2" data-mydata="{$list.id}">{$list.name}</dd>
+                    {/if}
+                    {/foreach}
+				</dl> 
+				<a href="#" class="more">更多</a>
+			</div>
+			<div class="floor-con" id="thelist" style="background-image:url(themes/default/img/ertu_bg.jpg)">
+				{foreach from=$good_list item=goods_info}
+				<div class="pro-box">
+					<img src="{$goods_info.thumb}" alt="">
+					<p>{$goods_info.name}</p>
+				</div>
+				{/foreach}
+			</div>
+	</div>
+
+	<!-- 右侧悬浮 -->
+	<div class="right-server" id="rightServer">
+	    <a href="#" target="_blank" class="online">
+	        <div class="iconfont">&#xe60a;
+             
+            </div>
+           
+	        <span>在线客服</span>
+	    </a>
+	    <a href="#" target="_blank" class="make-time">
+	        <div class="iconfont">&#xe60b;
+            
+            </div>
+	        <span>免费预约量尺</span>
+	    </a>
+	    <a href="#" target="_blank" class="sale">
+	        <div class="iconfont">&#xe608;
+            
+            </div>
+	        <span>最新活动</span>
+	    </a>
+	    <a href="javascript:void(0)" class="to-top" id="toTop">
+	        <div class="iconfont">&#xe609;
+            
+            </div>
+	        <span>返回顶部</span>
+	    </a>
+	    
+	</div>
+	<div class="JQ_include" src="themes/default/include/m_footer.dwt"></div>
+	<div class="JQ_include" src="themes/default/include/site_bottom.dwt"></div>
+
+    <script src="themes/default/js/config.js"></script>
+	<script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+	<script src=themes/default/js/lib/template.min.js  "></script>
+	<script src="themes/default/js/loadHtml.js"></script>
+
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+	<script src="themes/default/js/worldunion.js"></script>
+	<script src="themes/default/js/mall-index.js"></script>
+<script>
+    $(function(){
+        $('.floor .category-tags>dd').click(function(){
+             $('.floor .category-tags>dd').removeClass("qiehuan1");
+             $('.floor .category-tags>dd').addClass("qiehuan2");
+             $(this).removeClass('qiehuan2');
+             $(this).addClass('qiehuan1');
+             var cat_id=$(this).data('mydata');
+             $.get('index.php?cat_id='+cat_id+'&type=ajax',function(data){
+               if(data){
+                $("#thelist>div").remove();
+                $("#thelist").append(data);
+               }else{
+                    var str='<div class="pro-box">没有找到您要的数据!<div>';
+                    $("#thelist>div").remove();
+                    $("#thelist").append(str);
+               }
+             });
+             
+        })
+    })
+</script>
+
+</body>
+</html>

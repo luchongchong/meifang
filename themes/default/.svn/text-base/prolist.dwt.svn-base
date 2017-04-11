@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>美房美邦</title>
+	<link rel="icon" href="themes/default/favicon.ico" />
+    <meta name="keywords" content=" " />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+	<link rel="stylesheet" type="text/css" href="themes/default/css/mall.css">
+	<link rel="stylesheet" type="text/css" href="themes/default/css/product.css">
+</head>
+<body class="mall-wrap">
+<!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/m_nav.lbi" --><!-- #EndLibraryItem -->
+	<!-- bread nav -->
+	<div class="breadNavBg">
+	    <div class="breadNav">
+	        <div>
+	        <a title="首页" href="/">所有分类</a><i class="symbol">&gt;</i><span class="count">共找到{$pager_list.record_count}件</span>
+	        </div>    
+	    </div>
+	</div>
+	<div class="w1200">
+		<!-- filter -->
+		<ul class="pro-filter">
+		    <li class="pro-attr clearfix">
+                <div class="attr-key fl">美美商城：</div>
+                <div class="attr-val fl">
+                    
+                    <ul class="attr-list">
+                        {foreach from=$cat_info.cat_id  item=cat_list}
+                        {if $cat_id eq $cat_list.id}
+                            <li class="on" data-mydata="{$cat_info.ti_name}" value="{$cat_list.id}">{$cat_list.name}</li> 
+                        {else}
+                            <li data-mydata="{$cat_info.ti_name}" value="{$cat_list.id}">{$cat_list.name}</li> 
+                        {/if}
+                        {/foreach}
+                    </ul>
+                    
+                </div>
+            </li>
+            <li class="pro-attr clearfix">
+                <div class="attr-key fl">{$material_info.name}：</div>
+                <div class="attr-val fl">
+                    <ul class="attr-list" style="background-color:#FBFFFF;">
+                        {foreach from=$material_info.cat_id item=material_list}
+                        {if  $material_id eq $material_list.id}
+                        <li class="on" style="background-color: #c52021;"  data-mydata="{$material_info.tj_name}" value="{$material_list.id}">{$material_list.name}</li>
+                        {else}
+                        <li style="background-color:#FBFFFF;"  data-mydata="{$material_info.tj_name}" value="{$material_list.id}">{$material_list.name}</li>
+                        {/if}
+                        {/foreach}
+                    </ul>
+                </div>
+            </li>  
+            <li class="pro-attr clearfix">
+                <div class="attr-key fl">{$style_info.name}：</div>
+                <div class="attr-val fl">
+                    <ul class="attr-list">
+                    {foreach from=$style_info.cat_id item=style_list}
+                     {if  $style_id eq $style_list.id}
+                         <li class="on" href="javascript:void(0)"  data-mydata="{$style_info.tj_name}" value="{$style_list.id}">{$style_list.name}</li>
+                     {else}
+                        <li  href="javascript:void(0)" data-mydata="{$style_info.tj_name}" value="{$style_list.id}">{$style_list.name}</li>
+                     {/if}
+                    {/foreach}
+                    </ul>
+                </div>
+            </li>
+		    <li class="pro-attr clearfix">
+		        <div class="attr-key fl">价格区间：</div>
+		        <div class="attr-val fl">
+		            <ul class="attr-list" style="background-color:#FBFFFF;">
+		                {if $price eq 99}
+		                <li data-mydata="price" class="on" style="background-color: #c52021;" value="99">100以下</li>
+		                {else}
+		                <li data-mydata="price" style="background-color:#FBFFFF;" value="99">100以下</li>
+		                {/if}
+		                {if $price eq 149}
+		                <li data-mydata="price" class="on" style="background-color: #c52021;" value="149">100以下</li>
+		                {else}
+		                <li data-mydata="price" style="background-color:#FBFFFF;" value="149">100-150</li>
+		                {/if}
+		                {if $price eq 199}
+		                <li data-mydata="price" class="on" style="background-color: #c52021;" value="199">150-200</li>
+		                {else}
+		                <li data-mydata="price" style="background-color:#FBFFFF;" value="199">150-200</li>
+		                {/if}
+		                {if $price eq 249}
+		                <li data-mydata="price" class="on" style="background-color: #c52021;" value="249">200-250</li>
+		                {else}
+		                <li data-mydata="price" style="background-color:#FBFFFF;" value="249">200-250</li>
+		                {/if}
+		                {if $price eq 299}
+		                <li data-mydata="price" class="on" style="background-color: #c52021;" value="299">250-300</li>
+		                {else}
+		                <li data-mydata="price" style="background-color:#FBFFFF;" value="299">250-300</li>
+		                {/if}
+		                {if $price eq 300}
+		                 <li data-mydata="price" class="on" style="background-color: #c52021;" value="300">300以上</li>
+		                {else}
+		                 <li data-mydata="price" style="background-color:#FBFFFF;" value="300">300以上</li>
+		                {/if}
+		            </ul>
+		        </div>
+		    </li>      
+		</ul>
+		<!-- prolist-bd -->
+		<div class="prolist-bd">
+			<div class="pro-bd-bar">
+				共发现了{$pager_list.record_count}个
+				<div class="page-btn">
+					<span id="prveP"><a href="{$pager_list.page_prev}">上一页</a></span><span id="nextP"><a href="{$pager_list.page_next}">上一页</a></span>
+				</div>
+			</div>
+			<ul class="main clearfix">
+			    {foreach from=$goods_list item=goods_info}
+				<li class="pro-box">
+					<a href="{$goods_info.url}">
+						<img src="{$goods_info.goods_thumb}" alt="">
+						<div class="parameter ellipsis">
+							<div><span>风格：</span><span>{$goods_info.style_name}</span></div>
+							<div><span>材质：</span><span>{$goods_info.material_name}</span></div>
+							<div><span>规格：</span><span>{$goods_info.specification}</span></div>
+							<div><span>产地：</span><span>{$goods_info.origin_name}</span></div>
+						</div>
+						<p>{$goods_info.goods_name}</p>
+						<p>
+							<span class="price">{$goods_info.shop_price}</span> 
+							<span class="del-price">{$goods_info.shop_price}</span>
+						</p>
+					</a>
+				</li>
+				{/foreach}
+			</ul>
+		</div>
+			<!-- page -->
+            <div class="page-bg">
+                <div class="page-items fr clearfix">
+                    <a id="prePage" class="prev fl" href="{$pager_list.page_prev}">上一页</a>
+                    <!-- {if $pager_list.page_count neq 1} -->
+                    <!--{foreach from=$pager_list.page_number key=key item=item}-->
+                      <!-- {if $pager_list.page eq $key} -->
+                      <a class="fl cur" href="{$list}" id="pageFirst">{$key}</a>
+                      <!-- {else} -->
+                      <a class="fl cur" href="{$list}">{$key}</a>
+                      <!-- {/if} -->
+                    <!--{/foreach}-->
+                    <!-- {/if} -->
+                    <a id="nextPage" class="next fl" title="下一页" href="{$pager_list.page_next}">下一页</a>
+                    <div class="fl">
+                        <span class="fl">到</span>
+                        <input class="fl" type="text">
+                        <span class="fl">页</span>
+                        <a class="pageGo fl" href="javascript:void(0)">确定</a>
+                    </div>
+                </div>
+            </div>
+			<!--// page -->
+	</div>
+
+    <div class="JQ_include" src="themes/default/include/m_footer.dwt"></div>
+    <div class="JQ_include" src="themes/default/include/site_bottom.dwt"></div>
+
+    <script src="themes/default/js/config.js"></script>
+    <script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+    <script src=themes/default/js/lib/template.min.js  "></script>
+    <script src="themes/default/js/loadHtml.js"></script>
+
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+    <script src="themes/default/js/worldunion.js"></script>
+    <script src="themes/default/js/prolist.js"></script>
+</body>
+</html>
+<script>
+jQuery(function(){
+    
+    $(".attr-list>li").click(function(){
+        filter={};
+        filter['cat_id']={$cat_id};
+        filter['style_id']={$style_id};
+        filter['material_id']={$material_id};
+        filter['price']={$price};
+        if($(this).attr('class')){
+            var name = $(this).data('mydata');
+            var value=0;
+            filter[name]=value;
+            //console.log(filter)
+        }else{
+            var name= $(this).data('mydata');
+            var value=$(this).val();
+            //console.log(filter)
+            filter[name]=value;
+        }
+        window.location.href='category.php?cat_id='+filter['cat_id']+'&style_id='+filter['style_id']+'&material_id='+filter['material_id']+'&price='+filter['price'];        
+        
+    })
+})
+
+</script>

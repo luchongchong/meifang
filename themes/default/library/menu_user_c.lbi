@@ -1,0 +1,46 @@
+<div class="am-cf admin-main">
+  <!-- sidebar start -->
+  <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+    <div class="am-offcanvas-bar admin-offcanvas-bar">
+      <ul class="am-list admin-sidebar-list">
+        <li><a href="user_c.php"><span class="am-icon-home"></span> 首页</a></li>
+        <li class="admin-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 会员信息 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
+            <li><a href="user_c.php?act=weixin_fans" class="am-cf"><span class="am-icon-check"></span> 我的小伙伴<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+            <li><a href="user_c.php?act=my_income"><span class="am-icon-puzzle-piece"></span> 我的收益</a></li>
+            <li><a href="user_c.php?act=profile_c"><span class="am-icon-puzzle-piece"></span> 密码修改</a></li>
+            <li><a href="user_c.php?act=info_c"><span class="am-icon-puzzle-piece"></span> 个人信息修改</a></li>
+          </ul>
+        </li>
+        <li class="admin-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-file"></span> 账户中心 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
+            <li><a href="user_c.php?act=account_raply_c" class="am-cf"><span class="am-icon-check"></span> 申请提现<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+            <li><a href="user_c.php?act=account_log_c"><span class="am-icon-puzzle-piece"></span> 提现记录</a></li>
+          </ul>
+        </li>
+        <li><a href="user_c.php?act=goods_send_status"><span class="am-icon-file"></span> 收货详情</a></li>
+        <li><a href="user_c.php?act=download_file"><span class="am-icon-file"></span> 文件下载</a></li>
+        <li><a href="user_c.php?act=sample_list"><span class="am-icon-file"></span>样本订单列表</a></li>
+        <li class="admin-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-nav2'}"><span class="am-icon-file"></span> 店铺详情 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav2">
+            <li><a href="user_c.php?act=store_photos_list" class="am-cf"><span class="am-icon-check"></span> 门店照片<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+            <li><a href="user_c.php?act=shop_assistant_list"><span class="am-icon-puzzle-piece"></span> 店员形象</a></li>
+			<li><a href="user_c.php?act=construction_team"><span class="am-icon-puzzle-piece"></span> 施工队评价</a></li>
+            <li><a href="user_c.php?act=evaluation_management"><span class="am-icon-puzzle-piece"></span> 评价管理</a></li>
+            <li><a href="user_c.php?act=vip_activity_list"><span class="am-icon-puzzle-piece"></span>专享活动</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      
+       <div class="am-panel am-panel-default admin-sidebar-panel">
+        <div class="am-panel-bd">
+          <p><span class="am-icon-tag"></span><strong> {$rank_name}{$user_info_c.username}</strong>&nbsp;&nbsp;<small>您好！</small></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎您回来!</p>
+        </div>
+      </div>
+    </div>
+  </div>

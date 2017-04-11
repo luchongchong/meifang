@@ -1,0 +1,98 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{$page_title}</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <script src="assets/js/jquery.min.js"></script>
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+<!--head start -->
+<!-- #BeginLibraryItem "/library/head_user_c.lbi" --><!-- #EndLibraryItem -->
+<!--head end -->
+
+<!--menu start -->
+<!-- #BeginLibraryItem "/library/menu_user_c.lbi" --><!-- #EndLibraryItem -->
+<!--menu end -->
+
+
+  <!-- content start -->
+  <div class="admin-content">
+
+    <div class="am-cf am-padding">
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">首页</strong></div>
+    </div>
+    <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">
+      <li><a href="#" class="am-text-success"><span class="am-icon-btn am-icon-user-md"></span><br/>会员姓名<br/>{$info.username}</a></li>
+      <li><a href="#" class="am-text-warning"><span class="am-icon-btn am-icon-calendar-o"></span><br/>上次登录时间<br/>{$info.last_time}</a></li>
+      <li><a href="#" class="am-text-danger"><span class="am-icon-btn am-icon-user-md"></span><br/>会员等级<br/>{$rank_name}{$next_rank_name}</a></li>
+      <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>账号<br/>{$userinfo[0].user_id}</a></li>
+
+    </ul>
+    <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">
+      <li><a href="#" class="am-text-success"><span class="am-icon-btn am-icon-phone"></span><br/>联系电话<br/>{$userinfo[0].tel}</a></li>
+      <li><a href="#" class="am-text-warning"><span class="am-icon-btn am-icon-calendar-o"></span><br/>联系地址<br/>{$userinfo[0].address}</a></li>
+      <li><a href="#" class="am-text-danger"><span class="am-icon-btn am-icon-user-md"></span><br/>邮箱<br/>{$userinfo[0].email}</a></li>
+      <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>账户积分<br/>{$info.integral}</a></li>
+    </ul>
+    <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-left admin-content-list ">
+          {$lang.your_account}
+          {$lang.your_surplus}:{$info.surplus}<br />
+          <!-- {if $info.credit_line gt 0} 如果有信用额度 -->
+          {$lang.credit_line}:{$info.formated_credit_line}<br />
+          <!-- {/if} -->
+          <!--{$lang.your_bonus}:<a href="user.php?act=bonus" class="pink ">{$info.bonus}</a><br />-->
+    </ul> 
+    <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">
+        <div class="Invitation_txt">我的二维码</div>
+        <div class="qr_img"><img src="{$qr_url}" style="width:120px; height:120px;"/></div>
+        <div><a href="{$qr_url}" target="_blank">点击查看大图</a></div>
+        <div><a href="./user_c.php?act=downimg" target="_blank">点击下载</a></div>
+    </ul> 
+  
+     
+    </div>
+  </div>
+  <!-- content end -->
+
+<script>
+
+</script>
+
+</div>
+
+<a class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+<footer>
+  <hr>
+  <p class="am-padding-left am-text-center">©2015 MEIBANG.COM 所有设计和内容保留一切权利 沪ICP备xxx号</p>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/polyfill/rem.min.js"></script>
+<script src="assets/js/polyfill/respond.min.js"></script>
+<script src="assets/js/amazeui.legacy.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/amazeui.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/app.js"></script>
+</body>
+</html>

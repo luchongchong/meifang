@@ -1,0 +1,193 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{$page_title}</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <script src="assets/js/jquery.min.js"></script>
+  {insert_scripts files="../js/utils.js,listtable.js"}
+  <style>
+    .am-u-sm-12 {
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+<!--head start -->
+<!-- #BeginLibraryItem "/library/head_user_p.lbi" --><!-- #EndLibraryItem -->
+<!--head end -->
+
+
+
+
+  <!-- content start --> 
+        <div class="admin-content " style="margin-bottom: 80px">
+          <div class="am-g am-padding">
+            <div class="am-u-sm-8 am-u-md-10">
+              <form action="user_p.php" class="am-form am-form-inline">
+                <div class="am-form-group am-form-icon">
+                  <i class="am-icon-calendar"></i>
+                  <input type="text" name="start_time" class="am-form-field am-input-sm" data-am-datepicker readonly placeholder="下单开始时间">
+                </div>
+                <div class="am-form-group am-form-icon">
+                  <i class="am-icon-calendar"></i>
+                  <input type="text" name="end_time" class="am-form-field am-input-sm" data-am-datepicker readonly placeholder="下单结束时间">
+                </div>
+                <div class="am-form-group am-input-group-sm">
+                  <input type="text" name="keywords" class="am-form-field" placeholder="其他搜索">
+                </div>
+                <style>
+                  .am-selected-btn {
+                      width: 140px;
+                    }
+                </style>
+                <div class="am-form-group ">                
+                    <select data-am-selected name="status" >
+                      <option value="" >选择发货状态</option>
+                      <option value="1">未发货</option>
+                      <option value="2">已发货</option>
+                                                                  
+                    </select>               
+                </div>   
+                <input name="act" type="hidden" value="list"/> 
+                <input name="username" type="hidden" value="{$username}"/>   
+                <input name="show_name" type="hidden" value="{$show_name}"/>  
+                <div class="am-form-group " >
+                  <button type="submit" class="am-btn am-btn-success am-default">立即搜索</button>
+                </div>
+              </form>
+            </div>
+          </div> 
+          <div class="am-u-sm-12">
+            <table class="am-table am-table-bd am-table-striped admin-content-table">
+              <thead>
+              <tr>
+
+                <th>型号</th>
+                <th>数量</th>
+                <th>状态</th>
+                <th>下单时间</th>
+                <th>收货人</th>
+                <th>直接发送给客户</th>
+                <th>收货人电话</th>
+                <th>收货地址</th>
+                <th>发货单号</th>
+                <th>发货时间</th>
+                <th>货运公司</th>
+                <th>订单号</th>
+                <th>操作</th>
+              </tr>
+              </thead>
+              <tbody>
+               {foreach from=$goods_list item=list key=k}
+
+                <tr>
+                  <td >{$list.goods_attr}</td>
+                  <td >{$list.goods_number}</td>
+                  <td >{if $list.status==1}未发货{else}已发货{/if}</td>
+                  <td >{$list.add_time}</td>
+                  <td >{$list.c_name}</td>
+                  <td >{if $list.send_status==1}是{else}否{/if}</td>
+                  <td >{$list.c_tel}</td>
+                  <td >{$list.c_address}</td>
+                  <td >{$list.send_sn}</td>
+                  <td >{if $list.send_time neq '1970-01-01'}{$list.send_time}{/if}</td>
+                  <td >{ $list.send_company}</td>
+                  <td >{$list.order_sn}</td>
+                  <td >
+                    {if $list.status eq 1}
+                    <button class="am-btn am-btn-success" id="doc-prompt-toggle{$k}">确认发货</button>
+                    {/if}
+                      <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
+                        <div class="am-modal-dialog">
+                          <div class="am-modal-hd">发货信息填写</div>
+                          <div class="am-modal-bd">
+                            <input type="text" class="am-modal-prompt-input" placeholder="货运单号" id="send_sn">
+                            <input type="text" class="am-modal-prompt-input" placeholder="货运公司" id="send_company">
+                          </div>
+                          <div class="am-modal-footer">
+                            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+                            <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+                          </div>
+                        </div>
+                    </div>
+                    
+                      
+                  </td>
+                </tr>
+                {/foreach}             
+              </tbody>
+            </table>
+          
+          </div> 
+           
+        </div>  
+  <!-- content end -->
+
+                      
+
+<a class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+<footer style="position:fixed;bottom:0;width:100% ;z-index:-100 ">
+  <hr>
+  <p class="am-padding-left am-text-center" >©2015 MEIBANG.COM 所有设计和内容保留一切权利 沪ICP备xxx号</p>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/polyfill/rem.min.js"></script>
+<script src="assets/js/polyfill/respond.min.js"></script>
+<script src="assets/js/amazeui.legacy.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="./assets/js/jquery.min.js">
+  
+
+</script>
+<script src="./assets/js/amazeui.min.js"></script>
+<!--<![endif]-->
+<script src="./assets/js/app.js"></script>
+<script >
+{foreach from=$goods_list item=list key=k}
+  $(function() {
+  $('#doc-prompt-toggle{$k}').on('click', function() {
+    $('#my-prompt').modal({
+      relatedTarget: this,
+      onConfirm: function(e) {
+        var send_sn = $('#send_sn').val();
+        var send_company = $('#send_company').val();
+        if(send_sn == ''||send_company == ''){
+          alert('请将发货信息填写完整！');
+          exit;
+        }else{
+          window.location = "user_p.php?act=check&id={$list.id}&username={$username}&send_sn="+send_sn+"&send_company="+send_company;  
+        }
+                
+      },
+    });
+  });
+});
+{/foreach}
+
+</script>
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+</body>
+</html>

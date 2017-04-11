@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>美房美邦</title>
+    <link rel="icon" href="../favicon.ico" />
+    <meta name="keywords" content=" " />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/mall.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/yangben.css">
+    <style type="text/css">
+        .sel-skin {
+            width: 170px;
+            height: 38px;
+            line-height: 38px;
+            padding-left: 4px;
+            padding-right: 4px;
+            border: 1px solid #ccc;
+            background-color: transparent;
+            display: block;
+            cursor: pointer;
+            position: relative;
+            z-index: 4;
+        }
+    </style>
+</head>
+<body class="bg-f7 mall-wrap">
+<!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/m_nav.lbi" --><!-- #EndLibraryItem -->
+    <!-- bread nav -->
+    <div class="breadNavBg">
+        <div class="breadNav">
+            <div>
+            <a title="首页" href="/">美美商城</a><i class="symbol">&gt;</i><span>样本</span>
+            </div>    
+        </div>
+    </div>
+    <div class="w1020">
+        <div class="yang_filter">
+            <ul class="clearfix">
+                <li class="yang_attr">
+                    <div class="attr_key">产地：</div>
+                        <div class="sel">
+                        <i class="iconfont">&#xe607;</i>
+                        <label class="sel-skin origin">请选择产地</label>
+                        <select id="filter1" class="sel-skin" style="top:-39px;width:180px;opacity:0;">
+                            <option value=0 {if $origin eq 0} selected='selected'{/if}>不限</option>
+                            {foreach from=$provite_list key=k item=provite}
+                            <option value={$provite.region_id} {if $origin eq $provite.region_id}selected=selected{/if}>{$provite.region_name}</option>
+                            {/foreach}
+                        </select>
+                        </div>
+                        
+
+                   <!-- <div id="filter1" class="sel">
+                        <i class="iconfont">&#xe607;</i>
+                        <label class="sel-skin">请选择产地</label>
+                        <ul>
+                            <li class="dianji" id="0" value='0' name='origin'>不限</li>
+                            {foreach from=$provite_list key=k item=provite}
+                            <li class="dianji" name='origin' {if $origin eq $provite.region_id} class="on" style="background-color: rgb(238, 238, 238);" {/if} value="{$provite.region_id}">{$provite.region_name}</li>
+                            {/foreach}
+                        </ul>
+                        <input type="hidden" id="input1">
+                    </div>-->
+
+                </li>
+                {foreach from=$categories key=k item=cate}
+                <li class="yang_attr">
+                    <div class="attr_key">{$cate.name}：</div>
+                    <div class="sel">
+                        <i class="iconfont">&#xe607;</i>
+                       
+                            {if $cate['idr'] eq 2}
+                             <label class="sel-skin cat_id">请选择{$cate.name}</label>
+                            <select id="filter{$cate.idr}" style="width:180px;top:-39px;opacity:0;" class="sel-skin">
+                            <option value="0"{if $cat_id eq 0}selected='selected'{/if}>不限</option>
+                            {foreach from=$cate.cat_id key=ke item=cate_info}
+                                <option value={$cate_info.id} {if $cat_id eq $cate_info['id']}selected='selected'{/if}>{$cate_info.name}</option>
+                            {/foreach}
+                            </select>
+                            {/if}
+
+                            {if $cate['idr'] eq 3}
+                             <label class="sel-skin style_id">请选择{$cate.name}</label>
+                                <select id="filter{$cate.idr}" style="width:180px;top:-39px;opacity:0;" class="sel-skin">
+                                <option value="0"{if $style_id eq 0}selected='selected'{/if}>不限</option>
+                                {foreach from=$cate.cat_id key=ke item=cate_info}
+                                    <option value={$cate_info.id} {if $style_id eq $cate_info['id']}selected='selected'{/if}>{$cate_info.name}</option>
+                                {/foreach}
+                                </select>
+                            {/if}
+
+                             {if $cate['idr'] eq 4}
+                              <label class="sel-skin material_id">请选择{$cate.name}</label>
+                                <select id="filter{$cate.idr}" style="width:180px;top:-39px;opacity:0;" class="sel-skin">
+                                <option value="0"{if $material_id eq 0}selected='selected'{/if}>不限</option>
+                                {foreach from=$cate.cat_id key=ke item=cate_info}
+                                    <option value={$cate_info.id} {if $material_id eq $cate_info['id']}selected='selected'{/if}>{$cate_info.name}</option>
+                                {/foreach}
+                                </select>
+                            {/if}
+                        <!--<ul>
+                            <li class="dianji" id="0" value='0' name="{$cate.tj_name}" >不限</li>
+                            {foreach from=$cate.cat_id key=ke item=cate_info}
+                            <li class="dianji" name="{$cate.tj_name}" value="{$cate_info.id}">{$cate_info.name}</li>
+                            {/foreach}
+                        </ul>
+                        <input type="hidden" id="input{$cate.idr}">-->
+
+
+                    </div>
+                </li>
+                {/foreach}
+                <li class="yang_attr">
+                <div class="attr_key">价格：</div>
+                <div  class="sel">
+                <i class="iconfont">&#xe607;</i>
+                <label class="sel-skin price">请选择价格</label>
+                  <select id='filter5' name='filter5' class="sel-skin" style="top:-39px;width:180px;opacity:0;">
+                        <option value='0' {if $price eq 0}selected='selected'{/if}>不限</option>
+                        <option value='49' {if $price eq 49}selected='selected'{/if}>0-50</option>
+                        <option value='99' {if $price eq 99}selected='selected'{/if}>50-100</option>
+                        <option value='199' {if $price eq 199}selected='selected'{/if}>100-200</option>
+                        <option value='200' {if $price eq 200}selected='selected'{/if}>200以上</option>
+                    </select>
+                </div>
+                <!-- <i class="iconfont" style="font-size:26px;line-height:42px;">&#xe607;</i>
+                 <div id="filter5" class="sel">
+                    <i class="iconfont">&#xe607;</i>
+                    <label class="sel-skin">请选择价格</label>
+                    <ul>
+                        <li class="dianji" id="0" name="price" value="0">不限</li>
+                        <li class="dianji" id="1" name="price" value="49">0-50</li>
+                        <li class="dianji" id="2" name="price" value="99">50-100</li>
+                        <li class="dianji" id="3" name="price" value="199">100-200</li>
+                        <li class="dianji" id="4" name="price" value="200">200以上</li>
+                    </ul>
+                    <input type="hidden" id="input5">
+                </div>-->
+
+
+            </li>
+            </ul>
+        </div>
+        <div class="content" >
+            <div class="srp album flex-f-row" id="J_ItemList" style="opacity:1;">
+                <ul class="yang_list clearfix pro_box cle" id="baoKuan">
+                {foreach from=$sample_list key=k item=list}
+                    <li>
+                        <a href="sample_info.php?id={$list.goods_id}">
+                            <img src="{$list.thumb}" alt="">
+                            <p class="name">{$list.name}</p>
+                            <p class="price">{$list.shop_price}</p>
+                        </a>
+                    </li>
+                 {/foreach}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+        <div class="page-bg">
+                <div class="page-items fr clearfix">
+                	   <a id="prePage" class="prev fl" href="{$pager_list.page_prev}">上一页</a>
+                     {if $pager_list.page_count neq 1} 
+                     
+                    {foreach from=$pager_list.page_number key=key item=item}
+                   
+                       {if $pager_list.page eq $key} 
+                      <a class="fl cur" href="{$item}" id="pageFirst" style="background:#008aff;">{$key}</a>
+                       {else} 
+                      <a class="fl cur" href="{$item}">{$key}</a>
+                       {/if} 
+                    {/foreach}
+                    {/if} 
+                    <a id="nextPage" class="next fl" title="下一页" href="{$pager_list.page_next}">下一页</a>
+                    <!-- <div class="fl">
+                        <span class="fl">到</span>
+                        <input class="fl" type="text">
+                        <span class="fl">页</span>
+                        <a class="pageGo fl" href="javascript:void(0)">确定</a>
+                    </div>-->
+                
+                
+                </div>
+            </div>
+			<!--// page -->
+     <div class="JQ_include" src="themes/default/include/m_footer.dwt"></div>
+    <div class="JQ_include" src="themes/default/include/site_bottom.dwt"></div>
+
+    <script src="themes/default/js/config.js"></script>
+    <script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+    <script src=themes/default/js/lib/template.min.js  "></script>
+    <script src="themes/default/js/loadHtml.js"></script>
+
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+    <script src="themes/default/js/worldunion.js"></script>
+    <script src="themes/default/js/yangben.js"></script>
+    <script type="text/javascript" src="themes/default/js/jquery.more.sample.js"></script>
+
+  <script type="text/javascript">
+         /*var cat_id={$cat_id};
+        var style_id= {$style_id};
+        var material_id ={$material_id};
+        var origin ={$origin};
+        var price  ={$price};//alert(price);
+       jQuery(function($){
+          $("#J_ItemList").more({'address':      'sample.php?' + 
+                                                'cat_id=00&style_id=00&material_id=00&origin=00&price=00'+
+                                                '&biaoji={$biaoji}&act=asynclist&category={$category}'+
+                                                '&brand={$brand_id}&filter_attr={$filter_attr}&page={$pager.page}'+
+                                                '&sort={$pager.sort}&order={$pager.order}', 
+                                'spinner_code': '<div style="text-align:center; margin:10px;">'+
+                                                    '<img src="{$ectouch_themes}/images/loader.gif" />'+
+                                                '</div>'
+                                },$('.dianji'));
+                 
+          $(window).scroll(function () {
+                if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                    $('.get_more').click();
+                }
+            });
+            
+        });*/
+     $(function(){
+	       	var cat_id={$cat_id};
+	        var style_id= {$style_id};
+	        var material_id = {$material_id};
+	        var origin ={$origin};
+	        var price  ={$price};
+	       
+            if(origin > 0){
+                $(".origin").html($("#filter1").find("option:selected").text());
+            }
+            if(price > 0){
+                $(".price").html($("#filter5").find("option:selected").text());
+            }
+             if(cat_id > 0){
+                $(".cat_id").html($("#filter2").find("option:selected").text());
+            }
+             if(style_id > 0){
+                $(".style_id").html($("#filter3").find("option:selected").text());
+            }
+             if(material_id > 0){
+                $(".material_id").html($("#filter4").find("option:selected").text());
+            }
+
+            $("#filter5,#filter1,#filter3,#filter2,#filter4").change(function(e){
+              if(e.target.id == "filter5"){
+                    price = $(this).val();
+              }else if(e.target.id == "filter1"){
+                    origin = $(this).val();
+              }else if(e.target.id == "filter2"){
+                    cat_id = $(this).val();
+              }else if(e.target.id == "filter3"){
+                    style_id = $(this).val();
+              }else if(e.target.id == "filter4"){
+                    material_id = $(this).val();
+              }
+              
+        	window.location.href = "sample.php?cat_id="+cat_id+"&style_id="+style_id+"&material_id="+material_id+"&origin="+origin+"&price="+price;
+        })
+     })
+       
+       
+    </script>
+    
+    
+    
+    
+</body>
+</html>

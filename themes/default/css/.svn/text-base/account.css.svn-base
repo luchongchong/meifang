@@ -1,0 +1,196 @@
+/* register s*/
+.register-wrap .head .search-hotwords{
+	display: none;
+}
+.register-con{
+    position: relative;
+	width: 1130px;
+	margin: 42px auto;
+	border-top: 2px solid #b5b5b6;
+}
+.register-con .register-steps{
+    width: 762px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -381px;
+    margin-top: -40px;
+    line-height: 44px;
+    font-size: 18px;
+    color: #c9caca;
+}
+.register-con .register-steps .line{
+    position: absolute;
+    display: block;
+    bottom: 0;
+    height: 0;
+    left: 50%;
+    border-top: 1px solid #c52021;
+    border-bottom: 1px solid #c52021;
+    margin-left: -381px;
+    width: 254px;
+}
+.register-con .register-steps i{ font-size: 20px;margin-right: 5px;}
+.register-con .register-steps .step{
+    float: left;
+    width: 254px;
+    text-align: center;
+    height: 40px;
+}
+.register-con .register-steps .on{ color: #3e3a39;}
+.register-con .register-steps .on i{ color: #c52021;}
+.account-form{
+	width: 550px;
+	margin: 60px auto;
+	font-size: 18px;
+}
+.account-form .items{
+	margin-bottom: 20px;
+}
+.account-form .items .lab{
+    float: left;
+    width: 170px;
+}
+.account-form .items .val{
+    position: relative;
+    float: left;
+    text-align: left;
+}
+.account-form .items .val input{
+    float: left;
+    margin-left: -1px;
+}
+.account-form .items .val input.sendcode{
+    width: 180px;
+    background-color: #fff;
+    font-size: .8em;
+    color: #b5b5b6;
+}
+.account-form .items .sel li{
+    position: relative;
+}
+.account-form .items .sel em{
+    position: absolute;
+    right: 17px;
+    top: 0;
+    line-height: 38px;
+}
+.register-con #step2Form{
+    display: none;
+}
+.register-con .over{
+    width: 550px;
+    margin: 60px auto;
+    display: none;
+}
+.over p{
+    font-size: 36px;
+    text-align: center;
+    line-height: 2;
+}
+.over a{
+    display: block;
+    margin: 20px auto;
+    width: 248px;
+    line-height: 36px;
+}
+.over .icon{
+    width: 160px;
+    height: 160px;
+    margin: 20px auto;
+    background-image: url(../img/success_failure.png);
+    background-repeat: no-repeat;
+    background-position: -160px 0;
+}
+.over div.failure{ background-position: -160px 0;}
+.over div.sure{ background-position: -320px 0;}
+
+/* register end*/
+/* login s*/
+.login-wrap{
+    background: url(../img/login_bg.jpg) no-repeat center top;
+    text-align: center;
+}
+.login-wrap .h-search-box{
+    display: none;
+}
+.login-wrap .login-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 370px;
+    height: 340px;
+    margin-top: -200px;
+    margin-left: -185px;
+    background-color: #fff;
+    border-top: 2px solid #c52021;
+    border-left: 1px solid #b7b7b7;
+    border-right: 1px solid #b7b7b7;
+    border-bottom: 1px solid #b7b7b7;
+    font-size: 16px;
+}
+.login-wrap .login-box .tit{
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #b7b7b7;
+    height: 60px;
+    line-height: 60px;
+}
+.login-wrap .login-box .tit .line{
+    position: absolute;
+    display: block;
+    bottom: 0;
+    height: 0;
+    width: 50%;
+    left: 0;
+    margin-bottom: -2px;
+    border-top: 1px solid #c52021;
+    border-bottom: 1px solid #e19191;
+}
+.login-wrap .login-box .tit span{
+    display: inline-block;
+    width: 50%;
+    color: #9fa0a0;
+    cursor: pointer;
+}
+.login-wrap .login-box .tit span.on{color: #333;}
+.scan-code img{
+    width: 130px;
+    height: 130px;
+    margin: 30px auto 0;
+}
+.scan-code p{ color: #9fa0a0;}
+#formLog{ display: none;}
+.login-form{
+    margin-top: 40px;
+}
+.login-form .items .val{
+    float: none;
+    margin-left: auto; 
+    margin-right: auto; 
+}
+.login-form .items .val .iconfont{
+    position: absolute;
+    right: 60px;
+    font-size: 22px;
+    line-height: 38px;
+    color: #aaa;
+}
+.login-form .items input{
+    display: block;
+    margin: 0 auto;
+}
+.login-form .others{
+    width: 260px;
+    margin: 0 auto;
+    line-height: 20px;
+    height: 20px;
+    margin-bottom: 20px;
+}
+.login-form .others a{
+    float: left;
+    color: #9fa0a0;
+}
+.login-form .others a.reg-link{
+    float: right;
+}

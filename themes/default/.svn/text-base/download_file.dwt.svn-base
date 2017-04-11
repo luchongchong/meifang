@@ -1,0 +1,95 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{$page_title}</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <script src="assets/js/jquery.min.js"></script>
+  {insert_scripts files="../js/utils.js,listtable.js"}
+  <style>
+    .am-u-sm-12 {
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+<!--head start -->
+<!-- #BeginLibraryItem "/library/head_user_c.lbi" --><!-- #EndLibraryItem -->
+<!--head end -->
+
+<!--menu start -->
+<!-- #BeginLibraryItem "/library/menu_user_c.lbi" --><!-- #EndLibraryItem -->
+<!--menu end -->
+
+
+  <!-- content start --> 
+        <div class="admin-content"> 
+          <div class="am-u-sm-12" style=" height:600px; width:100%; overflow-y:scroll;">
+            <table class="am-table am-table-bd am-table-striped admin-content-table">
+              <thead>
+              <tr>
+                <th width="80%">名称</th>
+                <th width="20%">操作</th>
+              </tr>
+              </thead>
+                <tbody>
+                 {foreach from=$list item=list1}
+                  <tr>
+                    <td>{$list1.title}</td>
+                    <td ><a href="{$list1.file_url}" target="_blank"><button class="am-btn am-btn-success">下载</button></a></td>
+                  </tr>
+                  {/foreach}                
+                </tbody>
+                
+            </table>
+          </div> 
+           </div>
+        </div>  
+  <!-- content end -->
+
+                      
+
+<a class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+<footer>
+  <hr>
+  <p class="am-padding-left am-text-center">©2015 MEIBANG.COM 所有设计和内容保留一切权利 沪ICP备xxx号</p>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/polyfill/rem.min.js"></script>
+<script src="assets/js/polyfill/respond.min.js"></script>
+<script src="assets/js/amazeui.legacy.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="./assets/js/jquery.min.js">
+  
+
+</script>
+<script src="./assets/js/amazeui.min.js"></script>
+<!--<![endif]-->
+<script src="./assets/js/app.js"></script>
+<script type="text/javascript">
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+
+</body>
+</html>

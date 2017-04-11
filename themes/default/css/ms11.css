@@ -1,0 +1,187 @@
+*
+{
+	margin:0px;
+	padding:0px;
+}
+a:link
+{
+	color:#000000; 
+	text-decoration:none;
+} 
+li
+{
+	list-style:none;
+}
+input
+{
+	font-size:18px;
+	outline:none;
+}
+body
+{
+	font-family:"微软雅黑";	
+}
+.top_bg
+{
+	width:100%;
+    height:48px;
+	background:#c52021;
+	overflow:hidden;
+	position:relative;
+}
+.jmy_bg
+{
+	/*width:18%;*/
+	/*height:50px;*/
+	float:left;
+	overflow:hidden;
+}
+ul.nav
+{
+	position:absolute;
+	top:10px;
+	left:550px;
+	overflow:hidden;
+	zoom:1;
+}
+ul.nav li
+{
+	float:left;
+	
+}
+ul.nav li a
+{
+	color:#fff;
+	display:block;
+	float:left;
+	margin-left:80px;
+	
+}
+.my_nei
+{
+	width:100%;
+	/*height:30px;*/
+	margin:0 auto;
+	overflow:hidden;
+}
+.my_nei span
+{
+	color:#fff;
+	position:relative;
+	top:-2px;
+	font:bold 16px/30px  微软雅黑;
+	margin-left:5px;
+}
+.my_nei img
+{
+	
+	width:100%;
+	
+}
+div.baokuan
+{
+	width:100%;
+	height:70px;
+	background:#41c4c0;	
+	color:#fff;
+	
+	
+	
+}
+div.baokuan p
+{
+	float:left;
+	margin-left:100px;
+	margin-top:20px;
+}
+div.baokuan dl
+{
+	float:right;
+	margin-right:150px;
+	margin-top:20px;
+}
+div.baokuan dl.fashou dt
+{
+	float:left;
+	margin-right:10px;
+}
+div.baokuan dl.fashou dd
+{
+	float:right;
+}
+div.content1
+{
+	width:1200px;
+	margin:0 auto;
+	overflow:hidden;zoom:1;
+	
+}
+ 
+ dl.starhot dd
+{
+	padding-left:5%;
+	font-size:16px;
+	
+	
+}
+
+ dl.goumai
+{
+	position:relative;
+	
+}
+ dl.goumai dd
+{
+	position:absolute;
+	top:8px;
+	padding-left:5%;
+	
+	width:100%;
+	
+}
+ dl.goumai dd span.now
+{
+	color:#fff;
+	font-size:18px;
+	
+}
+ dl.goumai dd span.before
+{
+	color:#fff;
+	font-size:12px;
+	text-decoration:line-through;
+	padding-left:3%;
+	
+}
+ dl.goumai dd span.shengyu
+{
+	color:#fff;
+	font-size:12px;
+	
+	
+	
+}
+ dl.goumai dd span.buy
+{
+	color:#f00;
+	font-size:16px;
+	padding-left:20%;
+	
+	
+	
+}
+div.content1 div.one
+{
+	float:left;
+	
+	margin-left:58px;
+	margin-top:1%;
+}
+div.content1 div.left
+{
+	margin-left:0;
+}
+
+
+/*选项卡*/
+

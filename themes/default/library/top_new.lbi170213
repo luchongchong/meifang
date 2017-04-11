@@ -1,0 +1,52 @@
+ 	<div class="top"></div><!--top-->
+
+        <div class="menu">
+        	<div class="wid">
+            	<p class="fl">欢迎光临本店　　欢迎登录美房美邦！<a href="./user.php?act=login" class="color"> 请登录</a><a href="./user.php?act=register">免费注册</a></p>
+                <p class="fr">
+                	<span class="fl"><a href="./user.php?act=order_list">我的订单</a><a href="flow.php"><img src="themes/default/img/ico16.png" alt="">购物车</a></span>
+                    <span class="fr">
+                    	<a href="./user.php?act=collection_list">收藏夹</a>
+                        <a href="#">积分商城</a>
+                        <a href="xiuxiu.php">魔法幻装</a>
+                        <a href="allmendian.php">全国门店</a>
+                        <a href="#">我秀我家</a>
+                        <a href="#" class="last">联系我们</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <div class="search">
+        	<div class="wid">
+            	<div class="logo">
+                	<img src="themes/default/img/img2.jpg" alt="">
+                </div>
+                <div class="layout_sea">
+                	<img src="themes/default/img/img3.jpg" alt="">
+                    <input type="text">
+                    <button>搜 索</button>
+                </div>
+                <div class="code">
+                	<img src="themes/default/img/img1.jpg" alt="">
+                    <p>扫我进入手机端</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="nav_menu">
+        	<div class="wid">
+            	<ul>
+            		<li class="acti"><a href="./index.php">首页</a></li>
+                    <li><a href="./wallpaper.php">墙纸</a></li>
+                    <li><a href="./wallcloth.php">无缝墙布</a></li>
+                    <li><a href="./fresco.php">壁画</a></li>
+                    <li><a href="./curtain.php">窗帘</a></li>
+                    <li><a href="./soft.php">软包</a></li>
+                    <li><a href="./diatom_ooze.php">硅藻泥</a></li>
+                    <li><a href="./decorative.php">装饰画</a></li>
+                    <li><a href="./accessories.php">辅料</a></li>
+                    <li><a href="./sample.php">样本</a></li>
+            	</ul>
+            </div>
+        </div>

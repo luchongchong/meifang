@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>美房美邦</title>
+	<link rel="icon" href="../favicon.ico" />
+    <meta name="keywords" content=" " />
+	<meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/account.css">
+    {insert_scripts files='common.js,user.js'}
+</head>
+<body class="register-wrap">
+    <!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+    <!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+	<div class="register-con">
+		<div class="register-steps">
+			<div class="step on" style="display:none">
+				<i class="iconfont">&#xe60c;</i> 设置登录名
+			</div>
+			<div class="step s2">
+				<i class="iconfont">&#xe60c;</i>填写用户信息
+			</div>
+			<div class="step s3">
+				<i class="iconfont">&#xe60d;</i>注册成功
+			</div>
+			<em class="line" id="stepLine"></em>
+		</div>
+		<form style="display:none;" id="step1Form" class="account-form" action="">
+			<div class="items">
+				<div class="lab">手机号码</div>
+				<div class="val">
+					<div id="countrySelect" class="sel">
+					      <i class="iconfont">&#xe607;</i>
+					      <label class="sel-skin">中国大陆 <em>+86</em></label>
+					      <ul>
+					         <li selectid="86">中国大陆 <em>+86</em></li>
+					         <li selectid="87">中国大陆 <em>+87</em></li>
+					         <li selectid="88">中国大陆 <em>+88</em></li>
+					      </ul>
+					</div>
+					<input name="country" type="hidden" id="country"/>
+					<input name="phone" type="text">
+				</div>
+			</div>
+			<div class="items">
+				<div class="lab">验<em class="chars2">&nbsp;</em>证</div>
+				<div class="val">
+					<input name="code" type="text">
+					<input class="sendcode" type="button" value="获取短信验证码">
+				</div>
+			</div>
+			<div class="items">
+				<div class="lab"></div>
+				<div class="val">
+					<input class="btn" id="nextStep" type="button" value="下一步">
+				</div>
+			</div>
+		</form>
+		{insert_scripts files='utils.js'}
+		<form id="step2Form" {if $act eq 'register'}style="display:block;width:100%" {/if} class="account-form" action="user.php" method="post" name="formUser" onsubmit="return register();" >
+			<div class="items">
+				<div class="lab">姓<em class="chars2">&nbsp;</em>名</div>
+				<div class="val">
+					<input name="username" type="text" class="middle-w" onblur="is_registered(this.value);" class="coLogin_txt">
+				</div>
+				<div class="tips" id="username_notice">*</div>
+			</div>
+			<div class="items">
+				<div class="lab">手机号码</div>
+				<div class="val">
+					<input name="mobile" type="text" class="middle-w" onblur="checkmobile(this.value);" class="coLogin_txt">
+				</div>
+				<div class="tips" id="mobile_notice">*</div>
+			</div>
+			<div class="items">
+				<div class="lab">E-mail</div>
+				<div class="val">
+					<input name="email" type="text" class="middle-w" onblur="checkEmail(this.value);" class="coLogin_txt" >
+				</div>
+				<div class="tips" id="email_notice">*</div>
+			</div>
+			
+			<div class="items">
+				<div class="lab">密<em class="chars2">&nbsp;</em>码</div>
+				<div class="val">
+					<input name="password" type="password" onblur="check_password(this.value);" onkeyup="checkIntensity(this.value)"  class="middle-w">
+				</div>
+				<div class="tips" id="password_notice">*</div>
+			</div>
+			<div class="items">
+				<div class="lab">确认密码</div>
+				<div class="val">
+					<input  name="confirm_password" type="password" onblur="check_conform_password(this.value);" class="middle-w">
+				</div>
+				<div class="tips" id="conform_password_notice">*</div>
+			</div>
+			
+			
+        <!-- 判断是否启用验证码 {if $enabled_captcha} -->
+       
+            <div class="items">
+                <div class="lab">{$lang.comment_captcha}：</div>
+                <div class="val">
+                        <input type="text" size="8" name="captcha" class="coLogin_txt_2" />
+                 </div>
+                 <div class="tips"> <img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;width:70px;height:40px;" onClick="this.src='captcha.php?'+Math.random()" /> </div>
+                
+            </div>
+    	<!-- {/if} -->
+			<div class="items">
+                <div class="lab"></div>
+                <div class="val">
+                   <p></p>
+                    <input name="agreement" type="checkbox" value="1" checked="checked" class="checkbox_txt" style="margin-top:10px;margin-right:5px;">
+                    <b>我已看过并接受《<a href="article.php?cat_id=-1" style="color:blue" target="_blank">用户协议</a>》</b>
+                </div>
+            </div>
+			<div class="items">
+				<div class="lab"></div>
+				<div class="val">
+				    <input name="Submit" type="submit" value="下一步" class="btn middle-w" disabled="">
+				    <input name="act" type="hidden" value="act_register">
+				</div>
+			</div>
+		</form>
+		<div class="over" id="overReg" {if $act eq 'act_register'}style="display:block;" {/if}>
+			<div class="icon"></div>
+			<p>恭喜您注册成功</p>
+			<a href="user.php" class="btn red-btn middle-w">完 &nbsp;&nbsp;&nbsp;成</a>
+		</div>
+	</div>
+
+
+    <script src="themes/default/js/config.js"></script>
+    <script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+    <script src=themes/default/js/lib/template.min.js  "></script>
+    <script src="themes/default/js/loadHtml.js"></script>
+
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+    <script src="themes/default/js/worldunion.js"></script>
+    <script src="themes/default/js/register.js"></script>
+    <script src="themes/default/js/transport.js"></script>
+    
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+{foreach from=$lang.passport_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+var username_exist = "{$lang.username_exist}";
+</script>
+</body>
+</html>

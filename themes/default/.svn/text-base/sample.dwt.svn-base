@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>美房美邦</title>
+    <link rel="icon" href="../favicon.ico" />
+    <meta name="keywords" content=" " />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/mall.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/yangben.css">
+</head>
+<body class="bg-f7 mall-wrap">
+<!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/m_nav.lbi" --><!-- #EndLibraryItem -->
+    <!-- bread nav -->
+    <div class="breadNavBg">
+        <div class="breadNav">
+            <div>
+            <a title="首页" href="/">美美商城</a><i class="symbol">&gt;</i><span>样本</span>
+            </div>    
+        </div>
+    </div>
+    <div class="w1020">
+        <div class="yang_filter">
+            <ul class="clearfix">
+                <li class="yang_attr">
+                    <div class="attr_key">产地：</div>
+                    <div id="filter1" class="sel">
+                        <i class="iconfont">&#xe607;</i>
+                        <label class="sel-skin">请选择产地</label>
+                        <ul>
+                            <li class="dianji" id="0">不限</li>
+                            {foreach from=$provite_list key=k item=provite}
+                            <li class="dianji" name='origin' {if $origin eq $provite.region_id} class="on" style="background-color: rgb(238, 238, 238);" {/if} value="{$provite.region_id}">{$provite.region_name}</li>
+                            {/foreach}
+                        </ul>
+                        <input type="hidden" id="input1">
+                    </div>
+                </li>
+                {foreach from=$categories key=k item=cate}
+                <li class="yang_attr">
+                    <div class="attr_key">{$cate.name}：</div>
+                    <div id="filter{$cate.idr}" class="sel">
+                        <i class="iconfont">&#xe607;</i>
+                        <label class="sel-skin">请选择{$cate.name}</label>
+                        <ul>
+                            <li class="dianji" id="0">不限</li>
+                            {foreach from=$cate.cat_id key=ke item=cate_info}
+                            <li class="dianji" name="{$cate.tj_name}" value="{$cate_info.id}">{$cate_info.name}</li>
+                            {/foreach}
+                        </ul>
+                        <input type="hidden" id="input{$cate.idr}">
+                    </div>
+                </li>
+                {/foreach}
+                <li class="yang_attr">
+                <div class="attr_key">价格：</div>
+                <div id="filter5" class="sel">
+                    <i class="iconfont">&#xe607;</i>
+                    <label class="sel-skin">请选择价格</label>
+                    <ul>
+                        <li class="dianji" id="0" name="price" value="0">不限</li>
+                        <li class="dianji" id="1" name="price" value="49">0-50</li>
+                        <li class="dianji" id="2" name="price" value="99">50-100</li>
+                        <li class="dianji" id="3" name="price" value="199">100-200</li>
+                        <li class="dianji" id="4" name="price" value="200">200以上</li>
+                    </ul>
+                    <input type="hidden" id="input5">
+                </div>
+            </li>
+            </ul>
+        </div>
+        <div class="content" >
+            <div class="srp album flex-f-row" id="J_ItemList" style="opacity:1;">
+                <ul class="yang_list clearfix pro_box cle" id="baoKuan">
+                {foreach from=$sample_list key=k item=list}
+                    <li>
+                        <a href="sample_info.php?id={$list.goods_id}">
+                            <img src="{$list.thumb}" alt="">
+                            <p class="name">{$list.name}</p>
+                            <p class="price">{$list.shop_price}</p>
+                        </a>
+                    </li>
+                 {/foreach}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <div class="JQ_include" src="themes/default/include/m_footer.dwt"></div>
+    <div class="JQ_include" src="themes/default/include/site_bottom.dwt"></div>
+
+    <script src="themes/default/js/config.js"></script>
+    <script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+    <script src=themes/default/js/lib/template.min.js  "></script>
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+    <script src="themes/default/js/worldunion.js"></script>
+    <script src="themes/default/js/yangben.js"></script>
+    <script type="text/javascript" src="themes/default/js/jquery.more.sample.js"></script>
+
+  <script type="text/javascript">
+        var cat_id={$cat_id};
+        var style_id= {$style_id};
+        var material_id ={$material_id};
+        var origin ={$origin};
+        var price  ={$price};
+        jQuery(function($){
+         $("#J_ItemList").more({'address':      'sample.php?' + 
+                                                'cat_id=00&style_id=00&material_id=00&origin=00&price=00'+
+                                                '&baioji={$biaoji}&act=asynclist&category={$category}'+
+                                                '&brand={$brand_id}&filter_attr={$filter_attr}&page={$pager.page}'+
+                                                '&sort={$pager.sort}&order={$pager.order}', 
+                                'spinner_code': '<div style="text-align:center; margin:10px;">'+
+                                                    '<img src="{$ectouch_themes}/images/loader.gif" />'+
+                                                '</div>'
+                                },$('.dianji'));
+        
+          $(window).scroll(function () {
+                if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                    $('.get_more').click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

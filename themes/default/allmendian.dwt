@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>美房美邦</title>
+	<link rel="icon" href="../favicon.ico" />
+    <meta name="keywords" content=" " />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+	<link rel="stylesheet" type="text/css" href="themes/default/css/mall.css">
+</head>
+<style type="text/css">
+		body
+		{
+			background-color:#f7f8f8;
+		}
+		div.mendian_content
+		{
+			width:1200px;
+			margin:0 auto;
+			overflow:auto;zoom:1;
+			
+		}
+		div.imgs
+		{
+			overflow:auto;
+			zoom:1;
+		}
+		div.imgs dl
+		{
+			width:204px;
+			float:left;
+			margin-left:7%;
+			margin-top:20px;
+			
+		}
+		div.imgs dd
+		{
+			text-align:center;
+			margin-top:10px;
+			
+		}
+		div.all_mendian
+		{
+			border:1px solid #ccc;
+			
+			margin:0 auto;
+			
+			margin-top:20px;
+		}
+		div.fanwei
+		{
+			padding:10px;
+			overflow:auto;
+			zoom:1;
+			
+		}
+		form.selects
+		{
+			margin-right:5%;
+		}
+		form.selects select
+		{
+			background-color:#f7f8f8;
+		}
+		form.selects input
+		{
+			background-color:#c52021;
+			color:#fff;
+			border:0;
+			width:40px;
+			height:25px;
+			line-height:20px;
+		}
+		dl.ditu
+		{
+			border-top:1px solid #ccc;
+			overflow:auto;
+			zooom:1;
+			padding-top:10px;
+			
+		}
+		dl.ditu dt
+		{
+			float:left;
+			margin-left:10px;
+		}
+		dl.ditu dd
+		{ 
+			width:400px;
+			float:left;
+			margin-left:5%;
+		}
+		dl.ditu dd li 
+		{
+			border-bottom:1px solid #ccc;
+			margin:5px;
+			padding-bottom:5px;
+		}
+		dl.ditu dd li h2
+		{
+			color:#036eb8;
+			
+		}
+		dl.ditu dd li p
+		{
+			color:#999;
+			
+		}
+    </style>  
+ <style type="text/css">  
+            body { margin: 0; font-family: "Helvetica,Arial,FreeSans"; color: #000000; font-size: 12px; }  
+            .demo_main { padding: 20px; padding-top: 10px;float:left;width:674px;height:469px; }  
+            .demo_title { padding: 10px; margin-bottom: 10px; background-color: #D3D8E0; border: solid 1px gray; }  
+            .demo_content { padding: 10px; margin-bottom: 10px; border: solid 1px gray; }  
+            fieldset { border: 1px solid gray; }  
+        </style>
+
+
+<body class="bg-f7 mall-wrap" >
+<!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/m_nav.lbi" --><!-- #EndLibraryItem -->
+
+
+<div class="mendian_content">
+
+    	<p class="title"><a href="#">美美商城</a>&nbsp;>&nbsp;<a href="#">全国门店</a></p><!--title   -->
+        <h3 style="color:#c52021;margin-top:10px;">最新门店</h3>
+		<div class="imgs">
+			{foreach from=$new_store item=store}
+            <dl>
+            	<dt><img src="{$store.store_img}" style="width:100%;"></dt>
+            	<dd>{$store.name}</dd>
+            </dl>
+            {/foreach}
+        </div><!--imgs-->
+    	
+	<div class="all_mendian">
+    	<div class="fanwei">
+        	<h3 style="display:inline;">全国范围</h3>
+            <span>&nbsp;{$store_count}家门店可以使用（门店信息仅供参考）</span>
+            <form method="post" action="allmendian.php" class="selects" style="display:inline;float:right;">
+            所在地：<select id="province" name='province'>
+                	<option value=0>所有省份</option>
+                </select>&nbsp;&nbsp;&nbsp;
+                <select id="city" name='city'>
+                	<option value=0>所有城市</option>
+                </select>&nbsp;&nbsp;&nbsp;
+                <select id="district" name='district'>
+                	<option value=0>所有区域</option>
+                </select>&nbsp;&nbsp;
+                <input type="submit" value="搜索">
+            </form>
+        </div><!--fanwei-->
+    	<dl class="ditu">
+    		<div class="demo_main">  
+           
+            <fieldset class="demo_content">  
+                <div style="min-height: 469px; width: 100%;" id="map">  
+                </div>  
+                <script type="text/javascript">  
+                    var markerArr = {$map_store_list};
+                    var map; //Map实例  
+                    function map_init() {  
+                        map = new BMap.Map("map");  
+                        //第1步：设置地图中心点，广州市  
+                        var point = new BMap.Point(121.48, 31.22);  
+                        //第2步：初始化地图,设置中心点坐标和地图级别。  
+                        map.centerAndZoom(point, 12);  
+                        //第3步：启用滚轮放大缩小  
+                        map.enableScrollWheelZoom(true);  
+                        //第4步：向地图中添加缩放控件  
+                        var ctrlNav = new window.BMap.NavigationControl({  
+                            anchor: BMAP_ANCHOR_TOP_LEFT,  
+                            type: BMAP_NAVIGATION_CONTROL_LARGE  
+                        });  
+                        map.addControl(ctrlNav);  
+                        //第5步：向地图中添加缩略图控件  
+                        var ctrlOve = new window.BMap.OverviewMapControl({  
+                            anchor: BMAP_ANCHOR_BOTTOM_RIGHT,  
+                            isOpen: 1  
+                        });  
+                        map.addControl(ctrlOve);  
+      
+                        //第6步：向地图中添加比例尺控件  
+                        var ctrlSca = new window.BMap.ScaleControl({  
+                            anchor: BMAP_ANCHOR_BOTTOM_LEFT  
+                        });  
+                        map.addControl(ctrlSca); 
+                        //第7步：绘制点    
+                        for (var i = 0; i < markerArr.length; i++) { 
+                            var p0 = markerArr[i].point.split(",")[0];  
+                            var p1 = markerArr[i].point.split(",")[1]; 
+                            var maker = addMarker(new window.BMap.Point(p0, p1), i);  
+                            addInfoWindow(maker, markerArr[i], i);   
+                        }  
+                    }  
+      
+                    // 添加标注  
+                    function addMarker(point, index) {  
+                        var myIcon = new BMap.Icon("http://api.map.baidu.com/img/markers.png",new BMap.Size(23, 25), {  
+                                offset: new BMap.Size(10, 25),  
+                                 imageOffset: new BMap.Size(0, 0 - 11 * 25)  
+                            });  
+                        var marker = new BMap.Marker(point, { icon: myIcon });  
+                        map.addOverlay(marker);  
+                        return marker;  
+                    }  
+      
+                    // 添加信息窗口  
+                    function addInfoWindow(marker, poi) {  
+                        var title = '<div style="font-weight:bold;color:#CE5521;font-size:14px">' + poi.title + '</div>';
+                        //pop弹窗信息  
+                        var html = [];  
+                        html.push('<table cellspacing="0" style="table-layout:fixed;width:100%;font:12px arial,simsun,sans-serif"><tbody>');  
+                        html.push('<tr>');  
+                        html.push('<td style="vertical-align:top;line-height:16px;width:38px;white-space:nowrap;word-break:keep-all">电话:</td>');  
+                        html.push('<td style="vertical-align:top;line-height:16px;">' + poi.tel + ' </td>');
+                        html.push("</tr><tr>");
+                        html.push('<td style="vertical-align:top;line-height:16px;width:38px;white-space:nowrap;word-break:keep-all">地址:</td>');  
+                        html.push('<td style="vertical-align:top;line-height:16px">' + poi.address + ' </td>');  
+                        html.push('</tr>');  
+                        html.push('</tbody></table>');  
+                        var infoWindow = new BMap.InfoWindow(html.join(""), { title: title, width: 200 });  
+      
+                        var openInfoWinFun = function () {  
+                            marker.openInfoWindow(infoWindow);  
+                        };  
+                        marker.addEventListener("click", openInfoWinFun);  
+                        return openInfoWinFun;  
+                    }  
+      
+                    //异步调用百度js  
+                    function map_load() {  
+                        var load = document.createElement("script");  
+                        load.src = "http://api.map.baidu.com/api?v=1.4&callback=map_init";  
+                        document.body.appendChild(load);  
+                    }  
+                    window.onload = map_load;  
+                </script>  
+            </fieldset>  
+        </div>  
+            
+            
+            
+            <dd>
+            	<ol type="1" style="font-weight:bold;">
+					{foreach from=$all_store_list item=all_list}
+                	<li>
+                		<a href="allmendian.php?act=see&id={$all_list.store_id}">
+                    	<h2>{$all_list.name}</h2>
+                    	<p>地址：{$all_list.address}</p>
+                        <p>电话：{$all_list.tel}</p>
+                    	</a>
+                    </li>
+                 	{/foreach}
+                </ol>
+                
+                
+                <div class="page-bg">
+                <div class="page-items fr clearfix">
+                	   <a id="prePage" class="prev fl" href="{$pager_list.page_prev}">上一页</a>
+                     {if $pager_list.page_count neq 1} 
+                     
+                    {foreach from=$pager_list.page_number key=key item=item}
+                   
+                       {if $pager_list.page eq $key} 
+                      <a class="fl cur" href="{$item}" id="pageFirst" style="background:#008aff;">{$key}</a>
+                       {else} 
+                      <a class="fl cur" href="{$item}">{$key}</a>
+                       {/if} 
+                    {/foreach}
+                    {/if} 
+                    <a id="nextPage" class="next fl" title="下一页" href="{$pager_list.page_next}">下一页</a>
+                    <!-- <div class="fl">
+                        <span class="fl">到</span>
+                        <input class="fl" type="text">
+                        <span class="fl">页</span>
+                        <a class="pageGo fl" href="javascript:void(0)">确定</a>
+                    </div>-->
+                
+                
+                </div>
+            </div>
+			<!--// page -->
+
+
+
+            </dd>
+        </dl><!--ditu-->
+    
+    </div><!--all_mendian-->
+</div>
+	
+	<div class="JQ_include" src="themes/default/include/m_footer.dwt"></div>
+	<div class="JQ_include" src="themes/default/include/site_bottom.dwt"></div>
+
+    <script src="themes/default/js/config.js"></script>
+	<script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+	<script src=themes/default/js/lib/template.min.js  "></script>
+	<script src="themes/default/js/loadHtml.js"></script>
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+	<script src="themes/default/js/worldunion.js"></script>
+	<script src="themes/default/js/mall-index.js"></script>
+
+
+</body>
+</html>
+<script type="text/javascript">
+$(function(){
+province = {$region_1};
+city = {$region_2};
+district = {$region_3};
+
+$.post("allmendian.php?act=region",{id:1},function(data){
+		$("#province").html("<option value='0'>所有省份</option>"+data);
+		if(province > 0){
+			$("#province").val(province);
+		}
+	});
+	
+	if(province > 0){
+		$.post("allmendian.php?act=region",{id:province},function(data){
+			$("#city").html("<option value='0'>所有城市</option>"+data);
+			if(city >0){
+				$("#city").val(city);
+			}
+		})
+	}
+	
+	if(city > 0){
+		$.post("allmendian.php?act=region",{id:city},function(data){
+			$("#district").html("<option value='0'>所有区域</option>"+data);
+			if(district > 0){
+				$("#district").val(district);
+			}
+		})
+	}
+	
+	$("#province").change(function(){
+		var pid = $(this).val();
+		if(pid == 0){
+			$("#city").html("<option value='0'>所有城市</option>");
+			$("#district").html("<option value='0'>所有区域</option>");		
+		}else{
+			$.post("allmendian.php?act=region",{id:pid},function(data){
+				$("#city").html("<option value='0'>所有城市</option>"+data);
+				$("#district").html("<option value='0'>所有区域</option>");
+			});
+		}
+	})
+	
+	$("#city").change(function(){
+		var cid = $(this).val();
+		if(cid == 0){
+			$("#district").html("<option value='0'>所有区域</option>");
+		}else{
+			$.post("allmendian.php?act=region",{id:cid},function(data){
+				$("#district").html("<option value='0'>所有区域</option>"+data);
+			})
+		}
+	})
+
+})
+
+</script>
+
+

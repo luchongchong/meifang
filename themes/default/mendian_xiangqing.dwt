@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>美房美邦</title>
+	<link rel="icon" href="../favicon.ico" />
+    <meta name="keywords" content=" " />
+	<meta name="description" content="" />
+    
+	<link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+	
+    <link rel="stylesheet" type="text/css" href="themes/default/css/mall.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/ms1.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/product.css">
+    <script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+   <script type="text/javascript">
+   	$(function(){
+		
+		$("#tabList li").mouseover(function(){
+			$(this).css("border-bottom","0");		
+		}).mouseout(function(){
+			$(this).css("border-bottom","1px solid #ccc")	
+		});
+	})
+   </script>
+ 
+	
+</head>
+<body class="shopping-cart-wrap">
+<!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/m_nav.lbi" --><!-- #EndLibraryItem -->
+	
+		<div class="top_bg">
+			<img src="themes/default/img/美美商城_全国门店_xx店_03.png" width="100%" height="117">
+		</div><!--top_bg-->
+      <div class="mendian_contents">
+        <div class="left">
+        	<dl>
+            	<dt><img src="themes/default/img/美美商城_全国门店_xx店_07.png" width="191" height="190"></dt>
+                <dd style="color:#f00;">"免费"墙纸从扫码开始</dd>
+            </dl>
+            <dl>
+            	<dt><img src="themes/default/img/美美商城_全国门店_xx店_07.png" width="191" height="190"></dt>
+                <dd style="color:#f00;text-align:center;">进入美美社区</dd>
+            </dl>
+        </div><!--left-->
+        <div class="right">
+            <div class="banner1">
+               
+                <dl class="shop">
+                    <!--<dt><img src="image/03.png"></dt>-->
+                    <dd>
+                        <h3 style="color:#333;">{$mendian_info.name}店<img src="themes/default/img/美美商城_全国门店_01_03.png" width="150" height="21" style="float:right;margin-left:10px;"></h3>
+                        <p>好评率：66%&nbsp;&nbsp;</p>
+                        <P>电话：{$mendian_info.tel}</P>
+                        <P style="width:450px;">地址：{$mendian_info.province}{$mendian_info.city}{$mendian_info.district}{$mendian_info.address}</P>
+                        <P>门店编号：{$mendian_info.shop_no}</P>
+                        <P>微信号：{$mendian_info.shop_weixin}</P>
+                    </dd>
+                </dl>
+
+                <div class="pro-hd-left fl">
+			        <div class="pic-show" id="bigPic">
+			            <img src="{$first_img}" />
+			        </div>
+			        <div class="small-pic" id="min-scroll" style="margin-top:10px;">
+	  					<a class="prev iconfont"></a> <a class="next iconfont"></a> 
+			            <ul id="smallPicItem" >
+			            	{foreach from=$store_shops item= img}
+			                <li><img src="{$img.store_shops}" /></li>
+			                {/foreach}
+			               <!--  <li><img src="themes/default/img/美美商城_全国门店_xx店_14.png" /></li>
+			                <li><img src="themes/default/img/美美商城_全国门店_xx店_16.png" /></li>
+			                <li><img src="themes/default/img/美美商城_全国门店_xx店_19.png" /></li> -->
+			            </ul>
+                        
+			        </div>
+			        
+			        
+			    </div>
+
+            </div><!--banner1-->
+        
+            
+        <div id="wrapper">
+        <div id="tab">
+        <ul id="tabList">
+            <li>店员形象</li>
+            <li>综合评价</li>
+            <li>施工团队</li>
+            <li>专项服务</li>
+            
+        </ul>
+        <div id="tabCont">
+            <div class="conts" style="padding:5px;">
+            
+            
+               
+           {foreach from=$assistant_list item=assistant}
+	        	<dl class="pin1" style="border:1px solid #ccc;">
+	                <dt class="dy"><img src="{$assistant.shop_assistant}" width="162" height="162"></dt>
+	                <dd class="one">
+	                	<p>姓名：{$assistant.shop_name}</p>
+	                    <p>职称：{$assistant.shop_explain}</p>
+	                    <p>技能：{$assistant.shop_skill}</p>
+	                </dd>
+	                <dd class="two" style="padding-right:10%;">
+	                	<p>电话：{$assistant.shop_phone}</p>
+	                    <p>微信号：{$assistant.shop_weixin}</p>
+	                </dd>
+	       	   </dl>
+       	   {/foreach}
+               
+               
+               
+               
+            </div>
+            <!--/conts-->	
+            <div class="conts pinglun">
+            	 
+	       	   {foreach from=$comment_list.item item=comment}
+                <dl class="pin1" style="border-bottom:1px solid #ccc;padding-bottom:5px;">
+                    <dt><img src="{$comment.user_img}" width="152" height="152">
+                        <span class="weixin">{$comment.user_name}</span>
+                    </dt>
+                    <dd class="one" style="margin-left:5%;">
+                        <p style="width:300px;">{$comment.content}</p>
+                        <P class="time">{$comment.add_time}<span style="margin-left:200px;"><span style="color:#036eb8;">赞</span>（0）</span></p>
+                    </dd>
+               </dl>
+                {/foreach}
+               
+             
+              	
+				<!-- page -->
+				
+				
+            <div class="page-bg" style="margin-bottom:0;margin-top:-10px;">
+                <div class="page-items fr clearfix">
+                    
+                </div>
+            </div>
+            
+            
+			<!--// page -->
+                   
+                  
+            </div>
+            <!--/conts-->
+                    <div class="conts">
+                    
+                    {foreach from=$construction_list.item item=construction}
+	                    <dl class="pin1" style="border-bottom:1px solid #ccc;">
+	                     	<!--<dt><a href="proList.html"><img src="imgs/pinpai_29.jpg" width="237" height="305"></a></dt>-->
+	                        <dd class="one" style="color:#666;padding:2%;">{$construction.construction_name}&nbsp;&nbsp;&nbsp;<span style="font-size:12px;">好评率：{$construction.positive}%</span>
+	                        	{if $construction.positive gte '95' }
+				                    <img src="themesmobile/mobile/img/2_03.png">
+				                    <img src="themesmobile/mobile/img/2_03.png">
+				                    <img src="themesmobile/mobile/img/2_03.png">
+				                    <img src="themesmobile/mobile/img/2_03.png">
+				                    <img src="themesmobile/mobile/img/2_03.png">
+			                    {elseif  $construction.positive gte '85'}
+				                    <img src="themesmobile/mobile/img/2_03.png">
+				                    <img src="themesmobile/mobile/img/2_03.png">
+				                    <img src="themesmobile/mobile/img/2_03.png">
+				                    <img src="themesmobile/mobile/img/2_03.png">
+				                    <img src="themesmobile/mobile/img/2_05.png">
+			                    {elseif $construction.positive gte '75'}
+				                    <img src="themesmobile/mobile/img/2_03.png">
+				                    <img src="themesmobile/mobile/img/2_03.png">
+				                    <img src="themesmobile/mobile/img/2_03.png">
+				                    <img src="themesmobile/mobile/img/2_05.png">
+				                    <img src="themesmobile/mobile/img/2_05.png">
+			                    {elseif $construction.positive gte '65'}
+				                    <img src="themesmobile/mobile/img/2_03.png">
+				                    <img src="themesmobile/mobile/img/2_03.png">
+				                    <img src="themesmobile/mobile/img/2_05.png">
+				                    <img src="themesmobile/mobile/img/2_05.png">
+				                    <img src="themesmobile/mobile/img/2_05.png">
+			                    {elseif $construction.positive gte '60'}
+				                    <img src="themesmobile/mobile/img/2_03.png">
+				                    <img src="themesmobile/mobile/img/2_05.png">
+				                    <img src="themesmobile/mobile/img/2_05.png">
+				                    <img src="themesmobile/mobile/img/2_05.png">
+				                    <img src="themesmobile/mobile/img/2_05.png">
+			                    {/if}
+	                        
+	                        </dd>
+	                        <!--<dd class="two"><a href="proList.html">来自意大利的时尚品牌</a></dd>-->
+	               		</dl>
+               		{/foreach}
+               
+            </div>
+            <!--/conts-->
+            <div class="conts">
+                <dl class="pin1 onlyserver" style="border:0">
+                    <dt><img src="themes/default//img/3_03.png"></dt>
+                    <dd class="one server" style="padding-left:0;">
+                        <h4 style="font-weight:normal;">7天无理由退货</h4>
+                        <P >该商品支持 7 天无理由退货，自商品签收之日起 7 天内：</P>
+                        <P >1、商品外包装完整，相关附（配）件齐全；（若有）要求吊牌完整；</P>
+                        <P >2、商品无显著穿着、无洗涤、无沾染化妆品（如口红等）、无破损等痕迹；</P>
+                        <P >可申请无理由退货，包邮商品需要买家承担退货邮费，非包邮商品需要买家承
+                        担发货和退货邮费</p>
+                    </dd>
+                    
+               </dl>
+                <dl class="pin1 onlyserver" style="border:0">
+                    <dt><img src="themes/default//img//3_06.png" ></dt>
+                    <dd class="one server" >
+                        <h4 style="font-weight:normal;">消费者保障服务</h4>
+                        <P >该卖家已缴纳 3000.0 元保证金。</P>
+                        <P >在确认收货15天内，如有商品质量问题、描述不符或未收到货等，您有权申请
+    退款或退货，来回邮费由卖家承担。</P>
+                        
+                    </dd>
+                    
+               </dl>
+        </div><!--/conts-->
+                    
+                    
+        </div><!--/tabCont-->
+    </div><!--/tab-->
+    </div><!--/wrapper-->
+</div><!--right-->
+</div><!--mendian_contents-->	
+   	<div class="JQ_include" src="themes/default/include/m_footer.dwt"></div>
+	<div class="JQ_include" src="themes/default/include/site_bottom.dwt"></div>
+
+    <script src="themes/default/js/config.js"></script>
+	<script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+	<script src=themes/default/js/lib/template.min.js  "></script>
+	<script src="themes/default/js/loadHtml.js"></script>
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+	<script src="themes/default/js/worldunion.js"></script>
+	<script src="themes/default/js/mall-index.js"></script>
+	<script src="themes/default//js/pinpai.js"></script>
+    <script src="themes/default//js/pro-detail.js"></script>
+   
+</body>
+</html>
+
+<script type="text/javascript">
+$(function(){
+var id = {$id};
+var page_list = {$page_list};
+for(var i = 1;i<=page_list;i++){
+	$(".page-items").append("<a class='fl cur' onclick='change_pinglun("+id+","+i+")'>"+i+"</a>");
+}
+})
+</script>
+
+<script>
+	
+	function change_pinglun(id,page){
+	
+	var url = "allmendian.php";
+		$.ajax({
+		url : url,
+		type:"POST",
+		data:{'id':id,'page':page,'act':'change'},
+		success:function(re){
+		$(".pinglun").append(re);
+		}
+		})
+	}
+</script>

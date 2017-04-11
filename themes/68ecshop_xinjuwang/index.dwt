@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,index.js'}
+<script language="javascript"> 
+<!--
+/*屏蔽所有的js错误*/
+function killerrors() { 
+return true; 
+} 
+window.onerror = killerrors; 
+//-->
+</script>
+<script type="text/javascript" src="js/action.js"></script>
+<script src="themes/68ecshop_xinjuwang/js/common.min.js"></script>
+<script language="JavaScript" src="themes/68ecshop_xinjuwang/js/index.min.js?0622"></script>
+<style>
+#category_tree{ display:block;}
+</style>
+</head>
+<body><script type="text/javascript">
+          //初始化主菜单
+            function sw_nav2(obj,tag)
+            {
+            var DisSub2 = document.getElementById("DisSub2_"+obj);
+            var HandleLI2= document.getElementById("HandleLI2_"+obj);
+                if(tag==1)
+                {
+                    DisSub2.style.display = "block";
+                }
+                else
+                {
+                    DisSub2.style.display = "none";
+                }
+            }
+</script>
+<!-- #BeginLibraryItem "/library/top_ad.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+
+    <!-- #BeginLibraryItem "/library/index_ad3.lbi" --><!-- #EndLibraryItem -->
+    <div class="new_laba" style="height:32px; line-height:32px;">
+	<div id="" style="width:10px;float:left;"></div>
+	<div id="marquee1" style="overflow:hidden;padding-left:0px;background-image:none;">
+	{$shop_notice}
+    </div>
+</div>
+<div style=" height:10px; line-height:10px; clear:both;"></div>
+<div class="block1 ">
+<div id="pageLeft" class="fl">
+    <div class="bg blank12">
+      <div class="mod1" >
+        <h1 class="mod1tit">{$lang.shop_notice}</h1>
+        <div class="mod1con shop_notice"> <!-- TemplateBeginEditable name="商店公告" -->
+<!-- #BeginLibraryItem "/library/cat_articles.lbi" -->
+
+
+<h1 class="mod2tit" style="height:0"><a href="{$articles_cat.url}" class="more" style="margin-top:3px;">更多</a></h1>
+<div class="mod2con clearfix">
+    <ul>
+     <!--{foreach from=$articles item=article_item}-->
+    <li style="width:250px; margin-right:20px; display:inline; height:25px; line-height:25px;" class="fl"><a href="{$article_item.url}" title="{$article_item.title|escape:html}" class="txtdot">{$article_item.short_title}</a></li>
+    <!--{/foreach}-->
+    <ul>
+</div>
+
+<script type="text/javascript">divheight("catArticles");</script>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> 
+</div>
+
+      </div>
+      <script type="text/javascript">divheight("mod1");</script> 
+    </div>
+
+    <!-- TemplateBeginEditable name="首页公告下广告" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+<div class="ads">
+{insert name='ads' id=$ads_id num=$ads_num}
+</div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+</div>
+<div id="pageRight" class="fr bg" > 
+<!-- #BeginLibraryItem "/library/recommend_promotion.lbi" --><!-- #EndLibraryItem --> </div>
+<div class="clear"></div>
+</div>
+<div class="block1 ">
+
+    <!-- {if $hot_goods} --> 
+    <!-- #BeginLibraryItem "/library/recommend_hot.lbi" --><!-- #EndLibraryItem --> 
+    <!--{/if}--> 
+    
+    <!--{if $best_goods} 精品推荐 START--> 
+    
+    <!-- #BeginLibraryItem "/library/recommend_best.lbi" --><!-- #EndLibraryItem --> 
+    
+    <!--{/if} 精品推荐 END--> 
+    <!-- #BeginLibraryItem "/library/recommend_new.lbi" --><!-- #EndLibraryItem -->
+    
+
+</div>
+
+<div class="block1 "> <!-- TemplateBeginEditable name="商品分类1" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<div class="blank1">
+  <div style="clearfix">
+    <div class="more clearfix best" >
+      <h1 class="tit">{$goods_cat.name|escape:html}</h1>
+      <h1 class="h1title">
+        <div style="float:right;"> <a href="{$goods_cat.url}" style="font-weight:normal;" >更多>></a> </div>
+      </h1>
+    </div>
+  </div>
+  <div class="recommendContenttong entry-content clearfix"  id="show_new_area" > 
+    
+    <!--{foreach from=$cat_goods item=goods}-->
+    <div class="goodsbox1">
+      <div class="imgbox1"><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></div>
+      <a href="{$goods.url}" title="{$goods.name|escape:html}" class="show68ecshop">{$goods.short_name}</a><br />
+      <p>{$lang.market_price}<font class="goodspice market">{$goods.market_price}</font></p>
+      
+      <!-- {if $goods.promote_price neq ""} -->
+      <p>{$lang.promote_price}<b class="f1">{$goods.promote_price}</b></p>
+      <!-- {else}-->
+      <p>{$lang.shop_price}<b class="f1">{$goods.shop_price}</b></p>
+      <!--{/if}--> 
+      
+    </div>
+    <!--{/foreach}--> 
+  </div>
+</div>
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> </div>
+
+<div class="block1 "> <!-- TemplateBeginEditable name="商品分类2" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<div class="blank1">
+  <div style="clearfix">
+    <div class="more clearfix best" >
+      <h1 class="tit">{$goods_cat.name|escape:html}</h1>
+      <h1 class="h1title">
+        <div style="float:right;"> <a href="{$goods_cat.url}" style="font-weight:normal;" >更多>></a> </div>
+      </h1>
+    </div>
+  </div>
+  <div class="recommendContenttong entry-content clearfix"  id="show_new_area" > 
+    
+    <!--{foreach from=$cat_goods item=goods}-->
+    <div class="goodsbox1">
+      <div class="imgbox1"><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></div>
+      <a href="{$goods.url}" title="{$goods.name|escape:html}" class="show68ecshop">{$goods.short_name}</a><br />
+      <p>{$lang.market_price}<font class="goodspice market">{$goods.market_price}</font></p>
+      
+      <!-- {if $goods.promote_price neq ""} -->
+      <p>{$lang.promote_price}<b class="f1">{$goods.promote_price}</b></p>
+      <!-- {else}-->
+      <p>{$lang.shop_price}<b class="f1">{$goods.shop_price}</b></p>
+      <!--{/if}--> 
+      
+    </div>
+    <!--{/foreach}--> 
+  </div>
+</div>
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> </div>
+<!--鼠标切换js Star-->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<!--<style>
+.info123 {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: url(../images/img3-5_3.png) repeat-y; PADDING-TOP: 5px;  padding-left:20px;
+}
+</style>-->
+<SCRIPT type=text/javascript>(function(){window._currentWidth=document.body.clientWidth;window.onresize=function(){window._currentWidth=document.body.clientWidth;index=0;autoRun();};})();var imgDom=M.$("a","#JS_side_stage");for(var i=0,ii=imgDom.length;i<ii;i++){imgDom[i].style.cssText="background:url("+imgDom[i].getAttribute("data-bg")+") center center no-repeat";imgDom[i].removeAttribute("data-bg");}var stage=M.$("#JS_side_stage"),imgList=M.$("a",stage),handler=M.$("a","#JS_side_nav"),len=handler.length,current=0,index=0;for(var k=0,kk=len;k<kk;k++){handler[k]._key=k;handler[k].onmouseover=function(){index=this._key;clearInterval(auto);autoRun();};handler[k].onmouseout=function(){auto=setInterval(function(){autoRun();},5000);};}var autoRun=function(){M.removeClass(handler[current],"current");M.addClass(handler[index],"current");M.Animate(stage,{marginLeft:(0-index)*window._currentWidth+"px"},200);current=index;index=(index>=len-1)?0:index+1;};var auto=setInterval(function(){autoRun();},5000);</SCRIPT>
+<script type="text/javascript">divheight("links");</script>	
+</body>
+</html>

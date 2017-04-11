@@ -1,0 +1,30 @@
+<div class="top">
+	<div class="w1200" id="top">
+    	<div class="top_sub top_welcom">
+    		{* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'} 
+    	</div>
+        <div class="top-right fr">
+	    	<div class="top_sub top_shopping">
+	    		<a href="./user.php?act=order_list">我的订单</a>
+	    		<a href="flow.php"><i class="icon iconfont c-red">&#xe606;</i>购物车</a>
+	    	</div>
+	    	<div class="top_sub top_fav">
+	    		<a href="./user.php?act=collection_list">收藏夹</a>
+	    	</div>
+        	<div class="top_sub top_points JQ_tags">
+        		<a href="javascript:void(0)"><i class="icon iconfont">&#xe607;</i>积分商城</a>
+                <div class="top_panel top_points_child t-c" style="display:none">
+                    <p><a href="../points/mypoints.html">我的积分</a></p>
+                    <p><a href="../points/convertible.html">积分兑换</a></p>
+                </div>
+        	</div>
+	    	<div class="top_sub top_other">
+	    		<s class="s"></s>
+	    		<a href="xiuxiu.php">魔法幻装</a>
+	    		<a href="allmendian.php">全国门店</a>
+	    		<a href="">我秀我家</a>
+	    		<a href="">联系我们</a>
+	    	</div>
+        </div>
+	</div>
+</div>

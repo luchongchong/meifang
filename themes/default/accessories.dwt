@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>美房美邦辅料</title>
+<meta name="Keywords" content="辅料" />
+<meta name="Description" content="辅料" />
+<link rel="stylesheet" href="themes/default/css/style.css" type="text/css"><!--页面CSS-->
+<link rel="stylesheet" href="themes/default/css/animate.min.css" type="text/css"><!--CSS3动画-->
+<script type="text/javascript" src="themes/default/js/jquery-1.4.4.min.js"></script><!--jQuery库-->
+</head>
+<body>
+
+    <!-- #BeginLibraryItem "/library/top_new.lbi" --><!-- #EndLibraryItem -->
+
+	<div class="pid_lar"><img src="themes/default/img/fl01.jpg" alt=""></div>
+        
+            
+        <div class="hot_Boutique wid">
+        	<h2><span>热销精品</span></h2>
+            <ul>
+            	<li>
+                	<div class="pict">
+                    	<img src="themes/default/img/img34.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <p>GAODANN</p>
+                        <h1>人造革</h1>
+                        <span>精选品质，优质服务</span>
+                        <h3><i>158</i>￥起</h3>
+                        <a href="#">GO</a>
+                    </div>
+                </li>
+                <li>
+                	<div class="pict">
+                    	<img src="themes/default/img/img35.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <p>GAODANN</p>
+                        <h1>人造革</h1>
+                        <span>精选品质，优质服务</span>
+                        <h3><i>158</i>￥起</h3>
+                        <a href="#">GO</a>
+                    </div>
+                </li>
+                <li>
+                	<div class="pict">
+                    	<img src="themes/default/img/img36.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <p>GAODANN</p>
+                        <h1>人造革</h1>
+                        <span>精选品质，优质服务</span>
+                        <h3><i>158</i>￥起</h3>
+                        <a href="#">GO</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div class="guess wid">
+        	<h2>猜你喜欢</h2>
+            <p>
+            	<a href="#">墙纸</a>
+                <a href="#">墙布</a>
+                <a href="#">墙画</a>
+                <a href="#">窗帘</a>
+                <a href="#">软包</a>
+                <a href="#">硬包</a>
+                <a href="#">硅藻泥</a>
+                <a href="#">装饰画</a>
+                <a href="#">辅料</a>
+                <a href="#">样本</a>
+            </p>
+        </div>
+        
+      
+      <!-- #BeginLibraryItem "/library/footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+<script type="text/javascript" src="themes/default/js/scrollanim.min.js"></script> <!--"动画库"-->
+<script src="themes/default/js/type.js"></script><!--自定义封装函数-->
+</html>

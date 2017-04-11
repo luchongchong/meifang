@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>美房美邦</title>
+	<link rel="icon" href="../favicon.ico" />
+    <meta name="keywords" content=" " />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/account.css">
+</head>
+<body class="login-wrap">
+	<!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+	<div class="login-box">
+		<div class="tit" id="loginFormTit">
+			<span class="on">快速登录</span><span>帐号和密码登录</span>
+			<em class="line"></em>
+		</div>
+		<div class="scan-code logType">
+			<img src="../img/Qr.png" alt="">
+			<p>手机扫码安全登录</p>
+		</div>
+		<div class="logType" style="display:none;">
+			<form id="loginForm" class="login-form" method="post" action="./flow.php?step=login">
+				<div class="items">
+					<div class="val">
+						<i class="iconfont">&#xe60f;</i>
+						<input name="username" type="text" class="middle-w">
+					</div>
+				</div>
+				<div class="items">
+					<div class="val">
+						<i class="iconfont">&#xe610;</i>
+						<input name="password" type="password" class="middle-w">
+					</div>
+				</div>
+				<div class="others">
+					<a href="../account/editpwd.html">忘记密码</a>
+					<a href="./user.php?act=register" class="reg-link">立即注册</a>
+				</div>
+				<div class="items">
+					<input type="submit" class="btn middle-w" value="立即登录">
+					<input name="act" type="hidden" value="signin">
+				</div>
+			</form>
+		</div>
+	</div>
+
+    <script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+    <script src="themes/default/js/config.js"></script>
+    <script src=themes/default/js/lib/template.min.js "></script>
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+    <script src="themes/default/js/worldunion.js"></script>
+
+	<script src="themes/default/js/login.js"></script>
+</body>
+</html>

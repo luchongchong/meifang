@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="icon" href="themes/default/favicon.ico" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$descri}" />
+<link rel="stylesheet" href="themes/default/css/style.css" type="text/css"><!--页面CSS-->
+<link rel="stylesheet" href="themes/default/css/animate.min.css" type="text/css"><!--CSS3动画-->
+<script type="text/javascript" src="themes/default/js/jquery-1.4.4.min.js"></script><!--jQuery库-->
+<meta name="baidu-site-verification" content="R2KaD7V5Va" />
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f931f3a4d7ce30786e7d53ef6bf396d8";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/top_new.lbi" --><!-- #EndLibraryItem -->
+        
+        <div class="banner">
+        	<div class="bann">
+                <ul>
+                    <li style="background:url(themes/default/img/img4.jpg) center no-repeat;"></li>
+                    <li style="background:url(themes/default/img/img4.jpg) center no-repeat;"></li>
+                    <li style="background:url(themes/default/img/img4.jpg) center no-repeat;"></li>
+                </ul>
+            </div>
+            <div class="cirl">
+                <ul>
+                    <li class="acti"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="exclusive">
+        	<div class="wid">
+        		<strong><img src="themes/default/img/ico0.png" alt="环保墙纸">你的专属活动</strong>
+                <ul>
+                	<li class="li0">
+                    	<div class="text">
+                        	<h2>团购</h2>
+                            <p>TUANGOU</p>
+                            <a href="#">GO</a>
+                        </div>
+						<img src="themes/default/img/ico1.png" alt="环保墙纸">
+                    </li>
+                    <li class="li1">
+                    	<div class="text">
+                        	<h2>团购</h2>
+                            <p>TUANGOU</p>
+                            <a href="#">GO</a>
+                        </div>
+                        <img src="themes/default/img/ico2.png" alt="环保墙纸">
+                    </li>
+                    <li class="li2">
+                    	<div class="text">
+                        	<h2>团购</h2>
+                            <p>TUANGOU</p>
+                            <a href="#">GO</a>
+                        </div>
+                        <img src="themes/default/img/ico3.png" alt="环保墙纸">
+                    </li>
+                    <li class="li3">
+                    	<div class="text">
+                        	<h2>团购</h2>
+                            <p>TUANGOU</p>
+                            <a href="#">GO</a>
+                        </div>
+                        <img src="themes/default/img/ico4.png" alt="环保墙纸">
+                    </li>
+                    <li class="li4">
+                    	<div class="text">
+                        	<h2>团购</h2>
+                            <p>TUANGOU</p>
+                            <a href="#">GO</a>
+                        </div>
+                        <img src="themes/default/img/ico5.png" alt="环保墙纸">
+                    </li>
+                </ul>
+            </div>
+        </div><!--exclusive-->
+        
+        <div class="Recommend wid mt28">
+        	<h2 class="title"><i></i>明星推荐<span>STAR RECOMMENDATION</span></h2>
+            <div class="layout">
+            	<div class="left">
+                	<div class="pict">
+                    	<img src="themes/default/img/img6.jpg" alt="环保墙纸">
+                    </div>
+                    <h3>2016</h3>
+                    <div class="text">
+                    	<p>省心价 | ￥189</p>
+                        <span>
+                        	<a href="#"><img src="themes/default/img/ico9.png" alt="环保墙纸"></a>
+                            <a href="#"><img src="themes/default/img/ico10.png" alt="环保墙纸"></a>
+                        </span>
+                    </div>
+                </div>
+                <div class="right">
+                	<ul>
+                		   {foreach from=$best_goods key=k item=best_goods}
+                		       	<li>
+                                    <div class="pict">
+                                            <a href="{$best_goods.url}" title="卧室墙纸">
+                                           <img src="{$best_goods.goods_img}" alt="环保墙纸" style="width:207px;height:166px;">
+                                             </a>
+                                       </div>
+                                       <h3>2016</h3>
+                                       <div class="text">
+                                           <p>省心价 | {$best_goods.shop_price}</p>
+                                           <span>
+                                               <a href="#"><img src="themes/default/img/ico9.png" alt="环保墙纸"></a>
+                                               <a href="#"><img src="themes/default/img/ico10.png" alt="环保墙纸"></a>
+                                           </span>
+                                       </div>
+                                   </li>
+                		         {/foreach}
+                	</ul>
+                </div>
+                <div class="sort">
+                	<div class="tabs at">
+                    	<ul>
+                    		<li class="acti">人气</li>
+                            <li>销量</li>
+                            <li>价格</li>
+                    	</ul>
+                    </div>
+                    <div class="list at">
+                    	<ul>
+                    		<li>
+                            	<div class="pict">
+                                	<img src="themes/default/img/ico11.png" alt="环保墙纸">
+                                </div>
+                                <div class="texcr">
+                                	<h3><i>￥</i>189 <img src="themes/default/img/ico12.png" alt="环保墙纸"><span>127783<img src="themes/default/img/ico15.png" alt="环保墙纸"></span></h3>
+                                    <p>卧室墙纸彩色条纹系列<a href="#"><img src="themes/default/img/ico13.png" alt="环保墙纸"></a><a href="#"><img src="themes/default/img/ico14.png" alt="环保墙纸"></a></p>
+                                </div>
+                            </li>
+                            <li>
+                            	<div class="pict">
+                                	<img src="themes/default/img/ico11.png" alt="环保墙纸">
+                                </div>
+                                <div class="texcr">
+                                	<h3><i>￥</i>189 <img src="themes/default/img/ico12.png" alt="环保墙纸"><span>127783<img src="themes/default/img/ico15.png" alt="环保墙纸"></span></h3>
+                                    <p>卧室墙纸彩色条纹系列<a href="#"><img src="themes/default/img/ico13.png" alt="环保墙纸"></a><a href="#"><img src="themes/default/img/ico14.png" alt=""></a></p>
+                                </div>
+                            </li>
+                            <li>
+                            	<div class="pict">
+                                	<img src="themes/default/img/ico11.png" alt="环保墙纸">
+                                </div>
+                                <div class="texcr">
+                                	<h3><i>￥</i>189 <img src="themes/default/img/ico12.png" alt="环保墙纸"><span>127783<img src="themes/default/img/ico15.png" alt="环保墙纸"></span></h3>
+                                    <p>卧室墙纸彩色条纹系列<a href="#"><img src="themes/default/img/ico13.png" alt="环保墙纸"></a><a href="#"><img src="themes/default/img/ico14.png" alt=""></a></p>
+                                </div>
+                            </li>
+                            <li>
+                            	<div class="pict">
+                                	<img src="themes/default/img/ico11.png" alt="环保墙纸">
+                                </div>
+                                <div class="texcr">
+                                	<h3><i>￥</i>189 <img src="themes/default/img/ico12.png" alt="环保墙纸"><span>127783<img src="themes/default/img/ico15.png" alt="环保墙纸"></span></h3>
+                                    <p>卧室墙纸彩色条纹系列<a href="#"><img src="themes/default/img/ico13.png" alt="环保墙纸"></a><a href="#"><img src="themes/default/img/ico14.png" alt="环保墙纸"></a></p>
+                                </div>
+                            </li>
+                    	</ul>
+                        <a href="#" class="more">更多卧室墙纸&gt;&gt;</a>
+                    </div>
+                    <div class="list at">
+                    	<ul>
+                    		<li>
+                            	<div class="pict">
+                                	<img src="themes/default/img/ico11.png" alt="环保墙纸">
+                                </div>
+                                <div class="texcr">
+                                	<h3><i>￥</i>289 <img src="themes/default/img/ico12.png" alt="环保墙纸"><span>127783<img src="themes/default/img/ico15.png" alt="环保墙纸"></span></h3>
+                                    <p>新品上市彩色条纹系列<a href="#"><img src="themes/default/img/ico13.png" alt="环保墙纸"></a><a href="#"><img src="themes/default/img/ico14.png" alt="环保墙纸"></a></p>
+                                </div>
+                            </li>
+                            <li>
+                            	<div class="pict">
+                                	<img src="themes/default/img/ico11.png" alt="环保墙纸">
+                                </div>
+                                <div class="texcr">
+                                	<h3><i>￥</i>189 <img src="themes/default/img/ico12.png" alt="环保墙纸"><span>127783<img src="themes/default/img/ico15.png" alt="环保墙纸"></span></h3>
+                                    <p>新品上市彩色条纹系列<a href="#"><img src="themes/default/img/ico13.png" alt="环保墙纸"></a><a href="#"><img src="themes/default/img/ico14.png" alt=""></a></p>
+                                </div>
+                            </li>
+                            <li>
+                            	<div class="pict">
+                                	<img src="themes/default/img/ico11.png" alt="环保墙纸">
+                                </div>
+                                <div class="texcr">
+                                	<h3><i>￥</i>189 <img src="themes/default/img/ico12.png" alt="环保墙纸"><span>127783<img src="themes/default/img/ico15.png" alt="环保墙纸"></span></h3>
+                                    <p>新品上市彩色条纹系列<a href="#"><img src="themes/default/img/ico13.png" alt="环保墙纸"></a><a href="#"><img src="themes/default/img/ico14.png" alt="环保墙纸"></a></p>
+                                </div>
+                            </li>
+                            <li>
+                            	<div class="pict">
+                                	<img src="themes/default/img/ico11.png" alt="环保墙纸">
+                                </div>
+                                <div class="texcr">
+                                	<h3><i>￥</i>189 <img src="themes/default/img/ico12.png" alt="环保墙纸"><span>127783<img src="themes/default/img/ico15.png" alt="环保墙纸"></span></h3>
+                                    <p>新品上市彩色条纹系列<a href="#"><img src="themes/default/img/ico13.png" alt="环保墙纸"></a><a href="#"><img src="themes/default/img/ico14.png" alt="环保墙纸"></a></p>
+                                </div>
+                            </li>
+                    	</ul>
+                        <a href="#" class="more">...更多&gt;&gt;</a>
+                    </div>
+                    <div class="list at">
+                    	<ul>
+                    		<li>
+                            	<div class="pict">
+                                	<img src="themes/default/img/ico11.png" alt="环保墙纸">
+                                </div>
+                                <div class="texcr">
+                                	<h3><i>￥</i>489 <img src="themes/default/img/ico12.png" alt="环保墙纸"><span>127783<img src="themes/default/img/ico15.png" alt="环保墙纸"></span></h3>
+                                    <p>新品上市彩色条纹系列<a href="#"><img src="themes/default/img/ico13.png" alt="环保墙纸"></a><a href="#"><img src="themes/default/img/ico14.png" alt="环保墙纸"></a></p>
+                                </div>
+                            </li>
+                            <li>
+                            	<div class="pict">
+                                	<img src="themes/default/img/ico11.png" alt="环保墙纸">
+                                </div>
+                                <div class="texcr">
+                                	<h3><i>￥</i>389 <img src="themes/default/img/ico12.png" alt="环保墙纸"><span>127783<img src="themes/default/img/ico15.png" alt="环保墙纸"></span></h3>
+                                    <p>新品上市彩色条纹系列<a href="#"><img src="themes/default/img/ico13.png" alt="环保墙纸"></a><a href="#"><img src="themes/default/img/ico14.png" alt="环保墙纸"></a></p>
+                                </div>
+                            </li>
+                            <li>
+                            	<div class="pict">
+                                	<img src="themes/default/img/ico11.png" alt="环保墙纸">
+                                </div>
+                                <div class="texcr">
+                                	<h3><i>￥</i>189 <img src="themes/default/img/ico12.png" alt="环保墙纸"><span>127783<img src="themes/default/img/ico15.png" alt="环保墙纸"></span></h3>
+                                    <p>新品上市彩色条纹系列<a href="#"><img src="themes/default/img/ico13.png" alt="环保墙纸"></a><a href="#"><img src="themes/default/img/ico14.png" alt="环保墙纸"></a></p>
+                                </div>
+                            </li>
+                            <li>
+                            	<div class="pict">
+                                	<img src="themes/default/img/ico11.png" alt="环保墙纸">
+                                </div>
+                                <div class="texcr">
+                                	<h3><i>￥</i>189 <img src="themes/default/img/ico12.png" alt="环保墙纸"><span>127783<img src="themes/default/img/ico15.png" alt="环保墙纸"></span></h3>
+                                    <p>新品上市彩色条纹系列<a href="#"><img src="themes/default/img/ico13.png" alt="环保墙纸"></a><a href="#"><img src="themes/default/img/ico14.png" alt="环保墙纸"></a></p>
+                                </div>
+                            </li>
+                    	</ul>
+                        <a href="#" class="more">...更多&gt;&gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Sale wid mt28">
+        	<h2 class="title"><i></i>美美特卖<span>SGOOD SALE</span></h2>
+        	<ul>
+        		 	<!-- 美美特卖 -->
+                        	   {foreach from=$hot_goods key=k item=hot_goods}
+                               <li>
+                                       <div class="pict">
+                                           <a href="{$hot_goods.url}" title="卧室墙纸"><img src="{$hot_goods.goods_img}" alt="环保墙纸" style="width:233px;height:211px;"></a>
+                                       </div>
+                                       <h3>{$hot_goods.name}</h3>
+                                       <p>{$hot_goods.shop_price}</p>
+                               </li>
+                               {/foreach}
+
+
+        	</ul>
+        </div>
+        
+        <div class="whole0"></div>
+        <h1 class="title"><span>新品展示</span></h1>
+		<div class="wipic wid mt28">
+        	<a href="#">
+        		<img src="themes/default/img/img9.jpg" alt="环保墙纸">
+            </a>
+            <ul>
+            	<li><a href="#" title="卧室墙纸">卧室墙纸<img class="opt" src="themes/default/img/img10.jpg" alt="环保墙纸"></a></li>
+                <li><a href="#" title="卧室墙纸">卧室墙纸<img class="opt" src="themes/default/img/img11.jpg" alt="环保墙纸"></a></li>
+                <li><a href="#" title="卧室墙纸">卧室墙纸<img class="opt" src="themes/default/img/img12.jpg" alt="环保墙纸"></a></li>
+                <li><a href="#" title="卧室墙纸">卧室墙纸<img class="opt" src="themes/default/img/img13.jpg" alt="环保墙纸"></a></li>
+                <li><a href="#" title="卧室墙纸">卧室墙纸<img class="opt" src="themes/default/img/img14.jpg" alt="环保墙纸"></a></li>
+                <li><a href="#" title="卧室墙纸">卧室墙纸<img class="opt" src="themes/default/img/img15.jpg" alt="环保墙纸"></a></li>
+            </ul>
+        </div>
+        <div class="whole1"></div>
+        <h1 class="title"><span>新品展示</span></h1>
+
+        <div class="wipic1 wid mt28">
+        	<a href="#">
+        		<img src="themes/default/img/img17.jpg" alt="环保墙纸">
+            </a>
+            <ul>
+               {foreach from=$curtain_goods key=k item=curtain_goods}
+               	<li><a href="{$curtain_goods.url}" title="卧室墙纸" >卧室墙纸<img class="opt_two" src="{$curtain_goods.goods_img}" alt="环保墙纸"></a>
+                               	<p>{$curtain_goods.name}</p>
+                                   <div class="text">
+                        <strong>￥{$curtain_goods.shop_price} <span><a href="#"><img src="themes/default/img/ico17.png" alt="环保墙纸"></a>|<a href="#"><img src="themes/default/img/ico18.png" alt="环保墙纸"></a><a href="#"><img src="themes/default/img/ico19.png" alt="环保墙纸"></a></span> 	</strong>
+                                   </div>
+                               </li>
+                  {/foreach}
+            </ul>
+        </div>
+
+        <div class="whole2"></div>
+        <h1 class="title"><span>新品展示</span></h1>
+
+		<div class="Luxurious wid">
+			<img src="themes/default/img/img20.jpg" alt="环保墙纸">
+            <div class="left">
+            	<div class="pict">卧室墙纸
+                	<img class="opt_60" src="themes/default/img/img21.jpg" alt="环保墙纸">
+                </div>
+                <div class="text">
+                	<h2>欧式拉扣软包112系列</h2>
+                    <p>258.00 <a href="#">GO</a></p>
+                </div>
+            </div>
+            <div class="right">
+            	<ul>
+                {foreach from=$soft_goods key=k item=soft_goods}
+            		<li>
+                    	<div class="pict">卧室墙纸
+                            <a href="{$soft_goods.url}" title="卧室墙纸"><img class="opt_three" src="{$soft_goods.goods_img}" alt="环保墙纸" ></a>
+                        </div>
+                        <div class="text">
+                            <h2>{$soft_goods.name}</h2>
+                            <p>{$soft_goods.shop_price} <a href="#">GO</a></p>
+                        </div>
+                    </li>
+                     {/foreach}
+            	</ul>
+            </div>
+            
+        </div>
+        <div class="bottom wid">
+        	<ul>
+        		<li>
+                	<p><img src="themes/default/img/ico20.png" alt="环保墙纸">上门量房</p>
+                </li>
+                <li>
+                	<p><img src="themes/default/img/ico20-1.png" alt="环保墙纸">上门安装</p>
+                </li>
+                <li>
+                	<p><img src="themes/default/img/ico20-2.png" alt="环保墙纸">全屋家具涉及</p>
+                </li>
+                <li>
+                	<p><img src="themes/default/img/ico20-3.png" alt="环保墙纸">家具摆放效果</p>
+                </li>
+                <li>
+                	<p><img src="themes/default/img/ico20-4.png" alt="环保墙纸">保修终身维护</p>
+                </li>
+        	</ul>
+        </div>
+<!-- #BeginLibraryItem "/library/footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+<script type="text/javascript" src="themes/default/js/scrollanim.min.js"></script> <!--"动画库"-->
+<script src="themes/default/js/type.js"></script><!--自定义封装函数-->
+<script>
+   fade(".banner .bann ul li",".banner .cirl ul li",3000,"","");
+  	tabs_cg(".Recommend .layout .sort .tabs ul li",".Recommend .layout .sort .list","click","acti","","");
+</script>
+</html>

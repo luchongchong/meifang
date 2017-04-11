@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>美房美邦</title>
+	<link rel="icon" href="../favicon.ico" />
+    <meta name="keywords" content=" " />
+	<meta name="description" content="" />
+   <link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+   <link rel="stylesheet" type="text/css" href="themes/default/css/shopping.css">
+    <script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+    <script src="themes/default/js/config.js"></script>
+    <script src=themes/default/js/lib/template.min.js "></script>
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+    <script src="themes/default/js/worldunion.js"></script>
+    <script src="themes/default/js/mycart.js"></script>
+    <script src="themes/default/js/transport.js"></script>
+    <script src="themes/default/js/common.js"></script>
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+	
+	<div class="shopping-wrap">
+		<div class="shopping-hd step1">
+			<span>1.我的购物车</span><span>2.确认订单信息</span><span>3.成功提交订单</span>
+		</div>		
+		<!-- <div class="shopping-hd step2">
+			<span>1.我的购物车</span><span>2.确认订单信息</span><span>3.成功提交订单</span>
+		</div>		
+		<div class="shopping-hd step3">
+			<span>1.我的购物车</span><span>2.确认订单信息</span><span>3.成功提交订单</span>
+		</div>	 -->	
+		<div class="cart-bd">
+			<table cellpadding="0" cellspacing="0" class="tab-layout">
+				<colgroup>
+					<col style="" />
+					<col style="width:13%" />
+					<col style="width:13%" />
+					<col style="width:13%" />
+					<col style="width:13%" />
+					<col style="width:13%" />
+					<col style="width:13%" />
+				</colgroup>
+				<tr>
+					<th>商品名称</th>
+					<th>属性</th>
+					<th>市场价</th>
+					<th>本店价</th>
+					<th>数量</th>
+					<th>小计</th>
+					<th>操作</th>
+				</tr>
+				
+				<!-- {foreach from=$goods_list item=goods} -->
+				<tr>
+					<td class="pro-info">
+					<!-- {if $goods.goods_id gt 0 && $goods.extension_code neq 'package_buy'} 商品 -->
+						<!-- {if $show_goods_thumb eq 1} -->
+                        <a href="goods.php?id={$goods.goods_id}" target="_blank" class="f6">{$goods.goods_name}</a>
+                    <!-- {elseif $show_goods_thumb eq 2} -->
+                        <a href="goods.php?id={$goods.goods_id}" target="_blank"><img width="92px" height="92px" src="{$goods.goods_thumb}" border="0" title="{$goods.goods_name|escape:html}" /></a>
+                    <!-- {else} -->
+                        <a href="goods.php?id={$goods.goods_id}" target="_blank"><img width="92px" height="92px" src="{$goods.goods_thumb}" border="0" title="{$goods.goods_name|escape:html}" />
+                        <div class="txt w130">{$goods.goods_name}</div></a>
+                    <!-- {/if} -->
+                    <!-- {if $goods.parent_id gt 0} 配件 -->
+                    <span style="color:#FF0000">（{$lang.accessories}）</span>
+                    <!-- {/if} -->
+                    <!-- {if $goods.is_gift gt 0} 赠品 -->
+                    <span style="color:#FF0000">（{$lang.largess}）</span>
+                    <!-- {/if} -->
+                    <!-- {elseif $goods.goods_id gt 0 && $goods.extension_code eq 'package_buy'} -->
+                    <a href="javascript:void(0)" onclick="setSuitShow({$goods.goods_id})" class="f6">{$goods.goods_name}<span style="color:#FF0000;">（{$lang.remark_package}）</span></a> <img src="images/package.gif" />
+                    <div id="suit_{$goods.goods_id}" style="display:none;">
+                            <!-- {foreach from=$goods.package_goods_list item=package_goods_list} -->
+                                <a href="goods.php?id={$package_goods_list.goods_id}" target="_blank" class="f6">{$package_goods_list.goods_name}</a><br />
+                            <!-- {/foreach} -->
+                    </div>
+					<!-- {else} 优惠活动 -->
+                    {$goods.goods_name}
+                    <!-- {/if} -->	
+					</td>
+					<td>型号：{$goods.goods_attr}</td>
+					<td>{$goods.market_price}</td>
+					<td>{$goods.goods_price}</td>
+					<td>
+                        <div class="count-box">
+                                                      <!-- {if $goods.goods_id gt 0 && $goods.is_gift eq 0 && $goods.parent_id eq 0} 普通商品可修改数量 -->
+                            <input class="inputBg intype-text js-num" type="number" min="1" max="1000" name="goods_number[{$goods.rec_id}]" id="goods_number_{$goods.rec_id}" value="{$goods.goods_number}" size="4"   onkeyup="changenum({$goods.rec_id})" onChange="changenum({$goods.rec_id})"/>
+                            <script>
+                                function changenum(rec_id){
+                                    var goods_number = parseInt(document.getElementById('goods_number_'+rec_id).value);
+                                    change_goods_number(rec_id,goods_number);
+                                }
+                            
+                                function change_goods_number(rec_id, goods_number)
+                                {   
+                                Ajax.call('flow.php?step=ajax_update_cart', 'rec_id=' + rec_id +'&goods_number=' + goods_number, change_goods_number_response, 'POST','JSON');  
+                                } 
+                                
+                                function change_goods_number_response(result)
+                                {    
+                                    if (result.error == 0)
+                                    {
+                                    var rec_id = result.rec_id;
+                                       
+                                        document.getElementById('goods_subtotal').innerHTML = result.total_desc;//更新小计
+                                        if (document.getElementById('ECS_CARTINFO'))
+                                            {//更新购物车数量
+                                            document.getElementById('ECS_CARTINFO').innerHTML = result.cart_info;
+                                            }
+                                }
+                                else if (result.message != '')
+                                    {
+                                    alert(result.message);
+                                    }                
+                                }
+                        </script> 
+                            <!-- {else} --> 
+                            {$goods.goods_number} 
+                            <!-- {/if} --> 
+                        </div>
+					</td>
+					<td>{$goods.goods_price}</td>
+					<td>
+						<p class="c-red"><a href="javascript:if (confirm('{$lang.drop_goods_confirm}')) location.href='flow.php?step=drop_goods&amp;id={$goods.rec_id}'; " ><u class="b">{$lang.drop}</u></a>&nbsp;&nbsp;</p>
+						<p class="c-red"><a href="javascript:if (confirm('您确实要把该商品加入收藏吗？')) location.href='flow.php?step=drop_to_collect&amp;id={$goods.rec_id}'; " ><u class="b">{$lang.drop_to_collect}</u></a></p>
+					</td>
+				</tr>
+				{/foreach}
+				<tr>
+					<td class="empty"><a href="flow.php?step=clear" class="c-red"><i class="iconfont">&#xe614;</i>清空购物车</a></td>
+					<td colspan="6" class="settlement">
+						<p class="total-price">商品总价：<span id="goods_subtotal">{$total.goods_price}</span></p>
+						<p class="total-price">使用积分：<span></span></p>
+						<p class="cart-btn">
+							<a href="./category.php" class="btn btn-gray">继续购物</a>
+							<a href="./flow.php?step=checkout" class="btn">去结算 <i class="iconfont">&#xe615;</i></a>
+						</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<div class="JQ_include" src="themes/default/include/m_footer.dwt"></div>
+    <div class="JQ_include" src="themes/default/include/site_bottom.dwt"></div>
+
+
+
+</body>
+</html>

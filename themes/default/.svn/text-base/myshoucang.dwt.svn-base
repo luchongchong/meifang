@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>美房美邦</title>
+	<link rel="icon" href="../favicon.ico" />
+    <meta name="keywords" content=" " />
+	<meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/shopping.css">
+	<style type="text/css">
+		body
+		{
+			background-color:#f7f8f8;
+		}
+		div.person
+		{
+			width:1000px;
+			margin:0 auto;
+			
+		}
+		table.myfav
+		{
+			width:900px;
+			margin:0 auto;	
+			
+		}
+		tr.tit
+		 {
+				border:1px solid #ccc; 
+				background-color:#fff;
+				padding:20px;
+		 }
+		 tr.delete
+		 {
+			text-align:center;
+			margin:0 auto; 
+		 }
+		  tr.delete td
+		  {
+			  padding-top:20px;
+		  }
+		 tr.delete td img
+		 {
+			 vertical-align:center;
+		 }
+		 tr.delete td span
+		 {
+			float:right; 
+			
+			margin-right:40%;
+			margin-top:-5%;
+		 }
+    </style>  
+ 
+
+</head>
+<body class="shopping-cart-wrap">
+	
+<!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+	<div class="person">
+    	<h2 style="font-weight:normal;">我的收藏</h2>
+        <div class="favorites">
+        	<table class="myfav">
+              <tr class="tit">
+                <th scope="col">商品名称</th>
+                <th scope="col">操作</th>
+              </tr>
+              {foreach from=$goods_list item=goods_info}
+              <tr class="delete">
+                <td><img src="{$goods_info.goods_thumb}" style="margin-left:40%;"/><span>{$goods_info.goods_name}</span></td>
+                <td style="color:#f00;"><a href="javascript:if (confirm('您确定要从收藏夹中删除选定的商品吗？')) location.href='user.php?act=delete_collection&amp;collection_id={$goods_info.rec_id}'" class="f6">删除</a></td>
+              </tr>
+              {/foreach}
+              <tr>
+                <td align="center" colspan="5"><!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem --></td>
+              </tr>
+            </table>
+
+            
+        </div><!--favorites-->
+    </div><!--person-->
+	
+    <div class="JQ_include" src="themes/default/include/m_footer.dwt"></div>
+    <div class="JQ_include" src="themes/default/include/site_bottom.dwt"></div>
+	
+
+    <script src="themes/default/js/config.js"></script>
+    <script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+    <script src=themes/default/js/lib/template.min.js  "></script>
+    <script src="themes/default/js/loadHtml.js"></script>
+
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+    <script src="themes/default/js/worldunion.js"></script>
+    <script src="themes/default/js/mall-index.js"></script>
+
+
+</body>
+</html>

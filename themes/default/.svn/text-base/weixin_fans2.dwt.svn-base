@@ -1,0 +1,171 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{$page_title}</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="./assets/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="./assets/css/admin.css">
+  <script src="./assets/js/jquery.min.js"></script>
+  {insert_scripts files="../js/utils.js,listtable.js"}
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+<!--head start -->
+<!-- #BeginLibraryItem "/library/head_user_c.lbi" --><!-- #EndLibraryItem -->
+<!--head end -->
+
+<!--menu start -->
+<!-- #BeginLibraryItem "/library/menu_user_c.lbi" --><!-- #EndLibraryItem -->
+<!--menu end -->
+
+  <!-- content start -->
+  <div class="admin-content ">
+    <div class="am-g am-padding">
+      <div class="am-u-md-10 am-u-md-push-2 am-u-lg-reset-order"><strong class="am-text-primary am-text-lg">我的收益</strong></div>
+      <div class="am-u-md-2 am-u-md-pull-10 am-u-lg-reset-order"><a  href="./user_c.php?act=gain_rebate" style="display:none;"><button type="button" class="am-btn am-btn-success am-round">获取返利</button></a></div>
+    </div>
+    <div class="am-g am-padding">
+          <div class="am-u-sm-10 am-u-md-10">
+            <form action="user_c.php" class="am-form am-form-inline">
+              <div class="am-form-group am-form-icon">
+                <i class="am-icon-calendar"></i>
+                <input type="text" name="start_time" class="am-form-field am-input-sm" data-am-datepicker readonly placeholder="开始时间">
+              </div>
+              <div class="am-form-group am-form-icon">
+                <i class="am-icon-calendar"></i>
+                <input type="text" name="end_time" class="am-form-field am-input-sm" data-am-datepicker readonly placeholder="结束时间">
+              </div>
+              <style>
+                  .am-selected-btn {
+                      width: 120px;
+                    }
+                </style>
+              <div class="am-form-group ">                
+                  <select data-am-selected name="user_rank">
+                    <option value="">会员等级</option>
+                    <option value="pthy">普通会员</option>
+                    <option value="99">vip会员</option>
+                    {if $user_rank == 103}
+                    <option value="102">加盟商</option>
+                    {/if}
+                    <option value="103">服务商</option>
+                  </select>               
+              </div>  
+              <div class="am-form-group ">
+                <input type="text" name="user_name" class="am-form-field " placeholder="会员名或昵称" style="width:120px">
+              </div>
+              <input name="act" type="hidden" value="{$act_self}"/> 
+              <div class="am-form-group ">
+                <button type="submit" class="am-btn am-btn-success am-default">立即搜索</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding-xs am-text-center admin-content-list ">
+      <li><a href="#" class="am-text-success"><span class="am-icon-btn am-icon-user-md"></span><br/>订单总数<br/>{$count}</a></li>
+      <li><a href="#" class="am-text-warning"><span class="am-icon-btn am-icon-user-md"></span><br/>成交订单总数<br/>{$count}</a></li>
+      <li><a href="#" class="am-text-danger"><span class="am-icon-btn am-icon-user-md"></span><br/>成交总金额<br/>{$total_money}</a></li>
+      <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>收益总金额<br/>{$money}</a></li>
+    </ul>
+    <div class="am-g">
+      <div class="am-u-sm-12">
+        <table class="am-table am-table-bd am-table-striped admin-content-table">
+          <thead>
+          <tr>
+            <th>会员名称</th>
+            <th>订单号</th>
+            <th>下单时间</th>
+            <th>订单总额</th>
+            <th>返现状态</th>
+            <th>返现说明</th>
+            <th>返现金额</th>
+            <th>操作</th>
+          </tr>
+          </thead>
+          <tbody>
+           {foreach from=$arr item=user }
+            <tr>
+              <td >{$user.username}</td>
+              <td >{$user.order_sn}</td>
+              <td >{$user.add_time}</td>
+              <td >{$user.goods_amount}</td>
+              <td >{if $user.is_gain_rebate==1}已返{else}未返{/if}</td>
+              <td >{$user.change_desc}</td>
+              <td >{$user.user_money}</td>
+              <td ><a href="./user_c.php?act=order_detail_c&order_id={$user.order_id}"><button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 查看订单</button></a></td>
+            </tr>  
+            {/foreach}             
+          </tbody>
+        </table>
+        <!-- #BeginLibraryItem "/library/pages_c_c.lbi" --><!-- #EndLibraryItem -->
+      </div>
+    </div>
+    
+    </div>
+  </div>
+  <!-- content end -->
+ 
+</div>
+
+<a class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<footer>
+  <hr>
+  <p class="am-padding-left am-text-center">©2015 MEIBANG.COM 所有设计和内容保留一切权利 沪ICP备xxx号</p>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="./assets/js/polyfill/rem.min.js"></script>
+<script src="./assets/js/polyfill/respond.min.js"></script>
+<script src="./assets/js/amazeui.legacy.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/amazeui.min.js"></script>
+<!--<![endif]-->
+<script src="./assets/js/app.js"></script>
+<script >
+{foreach from=$order item=list key=k}
+  $(function() {
+  $('#doc-prompt-toggle{$k}').on('click', function() {
+    $('#my-prompt{$k}').modal({
+      relatedTarget: this,
+      onConfirm: function(e) {
+        var user_name = $('#user_name{$k}').val();
+        if(user_name == ''){
+          alert('请填写会员名！');
+          exit;
+        }else{
+          window.location = "user_c.php?act=user_name&id={$list.user_id}&user_name="+user_name;  
+        }
+                
+      },
+    });
+  });
+});
+{/foreach}
+
+</script>
+<script type="text/javascript">
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>美房美邦</title>
+	<link rel="icon" href="../favicon.ico" />
+    <meta name="keywords" content=" " />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/mall.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/yangben.css">
+</head>
+<body class="bg-f7 mall-wrap">
+<!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/m_nav.lbi" --><!-- #EndLibraryItem -->
+    <!-- bread nav -->
+    <div class="breadNavBg">
+        <div class="breadNav">
+            <div>
+            <a title="首页" href="/">美美商城</a><i class="symbol">&gt;</i><span>样本</span>
+            </div>    
+        </div>
+    </div>
+    <div class="yang_detail">
+        <div class="yang_hd">
+            <span>{$goods.goods_name}</span>
+            <a href="" class="c-red buy">立即购买</a>
+        </div>
+
+        <ul class="condition clearfix">
+            <li>产地：{$chandi}</li>
+            <li>材质：{$material_name}</li>
+            <li>价格：{$goods.shop_price}</li>
+            <li>风格：{$style_name}</li>
+            <li>场所：{$cat_name}</li>
+        </ul>
+
+        <p class="desc">{$goods.goods_desc}</p>
+
+        <div class="show_img">
+            <div class="pic-show" id="bigPic">
+                <img src="{$goods.goods_img}" />
+            </div>
+            <div class="small-pic" id="min-scroll">
+                <a class="prev iconfont">&#xe61d;</a> <a class="next iconfont">&#xe61c;</a> 
+                <div class="show_min_img">
+                    <ul id="smallPicItem">
+                        {foreach from=$pictures item=list}
+                        <li><img src="{$list.img_url}" /></li>
+                        {/foreach}    
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-main">
+            <div class="detail-hd" id="detaiInfoHdBar">
+                <a href="javascript:;" class="active">商品详情</a>
+            </div>
+            <div class="detail-bd">
+                <ul class="pro-parameter clearfix">
+                    {foreach from=$specification item=specification_list}
+                     {if $specification_list.name eq '规格'}
+                     
+                     <li>规格:{$specification_list.values[0].label}</li>
+                     {else}
+                     {/if}
+                    {/foreach}
+                    <li>风格:{$style_name}</li>
+                </ul>
+                <div class="main-box">
+                    <img src="themes/default/img/temp.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="JQ_include" src="themes/default/include/m_footer.dwt"></div>
+    <div class="JQ_include" src="themes/default/include/site_bottom.dwt"></div>
+    <script src="themes/default/js/config.js"></script>
+    <script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+    <script src=themes/default/js/lib/template.min.js  "></script>
+    <script src="themes/default/js/loadHtml.js"></script>
+    {insert_scripts files='transport.js'}
+    {insert_scripts files='transport.js,utils.js'}
+    {insert_scripts files='common.js'}
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+    <script src="themes/default/js/worldunion.js"></script>
+    <script src="themes/default/js/yangDetail.js"></script>
+</body>
+</html>

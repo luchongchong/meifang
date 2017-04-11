@@ -1,0 +1,8 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $ad_div}
+<div class="top_ad">
+{foreach from=$ad_div item=divAd name=name}
+<a href="{$ad_div.url}" style="background-image:url({$divAd.image})" target="_blank"></a>
+{/foreach}
+</div>
+{/if}

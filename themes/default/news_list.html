@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>资讯列表</title>
+<link rel="stylesheet" href="themes/default/news_temples/css/style.css" type="text/css"><!--页面CSS-->
+<link rel="stylesheet" href="themes/default/css/style.css" type="text/css"><!--页面CSS-->
+<link rel="stylesheet" href="themes/default/news_temples/css/animate.min.css" type="text/css"><!--CSS3动画-->
+<script type="text/javascript" src="themes/default/news_temples/js/jquery-1.4.4.min.js"></script><!--jQuery库-->
+</head>
+<body>
+    	<div class="top" style="background: url(themes/default/img/img0.jpg) center;">
+        	
+        </div><!--top-->
+        <div class="menu">
+        	<div class="wid">
+            	<p class="fl">欢迎光临本店　　欢迎登录美房美邦！<a href="./user.php?act=login" class="color"> 请登录</a><a href="./user.php?act=register">免费注册</a></p>
+                <p class="fr">
+                	<span class="fl"><a href="#">我的订单</a><a href="#"><img src="themes/default/img_news/ico16.png" alt="">购物车</a></span>
+   
+                    <span class="fr">
+                    	<a href="./user.php?act=collection_list">收藏夹</a>
+                        <a href="http://www.mfmb58.com">积分商城</a>
+                        <a href="http://www.atqzxx.com/WallpaperShow/?seller_nick=美房美邦墙纸#">魔法幻装</a>
+                        <a href="allmendian.php">全国门店</a>
+                        <a href="http://www.mfmb58.com">我秀我家</a>
+                        <a href="contact_us.php" class="last">联系我们</a>
+                        <a href="join_us.php" class="last">加入我们</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="search">
+        	<div class="wid">
+            	<div class="logo">
+                	<img src="themes/default/img_news/img2.jpg" alt="">
+                </div>
+                <div class="layout_sea">
+                	<img src="themes/default/img_news/img3.jpg" alt="">
+                    <input type="text">
+                    <button>搜 索</button>
+                </div>
+                <div class="code">
+                	<img src="themes/default/img_news/img1.jpg" alt="">
+                    <p>扫我进入手机端</p>
+                </div>
+            </div>
+        	
+        </div>
+        <div class="nav_menu">
+        	<div class="wid">
+            	<ul>
+            		<li class="acti"><a href="./attract_investment.php">首页</a></li>
+            		<li><a href="./indexs.php">商城</a></li>
+                    <li><a href="./wallpaper.php">墙纸</a></li>
+                    <li><a href="./wallcloth.php">无缝墙布</a></li>
+                    <li><a href="./fresco.php">壁画</a></li>
+                    <li><a href="./curtain.php">窗帘</a></li>
+                    <li><a href="./soft.php">软包</a></li>
+                    <li><a href="./diatom_ooze.php">硅藻泥</a></li>
+                    <li><a href="./decorative.php">装饰画</a></li>
+                    <li><a href="./accessories.php">辅料</a></li>
+                    <li><a href="./sample.php">样本</a></li>
+                    <li><a href="./article_cat.php?id=5">资讯列表</a></li>
+            	</ul>
+            </div>
+        </div>
+        
+        <div class="information wid">
+        	<div class="left_layout">
+            	<ul>
+            	    {foreach from=$article_categories item=cat}
+            		<li class="li0">
+            		<h2>{$cat.name|escape:html}</h2></li>
+            		{foreach from=$cat.children item=child}
+                    <li><a href="{$child.url}">{$child.name|escape:html}</a></li>
+                    {/foreach}
+                   {/foreach}
+            	</ul>
+            </div>
+            <div class="right_layout">
+            	<p class="position">{$lang.ur_here} {$ur_here}</p>
+            	<ul>
+            	{foreach from=$artciles_list item=article}
+            		<li>
+                    	<div class="pict">
+                    	<img src="{$article.urls}" alt="{$article.short_title}" class="img99">
+                        </div>
+                        <div class="text">
+                        	<h3><a href="{$article.ids}">{$article.short_title}</a></h3>
+                            <p>{$article.short_title}</p>
+							<a href="{$article.url}" class="more">MORE</a>
+                        </div>
+                    </li>
+                    {/foreach}
+            	</ul>
+                
+                <div class="pages">
+                	<a href="/index.php" class="a1">首页</a>
+                    <a href="#" class="a1">上一页</a>
+                    <a href="#" class="acti">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">..</a>
+                    <a href="#" class="a1">下一页</a>
+                    <a class="nopage a1" href="#">末页</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+ <div class="bottom_menu">
+        	<div class="wid">
+            	<ul>
+            		<li>
+                    	<h2><img src="themes/default/img_news/ico21.png" alt="">新手上路</h2>
+                        <p>
+                        <a href="liucheng.php">售后流程</a>
+                        <a href="http://www.mfmb58.com">购物流程</a></p>
+                        <p>
+                        <a href="http://www.mfmb58.com">订购方式</a>
+                        <a href="http://www.mfmb58.com">隐私声明</a></p>
+                    </li>
+                    <li>
+                    	<h2><img src="themes/default/img_news/ico22.png" alt="">会员中心</h2>
+                        <p>
+                        <a href="#">资金管理</a>
+                        <a href="#">我的收藏</a>
+                        </p>
+                        <p>
+                        <a href="#">我的订单</a>
+                        </p>
+                    </li>
+                    <li>
+                    	<h2><img src="themes/default/img_news/ico23.png" alt="">服务保证</h2>
+                        <p>
+                        <a href="#">退换货原则</a>
+                        <a href="#">售后服务保证</a>
+                        </p>
+                        <p><a href="#">产品质量保证</a>
+                        </p>
+                    </li>
+            	</ul>
+                <div class="code">
+                	<img src="themes/default/img_news/img1.jpg" alt="">
+                    <p>扫我进入手机端</p>
+                </div>
+                <div class="copy">
+                <p class="dibu">
+                            <a href="http://www.mfmb58.com">环保墙纸</a>
+                            &nbsp;&nbsp;
+                            <a href="http://www.mfmb58.com" >卧室墙纸</a>
+                        </p>
+                        <p class="dibu"><a>友情链接</a>     &nbsp;: &nbsp;<a href="http://www.ogoqz.com">墙纸加盟</a>
+                        &nbsp; &nbsp;<a href="http://www.yhs-china.com">办公室装修公司</a>
+                        </p>
+                	<p>2015 MEIBANG.COM 所有设计和内容保留一切权利 沪ICP备15010141号</p>
+                </div>
+            </div>
+        </div>
+</body>
+<script type="text/javascript" src="js/scrollanim.min.js"></script> <!--"动画库"-->
+<script src="js/type.js"></script><!--自定义封装函数-->
+</html>

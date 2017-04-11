@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>美房美邦</title>
+	<link rel="icon" href="themes/default/favicon.ico" />
+    <meta name="keywords" content=" " />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+	<link rel="stylesheet" type="text/css" href="themes/default/css/mall.css">
+	<link rel="stylesheet" type="text/css" href="themes/default/css/product.css">
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/m_nav.lbi" --><!-- #EndLibraryItem -->
+	<!-- bread nav -->
+	<div class="breadNavBg">
+	    <div class="breadNav">
+	        <div>
+	        <a title="首页" href="/">美美商城</a><i class="symbol">&gt;</i><!--<span class="desc">适合场所：儿童房</span>--><span class="count" style="color:#999">XXXXXX</span>
+	        </div>    
+	    </div>
+	</div>
+	<div class="prodetail-wrap w1200 clearfix">
+		<div class="col-sub">
+			<ul class="cat-list">
+		      {foreach from=$style item=style_list}
+                <li><a href="category.php?style_id={$style_list.id}" style="background:none;">{$style_list.name}</a></li>
+              {/foreach}
+			</ul>
+			<div class="view-list" id="history_list">
+				<h3>浏览历史</h3>
+				  
+					{$insert_history}
+			</div>
+		</div>
+		<div class="col-main">
+			<div class="pro-hd clearfix">
+			    <div class="pro-hd-left fl">
+                
+			        <div class="pic-show" id="bigPic">
+			            <img src="{$goods.goods_thumb}" />
+			        </div>
+			        <div class="small-pic" id="min-scroll">
+                    	
+	  					<a class="prev iconfont"><</a>
+                        	
+                        <a class="next iconfont">></a> 
+                        	
+			            <ul id="smallPicItem">
+                        	{foreach from=$pictures item=list}
+			                <li><img src="{$list.img_url}" /></li>
+                            {/foreach}        
+			            </ul>
+                         
+			        </div>
+                   
+			    </div>
+			    <div class="pro-hd-desc fl">
+			        <h3 class="title">{$goods.goods_name}</h3>
+			        <div class="pro-info">
+				        <p><span>市场价：</span><span class="market_price">{$goods.market_price}</span></p>
+				        <p><span>本店价：</span> <span class="price"><em class="c-red">￥</em>{$goods.shop_price} </span> </p>
+				        <p><span>节&nbsp;&nbsp;&nbsp;省：</span> <span>￥ 76 (4.8折)</span> </p>
+			        </div>
+			        <form action="javascript:addToCart({$goods.goods_id})" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
+			        <div class="pro-model">
+			        
+			        	<dl class="tb-prop clearfix">
+				        	<dt class="tb-property-type">型&nbsp;&nbsp;&nbsp;号：</dt>
+				        	
+				        	<dd>
+				        	    <ul class="clearfix">
+				        	       <!-- {foreach from=$specification item=spec key=spec_key} -->
+				        	       <!-- {if $spec.name eq '型号'} -->
+				        	       <!-- {foreach from=$spec.values item=value key=key} -->
+				        	      <li>
+				        	         <a>
+                                     <input type="radio" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" {if $key eq 0}checked{/if} onclick="changePrice()" />
+                                     <label for="spec_value_{$value.id}">{if $value.product_number eq 0}{$value.label}{else}{$value.label}-<font class="price">{$value.product_number}{$goods.measure_unit}</font>{/if}</label> 
+                                    </a>
+                                  <li>
+                                    <!-- {/foreach} -->   
+                                    <!-- {/if} -->
+                                    <!-- {/foreach} -->
+                                </ul>
+				        	</dd>
+			        	</dl>
+                        <dl class="tb-prop clearfix">
+				        	<dt class="tb-property-type">购买数量:</dt>
+				        	<dd>
+				        		<input type="text" name="number" value="1" style="color:#ccc;font-size:12px;height:20px;">
+				        	</dd>
+                            
+			        	</dl>
+			        </div>
+			        <div class="buy-action">
+			            <a class="btn addCartBtn" data-id="722" style="z-index:100;"><i class="iconfont" style="margin-right:0;"><img src="themes/default/img/flowdeta.png" style="margin:7px 30px 7px 7px;"></i><span>加入购物车</span></a>
+			            <a class="btn buynow" data-id="722" data-act="buy" onClick="addToCart_quick({$goods.goods_id})">立即购买</a>
+			        </div>
+			    </div>
+			    </form>
+			</div>
+			
+			<div class="detail-main" style="margin-bottom:300px;">
+				<div class="detail-hd" id="detaiInfoHdBar">
+		            <a href="javascript:;" class="active">商品详情</a>
+		        </div>
+		        <div class="detail-bd">
+		        	<ul class="pro-parameter clearfix">
+		                 {$goods.goods_desc}
+		            </ul>
+		            <div class="main-box">
+		            	<img src="themes/default/img/temp.jpg" alt="">
+		            </div>
+		        </div>
+			</div>
+		</div>
+	</div>
+    <div class="JQ_include" src="themes/default/include/m_footer.dwt"></div>
+    <div class="JQ_include" src="themes/default/include/site_bottom.dwt"></div>
+    <script src="themes/default/js/config.js"></script>
+    <script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+    <script src=themes/default/js/lib/template.min.js  "></script>
+    <script src="themes/default/js/loadHtml.js"></script>
+   
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+    <script src="themes/default/js/worldunion.js"></script>
+    <script src="themes/default/js/pro-detail.js"></script>
+    <script src="themes/default/js/transport.js"></script>
+    <script src="themes/default/js/common.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    function clear_history()
+    {
+    Ajax.call('user.php', 'act=clear_history',clear_history_Response, 'GET', 'TEXT',1,1);
+    }
+    function clear_history_Response(res)
+    {
+    document.getElementById('history_list').innerHTML = '{$lang.no_history}';
+    }
+</script>

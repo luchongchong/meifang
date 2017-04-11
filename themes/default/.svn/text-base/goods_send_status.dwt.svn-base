@@ -1,0 +1,184 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{$page_title}</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <script src="assets/js/jquery.min.js"></script>
+  {insert_scripts files="../js/utils.js,listtable.js"}
+  <style>
+    .am-u-sm-12 {
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+<!--head start -->
+<!-- #BeginLibraryItem "/library/head_user_c.lbi" --><!-- #EndLibraryItem -->
+<!--head end -->
+
+<!--menu start -->
+<!-- #BeginLibraryItem "/library/menu_user_c.lbi" --><!-- #EndLibraryItem -->
+<!--menu end -->
+
+
+  <!-- content start --> 
+        <div class="admin-content ">
+          <div class="am-g am-padding">
+            <div class="am-u-sm-8 am-u-md-10">
+              <form action="user_c.php" class="am-form am-form-inline">
+                <div class="am-form-group am-form-icon">
+                  <i class="am-icon-calendar"></i>
+                  <input type="text" name="start_time" class="am-form-field am-input-sm" data-am-datepicker readonly placeholder="下单开始时间">
+                </div>
+                <div class="am-form-group am-form-icon">
+                  <i class="am-icon-calendar"></i>
+                  <input type="text" name="end_time" class="am-form-field am-input-sm" data-am-datepicker readonly placeholder="下单结束时间">
+                </div>
+                <div class="am-form-group am-input-group-sm am-padding">
+                  <input type="text" name="keywords" class="am-form-field" placeholder="其他搜索">
+                </div>
+               
+                <div class="am-form-group ">                
+                    <select data-am-selected name="status" >
+                      <option value="" >选择收货状态</option>
+                      <option value="1">未发货</option>
+                      <option value="2">未确认收货</option>
+                      <option value="3">已确认收货</option>
+                                                                  
+                    </select>               
+                </div>
+                <div class="am-form-group"> 
+                  <input type="text" name="send_company" class="am-form-field" placeholder="货运公司搜索">             
+                </div>   
+                <input name="act" type="hidden" value="goods_send_status"/> 
+                <input name="username" type="hidden" value="{$username}"/>   
+                <input name="show_name" type="hidden" value="{$show_name}"/>  
+                <div class="am-form-group " >
+                  <button type="submit" class="am-btn am-btn-success am-default">立即搜索</button>
+                </div>
+              </form>
+            </div>
+          </div> 
+          <div class="am-u-sm-12" style=" height:450px; width:100%; overflow-y:scroll;">
+            <table class="am-table am-table-bd am-table-striped admin-content-table">
+              <thead>
+              <tr>
+                <th>订单号</th>
+                <th>数量</th>
+                <th>状态</th>
+                <th>下单时间</th>
+                <th>发货单号</th>
+                <th>发货时间</th>
+                <th>货运公司</th>
+
+                <th>操作</th>
+              </tr>
+              </thead>
+              {if $user_rank eq '103'}
+              <tbody>
+              
+               {foreach from=$goods_list item=list key=k}
+
+                <tr>
+                  <td title="{$list.goods_name}--{$list.goods_sn}">{$list.order_sn}</td>
+                  <td >{$list.goods_number}</td>
+                  {if $list.send_status eq 1}
+                  <td >{if $list.status==1}未发货{else}已发货{/if}</td>
+                  {else}
+                  <td >{if $list.status==1}未发货{elseif $list.status==2}已发货,未确认{else}已发货,已确认{/if}</td>
+                  {/if}
+                  <td >{$list.add_time}</td>
+                  <td >{$list.send_sn}</td>
+                  <td >{if $list.send_time neq '1970-01-01'}{$list.send_time}{/if}</td>
+                  <td >{$list.send_company}</td>
+                  <td >
+                    {if $list.send_status neq 1}
+                    {if $list.status eq 2}
+                    <a href="user_c.php?act=check_send_status&id={$list.id}"><button class="am-btn am-btn-success">确认收货</button></a>
+                    {/if}                    
+                    {/if}  
+                  </td>
+                </tr>
+                {/foreach}
+                </tbody>
+                {/if}
+                {if $user_rank eq '102'}
+                <tbody>
+                 {foreach from=$goods_list item=list key=k}
+
+                  <tr>
+                    <td title="{$list.goods_name}--{$list.goods_sn}">{$list.order_sn}</td>
+                    <td >{$list.goods_number}</td>
+                    {if $list.send_status eq 1}
+                    <td >{if $list.status lte 2}未发货{else}已发货{/if}</td>
+                    {else}
+                    <td >{if $list.status lte 2}未发货{elseif $list.status==3}已发货,未确认{else}已发货,已确认{/if}</td>
+                    {/if}
+                    <td >{$list.add_time}</td>
+                    <td >{$list.send_sn}</td>
+                    <td >{if $list.send_time neq '1970-01-01'}{$list.send_time}{/if}</td>
+                    <td >{$list.send_company}</td>
+                    <td >
+                      {if $list.send_status neq 1}
+                      {if $list.status eq 3}
+                      <a href="user_c.php?act=check_send_status&id={$list.id}"><button class="am-btn am-btn-success">确认收货</button></a>
+                      {/if}                    
+                      {/if}  
+                    </td>
+                  </tr>
+                  {/foreach}                
+                </tbody>
+                {/if}
+            </table>
+          </div> 
+           </div>
+        </div>  
+  <!-- content end -->
+
+                      
+
+<a class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+<footer>
+  <hr>
+  <p class="am-padding-left am-text-center">©2015 MEIBANG.COM 所有设计和内容保留一切权利 沪ICP备xxx号</p>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/polyfill/rem.min.js"></script>
+<script src="assets/js/polyfill/respond.min.js"></script>
+<script src="assets/js/amazeui.legacy.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="./assets/js/jquery.min.js">
+  
+
+</script>
+<script src="./assets/js/amazeui.min.js"></script>
+<!--<![endif]-->
+<script src="./assets/js/app.js"></script>
+<script type="text/javascript">
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+
+</body>
+</html>

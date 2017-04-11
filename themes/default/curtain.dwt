@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>美房美邦窗帘</title>
+<meta name="Keywords" content="窗帘" />
+<meta name="Description" content="窗帘" />
+<link rel="stylesheet" href="themes/default/css/style.css" type="text/css"><!--页面CSS-->
+<link rel="stylesheet" href="themes/default/css/animate.min.css" type="text/css"><!--CSS3动画-->
+<script type="text/javascript" src="themes/default/js/jquery-1.4.4.min.js"></script><!--jQuery库-->
+</head>
+<body>
+
+      <!-- #BeginLibraryItem "/library/top_new.lbi" --><!-- #EndLibraryItem -->
+
+        <div class="pid_lar"><img src="themes/default/img/img17.jpg" alt=""></div>
+        
+        <div class="list_style">
+        	<div class="wid">
+            	<h1><i> </i>田园风格<span>TIANYUAN</span><a href="#">更多>></a></h1>
+                <div class="left_layout">
+                	<img src="themes/default/img/img24.jpg" alt=""><!--左图-->
+                </div>
+                <div class="right_layout">
+                		<div class="top_secord">
+                        	<div class="box1">
+                            	<img src="themes/default/img/img25.jpg" alt="">
+                            </div>
+                            <div class="box2">
+                            	<img src="themes/default/img/img26.jpg" alt="">
+                                <div class="text">
+                                	<b>￥258</b>
+                                    <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom_secord">
+                        	<ul>
+                        		<li>
+                                	<a href="#">
+                                        <div class="pict">
+                                            <img src="themes/default/img/img27.jpg" alt="">
+                                        </div>
+                                        <b><i>￥</i>288.00</b>
+                                        <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                        <span>已售 888<i>/</i>评论 888</span>
+                                    </a>
+                                </li>
+                                <li>
+                                	<div class="pict">
+                                    	<img src="themes/default/img/img27.jpg" alt="">
+                                    </div>
+                                    <b><i>￥</i>288.00</b>
+                                    <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                    <span>已售 888<i>/</i>评论 888</span>
+                                </li>
+                                <li>
+                                	<div class="pict">
+                                    	<img src="themes/default/img/img27.jpg" alt="">
+                                    </div>
+                                    <b><i>￥</i>288.00</b>
+                                    <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                    <span>已售 888<i>/</i>评论 888</span>
+                                </li>
+                        	</ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="list_style">
+        	<div class="wid">
+            	<h1><i> </i>欧式风格<span>OUSHI</span><a href="#">更多>></a></h1>
+                <div class="left_layout">
+                	<img src="themes/default/img/img24-0.jpg" alt=""><!--左图-->
+                </div>
+                <div class="right_layout">
+                		<div class="top_secord">
+                        	<div class="box1">
+                            	<img src="themes/default/img/img25.jpg" alt="">
+                            </div>
+                            <div class="box2">
+                            	<img src="themes/default/img/img26.jpg" alt="">
+                                <div class="text">
+                                	<b>￥258</b>
+                                    <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom_secord">
+                        	<ul>
+                        		<li>
+                                	<div class="pict">
+                                    	<img src="themes/default/img/img27.jpg" alt="">
+                                    </div>
+                                    <b><i>￥</i>288.00</b>
+                                    <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                    <span>已售 888<i>/</i>评论 888</span>
+                                </li>
+                                <li>
+                                	<div class="pict">
+                                    	<img src="themes/default/img/img27.jpg" alt="">
+                                    </div>
+                                    <b><i>￥</i>288.00</b>
+                                    <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                    <span>已售 888<i>/</i>评论 888</span>
+                                </li>
+                                <li>
+                                	<div class="pict">
+                                    	<img src="themes/default/img/img27.jpg" alt="">
+                                    </div>
+                                    <b><i>￥</i>288.00</b>
+                                    <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                    <span>已售 888<i>/</i>评论 888</span>
+                                </li>
+                        	</ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="list_style">
+        	<div class="wid">
+            	<h1><i> </i>现代风格<span>XIANDAI</span><a href="#">更多>></a></h1>
+                <div class="left_layout">
+                	<img src="themes/default/img/img24-1.jpg" alt=""><!--左图-->
+                </div>
+                <div class="right_layout">
+                		<div class="top_secord">
+                        	<div class="box1">
+                            	<img src="themes/default/img/img25-1.jpg" alt="">
+                            </div>
+                            <div class="box2">
+                            	<img src="themes/default/img/img26.jpg" alt="">
+                                <div class="text">
+                                	<b>￥258</b>
+                                    <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom_secord">
+                        	<ul>
+                        		<li>
+                                	<div class="pict">
+                                    	<img src="themes/default/img/img27.jpg" alt="">
+                                    </div>
+                                    <b><i>￥</i>288.00</b>
+                                    <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                    <span>已售 888<i>/</i>评论 888</span>
+                                </li>
+                                <li>
+                                	<div class="pict">
+                                    	<img src="themes/default/img/img27.jpg" alt="">
+                                    </div>
+                                    <b><i>￥</i>288.00</b>
+                                    <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                    <span>已售 888<i>/</i>评论 888</span>
+                                </li>
+                                <li>
+                                	<div class="pict">
+                                    	<img src="themes/default/img/img27.jpg" alt="">
+                                    </div>
+                                    <b><i>￥</i>288.00</b>
+                                    <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                    <span>已售 888<i>/</i>评论 888</span>
+                                </li>
+                        	</ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="list_style">
+        	<div class="wid">
+            	<h1><i> </i>中式风格<span>ZHONGSHI</span><a href="#">更多>></a></h1>
+                <div class="left_layout">
+                	<img src="themes/default/img/img24-2.jpg" alt=""><!--左图-->
+                </div>
+                <div class="right_layout">
+                		<div class="top_secord">
+                        	<div class="box1">
+                            	<img src="themes/default/img/img25-1.jpg" alt="">
+                            </div>
+                            <div class="box2">
+                            	<img src="themes/default/img/img26.jpg" alt="">
+                                <div class="text">
+                                	<b>￥258</b>
+                                    <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom_secord">
+                        	<ul>
+                        		<li>
+                                	<div class="pict">
+                                    	<img src="themes/default/img/img27.jpg" alt="">
+                                    </div>
+                                    <b><i>￥</i>288.00</b>
+                                    <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                    <span>已售 888<i>/</i>评论 888</span>
+                                </li>
+                                <li>
+                                	<div class="pict">
+                                    	<img src="themes/default/img/img27.jpg" alt="">
+                                    </div>
+                                    <b><i>￥</i>288.00</b>
+                                    <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                    <span>已售 888<i>/</i>评论 888</span>
+                                </li>
+                                <li>
+                                	<div class="pict">
+                                    	<img src="themes/default/img/img27.jpg" alt="">
+                                    </div>
+                                    <b><i>￥</i>288.00</b>
+                                    <p>现代风格 时尚简约 百变组合 随意搭配</p>
+                                    <span>已售 888<i>/</i>评论 888</span>
+                                </li>
+                        	</ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guess wid">
+        	<h2>猜你喜欢</h2>
+            <p>
+            	<a href="#">墙纸</a>
+                <a href="#">墙布</a>
+                <a href="#">墙画</a>
+                <a href="#">窗帘</a>
+                <a href="#">软包</a>
+                <a href="#">硬包</a>
+                <a href="#">硅藻泥</a>
+                <a href="#">装饰画</a>
+                <a href="#">辅料</a>
+                <a href="#">样本</a>
+            </p>
+        </div>
+        
+      
+     <!-- #BeginLibraryItem "/library/footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+<script type="text/javascript" src="themes/default/js/scrollanim.min.js"></script> <!--"动画库"-->
+<script src="themes/default/js/type.js"></script><!--自定义封装函数-->
+</html>

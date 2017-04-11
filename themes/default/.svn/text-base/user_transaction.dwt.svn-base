@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>美房美邦</title>
+	<link rel="icon" href="../favicon.ico" />
+    <meta name="keywords" content=" " />
+	<meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/shopping.css">
+    <script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+
+	<style type="text/css">
+	body
+		{
+			background-color:#f7f8f8;
+		}
+	  div.userinternet
+	 	{
+			width:1000px;
+			margin:0 auto;
+			
+			height:250px;
+			
+		}
+      div.userinternet p
+	  {
+		  margin-top:30px;
+		 
+	  }
+	  form.internet
+	  {
+		  width:700px;
+		  margin:0 auto;
+	   }
+	   form.internet input.sub
+	  {
+		  border:0;
+		  width:150px;
+		  background-color:#c52021;
+		  color:#fff;
+		  text-align:center;
+		  margin-left:40%;
+	   }
+    </style>  
+ 
+
+</head>
+<body class="shopping-cart-wrap">
+    <!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+    <!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+	<div class="userinternet">
+    	<h2 style="font-weight:normal;">用户信息 </h2>
+        <form class="internet" action="user.php" method="post" name="theForm" id="theForm" onsubmit="return checkConsignee(this)">
+        	配送区域：
+        	<select name="country" id="selCountries_{$sn}" onchange="region.changed(this, 1, 'selProvinces_{$sn}')" style="border:1px solid #ccc; display:none;">
+                 <option value="0">{$lang.please_select}{$name_of_region[0]}</option>
+                 <!-- {foreach from=$country_list item=country} -->
+                 <option value="{$country.region_id}"{if $country.region_id eq '1'} selected{/if}>{$country.region_name}</option>
+                 <!-- {/foreach} -->
+            </select>
+    
+              
+            <select name="province" id="selProvinces_{$sn}" onchange="region.changed(this, 2, 'selCities_{$sn}')" class="province_select" >
+                <option value="0">{$lang.please_select}{$name_of_region[1]}</option>
+                {foreach from=$province_list.$sn item=province}
+                <option value="{$province.region_id}"{if $consignee_list[0].province eq $province.region_id} selected="selected"{/if}>{$province.region_name}</option>
+                {/foreach}
+            </select>
+            <select name="city" id="selCities_{$sn}" onchange="region.changed(this, 3, 'selDistricts_{$sn}')" style="border:1px solid #ccc; ">
+              <option value="0">{$lang.please_select}{$name_of_region[2]}</option>
+              <!-- {foreach from=$city_list.$sn item=city} -->
+              <option value="{$city.region_id}" {if $consignee_list[0].city eq $city.region_id}selected{/if}>{$city.region_name}</option>
+              <!-- {/foreach} -->
+            </select>
+            <select name="district" id="selDistricts_{$sn}" {if !$district_list.$sn}style="display:none"{/if} style="border:1px solid #ccc;">
+              <option value="0">{$lang.please_select}{$name_of_region[3]}</option>
+              <!-- {foreach from=$district_list.$sn item=district} -->
+              <option value="{$district.region_id}" {if $consignee_list[0].district eq $district.region_id}selected{/if}>{$district.region_name}</option>
+              <!-- {/foreach} -->
+            </select>
+            <p>收货人姓名：<input name="consignee" type="text" class="inputBg" id="consignee_{$sn}" value="{$consignee_list[0].consignee|escape}" />&nbsp;(必填)</p>
+            <p>详 细 地 址：<input name="address" type="text" class="inputBg"  id="address_{$sn}" value="{$consignee_list[0].address|escape}" />&nbsp;(必填)</p>
+            <p style="float:right;margin-top:-75px;">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：<input name="tel" type="text" class="inputBg"  id="tel_{$sn}" value="{$consignee_list[0].tel|escape}" />&nbsp;(必填)</p>
+            <P>
+            <!-- {if $smarty.session.user_id gt 0 and $consignee.address_id gt 0} --> 
+            <!-- 如果登录了，显示删除按钮 -->
+              <button type="submit" class="c-btn3" name="Submit">{$lang.shipping_address}</button>
+              <button type="button" class="c-btn3" name="button" onclick="if (confirm('{$lang.drop_consignee_confirm}')) location.href='flow.php?step=drop_consignee&amp;id={$consignee.address_id}'">{$lang.drop}</button>
+            <!-- {else} -->
+               <button type="submit" class="c-btn3" name="Submit">{$lang.shipping_address}</button>
+            <!-- {/if} -->
+            </P>
+            <input type="hidden" name="step" value="consignee" />
+            <input type="hidden" name="act" value="act_edit_address" />
+            <input name="address_id" type="hidden" value="{$consignee_list[0].address_id}" />
+            
+        </form>
+    </div><!--userinternet-->
+	
+    <div class="JQ_include" src="themes/default/include/m_footer.dwt"></div>
+    <div class="JQ_include" src="themes/default/include/site_bottom.dwt"></div>
+    
+    <script src="themes/default/js/config.js"></script>
+    <script src=themes/default/js/lib/template.min.js  "></script>
+    <script src="themes/default/js/loadHtml.js"></script>
+
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+    <script src="themes/default/js/worldunion.js"></script>
+    <script src="themes/default/js/mall-index.js"></script>
+    <script src="themes/default/js/transport.js"></script>
+    <script src="js/utils.js"></script>
+    {insert_scripts files='region.js,shopping_flow.js'} 
+</body>
+</html>

@@ -1,0 +1,18 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $related_goods} -->
+<div class="entry-content grid clearfix">
+<!--{foreach from=$related_goods item=releated_goods_data}-->
+ <div class="goodsbox1" >
+	 <div class="imgbox1"><a href="{$releated_goods_data.url}"><img src="{$releated_goods_data.goods_thumb}" alt="{$releated_goods_data.goods_name}" /></a></div>
+      <a href="{$releated_goods_data.url}" title="{$releated_goods_data.goods_name}" class="show68ecshop">{$releated_goods_data.short_name}</a><br />
+              <p>{$lang.promote_price}<font class="goodspice market">{$releated_goods_data.formated_promote_price}</font></p>
+			 <!-- {if $releated_goods_data.promote_price neq 0} -->
+   {$lang.promote_price}<b class="f1">{$releated_goods_data.formated_promote_price}</b>
+	 <!-- {else} -->
+	 {$lang.shop_price}<b class="f1">{$releated_goods_data.shop_price}</b>
+	 <!-- {/if} -->
+
+ </div>
+<!--{/foreach}-->
+</div>
+<!-- {/if} -->

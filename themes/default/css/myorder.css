@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+div.contents
+{
+	width:1300px;margin:0 auto;
+}
+table
+{
+	width:1300px;
+	text-align:center;	
+}
+td.comment
+{
+	
+	background-color:#c52021;
+	border-radius:10px;
+	color:#fff;
+	width:50px;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+<link rel="stylesheet" type="text/css" href="themes/default/css/mall.css">
+{* 包含脚本文件 *}
+{insert_scripts files='common.js'}
+</head>
+<body>
+    <!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+    <!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+<div class="blank"></div>
+<div class="block">
+  <div class="box">
+   <div class="box_1">
+    <h3><span>{$article.title|escape:html}</span></h3>
+    <div class="boxCenterList">
+      <!-- {if $article.content } -->
+     {$article.content}
+     <!-- {/if} -->
+    </div>
+   </div>
+  </div>
+  <div class="blank5"></div>
+</div>
+<div class="blank5"></div>
+<!--帮助-->
+<div class="block">
+  <div class="box">
+   <div class="helpTitBg clearfix">
+    <!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+   </div>
+  </div>  
+</div>
+<div class="blank"></div>
+<div class="site_bottom w1290">
+    <div class="w1200 clearfix">
+        <table class="items1">
+            <tr>
+                <td class="tit">
+                    <div class="icon"></div>
+                    新手上路
+                </td>
+            </tr>
+            <tr>
+                <td><a href="">售后流程</a><a href="">购物流程</a></td>
+            </tr>
+            <tr>
+                <td><a href="">订购方式</a><a href="">隐私声明</a></td>
+            </tr>
+        </table>
+        <table class="items2">
+            <tr>
+                <td class="tit">
+                    <div class="icon"></div>
+                    会员中心
+                </td>
+            </tr>
+            <tr>
+                <td><a href="">资金管理</a><a href="./user.php?act=collection_list">我的收藏</a></td>
+            </tr>
+            <tr>
+                <td><a href="./user.php?act=order_list">我的订单</a></td>
+            </tr>
+        </table>
+        <table class="items3">
+            <tr>
+                <td class="tit">
+                    <div class="icon"></div>
+                    服务保证
+                </td>
+            </tr>
+            <tr>
+                <td><a href="">退换货原则</a><a href="">售后服务保证</a></td>
+            </tr>
+            <tr>
+                <td><a href="">产品质量保证</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="copyright">
+    &copy;2015 MEIBANG.COM 所有设计和内容保留一切权利 沪ICP备xxx号
+</div>
+</body>
+</html>

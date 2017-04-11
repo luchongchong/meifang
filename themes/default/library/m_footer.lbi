@@ -1,0 +1,39 @@
+<div class="footer-wrap w1290">
+	<div class="w1200 clearfix">
+		<div class="footer-items items1">
+			<div class="icon"></div>
+			<div class="txt">
+				<p class="free">免费</p>
+				<p class="sub-free">上门量房</p>
+			</div>
+		</div>
+		<div class="footer-items items2">
+			<div class="icon"></div>
+			<div class="txt">
+				<p class="free">免费</p>
+				<p class="sub-free">上门安装</p>
+			</div>
+		</div>
+		<div class="footer-items items3">
+			<div class="icon"></div>
+			<div class="txt">
+				<p class="free">免费看</p>
+				<p class="sub-free">全屋家具涉及</p>
+			</div>
+		</div>
+		<div class="footer-items items4">
+			<div class="icon"></div>
+			<div class="txt">
+				<p class="free">免费</p>
+				<p class="sub-free">家具摆放效果</p>
+			</div>
+		</div>
+		<div class="footer-items items5">
+			<div class="icon"></div>
+			<div class="txt">
+				<p class="free">免费</p>
+				<p class="sub-free">保修终生维护</p>
+			</div>
+		</div>
+	</div>
+</div>

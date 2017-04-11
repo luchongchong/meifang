@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>美房美邦</title>
+	<link rel="icon" href="../favicon.ico" />
+    <meta name="keywords" content=" " />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+	<link rel="stylesheet" type="text/css" href="themes/default/css/mall.css">
+</head>
+<body class="bg-f7 mall-wrap">
+	<!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+	<!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+	<!-- #BeginLibraryItem "/library/m_nav.lbi" --><!-- #EndLibraryItem -->
+	<!-- dapei -->
+	
+    <div class="dapei_content">
+		<p class="title"><a href="#">美美商城</a>&nbsp;>&nbsp;<a href="#">搭配大师</a></p><!--title   -->
+       	<form action="dapei.php" method="post" style="margin-top:10px;color:#666;">
+       		<input type="text" name="keywords" value='{$keywords}' />
+       		<input type="submit" value="搜索" style="background:#c52021;color:#fff;" />
+        </form>
+      
+       {foreach from=$all_dapei_list item=item}
+	       <dl class="dapei_dl" style="margin-left:0;">
+	       		<a href="dapei.php?act=see&id={$item.id}">
+					<dt><img src="{$item.facepath}" width="275" height="263"></dt>  
+		            <dd><h3 style="font-weight:normal;color:#999;">{$item.designer}</h3></dd>
+		            <dd style="color:#4a88fa;border-bottom:1px solid #ccc;font-size:14px;">{$item.theme}</dd> 
+		            <dd class="dl_word" style="font-size:12px;text-indent:2em;color:#999;">{$item.design}</dd> 
+	            </a>
+	            <dd class="zan" style="height:30px;">
+	            	<P>
+	                    <img src="themes/default/img/222_03.jpg" width="23" height="22" style="margin-top:5px;">
+	                    <span style="margin-left:20px;margin-top:-20px;">{$item.dianzan}</span>
+	                </P>
+	                <P style="margin-left:25px;">
+	                	<img src="themes/default/img/222_06.jpg" width="29" height="14" style="margin-top:10px;">
+	                    <span style="margin-left:30px;margin-top:-17px;">{$item.yuedu}</span>
+	                </P>
+	            </dd>  
+	       </dl>
+		{/foreach}
+       
+	</div>
+	
+	
+	
+			 	<div class="page-bg" style="margin-bottom:0px;">
+	                <div class="page-items fr clearfix">
+                	   <a id="prePage" class="prev fl" href="{$pager_list.page_prev}">上一页</a>
+                     {if $pager_list.page_count neq 1} 
+                     
+                    {foreach from=$pager_list.page_number key=key item=item}
+                   
+                       {if $pager_list.page eq $key} 
+                      <a class="fl cur" href="{$item}" id="pageFirst" style="background:#008aff;">{$key}</a>
+                       {else} 
+                      <a class="fl cur" href="{$item}">{$key}</a>
+                       {/if} 
+                    {/foreach}
+                    {/if} 
+                    <a id="nextPage" class="next fl" title="下一页" href="{$pager_list.page_next}">下一页</a>
+                  
+                </div>
+		  	</div>
+
+	<div class="JQ_include" src="themes/default/include/m_footer.dwt"></div>
+	<div class="JQ_include" src="themes/default/include/site_bottom.dwt"></div>
+
+    <script src="themes/default/js/config.js"></script>
+	<script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+	<script src=themes/default/js/lib/template.min.js  "></script>
+	<script src="themes/default/js/loadHtml.js"></script>
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+	<script src="themes/default/js/worldunion.js"></script>
+	<script src="themes/default/js/mall-index.js"></script>
+
+
+</body>
+</html>

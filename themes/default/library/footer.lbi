@@ -1,0 +1,35 @@
+        <div class="bottom_menu">
+        	<div class="wid">
+            	<ul>
+            		<li>
+                    	<h2><img src="themes/default/img/ico21.png" alt="">新手上路</h2>
+                        <p><a href="liucheng.php">售后流程</a><a href="http://www.mfmb58.com">购物流程</a></p>
+                        <p><a href="http://www.mfmb58.com">订购方式</a><a href="http://www.mfmb58.com">隐私声明</a></p>
+                    </li>
+                    <li>
+                    	<h2><img src="themes/default/img/ico22.png" alt="">会员中心</h2>
+                        <p><a href="http://www.mfmb58.com">资金管理</a><a href="http://www.mfmb58.com">我的收藏</a></p>
+                        <p><a href="http://www.mfmb58.com">我的订单</a></p>
+                    </li>
+                    <li>
+                    	<h2><img src="themes/default/img/ico23.png" alt="">服务保证</h2>
+                        <p><a href="http://www.mfmb58.com">退换货原则</a><a href="http://www.mfmb58.com">售后服务保证</a></p>
+                        <p><a href="http://www.mfmb58.com">产品质量保证</a></p>
+                    </li>
+            	</ul>
+                <div class="code">
+                	<img src="themes/default/img/img1.jpg" alt="美房美邦">
+                    <p>扫我进入手机端</p>
+                </div>
+                <div class="copy">
+                	 <p class="dibu">
+                            <a href="http://www.mfmb58.com">环保墙纸</a>
+                            &nbsp;&nbsp;
+                            <a href="http://www.mfmb58.com" >卧室墙纸</a>
+                        </p>
+                        </p>
+                	<p>2015 MEIBANG.COM 所有设计和内容保留一切权利 沪ICP备15010141号-1</p>
+                	<p class="s1">美房美邦以全方位的优质产品点缀居家生活，主要从事开发、生产和销售<a href="http://www.mfmb58.com" class="huanbao">环保墙纸</a>、墙布、窗帘、软包、装饰画、硅藻泥、辅料等居室美化产品达10余年之久，最让人贴心满意的服务；做只做最专业的卧室墙纸；我们的规模遍布全国；公司以诚信赢得信任，以理念引领时代！以创新布局未来！做未来卧室墙纸消费者行业第一品牌！创新线上O2O新型模式领跑者！三年实现万家店，美房美邦必将成为广大家庭用户最喜欢的环保墙纸品牌！</p>
+                </div>
+            </div>
+        </div>

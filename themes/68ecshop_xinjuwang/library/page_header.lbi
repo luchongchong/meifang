@@ -1,0 +1,133 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+<script language="javascript"> 
+<!--
+function killerrors() { 
+return true; 
+} 
+window.onerror = killerrors; 
+//-->
+</script>
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+var btn_buy = "{$lang.btn_buy}";
+var is_cancel = "{$lang.is_cancel}";
+var select_spe = "{$lang.select_spe}";
+</script>
+
+<div class="page-header ">
+<div class="top_menu clearfix">
+      <div class="top_nav fl"> <span class="current1 fl"><a target="_blank" href="http://www.68ecshop.com">68ecshop官网&nbsp;</a></span>
+        <div class="t_tdcode" style="z-index:9999999;" onmouseover="this.className='t_tdcode tdcode_show'" onmouseout="this.className='t_tdcode'">
+          <div class="tdcode_outter">
+            <div class="tdcode_inner"> <i class="arrow_outter">◆</i><i class="arrow_inner">◆</i>
+              <div class="pic"></div>
+              <p class="txt">扫描二维码，关注有好礼！</p>
+            </div>
+          </div>
+        </div>
+        <a target="_blank" href="http://e.t.qq.com/ecshop_moban" class="t_qq" title="关注68ecshop官方腾讯微博"><span class="hide_clip">腾讯微博</span> </a> <a target="_blank" href="http://e.weibo.com/68ecshopcom" class="t_sina" title="关注68ecshop官方新浪微博"><span class="hide_clip">新浪微博</span></a> </div>
+      <div class="top_nav fr"> {insert_scripts files='transport.js,utils.js'} <font id="ECS_MEMBERZONE" > {* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'}</font> 
+        <!--{if $navigator_list.top}--> 
+        <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav} --><span class="linetop">|</span><a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a><!-- {/foreach} --><!-- {/if} --> 
+      </div>
+    </div>
+</div>
+<DIV class=zt_header_box>
+<DIV style="HEIGHT: 58px" class=zt_header_sign>
+<img class="fav_dis" title="" style="position:absolute;right:0px;top:0px;z-index:100;" src="images/erweima.gif" width="192" height="100" alt="电话">
+<A class=zt_header_logo href="http://www.68ecshop.com"></A>
+<DIV style="Z-INDEX: 9999" class=zt_header_search>
+<DIV 
+style="Z-INDEX: 1; POSITION: relative; MARGIN: -22px 0px 0px -37px; WIDTH: 714px; HEIGHT: 70px"></DIV><!--搜索框外框-->
+<DIV style="Z-INDEX: 2; POSITION: relative; MARGIN: -41px 0px 0px" 
+class=zt_header_search_bg>
+<form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()">
+<INPUT name="keywords" type="text" class="zt_header_search_input" id="keyword" value="请输入你要查找的商品" onclick="javascript:this.value='';"> 
+<INPUT style="FILTER: alpha(opacity=0); BACKGROUND: #fff; opacity: 0" name="btsearch" type="submit" id="btsearch" value="" class=zt_header_search_btn > 
+ </form>
+<DIV class=clear></DIV></DIV>
+<P style="Z-INDEX: 3; POSITION: relative" class=zt_header_search_hot>
+{if $searchkeywords}
+{foreach from=$searchkeywords item=val}
+<a href="search.php?keywords={$val|escape:url}" target="_blank">{$val}</a>
+{/foreach}
+{/if}
+</P></DIV>
+<DIV class=clear></DIV>
+ </DIV>
+<DIV class=zt_header_nav_bg>
+
+<DIV class=zt_header_nav>
+<UL>
+<LI {if $navigator_list.config.index eq 1}class=nav_active {else} onMouseOver="this.className='nav_active'" onMouseOut="this.className=''"{/if}><A href="../index.php">{$lang.home}</A></LI>
+<!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav } --> 
+<LI {if $nav.active eq 1} class="nav_active"{else}onMouseOver="this.className='nav_active'" onMouseOut="this.className=''"{/if}><A href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if} title="{$nav.name}" >{$nav.name}</A></LI>
+<!-- {/foreach} --> 
+      
+  <LI class=ty_right id="ECS_CARTINFO">{insert name='cart_info'}</LI></UL>
+<UL class=clear></UL></DIV>
+</DIV>
+</DIV>
+
+<div class="blank" style="position:relative; width:1190px; margin:0 auto; z-index:99999;">
+
+<DIV class=fenlei_line >
+<DIV class="new_fenlei_box" onmouseover="showhide('block')" onmouseout="showhide('none')">
+    <DIV class=fenlei_list>
+      <DIV class=fenlei_tit>
+        <H3>{$lang.all_category}</H3>
+        <SPAN></SPAN></DIV>
+</DIV>
+<div id="category_tree" style="	top:40px;left:2px;">
+<div class="clearfix" > 
+<!--{foreach from=get_categories_tree(0) item=cat name=no}-->
+<div  class="dt" onMouseOver="sw_nav2({$smarty.foreach.no.iteration},1);" onMouseOut="sw_nav2({$smarty.foreach.no.iteration},0);">
+      <dl id="HandleLI2_{$smarty.foreach.no.iteration}" {if $smarty.foreach.no.last}style="border:none;"{/if}>
+        <dt> <a href="{$cat.url}"> {$cat.name|escape:html} </a> </dt>
+        <!--{foreach from=$cat.cat_id item=child name=name}--> 
+        <!--{if $smarty.foreach.name.iteration lt 7}-->
+        <dd> <a href="{$child.url}">{$child.name|escape:html}</a> </dd>
+        <!--{/if}--> 
+        <!--{/foreach}-->
+        <ul id=DisSub2_{$smarty.foreach.no.iteration} style="display:none">
+          <!--{foreach from=$cat.cat_id item=child name=childs}-->
+          <li {if $smarty.foreach.childs.last} style="border:none;"{/if}>
+            <div class="fenlei_con_tit"> <a class="over_2" href="{$child.url}">{$child.name|escape:html}</a></div>
+            <div class="fenlei_con_a_list"> 
+              <!--{foreach from=$child.cat_id item=childer}--> 
+              <a href="{$childer.url}" target="_blank">{$childer.name|escape:html}</a> |&nbsp; 
+              <!--{/foreach}--> 
+            </div>
+            <div class="clear"></div>
+          </li>
+          <!--{/foreach}-->
+        </ul>
+      </dl>
+    </div>
+    <!--{/foreach}--> 
+  </div>
+</div>
+</DIV>
+</DIV>
+</div>
+<script type="text/javascript">
+    {literal}
+    <!--
+    function checkSearchForm()
+    {
+        if(document.getElementById('keyword').value)
+        {
+            return true;
+        }
+        else
+        {
+            alert("{$lang.no_keywords}");
+            return false;
+        }
+    }
+    -->
+    {/literal}
+    </script>

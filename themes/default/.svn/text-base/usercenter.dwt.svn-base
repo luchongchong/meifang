@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>美房美邦</title>
+	<link rel="icon" href="../favicon.ico" />
+    <meta name="keywords" content=" " />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/css/mall.css">
+</head>
+<style type="text/css">
+	div.user
+	{
+		width:1200px;
+		margin:0 auto;
+		overflow:auto;zoom:1;
+	}
+	div.left
+	{
+		width:180px;
+		float:left;
+	}
+	p.Lp
+	{
+		border:1px solid #ccc;
+		width:168px;
+		height:18px;
+		background-color:#f7f8f8;
+		padding:5px 5px 5px 5px;
+		margin-top:10px;
+	}
+	p.Lp span
+	{
+		float:right;
+		margin-top:-20px;
+		padding-right:55px;
+	}
+	ul.order
+	{
+		border:1px solid #ccc;
+		width:168px;
+		background-color:#f7f8f8;
+		padding:5px 5px 5px 5px;
+		margin-top:10px;
+	}
+	li.orcenter
+	{
+		border-bottom:1px solid #ccc;
+		background:url(themes/default/img/user2.png) left no-repeat;
+		padding-left:30px;
+		font-size:14px;
+	}
+	li.myorder
+	{
+		width:105px;
+		margin:0 auto;
+		font-size:12px;
+		margin-top:10px;
+		color:#999;
+	}
+	p.exit
+	{
+		background:#c52021 url(themes/default/img/user4.png) no-repeat;
+		text-align:center;
+		color:#FFF;
+		font-size:16px;
+		width:168px;
+		padding:5px 0px 5px 0px;
+		margin-top:10px;
+	}
+	div.right
+	{
+		float:right;
+		border:1px solid #ccc;
+		width:980px;
+		margin:10px auto 0  auto;
+		background-color:#f7f8f8;
+		padding:15px;
+		height:400px;
+	}
+	div.right p
+	{
+		margin-top:10px;
+		color:#999;
+		font-size:12px;
+	}
+	p.gonggao
+	{
+		background:url(themes/default/img/user3.jpg)left no-repeat;
+		border:1px solid #ccc;
+		height:25px;
+		line-height:25px;
+		padding:5px;
+		
+	}
+	
+	h2
+	{
+		font-weight:normal;
+	}
+	p.jifen span
+	{
+		border:1px solid #c52021;
+		background-color:#c52021;
+		color:#fff;
+		border-radius:15px;
+		margin-left:20px;
+		padding:2px 4px 2px 4px;
+	}
+</style>
+<body class="bg-f7 mall-wrap">
+	<!-- #BeginLibraryItem "/library/top.lbi" --><!-- #EndLibraryItem -->
+    <!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+    <!-- #BeginLibraryItem "/library/m_nav.lbi" --><!-- #EndLibraryItem -->
+	<!-- dapei -->
+    <div class="user">
+		<p class="title">当前位置：<a href="index.html">首页</a>&nbsp;>&nbsp;<a href="#">用户中心</a></p><!--title-->
+        <div class="left">
+        	<p class="Lp"><img src="themes/default/img/user1.png"><span>我的个人主页</span></p>
+           	<ul class="order">
+            	<li class="orcenter">订单中心</li>
+                <li class="myorder"><a href="user.php?act=order_list">我的订单</a></li>
+                <li class="myorder"><a href="user.php?act=address_list">收货地址</a></li>
+            	
+            </ul>
+            	<ul class="order">
+            	<li class="orcenter">会员中心</li>
+                <li class="myorder"><a href="user.php?act=profile"> 用户信息</a></li>
+                <li class="myorder"><a href="user.php?act=collection_list"> 我的收藏</a></li>
+                <li class="myorder"><a href="user.php?act=weixin_fans">我的小伙伴</a></li>
+                <li class="myorder"><a href="user.php?act=vip_income" class="curs">我的收益</a></li>
+            	
+            </ul>
+            	<ul class="order">
+            	<li class="orcenter">账户中心</li>
+                <li class="myorder"><a href="user.php?act=account_log"> 资金管理</a></li>
+               
+            	
+            </ul>
+            
+            <P class="exit"><a href="user.php?act=logout">安全退出</a></P>
+        </div><!--left-->
+       	<div class="right">
+        	<P><span style="font-size:16px;font-weight:bold;color:#666;">{$info.username}</span>&nbsp;&nbsp;欢迎您回到 美房美邦!</P>
+            <P>您的上一次登录时间: {$info.last_time}</P>
+            <P>{$rank_name} {$next_rank_name}</P>
+            <p class="gonggao"><span style="padding-left:20px;">用户中心公告！</span></p>
+            <P><h2>您的账户</h2></P>
+            <P>余额：<span style="color:#f00;">¥</span>{$info.surplus}</P>
+            <P class="jifen">积分：{$info.integral}<span>积分明细</span><span>兑换商品</span></P>
+        	<P style="margin-top:50px;"><h2>我的二维码</h2></P>
+        	<p><img src="{$qr_url}" /></p>
+            <p style="color:#c52021;font-size:16px;"><a href="{$qr_url}" target="_blank">点击查看</a></p>
+        </div><!--right-->
+	</div><!--user-->
+	<div class="JQ_include" src="themes/default/include/m_footer.dwt"></div>
+    <div class="JQ_include" src="themes/default/include/site_bottom.dwt"></div>
+
+    <script src="themes/default/js/config.js"></script>
+    <script src="themes/default/js/lib/jquery-1.9.1.min.js"></script>
+    <script src=themes/default/js/lib/template.min.js  "></script>
+    <script src="themes/default/js/loadHtml.js"></script>
+
+    <script src="themes/default/js/plug.js"></script>
+    <script src="themes/default/js/global.js"></script>
+    <script src="themes/default/js/worldunion.js"></script>
+    <script src="themes/default/js/mall-index.js"></script>
+
+
+</body>
+</html>

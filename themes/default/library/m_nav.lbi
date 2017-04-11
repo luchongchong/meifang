@@ -1,0 +1,19 @@
+<div class="mall_nav">
+	<div class="w1200">
+		<ul id="nav">
+			<li><a href="index.php"class="currrent" style="background-color:#c52021;width:124px;" >首页</a></li>
+			<li class="top_sub top_points JQ_tags" >
+        		<a href="category.php">所有分类</a>
+                <div class="nav_panel top_points_child" style="display:none;">
+                    {foreach from=$material item=material_list}
+                    <p><a href="category.php?material_id={$material_list.id}" style="background:none;">{$material_list.name}</a></p>
+                    {/foreach}
+                </div>
+			</li>
+			{foreach from=$cait item=cait_list}
+			<li><a href="category.php?cat_id={$cait_list.id}">{$cait_list.name}</a></li>
+			{/foreach}
+			<li><a href="sample.php">样本</a></li>
+		</ul>
+	</div>
+</div>

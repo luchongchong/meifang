@@ -1,0 +1,44 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $hot_goods} -->
+
+<div class="blank1">
+<div style="clearfix">
+<div class="more clearfix best" id="itemHot" >
+<h1 class="tit">{$lang.hot_goods}</h1>
+<h1 class="h1title">
+<div style="float:right;">
+
+
+{foreach from=$cat_rec[3] item=rec_data}
+<h2 class="h2bg">
+<a href="category.php?id={$rec_data.cat_id}" >{$rec_data.cat_name}</a> |
+
+</h2>
+{/foreach}
+
+<a href="../search.php?intro=hot" style="font-weight:normal;" >更多>></a>
+</div>
+</h1>
+</div>
+</div>
+<div class="recommendContenttong entry-content clearfix"   >
+
+<!--{foreach from=$hot_goods item=goods}-->
+<div class="goodsbox1">
+				<div class="imgbox1"><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></div>
+			 <a href="{$goods.url}" title="{$goods.name|escape:html}" class="show68ecshop">{$goods.short_style_name}</a><br />
+                <p>{$lang.market_price}<font class="goodspice market">{$goods.market_price}</font></p>
+                 
+			 <!-- {if $goods.promote_price neq ""} -->
+			   <p>{$lang.promote_price}<b class="f1">{$goods.promote_price}</b></p>
+			 <!-- {else}-->
+			   <p>{$lang.shop_price}<b class="f1">{$goods.shop_price}</b></p>
+			 <!--{/if}-->
+
+			</div>
+<!--{/foreach}-->
+
+</div>
+</div>
+
+<!-- {/if} -->

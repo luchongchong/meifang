@@ -1,0 +1,119 @@
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <style type="text/css">
+ #copyright_box a:hover{ color:#FFF; text-decoration:none}
+ </style>
+<DIV class=footer>
+<DIV class=helper>
+<DIV class=hl_inr>
+<DIV id=no_border1 class=hl_box>
+<DIV class=hlb_bar><SPAN class=icon01></SPAN>
+<P><B>免费</B><BR>上门量房</P></DIV></DIV>
+<DIV class=hl_box>
+<DIV class=hlb_bar><A href="#" 
+target=_blank><SPAN class=icon02></SPAN>
+<P><B>免费</B><BR>全屋家具设计</P></A></DIV></DIV>
+<DIV class=hl_box>
+<DIV class=hlb_bar><A href="#" 
+target=_blank><SPAN class=icon03></SPAN>
+<P><B>免费看</B><BR>家具摆放效果</P></A></DIV></DIV>
+<DIV class=hl_box>
+<DIV class=hlb_bar><SPAN class=icon04></SPAN>
+<P><B>免费</B><BR>上门安装</P></DIV></DIV>
+<DIV id=no_border2 class=hl_box>
+<DIV class=hlb_bar><SPAN class=icon05></SPAN>
+<P><B>免费</B><BR>保修，终身维护</P></DIV></DIV></DIV>
+<DIV class=devide_line>
+<P></P></DIV>
+<DIV class=hl_lnk>
+<DIV class=hll_lf>
+<UL>
+   <!-- {foreach from=$helps item=help_cat name=helps } -->
+  <LI>
+  <P>{$help_cat.cat_name}</P>
+  <!-- {foreach from=$help_cat.article item=item} -->
+  <a href="{$item.url}" target="_blank" title="{$item.title|escape:html}">{$item.short_title}</a><BR>
+ <!-- {/foreach} --> 
+  </LI>
+  <!-- {/foreach} --> 
+  
+  
+
+            
+            </UL></DIV>
+</DIV></DIV>
+<!--{if $img_links  or $txt_links }-->
+<DIV style="BACKGROUND: #f7f7f7; BORDER-TOP: #fff 1px solid">
+<DIV class=youqing_links>
+<DIV class=youqing_right>
+<DIV class=aalink style="text-align:center">
+<!--开始图片类型的友情链接{foreach from=$img_links item=link}-->
+     
+       <a href="{$link.url}" target="_blank" title="{$link.name}"><img src="{$link.logo}" alt="{$link.name}" border="0" /></a>
+       
+        <!--结束图片类型的友情链接{/foreach}-->
+        <div class="clear"></div>
+                <!-- {if $txt_links} -->
+        <!--开始文字类型的友情链接{foreach from=$txt_links item=link name=name}-->
+        <a href="{$link.url}" target="_blank" title="{$link.name}">{$link.name}</a> {if !$smarty.foreach.name.last}|{/if} 
+        <!--结束文字类型的友情链接{/foreach}-->
+        <!-- {/if} -->
+</DIV>
+
+</DIV>
+<DIV class=clear></DIV></DIV></DIV>
+<!-- {/if} -->
+
+<DIV class=copyright>
+<DIV class=cr_top></DIV>
+<DIV class=cr_box>
+<P>
+  <!-- {if $navigator_list.bottom} --> 
+  
+  <!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav} --> 
+  <a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a> 
+  <!-- {if !$smarty.foreach.nav_bottom_list.last} --> 
+  | 
+  <!-- {/if} --> 
+  <!-- {/foreach} -->
+
+  <!-- {/if} --> 
+</P>
+<DIV id=copyright_box>
+  © 2005-2015 ECSHOP 版权所有，并保留所有权利。<br/>
+<!--提示start:此代码不可删除，删除后出现乱码!-->
+  <a href="http://www.68ecshop.com" target="_blank">技术支持：秦皇岛商之翼网络科技有限公司</a>
+  <!--提示end-->
+  {$shop_address} {$shop_postcode} 
+  <!-- 客服电话{if $service_phone} --> 
+    <!-- 结束客服电话{/if} --> 
+  <!-- 邮件{if $service_email} --> 
+  E-mail: {$service_email}<br />
+  <!-- 结束邮件{/if} --> 
+  <!-- QQ 号码 {foreach from=$qq item=im} --> 
+  <!-- {if $im} --> 
+  <a href="http://wpa.qq.com/msgrd?V=1&amp;Uin={$im}&amp;Site={$shop_name}&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:{$im}:4" height="16" border="0" alt="QQ" /> {$im}</a> 
+  <!-- {/if} --> <!-- {/foreach} 结束QQ号码 --><a href="http://www.68ecshop.com" style="display:none;">68ECSHOP模版中心</a><!-- 淘宝旺旺 {foreach from=$ww item=im} --> <!-- {if $im} -->  
+  <!-- {/if} --> 
+  <!--{/foreach} 结束淘宝旺旺 --> 
+  <!-- Yahoo Messenger {foreach from=$ym item=im} --> 
+  <!-- {if $im} --> 
+  <a href="http://edit.yahoo.com/config/send_webmesg?.target={$im}n&.src=pg" target="_blank"><img src="../images/yahoo.gif" width="18" height="17" border="0" alt="Yahoo Messenger" /> {$im}</a> 
+  <!-- {/if} --> 
+  <!-- {/foreach} 结束Yahoo Messenger --> 
+  <!-- MSN Messenger {foreach from=$msn item=im} --> 
+  <!-- {if $im} --> 
+  <img src="../images/msn.gif" width="18" height="17" border="0" alt="MSN" /> <a href="msnim:chat?contact={$im}">{$im}</a> 
+  <!-- {/if} --> 
+  <!-- {/foreach} 结束MSN Messenger --> 
+  <!-- Skype {foreach from=$skype item=im} --> 
+  <!-- {if $im} --> 
+  <img src="http://mystatus.skype.com/smallclassic/{$im|escape:url}" alt="Skype" /><a href="skype:{$im|escape:url}?call">{$im}</a> 
+  <!-- {/if} --> 
+  <!-- {/foreach} --><br />
+  <!-- ICP 证书{if $icp_number} --> 
+  {$lang.icp_number}:<a href="http://www.miibeian.gov.cn/" target="_blank">{$icp_number}</a><br />
+  <!-- 结束ICP 证书{/if} -->
+  <!--提示start:此代码不可删除，删除后出现乱码!-->
+  {foreach from=$lang.p_y item=pv}{$pv}{/foreach}<br />
+  <!--提示end-->
+</div>

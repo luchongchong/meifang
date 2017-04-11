@@ -1,0 +1,199 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{$page_title}</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="assets/css/admin.css">
+  {* 包含脚本文件 *}
+{insert_scripts files='transport.js,common.js,user.js'}
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+<!--head start -->
+<!-- #BeginLibraryItem "/library/head_user_c.lbi" --><!-- #EndLibraryItem -->
+<!--head end -->
+
+<!--menu start -->
+<!-- #BeginLibraryItem "/library/menu_user_c.lbi" --><!-- #EndLibraryItem -->
+<!--menu end -->
+
+
+  <!-- content start -->
+  <div class="admin-content">
+    <div class="am-cf am-padding">
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">订单状态</strong></div>
+    </div>
+
+    <hr/>
+
+    <div class="am-g">
+    <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-left admin-content-list ">
+    订单号：{$order.order_sn}
+    </ul>
+    <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-left admin-content-list ">
+    订单状态：{$order.order_status}&nbsp;&nbsp;&nbsp;&nbsp;{$order.confirm_time}
+    </ul>
+    <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-left admin-content-list ">
+    付款状态：{$order.pay_status}&nbsp;&nbsp;&nbsp;&nbsp;{if $order.order_amount gt 0}{$order.pay_online}{/if}{$order.pay_time}
+    </ul>
+    <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-left admin-content-list ">
+    配送状态：{$order.shipping_status}&nbsp;&nbsp;&nbsp;&nbsp;{$order.shipping_time}
+    </ul>
+      
+    </div>
+    <div class="am-cf am-padding">
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">商品列表</strong></div>
+    </div>
+   <div class="am-g">
+      <div class="am-u-sm-12">
+        <table class="am-table am-table-bd am-table-striped admin-content-table">
+          <thead>
+          <tr>
+            <th>商品名称</th>
+            <th>属性</th>
+            <th>商品价格</th>
+            <th>商品数量</th>
+            <th>小计</th>
+          </tr>
+          </thead>
+          <tbody>
+          <!-- {foreach from=$goods_list item=goods} -->
+            <tr>
+              <td ><!-- {if $goods.goods_id gt 0 && $goods.extension_code neq 'package_buy'} 商品 -->
+                <a href="goods.php?id={$goods.goods_id}" target="_blank" class="f6">{$goods.goods_name}</a>
+                <!-- {if $goods.parent_id > 0} -->
+                <span style="color:#FF0000">（{$lang.accessories}）</span>
+                <!-- {elseif $goods.is_gift} -->
+                <span style="color:#FF0000">（{$lang.largess}）</span>
+                <!-- {/if} -->
+              <!-- {elseif $goods.goods_id gt 0 && $goods.extension_code eq 'package_buy'} -->
+                <a href="javascript:void(0)" onclick="setSuitShow({$goods.goods_id})" class="f6">{$goods.goods_name}<span style="color:#FF0000;">（礼包）</span></a>
+                <div id="suit_{$goods.goods_id}" style="display:none">
+                    <!-- {foreach from=$goods.package_goods_list item=package_goods_list} -->
+                      <a href="goods.php?id={$package_goods_list.goods_id}" target="_blank" class="f6">{$package_goods_list.goods_name}</a><br />
+                    <!-- {/foreach} -->
+                </div>
+              <!-- {/if} -->
+              </td>
+              <td >{$goods.goods_attr|nl2br}</td>
+              <td >{$goods.goods_price}</td>
+              <td >{$goods.goods_number}</td>
+              <td >{$goods.subtotal}</td>
+            </tr>  
+          <!-- {/foreach} --> 
+            <tr>
+            <td colspan="8" bgcolor="#ffffff" align="right">
+            {$lang.shopping_money}<!-- {if $order.extension_code eq "group_buy"} -->{$lang.gb_deposit}<!-- {/if} -->: {$order.formated_goods_amount}
+            </td>
+            </tr>          
+          </tbody>
+        </table>       
+      </div>
+    </div>
+    <div class="am-cf am-padding">
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">费用总计</strong></div>
+    </div>
+    <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-left admin-content-list ">
+      {$lang.goods_all_price}<!-- {if $order.extension_code eq "group_buy"} -->{$lang.gb_deposit}<!-- {/if} -->: {$order.formated_goods_amount}
+              <!-- {if $order.discount gt 0} 折扣 -->
+              - {$lang.discount}: {$order.formated_discount}
+              <!-- {/if} -->
+              <!-- {if $order.tax gt 0} -->
+              + {$lang.tax}: {$order.formated_tax}
+              <!-- {/if} -->
+              <!-- {if $order.shipping_fee > 0} -->
+              + {$lang.shipping_fee}: {$order.formated_shipping_fee}
+              <!-- {/if} -->
+              <!-- {if $order.insure_fee > 0} -->
+              + {$lang.insure_fee}: {$order.formated_insure_fee}
+              <!-- {/if} -->
+              <!-- {if $order.pay_fee > 0} -->
+              + {$lang.pay_fee}: {$order.formated_pay_fee}
+              <!-- {/if} -->
+              <!-- {if $order.pack_fee > 0} -->
+              + {$lang.pack_fee}: {$order.formated_pack_fee}
+              <!-- {/if} -->
+              <!-- {if $order.card_fee > 0} -->
+              + {$lang.card_fee}: {$order.formated_card_fee}
+              <!-- {/if} -->  
+    </ul>
+     <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-left admin-content-list ">
+      应付款金额: {$order.formated_order_amount}
+            <!-- {if $order.extension_code eq "group_buy"} --><br />
+            {$lang.notice_gb_order_amount}<!-- {/if} -->        
+    </ul>
+
+    {if $user_rank neq 103}
+    <div class="am-cf am-padding">
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">收货人信息</strong></div>
+    </div>    
+    <div class="am-g">
+      <div class="am-u-sm-12">
+        <table class="am-table am-table-bd am-table-striped admin-content-table">
+          <thead>
+          <tr>
+            <th>收货人姓名</th>
+            <th>电子邮件地址</th>
+            <th>详细地址</th>
+            <th>邮政编码</th>
+            <th>电话</th>
+            <th>手机</th>
+            <th>标志建筑</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td >{$order.consignee|escape}</td>
+              <td >{$order.email|escape}</td>
+              <td >{$order.address|escape}</td>
+              <td >{$order.zipcode|escape}</td>
+              <td >{$order.tel|escape}</td>
+              <td >{$order.mobile|escape}</td>
+              <td >{$order.sign_building|escape}</td>
+            </tr>           
+          </tbody>
+        </table>       
+      </div>
+    </div>
+    {/if}
+
+  </div>  
+  <!-- content end -->
+
+
+
+<a class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+<footer>
+  <hr>
+  <p class="am-padding-left am-text-center" >©2015 MEIBANG.COM 所有设计和内容保留一切权利 沪ICP备xxx号</p>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/polyfill/rem.min.js"></script>
+<script src="assets/js/polyfill/respond.min.js"></script>
+<script src="assets/js/amazeui.legacy.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/amazeui.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/app.js"></script>
+</body>
+</html>

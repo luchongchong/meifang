@@ -1,0 +1,33 @@
+        <div class="bottom_menu">
+        	<div class="wid">
+            	<ul>
+            		<li>
+                    	<h2><img src="themes/default/img/ico21.png" alt="">新手上路</h2>
+                        <p><a href="liucheng.php">售后流程</a><a href="#">购物流程</a></p>
+                        <p><a href="#">订购方式</a><a href="#">隐私声明</a></p>
+                    </li>
+                    <li>
+                    	<h2><img src="themes/default/img/ico22.png" alt="">会员中心</h2>
+                        <p><a href="#">资金管理</a><a href="#">我的收藏</a></p>
+                        <p><a href="#">我的订单</a></p>
+                    </li>
+                    <li>
+                    	<h2><img src="themes/default/img/ico23.png" alt="">服务保证</h2>
+                        <p><a href="#">退换货原则</a><a href="#">售后服务保证</a></p>
+                        <p><a href="#">产品质量保证</a></p>
+                    </li>
+            	</ul>
+                <div class="code">
+                	<img src="themes/default/img/img1.jpg" alt="">
+                    <p>扫我进入手机端</p>
+                </div>
+                <div class="copy">
+                <p class="dibu">
+                	<a href="http://www.mfmb58.com">环保墙纸</a>
+                	&nbsp;&nbsp;
+                	<a href="http://www.mfmb58.com" >卧室墙纸</a>
+                	</p>
+                	<p>2015 MEIBANG.COM 所有设计和内容保留一切权利 沪ICP备xxx号</p>
+                </div>
+            </div>
+        </div>

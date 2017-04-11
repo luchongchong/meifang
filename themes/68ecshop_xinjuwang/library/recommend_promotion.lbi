@@ -1,0 +1,29 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $promotion_goods} -->
+<div class="blank1">
+<div style="clearfix">
+<div class="more clearfix pro_title" >
+<h1 class="tit">{$lang.promotion_goods}</h1>
+<h1 class="h1title">
+<div style="float:right;">
+<a href="../search.php?intro=promotion" style="font-weight:normal;" >更多>></a>
+</div>
+</h1>
+</div>
+</div>
+<div class="recommendContent entry-content clearfix"  >
+
+<!--{foreach from=$promotion_goods item=goods name="promotion_foreach"}-->
+<div class="goodsbox1">
+				<div class="imgbox1"><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></div>
+			 <a href="{$goods.url}" title="{$goods.name|escape:html}" class="show68ecshop">{$goods.short_style_name}</a><br />
+              <p>{$lang.shop_price}<font class="goodspice market">{$goods.shop_price}</font></p>
+			
+			 <p>{$lang.promote_price}<b class="f1">{$goods.promote_price}</b></p>
+			
+
+			</div>
+<!--{/foreach}-->
+</div>
+</div>
+<!-- {/if} -->
