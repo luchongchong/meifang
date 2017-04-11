@@ -254,20 +254,6 @@ $data = array (
   ),
   18 => 
   array (
-    'cat_id' => '94',
-    'cat_name' => '场所分类',
-    'measure_unit' => '',
-    'parent_id' => '46',
-    'is_show' => '1',
-    'show_in_nav' => '0',
-    'grade' => '0',
-    'sort_order' => '50',
-    'has_children' => '1',
-    'type_img' => '',
-    'goods_num' => 0,
-  ),
-  19 => 
-  array (
     'cat_id' => '114',
     'cat_name' => '风格分类',
     'measure_unit' => '',
@@ -280,21 +266,21 @@ $data = array (
     'type_img' => '',
     'goods_num' => 0,
   ),
-  20 => 
+  19 => 
   array (
-    'cat_id' => '95',
-    'cat_name' => '材质分类',
+    'cat_id' => '94',
+    'cat_name' => '场所分类',
     'measure_unit' => '',
-    'parent_id' => '47',
+    'parent_id' => '46',
     'is_show' => '1',
     'show_in_nav' => '0',
     'grade' => '0',
     'sort_order' => '50',
-    'has_children' => '0',
+    'has_children' => '1',
     'type_img' => '',
     'goods_num' => 0,
   ),
-  21 => 
+  20 => 
   array (
     'cat_id' => '97',
     'cat_name' => '风格分类',
@@ -305,6 +291,20 @@ $data = array (
     'grade' => '0',
     'sort_order' => '50',
     'has_children' => '9',
+    'type_img' => '',
+    'goods_num' => 0,
+  ),
+  21 => 
+  array (
+    'cat_id' => '95',
+    'cat_name' => '材质分类',
+    'measure_unit' => '',
+    'parent_id' => '47',
+    'is_show' => '1',
+    'show_in_nav' => '0',
+    'grade' => '0',
+    'sort_order' => '50',
+    'has_children' => '0',
     'type_img' => '',
     'goods_num' => 0,
   ),
@@ -534,20 +534,6 @@ $data = array (
   ),
   38 => 
   array (
-    'cat_id' => '83',
-    'cat_name' => '餐厅',
-    'measure_unit' => '',
-    'parent_id' => '67',
-    'is_show' => '1',
-    'show_in_nav' => '0',
-    'grade' => '0',
-    'sort_order' => '50',
-    'has_children' => '0',
-    'type_img' => '1489558986.jpg',
-    'goods_num' => 0,
-  ),
-  39 => 
-  array (
     'cat_id' => '79',
     'cat_name' => '客厅',
     'measure_unit' => '',
@@ -560,7 +546,7 @@ $data = array (
     'type_img' => '1480677900.jpg',
     'goods_num' => 1287,
   ),
-  40 => 
+  39 => 
   array (
     'cat_id' => '81',
     'cat_name' => '书房',
@@ -574,10 +560,10 @@ $data = array (
     'type_img' => '1489558928.jpg',
     'goods_num' => 177,
   ),
-  41 => 
+  40 => 
   array (
-    'cat_id' => '84',
-    'cat_name' => '娱乐场所',
+    'cat_id' => '83',
+    'cat_name' => '餐厅',
     'measure_unit' => '',
     'parent_id' => '67',
     'is_show' => '1',
@@ -585,10 +571,10 @@ $data = array (
     'grade' => '0',
     'sort_order' => '50',
     'has_children' => '0',
-    'type_img' => '1489558866.jpg',
+    'type_img' => '1489558986.jpg',
     'goods_num' => 0,
   ),
-  42 => 
+  41 => 
   array (
     'cat_id' => '163',
     'cat_name' => '婚房',
@@ -602,7 +588,7 @@ $data = array (
     'type_img' => '1489559192.jpg',
     'goods_num' => 4,
   ),
-  43 => 
+  42 => 
   array (
     'cat_id' => '80',
     'cat_name' => '卧室',
@@ -616,7 +602,7 @@ $data = array (
     'type_img' => '1489558907.jpg',
     'goods_num' => 940,
   ),
-  44 => 
+  43 => 
   array (
     'cat_id' => '82',
     'cat_name' => '儿童房',
@@ -630,7 +616,35 @@ $data = array (
     'type_img' => '1489558971.jpg',
     'goods_num' => 230,
   ),
+  44 => 
+  array (
+    'cat_id' => '84',
+    'cat_name' => '娱乐场所',
+    'measure_unit' => '',
+    'parent_id' => '67',
+    'is_show' => '1',
+    'show_in_nav' => '0',
+    'grade' => '0',
+    'sort_order' => '50',
+    'has_children' => '0',
+    'type_img' => '1489558866.jpg',
+    'goods_num' => 0,
+  ),
   45 => 
+  array (
+    'cat_id' => '164',
+    'cat_name' => '无纺纯',
+    'measure_unit' => '',
+    'parent_id' => '68',
+    'is_show' => '1',
+    'show_in_nav' => '0',
+    'grade' => '0',
+    'sort_order' => '50',
+    'has_children' => '0',
+    'type_img' => '1489558290.jpg',
+    'goods_num' => 0,
+  ),
+  46 => 
   array (
     'cat_id' => '85',
     'cat_name' => '无纺',
@@ -644,7 +658,7 @@ $data = array (
     'type_img' => '1489556863.jpg',
     'goods_num' => 0,
   ),
-  46 => 
+  47 => 
   array (
     'cat_id' => '87',
     'cat_name' => 'PVC',
@@ -658,7 +672,7 @@ $data = array (
     'type_img' => '1489557181.jpg',
     'goods_num' => 0,
   ),
-  47 => 
+  48 => 
   array (
     'cat_id' => '89',
     'cat_name' => '石英壁布',
@@ -672,7 +686,7 @@ $data = array (
     'type_img' => '1489557466.jpg',
     'goods_num' => 0,
   ),
-  48 => 
+  49 => 
   array (
     'cat_id' => '91',
     'cat_name' => '蚕丝',
@@ -686,7 +700,7 @@ $data = array (
     'type_img' => '1489557872.jpg',
     'goods_num' => 0,
   ),
-  49 => 
+  50 => 
   array (
     'cat_id' => '93',
     'cat_name' => '草编',
@@ -698,20 +712,6 @@ $data = array (
     'sort_order' => '50',
     'has_children' => '0',
     'type_img' => '1489558099.jpg',
-    'goods_num' => 0,
-  ),
-  50 => 
-  array (
-    'cat_id' => '164',
-    'cat_name' => '无纺纯',
-    'measure_unit' => '',
-    'parent_id' => '68',
-    'is_show' => '1',
-    'show_in_nav' => '0',
-    'grade' => '0',
-    'sort_order' => '50',
-    'has_children' => '0',
-    'type_img' => '1489558290.jpg',
     'goods_num' => 0,
   ),
   51 => 

@@ -17,40 +17,6 @@ $data = array (
     'id' => '46',
     'name' => '墙画',
   ),
-  94 => 
-  array (
-    'cat_id' => '94',
-    'cat_name' => '场所分类',
-    'measure_unit' => '',
-    'parent_id' => '46',
-    'is_show' => '1',
-    'show_in_nav' => '0',
-    'grade' => '0',
-    'sort_order' => '50',
-    'has_children' => '1',
-    'type_img' => '',
-    'goods_num' => 0,
-    'level' => 1,
-    'id' => '94',
-    'name' => '场所分类',
-  ),
-  145 => 
-  array (
-    'cat_id' => '145',
-    'cat_name' => '卧室',
-    'measure_unit' => '',
-    'parent_id' => '94',
-    'is_show' => '1',
-    'show_in_nav' => '1',
-    'grade' => '0',
-    'sort_order' => '50',
-    'has_children' => '0',
-    'type_img' => '1489559381.jpg',
-    'goods_num' => '4',
-    'level' => 2,
-    'id' => '145',
-    'name' => '卧室',
-  ),
   114 => 
   array (
     'cat_id' => '114',
@@ -169,6 +135,40 @@ $data = array (
     'level' => 2,
     'id' => '155',
     'name' => '现代风格',
+  ),
+  94 => 
+  array (
+    'cat_id' => '94',
+    'cat_name' => '场所分类',
+    'measure_unit' => '',
+    'parent_id' => '46',
+    'is_show' => '1',
+    'show_in_nav' => '0',
+    'grade' => '0',
+    'sort_order' => '50',
+    'has_children' => '1',
+    'type_img' => '',
+    'goods_num' => 0,
+    'level' => 1,
+    'id' => '94',
+    'name' => '场所分类',
+  ),
+  145 => 
+  array (
+    'cat_id' => '145',
+    'cat_name' => '卧室',
+    'measure_unit' => '',
+    'parent_id' => '94',
+    'is_show' => '1',
+    'show_in_nav' => '1',
+    'grade' => '0',
+    'sort_order' => '50',
+    'has_children' => '0',
+    'type_img' => '1489559381.jpg',
+    'goods_num' => '4',
+    'level' => 2,
+    'id' => '145',
+    'name' => '卧室',
   ),
   48 => 
   array (
@@ -765,23 +765,6 @@ $data = array (
     'id' => '67',
     'name' => '场所分类',
   ),
-  83 => 
-  array (
-    'cat_id' => '83',
-    'cat_name' => '餐厅',
-    'measure_unit' => '',
-    'parent_id' => '67',
-    'is_show' => '1',
-    'show_in_nav' => '0',
-    'grade' => '0',
-    'sort_order' => '50',
-    'has_children' => '0',
-    'type_img' => '1489558986.jpg',
-    'goods_num' => 0,
-    'level' => 2,
-    'id' => '83',
-    'name' => '餐厅',
-  ),
   79 => 
   array (
     'cat_id' => '79',
@@ -816,10 +799,10 @@ $data = array (
     'id' => '81',
     'name' => '书房',
   ),
-  84 => 
+  83 => 
   array (
-    'cat_id' => '84',
-    'cat_name' => '娱乐场所',
+    'cat_id' => '83',
+    'cat_name' => '餐厅',
     'measure_unit' => '',
     'parent_id' => '67',
     'is_show' => '1',
@@ -827,11 +810,11 @@ $data = array (
     'grade' => '0',
     'sort_order' => '50',
     'has_children' => '0',
-    'type_img' => '1489558866.jpg',
+    'type_img' => '1489558986.jpg',
     'goods_num' => 0,
     'level' => 2,
-    'id' => '84',
-    'name' => '娱乐场所',
+    'id' => '83',
+    'name' => '餐厅',
   ),
   163 => 
   array (
@@ -883,6 +866,23 @@ $data = array (
     'level' => 2,
     'id' => '82',
     'name' => '儿童房',
+  ),
+  84 => 
+  array (
+    'cat_id' => '84',
+    'cat_name' => '娱乐场所',
+    'measure_unit' => '',
+    'parent_id' => '67',
+    'is_show' => '1',
+    'show_in_nav' => '0',
+    'grade' => '0',
+    'sort_order' => '50',
+    'has_children' => '0',
+    'type_img' => '1489558866.jpg',
+    'goods_num' => 0,
+    'level' => 2,
+    'id' => '84',
+    'name' => '娱乐场所',
   ),
   69 => 
   array (
@@ -1071,6 +1071,23 @@ $data = array (
     'id' => '68',
     'name' => '材质分类',
   ),
+  164 => 
+  array (
+    'cat_id' => '164',
+    'cat_name' => '无纺纯',
+    'measure_unit' => '',
+    'parent_id' => '68',
+    'is_show' => '1',
+    'show_in_nav' => '0',
+    'grade' => '0',
+    'sort_order' => '50',
+    'has_children' => '0',
+    'type_img' => '1489558290.jpg',
+    'goods_num' => 0,
+    'level' => 2,
+    'id' => '164',
+    'name' => '无纺纯',
+  ),
   85 => 
   array (
     'cat_id' => '85',
@@ -1156,23 +1173,6 @@ $data = array (
     'id' => '93',
     'name' => '草编',
   ),
-  164 => 
-  array (
-    'cat_id' => '164',
-    'cat_name' => '无纺纯',
-    'measure_unit' => '',
-    'parent_id' => '68',
-    'is_show' => '1',
-    'show_in_nav' => '0',
-    'grade' => '0',
-    'sort_order' => '50',
-    'has_children' => '0',
-    'type_img' => '1489558290.jpg',
-    'goods_num' => 0,
-    'level' => 2,
-    'id' => '164',
-    'name' => '无纺纯',
-  ),
   86 => 
   array (
     'cat_id' => '86',
@@ -1257,23 +1257,6 @@ $data = array (
     'level' => 0,
     'id' => '47',
     'name' => '无缝墙布',
-  ),
-  95 => 
-  array (
-    'cat_id' => '95',
-    'cat_name' => '材质分类',
-    'measure_unit' => '',
-    'parent_id' => '47',
-    'is_show' => '1',
-    'show_in_nav' => '0',
-    'grade' => '0',
-    'sort_order' => '50',
-    'has_children' => '0',
-    'type_img' => '',
-    'goods_num' => 0,
-    'level' => 1,
-    'id' => '95',
-    'name' => '材质分类',
   ),
   97 => 
   array (
@@ -1444,6 +1427,23 @@ $data = array (
     'level' => 2,
     'id' => '106',
     'name' => '进口',
+  ),
+  95 => 
+  array (
+    'cat_id' => '95',
+    'cat_name' => '材质分类',
+    'measure_unit' => '',
+    'parent_id' => '47',
+    'is_show' => '1',
+    'show_in_nav' => '0',
+    'grade' => '0',
+    'sort_order' => '50',
+    'has_children' => '0',
+    'type_img' => '',
+    'goods_num' => 0,
+    'level' => 1,
+    'id' => '95',
+    'name' => '材质分类',
   ),
   96 => 
   array (

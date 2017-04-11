@@ -1,6 +1,9 @@
-/data/
+
 /phpMyAdmin/
 /temp/
 /images/
 /temp_60608/
+/mobile/temp/
 /mobile/temp/caches/
+/mobile/temp/compiled/
+/mobile/temp/static_caches/
