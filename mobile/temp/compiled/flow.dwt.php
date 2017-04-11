@@ -469,11 +469,11 @@ var card = document.getElementsByName('card');
           <i></i>
         </dl>
         <div class="dl_box" id="payment" style="display:none">
-          <?php $_from = $this->_var['payment_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'payment_0_25422300_1491879124');if (count($_from)):
-    foreach ($_from AS $this->_var['payment_0_25422300_1491879124']):
+          <?php $_from = $this->_var['payment_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'payment_0_44801600_1491885264');if (count($_from)):
+    foreach ($_from AS $this->_var['payment_0_44801600_1491885264']):
 ?>
           <p>
-           <input type="radio" class="radio" name="payment" id="payment_<?php echo $this->_var['payment_0_25422300_1491879124']['pay_id']; ?>" value="<?php echo $this->_var['payment_0_25422300_1491879124']['pay_id']; ?>" <?php if ($this->_var['order']['pay_id'] == $this->_var['payment_0_25422300_1491879124']['pay_id']): ?>checked<?php endif; ?> isCod="<?php echo $this->_var['payment_0_25422300_1491879124']['is_cod']; ?>"   style="vertical-align:middle" /><label for="payment_<?php echo $this->_var['payment_0_25422300_1491879124']['pay_id']; ?>"><?php echo $this->_var['payment_0_25422300_1491879124']['pay_name']; ?> <?php if ($this->_var['payment_0_25422300_1491879124']['pay_id'] == 6): ?>[<?php echo $this->_var['user_money']; ?>]<?php endif; ?></label>
+           <input type="radio" class="radio" name="payment" id="payment_<?php echo $this->_var['payment_0_44801600_1491885264']['pay_id']; ?>" value="<?php echo $this->_var['payment_0_44801600_1491885264']['pay_id']; ?>" <?php if ($this->_var['order']['pay_id'] == $this->_var['payment_0_44801600_1491885264']['pay_id']): ?>checked<?php endif; ?> isCod="<?php echo $this->_var['payment_0_44801600_1491885264']['is_cod']; ?>"   style="vertical-align:middle" /><label for="payment_<?php echo $this->_var['payment_0_44801600_1491885264']['pay_id']; ?>"><?php echo $this->_var['payment_0_44801600_1491885264']['pay_name']; ?> <?php if ($this->_var['payment_0_44801600_1491885264']['pay_id'] == 6): ?>[<?php echo $this->_var['user_money']; ?>]<?php endif; ?></label>
            </p>
             <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
         </div>

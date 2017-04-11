@@ -1,4 +1,4 @@
-<?php exit;?>a:3:{s:8:"template";a:2:{i:0;s:53:"/mnt/www/meifang/mobile/themesmobile/mobile/goods.dwt";i:1;s:64:"/mnt/www/meifang/mobile/themesmobile/mobile/library/comments.lbi";}s:7:"expires";i:1491879219;s:8:"maketime";i:1491879219;}<!DOCTYPE html>
+<?php exit;?>a:3:{s:8:"template";a:2:{i:0;s:53:"/mnt/www/meifang/mobile/themesmobile/mobile/goods.dwt";i:1;s:64:"/mnt/www/meifang/mobile/themesmobile/mobile/library/comments.lbi";}s:7:"expires";i:1491885430;s:8:"maketime";i:1491885430;}<!DOCTYPE html>
 <html>
 <head>
 <meta name="Generator" content="ECSHOP v2.7.3" />
@@ -35,9 +35,9 @@ function changenum(diff) {
 wx.config({
     debug: false,
     appId: 'wx2326ecf73474cfaa',
-    timestamp: 1491879219,
-    nonceStr: '8byp1agtffsok2nr9wu7im7enho29f0p',
-    signature: 'fc33021433169a661abf3986977da29394992c72',
+    timestamp: 1491885430,
+    nonceStr: 'o1rsu6beyb694xvp59szs45cdmw36yrn',
+    signature: 'ebeb05ccf262786871aff0fdd488ea2cf110ddb2',
     jsApiList: [
 		'onMenuShareTimeline',
 		'onMenuShareAppMessage',
@@ -50,7 +50,7 @@ wx.ready(function () {
     link: 'http://test.mfmb58.com/mobile/goods4.php?id=3305',
     imgUrl: '../images/201612/source_img/3305_G_1480619940301.jpg',
     success: function () { 
-		$.get('http://test.mfmb58.com/mobile/user.php?act=point_share&user_id=171816', function(result){	
+		$.get('http://test.mfmb58.com/mobile/user.php?act=point_share&user_id=0', function(result){	
   		});
     },
     cancel: function () { 
@@ -66,7 +66,7 @@ wx.ready(function () {
     type: '',
     dataUrl: '',
     success: function () { 
-		$.get('http://test.mfmb58.com/mobile/user.php?act=point_share&user_id=171816', function(result){	
+		$.get('http://test.mfmb58.com/mobile/user.php?act=point_share&user_id=0', function(result){	
   		});
     },
     cancel: function () { 
@@ -373,7 +373,7 @@ var minute = "分钟";
 var second = "秒";
 var end = "结束";
 var goodsId = 3305;
-var now_time = 1491850419;
+var now_time = 1491856630;
 onload = function(){
   changePrice();
   fixpng();

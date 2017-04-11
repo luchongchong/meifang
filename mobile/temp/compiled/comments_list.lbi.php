@@ -33,10 +33,10 @@ if ($this->_foreach['comments']['total'] > 0):
 <a href="<?php echo $this->_var['pager']['page_prev']; ?>" class="prev"><?php echo $this->_var['lang']['page_prev']; ?></a> 
 <a href="javascript:;" class="prev" >共<?php echo $this->_var['pager']['page_count']; ?>页</a> 
 <a href="<?php echo $this->_var['pager']['page_next']; ?>" class="next" ><?php echo $this->_var['lang']['page_next']; ?></a>
-     <?php $_from = $this->_var['pager']['search']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'item_0_77991700_1491879517');if (count($_from)):
-    foreach ($_from AS $this->_var['key'] => $this->_var['item_0_77991700_1491879517']):
+     <?php $_from = $this->_var['pager']['search']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'item_0_64908100_1491887552');if (count($_from)):
+    foreach ($_from AS $this->_var['key'] => $this->_var['item_0_64908100_1491887552']):
 ?>
-            <input type="hidden" name="<?php echo $this->_var['key']; ?>" value="<?php echo $this->_var['item_0_77991700_1491879517']; ?>" />
+            <input type="hidden" name="<?php echo $this->_var['key']; ?>" value="<?php echo $this->_var['item_0_64908100_1491887552']; ?>" />
             <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
     </div>
       </form>
@@ -99,10 +99,10 @@ if ($this->_foreach['comments']['total'] > 0):
 
 <script type="text/javascript">
 //<![CDATA[
-<?php $_from = $this->_var['lang']['cmt_lang']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'item_0_78013800_1491879517');if (count($_from)):
-    foreach ($_from AS $this->_var['key'] => $this->_var['item_0_78013800_1491879517']):
+<?php $_from = $this->_var['lang']['cmt_lang']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'item_0_64929400_1491887552');if (count($_from)):
+    foreach ($_from AS $this->_var['key'] => $this->_var['item_0_64929400_1491887552']):
 ?>
-var <?php echo $this->_var['key']; ?> = "<?php echo $this->_var['item_0_78013800_1491879517']; ?>";
+var <?php echo $this->_var['key']; ?> = "<?php echo $this->_var['item_0_64929400_1491887552']; ?>";
 <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
 
 /**

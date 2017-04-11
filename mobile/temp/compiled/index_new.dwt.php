@@ -171,16 +171,16 @@ if ($this->_foreach['wap_index_ad']['total'] > 0):
 
         	<ul>
         	
-        	   <?php $_from = $this->_var['hot_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('k', 'hot_goods_0_97485000_1491879141');if (count($_from)):
-    foreach ($_from AS $this->_var['k'] => $this->_var['hot_goods_0_97485000_1491879141']):
+        	   <?php $_from = $this->_var['hot_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('k', 'hot_goods_0_51433500_1491885295');if (count($_from)):
+    foreach ($_from AS $this->_var['k'] => $this->_var['hot_goods_0_51433500_1491885295']):
 ?>
-	            <a href="<?php echo $this->_var['hot_goods_0_97485000_1491879141']['url']; ?>" title="环保墙纸">
+	            <a href="<?php echo $this->_var['hot_goods_0_51433500_1491885295']['url']; ?>" title="环保墙纸">
         		<li>
                 	<div class="pict">
-                    	<img src="<?php echo $this->_var['hot_goods_0_97485000_1491879141']['goods_img']; ?>">
-                        <span><?php echo $this->_var['hot_goods_0_97485000_1491879141']['name']; ?></span>
+                    	<img src="<?php echo $this->_var['hot_goods_0_51433500_1491885295']['goods_img']; ?>">
+                        <span><?php echo $this->_var['hot_goods_0_51433500_1491885295']['name']; ?></span>
                     </div>
-                    <p><?php echo $this->_var['hot_goods_0_97485000_1491879141']['shop_price']; ?></p>
+                    <p><?php echo $this->_var['hot_goods_0_51433500_1491885295']['shop_price']; ?></p>
                 </li>
                   </a>
              <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
@@ -203,22 +203,22 @@ if ($this->_foreach['wap_index_ad']['total'] > 0):
             </div>
 
             <ul>
-            <?php $_from = $this->_var['qiangzhi_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('k', 'qiangzhi_goods_0_97493800_1491879141');if (count($_from)):
-    foreach ($_from AS $this->_var['k'] => $this->_var['qiangzhi_goods_0_97493800_1491879141']):
+            <?php $_from = $this->_var['qiangzhi_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('k', 'qiangzhi_goods_0_51444500_1491885295');if (count($_from)):
+    foreach ($_from AS $this->_var['k'] => $this->_var['qiangzhi_goods_0_51444500_1491885295']):
 ?>
                 	<li>
-                     	<a href="<?php echo $this->_var['qiangzhi_goods_0_97493800_1491879141']['url']; ?>" class="" title="环保墙纸">
+                     	<a href="<?php echo $this->_var['qiangzhi_goods_0_51444500_1491885295']['url']; ?>" class="" title="环保墙纸">
                         <div class="pict">
-                            <img src="<?php echo $this->_var['qiangzhi_goods_0_97493800_1491879141']['goods_img']; ?>" alt="墙纸产品">
+                            <img src="<?php echo $this->_var['qiangzhi_goods_0_51444500_1491885295']['goods_img']; ?>" alt="墙纸产品">
                             
                         </div>
                         <div class="text">
-                            <p><?php echo $this->_var['qiangzhi_goods_0_97493800_1491879141']['name']; ?></p>
-                                <font color="red"><?php echo $this->_var['qiangzhi_goods_0_97493800_1491879141']['shop_price']; ?></font>
+                            <p><?php echo $this->_var['qiangzhi_goods_0_51444500_1491885295']['name']; ?></p>
+                                <font color="red"><?php echo $this->_var['qiangzhi_goods_0_51444500_1491885295']['shop_price']; ?></font>
                                 <div style="float:right;display:none">
-                                    <a href="<?php echo $this->_var['qiangzhi_goods_0_97493800_1491879141']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-0.png" alt="墙纸加盟"></a>
-                                    <a href="<?php echo $this->_var['qiangzhi_goods_0_97493800_1491879141']['url']; ?>" class="line" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-1.png" alt="墙纸代理"></a>
-                                    <a href="<?php echo $this->_var['qiangzhi_goods_0_97493800_1491879141']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-2.png" alt="墙纸招商"></a>
+                                    <a href="<?php echo $this->_var['qiangzhi_goods_0_51444500_1491885295']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-0.png" alt="墙纸加盟"></a>
+                                    <a href="<?php echo $this->_var['qiangzhi_goods_0_51444500_1491885295']['url']; ?>" class="line" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-1.png" alt="墙纸代理"></a>
+                                    <a href="<?php echo $this->_var['qiangzhi_goods_0_51444500_1491885295']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-2.png" alt="墙纸招商"></a>
                                 </div>
                         </div>
                          </a>
@@ -241,21 +241,21 @@ if ($this->_foreach['wap_index_ad']['total'] > 0):
             </div>
 
             <ul>
-            <?php $_from = $this->_var['chuanlian_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('k', 'chuanlian_goods_0_97503800_1491879141');if (count($_from)):
-    foreach ($_from AS $this->_var['k'] => $this->_var['chuanlian_goods_0_97503800_1491879141']):
+            <?php $_from = $this->_var['chuanlian_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('k', 'chuanlian_goods_0_51454700_1491885295');if (count($_from)):
+    foreach ($_from AS $this->_var['k'] => $this->_var['chuanlian_goods_0_51454700_1491885295']):
 ?>
                 	<li>
-                     	<a href="<?php echo $this->_var['chuanlian_goods_0_97503800_1491879141']['url']; ?>" title="环保墙纸">
+                     	<a href="<?php echo $this->_var['chuanlian_goods_0_51454700_1491885295']['url']; ?>" title="环保墙纸">
                         <div class="pict">
-                            <img src="<?php echo $this->_var['chuanlian_goods_0_97503800_1491879141']['goods_img']; ?>" alt="墙纸图片">
+                            <img src="<?php echo $this->_var['chuanlian_goods_0_51454700_1491885295']['goods_img']; ?>" alt="墙纸图片">
                         </div>
                         <div class="text">
-                            <p><?php echo $this->_var['chuanlian_goods_0_97503800_1491879141']['name']; ?></p>
-                                <font color="red"><?php echo $this->_var['chuanlian_goods_0_97503800_1491879141']['shop_price']; ?></font>
+                            <p><?php echo $this->_var['chuanlian_goods_0_51454700_1491885295']['name']; ?></p>
+                                <font color="red"><?php echo $this->_var['chuanlian_goods_0_51454700_1491885295']['shop_price']; ?></font>
                                 <div style="float:right;display:none">
-                                    <a href="<?php echo $this->_var['chuanlian_goods_0_97503800_1491879141']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-0.png" alt="墙纸代理"></a>
-                                    <a href="<?php echo $this->_var['chuanlian_goods_0_97503800_1491879141']['url']; ?>" class="line" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-1.png" alt="墙纸招商"></a>
-                                    <a href="<?php echo $this->_var['chuanlian_goods_0_97503800_1491879141']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-2.png" alt="墙纸加盟"></a>
+                                    <a href="<?php echo $this->_var['chuanlian_goods_0_51454700_1491885295']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-0.png" alt="墙纸代理"></a>
+                                    <a href="<?php echo $this->_var['chuanlian_goods_0_51454700_1491885295']['url']; ?>" class="line" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-1.png" alt="墙纸招商"></a>
+                                    <a href="<?php echo $this->_var['chuanlian_goods_0_51454700_1491885295']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-2.png" alt="墙纸加盟"></a>
                                 </div>
                         </div>
                          </a>
@@ -279,21 +279,21 @@ if ($this->_foreach['wap_index_ad']['total'] > 0):
             </div>
 
             <ul>
-            <?php $_from = $this->_var['ruanbao_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('k', 'ruanbao_goods_0_97514200_1491879141');if (count($_from)):
-    foreach ($_from AS $this->_var['k'] => $this->_var['ruanbao_goods_0_97514200_1491879141']):
+            <?php $_from = $this->_var['ruanbao_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('k', 'ruanbao_goods_0_51464600_1491885295');if (count($_from)):
+    foreach ($_from AS $this->_var['k'] => $this->_var['ruanbao_goods_0_51464600_1491885295']):
 ?>
                 	<li>
-                     	<a href="<?php echo $this->_var['ruanbao_goods_0_97514200_1491879141']['url']; ?>" class="" title="环保软包">
+                     	<a href="<?php echo $this->_var['ruanbao_goods_0_51464600_1491885295']['url']; ?>" class="" title="环保软包">
                         <div class="pict">
-                            <img src="<?php echo $this->_var['ruanbao_goods_0_97514200_1491879141']['goods_img']; ?>" alt="环保软包">
+                            <img src="<?php echo $this->_var['ruanbao_goods_0_51464600_1491885295']['goods_img']; ?>" alt="环保软包">
                         </div>
                         <div class="text">
-                            <p><?php echo $this->_var['ruanbao_goods_0_97514200_1491879141']['name']; ?></p>
-                                <font color="red"><?php echo $this->_var['ruanbao_goods_0_97514200_1491879141']['shop_price']; ?></font>
+                            <p><?php echo $this->_var['ruanbao_goods_0_51464600_1491885295']['name']; ?></p>
+                                <font color="red"><?php echo $this->_var['ruanbao_goods_0_51464600_1491885295']['shop_price']; ?></font>
                                 <div style="float:right;display:none">
-                                    <a href="<?php echo $this->_var['ruanbao_goods_0_97514200_1491879141']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-0.png" alt="墙纸代理"></a>
-                                    <a href="<?php echo $this->_var['ruanbao_goods_0_97514200_1491879141']['url']; ?>" class="line" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-1.png" alt="墙纸招商"></a>
-                                    <a href="<?php echo $this->_var['ruanbao_goods_0_97514200_1491879141']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-2.png" alt="墙纸加盟"></a>
+                                    <a href="<?php echo $this->_var['ruanbao_goods_0_51464600_1491885295']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-0.png" alt="墙纸代理"></a>
+                                    <a href="<?php echo $this->_var['ruanbao_goods_0_51464600_1491885295']['url']; ?>" class="line" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-1.png" alt="墙纸招商"></a>
+                                    <a href="<?php echo $this->_var['ruanbao_goods_0_51464600_1491885295']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-2.png" alt="墙纸加盟"></a>
                                 </div>
                         </div>
                          </a>
@@ -311,21 +311,21 @@ if ($this->_foreach['wap_index_ad']['total'] > 0):
 
 
             <ul>
-            <?php $_from = $this->_var['like_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('k', 'like_goods_0_97524000_1491879141');if (count($_from)):
-    foreach ($_from AS $this->_var['k'] => $this->_var['like_goods_0_97524000_1491879141']):
+            <?php $_from = $this->_var['like_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('k', 'like_goods_0_51474200_1491885295');if (count($_from)):
+    foreach ($_from AS $this->_var['k'] => $this->_var['like_goods_0_51474200_1491885295']):
 ?>
                 	<li>
-                     	<a href="<?php echo $this->_var['like_goods_0_97524000_1491879141']['url']; ?>" class="" title="环保墙纸">
+                     	<a href="<?php echo $this->_var['like_goods_0_51474200_1491885295']['url']; ?>" class="" title="环保墙纸">
                         <div class="pict">
-                            <img src="<?php echo $this->_var['like_goods_0_97524000_1491879141']['goods_img']; ?>" alt="墙纸图片">
+                            <img src="<?php echo $this->_var['like_goods_0_51474200_1491885295']['goods_img']; ?>" alt="墙纸图片">
                         </div>
                         <div class="text">
-                            <p><?php echo $this->_var['like_goods_0_97524000_1491879141']['name']; ?></p>
-                                <font color="red"><?php echo $this->_var['like_goods_0_97524000_1491879141']['shop_price']; ?></font>
+                            <p><?php echo $this->_var['like_goods_0_51474200_1491885295']['name']; ?></p>
+                                <font color="red"><?php echo $this->_var['like_goods_0_51474200_1491885295']['shop_price']; ?></font>
                                 <div style="float:right;display:none">
-                                    <a href="<?php echo $this->_var['like_goods_0_97524000_1491879141']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-0.png" alt="墙纸代理"></a>
-                                    <a href="<?php echo $this->_var['like_goods_0_97524000_1491879141']['url']; ?>" class="line" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-1.png" alt="墙纸招商"></a>
-                                    <a href="<?php echo $this->_var['like_goods_0_97524000_1491879141']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-2.png" alt="墙纸加盟"></a>
+                                    <a href="<?php echo $this->_var['like_goods_0_51474200_1491885295']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-0.png" alt="墙纸代理"></a>
+                                    <a href="<?php echo $this->_var['like_goods_0_51474200_1491885295']['url']; ?>" class="line" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-1.png" alt="墙纸招商"></a>
+                                    <a href="<?php echo $this->_var['like_goods_0_51474200_1491885295']['url']; ?>" title="环保墙纸"><img src="themesmobile/mobile/img/ico20-2.png" alt="墙纸加盟"></a>
                                 </div>
                         </div>
                          </a>

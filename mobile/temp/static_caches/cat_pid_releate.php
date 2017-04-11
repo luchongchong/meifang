@@ -534,20 +534,6 @@ $data = array (
   ),
   38 => 
   array (
-    'cat_id' => '81',
-    'cat_name' => '书房',
-    'measure_unit' => '',
-    'parent_id' => '67',
-    'is_show' => '1',
-    'show_in_nav' => '0',
-    'grade' => '0',
-    'sort_order' => '50',
-    'has_children' => '0',
-    'type_img' => '1489558928.jpg',
-    'goods_num' => 177,
-  ),
-  39 => 
-  array (
     'cat_id' => '83',
     'cat_name' => '餐厅',
     'measure_unit' => '',
@@ -560,7 +546,7 @@ $data = array (
     'type_img' => '1489558986.jpg',
     'goods_num' => 0,
   ),
-  40 => 
+  39 => 
   array (
     'cat_id' => '79',
     'cat_name' => '客厅',
@@ -574,10 +560,10 @@ $data = array (
     'type_img' => '1480677900.jpg',
     'goods_num' => 1287,
   ),
-  41 => 
+  40 => 
   array (
-    'cat_id' => '82',
-    'cat_name' => '儿童房',
+    'cat_id' => '81',
+    'cat_name' => '书房',
     'measure_unit' => '',
     'parent_id' => '67',
     'is_show' => '1',
@@ -585,10 +571,10 @@ $data = array (
     'grade' => '0',
     'sort_order' => '50',
     'has_children' => '0',
-    'type_img' => '1489558971.jpg',
-    'goods_num' => 230,
+    'type_img' => '1489558928.jpg',
+    'goods_num' => 177,
   ),
-  42 => 
+  41 => 
   array (
     'cat_id' => '84',
     'cat_name' => '娱乐场所',
@@ -602,7 +588,7 @@ $data = array (
     'type_img' => '1489558866.jpg',
     'goods_num' => 0,
   ),
-  43 => 
+  42 => 
   array (
     'cat_id' => '163',
     'cat_name' => '婚房',
@@ -616,7 +602,7 @@ $data = array (
     'type_img' => '1489559192.jpg',
     'goods_num' => 4,
   ),
-  44 => 
+  43 => 
   array (
     'cat_id' => '80',
     'cat_name' => '卧室',
@@ -628,7 +614,21 @@ $data = array (
     'sort_order' => '50',
     'has_children' => '0',
     'type_img' => '1489558907.jpg',
-    'goods_num' => 942,
+    'goods_num' => 940,
+  ),
+  44 => 
+  array (
+    'cat_id' => '82',
+    'cat_name' => '儿童房',
+    'measure_unit' => '',
+    'parent_id' => '67',
+    'is_show' => '1',
+    'show_in_nav' => '0',
+    'grade' => '0',
+    'sort_order' => '50',
+    'has_children' => '0',
+    'type_img' => '1489558971.jpg',
+    'goods_num' => 230,
   ),
   45 => 
   array (

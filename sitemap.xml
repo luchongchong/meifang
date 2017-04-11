@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectName>美房美邦</ProjectName>
+  <FileFormat>XML 格式</FileFormat>
+  <Url>http://www.mfmb58.com</Url>
+  <FilePath>C:\Users\Administrator\Desktop\laohu_sitemap\a.xml</FilePath>
+  <EnableCompress>false</EnableCompress>
+  <MaxThreadCount>200</MaxThreadCount>
+  <Timeout>30000</Timeout>
+  <WaitingTime>100</WaitingTime>
+  <EnableRedirect>true</EnableRedirect>
+  <Priority xsi:nil="true" />
+  <ChangeFreq xsi:nil="true" />
+  <GetLastModified>false</GetLastModified>
+  <AutoSet>true</AutoSet>
+  <MaxItemsPerFile>50000</MaxItemsPerFile>
+  <MaxIncludeCount>2147483647</MaxIncludeCount>
+  <MaxCrawlLevel>2147483647</MaxCrawlLevel>
+  <MaxIncludeLevel>2147483647</MaxIncludeLevel>
+  <IncludeFilter>
+    <Contain />
+    <Exclude>
+      <string>?</string>
+    </Exclude>
+    <FileType>
+      <string>.exe</string>
+      <string>.rar</string>
+      <string>.zip</string>
+      <string>.tar</string>
+      <string>.gz</string>
+      <string>.pdf</string>
+      <string>.swf</string>
+      <string>.jpg</string>
+      <string>.png</string>
+      <string>.gif</string>
+      <string>.bmp</string>
+      <string>.mp3</string>
+      <string>.mp4</string>
+      <string>.rm</string>
+      <string>.rmvb</string>
+      <string>.smil</string>
+      <string>.wma</string>
+      <string>.pl</string>
+      <string>.c</string>
+      <string>.cpp</string>
+    </FileType>
+  </IncludeFilter>
+  <CrawlFilter>
+    <Contain />
+    <Exclude>
+      <string>?</string>
+    </Exclude>
+    <FileType />
+  </CrawlFilter>
+  <ProtocolFilter>
+    <IgnoredProtocol>
+      <string>mailto:</string>
+      <string>javascript:</string>
+      <string>#</string>
+      <string>msnim:</string>
+      <string>tencent://</string>
+      <string>skype:</string>
+      <string>gtalk:</string>
+    </IgnoredProtocol>
+  </ProtocolFilter>
+  <Replaces>
+    <ReplaceFroms />
+    <ReplaceTos />
+  </Replaces>
+  <ThreadCount>0</ThreadCount>
+</Project>

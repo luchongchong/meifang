@@ -22770,3 +22770,213 @@
 
 
 
+-----------2017-04-11 11:02:00-----------------2017-3-9 royallu
+
+
+
+-----------2017-04-11 11:02:00-----------------<xml><appid><![CDATA[wx2326ecf73474cfaa]]></appid>
+<attach><![CDATA[6989]]></attach>
+<bank_type><![CDATA[COMM_DEBIT]]></bank_type>
+<cash_fee><![CDATA[110500]]></cash_fee>
+<device_info><![CDATA[WEB]]></device_info>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[1231341002]]></mch_id>
+<nonce_str><![CDATA[9q77dilcb7pjf4i11oc5t9ew2crnpnlk]]></nonce_str>
+<openid><![CDATA[ofVnGtw4kG6IMK5h1ME0lds-xPhU]]></openid>
+<out_trade_no><![CDATA[2017041164036]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[86E464BB1F7AC78F6D6CEA514DBC1E95]]></sign>
+<time_end><![CDATA[20170411110159]]></time_end>
+<total_fee>110500</total_fee>
+<trade_type><![CDATA[JSAPI]]></trade_type>
+<transaction_id><![CDATA[4006602001201704116610332001]]></transaction_id>
+</xml>
+
+
+
+-----------2017-04-11 11:02:00-----------------{"appid":"wx2326ecf73474cfaa","attach":"6989","bank_type":"COMM_DEBIT","cash_fee":"110500","device_info":"WEB","fee_type":"CNY","is_subscribe":"Y","mch_id":"1231341002","nonce_str":"9q77dilcb7pjf4i11oc5t9ew2crnpnlk","openid":"ofVnGtw4kG6IMK5h1ME0lds-xPhU","out_trade_no":"2017041164036","result_code":"SUCCESS","return_code":"SUCCESS","sign":"86E464BB1F7AC78F6D6CEA514DBC1E95","time_end":"20170411110159","total_fee":"110500","trade_type":"JSAPI","transaction_id":"4006602001201704116610332001"}
+
+
+
+-----------2017-04-11 11:02:00-----------------test4444444444
+
+
+
+-----------2017-04-11 11:02:02-----------------2017-3-9 royallu
+
+
+
+-----------2017-04-11 11:02:02-----------------
+
+
+
+-----------2017-04-11 11:08:00-----------------2017-3-9 royallu
+
+
+
+-----------2017-04-11 11:08:00-----------------<xml><appid><![CDATA[wx2326ecf73474cfaa]]></appid>
+<attach><![CDATA[6990]]></attach>
+<bank_type><![CDATA[COMM_DEBIT]]></bank_type>
+<cash_fee><![CDATA[68000]]></cash_fee>
+<device_info><![CDATA[WEB]]></device_info>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[1231341002]]></mch_id>
+<nonce_str><![CDATA[k5kw25p0p807qlxo0whheux1kduh4vna]]></nonce_str>
+<openid><![CDATA[ofVnGtw4kG6IMK5h1ME0lds-xPhU]]></openid>
+<out_trade_no><![CDATA[2017041139468]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[1A9E7D19792536A2D1C42058F7A33E34]]></sign>
+<time_end><![CDATA[20170411110800]]></time_end>
+<total_fee>68000</total_fee>
+<trade_type><![CDATA[JSAPI]]></trade_type>
+<transaction_id><![CDATA[4006602001201704116607246005]]></transaction_id>
+</xml>
+
+
+
+-----------2017-04-11 11:08:00-----------------{"appid":"wx2326ecf73474cfaa","attach":"6990","bank_type":"COMM_DEBIT","cash_fee":"68000","device_info":"WEB","fee_type":"CNY","is_subscribe":"Y","mch_id":"1231341002","nonce_str":"k5kw25p0p807qlxo0whheux1kduh4vna","openid":"ofVnGtw4kG6IMK5h1ME0lds-xPhU","out_trade_no":"2017041139468","result_code":"SUCCESS","return_code":"SUCCESS","sign":"1A9E7D19792536A2D1C42058F7A33E34","time_end":"20170411110800","total_fee":"68000","trade_type":"JSAPI","transaction_id":"4006602001201704116607246005"}
+
+
+
+-----------2017-04-11 11:08:00-----------------test4444444444
+
+
+
+-----------2017-04-11 11:08:02-----------------2017-3-9 royallu
+
+
+
+-----------2017-04-11 11:08:02-----------------
+
+
+
+-----------2017-04-11 11:10:32-----------------2017-3-9 royallu
+
+
+
+-----------2017-04-11 11:10:32-----------------<xml><appid><![CDATA[wx2326ecf73474cfaa]]></appid>
+<attach><![CDATA[6991]]></attach>
+<bank_type><![CDATA[COMM_DEBIT]]></bank_type>
+<cash_fee><![CDATA[68000]]></cash_fee>
+<device_info><![CDATA[WEB]]></device_info>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[1231341002]]></mch_id>
+<nonce_str><![CDATA[vtle3f65cw6verdyfnlk4r4svucz3pi9]]></nonce_str>
+<openid><![CDATA[ofVnGtw4kG6IMK5h1ME0lds-xPhU]]></openid>
+<out_trade_no><![CDATA[2017041116609]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[A07ACFFD9F23FCE3DAF2F48C49E8098E]]></sign>
+<time_end><![CDATA[20170411111031]]></time_end>
+<total_fee>68000</total_fee>
+<trade_type><![CDATA[JSAPI]]></trade_type>
+<transaction_id><![CDATA[4006602001201704116607351825]]></transaction_id>
+</xml>
+
+
+
+-----------2017-04-11 11:10:32-----------------{"appid":"wx2326ecf73474cfaa","attach":"6991","bank_type":"COMM_DEBIT","cash_fee":"68000","device_info":"WEB","fee_type":"CNY","is_subscribe":"Y","mch_id":"1231341002","nonce_str":"vtle3f65cw6verdyfnlk4r4svucz3pi9","openid":"ofVnGtw4kG6IMK5h1ME0lds-xPhU","out_trade_no":"2017041116609","result_code":"SUCCESS","return_code":"SUCCESS","sign":"A07ACFFD9F23FCE3DAF2F48C49E8098E","time_end":"20170411111031","total_fee":"68000","trade_type":"JSAPI","transaction_id":"4006602001201704116607351825"}
+
+
+
+-----------2017-04-11 11:10:32-----------------test4444444444
+
+
+
+-----------2017-04-11 11:10:33-----------------2017-3-9 royallu
+
+
+
+-----------2017-04-11 11:10:33-----------------
+
+
+
+-----------2017-04-11 11:16:08-----------------2017-3-9 royallu
+
+
+
+-----------2017-04-11 11:16:08-----------------<xml><appid><![CDATA[wx2326ecf73474cfaa]]></appid>
+<attach><![CDATA[6994]]></attach>
+<bank_type><![CDATA[COMM_DEBIT]]></bank_type>
+<cash_fee><![CDATA[59500]]></cash_fee>
+<device_info><![CDATA[WEB]]></device_info>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[1231341002]]></mch_id>
+<nonce_str><![CDATA[9xkitd1h9u3o50x4vhuj0agx2hrglgez]]></nonce_str>
+<openid><![CDATA[ofVnGtw4kG6IMK5h1ME0lds-xPhU]]></openid>
+<out_trade_no><![CDATA[2017041154123]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[93B2DDB1D01B031FA36E39A92AAF71A6]]></sign>
+<time_end><![CDATA[20170411111607]]></time_end>
+<total_fee>59500</total_fee>
+<trade_type><![CDATA[JSAPI]]></trade_type>
+<transaction_id><![CDATA[4006602001201704116612469589]]></transaction_id>
+</xml>
+
+
+
+-----------2017-04-11 11:16:08-----------------{"appid":"wx2326ecf73474cfaa","attach":"6994","bank_type":"COMM_DEBIT","cash_fee":"59500","device_info":"WEB","fee_type":"CNY","is_subscribe":"Y","mch_id":"1231341002","nonce_str":"9xkitd1h9u3o50x4vhuj0agx2hrglgez","openid":"ofVnGtw4kG6IMK5h1ME0lds-xPhU","out_trade_no":"2017041154123","result_code":"SUCCESS","return_code":"SUCCESS","sign":"93B2DDB1D01B031FA36E39A92AAF71A6","time_end":"20170411111607","total_fee":"59500","trade_type":"JSAPI","transaction_id":"4006602001201704116612469589"}
+
+
+
+-----------2017-04-11 11:16:08-----------------test4444444444
+
+
+
+-----------2017-04-11 11:16:10-----------------2017-3-9 royallu
+
+
+
+-----------2017-04-11 11:16:10-----------------
+
+
+
+-----------2017-04-11 12:34:56-----------------2017-3-9 royallu
+
+
+
+-----------2017-04-11 12:34:57-----------------<xml><appid><![CDATA[wx2326ecf73474cfaa]]></appid>
+<attach><![CDATA[6995]]></attach>
+<bank_type><![CDATA[PSBC_DEBIT]]></bank_type>
+<cash_fee><![CDATA[96800]]></cash_fee>
+<device_info><![CDATA[WEB]]></device_info>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[1231341002]]></mch_id>
+<nonce_str><![CDATA[0h49gbak19ws01kldgtm0qru4amov761]]></nonce_str>
+<openid><![CDATA[ofVnGt9u2AG5DdfP8bkZaRMff3uE]]></openid>
+<out_trade_no><![CDATA[2017041177991]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[A595EAB45775DC2DC60176C22ACCA900]]></sign>
+<time_end><![CDATA[20170411123456]]></time_end>
+<total_fee>96800</total_fee>
+<trade_type><![CDATA[JSAPI]]></trade_type>
+<transaction_id><![CDATA[4006102001201704116615826564]]></transaction_id>
+</xml>
+
+
+
+-----------2017-04-11 12:34:57-----------------{"appid":"wx2326ecf73474cfaa","attach":"6995","bank_type":"PSBC_DEBIT","cash_fee":"96800","device_info":"WEB","fee_type":"CNY","is_subscribe":"Y","mch_id":"1231341002","nonce_str":"0h49gbak19ws01kldgtm0qru4amov761","openid":"ofVnGt9u2AG5DdfP8bkZaRMff3uE","out_trade_no":"2017041177991","result_code":"SUCCESS","return_code":"SUCCESS","sign":"A595EAB45775DC2DC60176C22ACCA900","time_end":"20170411123456","total_fee":"96800","trade_type":"JSAPI","transaction_id":"4006102001201704116615826564"}
+
+
+
+-----------2017-04-11 12:34:57-----------------test4444444444
+
+
+
+-----------2017-04-11 12:35:08-----------------2017-3-9 royallu
+
+
+
+-----------2017-04-11 12:35:08-----------------
+
+
+

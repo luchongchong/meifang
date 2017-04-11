@@ -1,0 +1,666 @@
+Index: user_c.php
+===================================================================
+--- user_c.php	(revision 676)
++++ user_c.php	(working copy)
+@@ -571,8 +571,10 @@
+ 	$sql_zj1 = "select * from ".$ecs->table('users')." where user_name = '".$username."'";
+ 	$re = $db->getRow($sql_zj1);
+ 	if($re['ec_salt']){
++
+ 		$password_zj2 = md5(md5($password).$re['ec_salt']);
+ 	}else{
++
+ 		$password_zj2 = md5($password);
+ 	}
+ 	$sql_zj2 = "select * from ".$ecs->table('users')." where password = '".$password_zj2."' and user_name = '".$username."'";
+@@ -581,6 +583,7 @@
+ // 	/* print_r($sql_zj2);
+ // 		print_r($re1);
+ // 		exit(); */
++
+ 	if(!($re1['user_rank'] == 102 || $re1['user_rank'] == 103)){
+ 		$_SESSION['login_fail'] ++ ;
+ 		show_message_c($_LANG['login_failure_1'], $_LANG['relogin_lnk'], 'user_c.php', 'error');
+@@ -3138,7 +3141,7 @@
+ 	}
+ 
+ 	foreach($arr as &$v){
+-		$sql_zj5 = "SELECT * FROM `wxch_user` WHERE  wxid = '".$v['wxid']."'";
++		$sql_zj5 = "SELECT * FROM " .$ecs->table('weixin_user'). " WHERE  ecuid = '".$v['wxid']."'";
+ 		$re_1 = $db->getRow($sql_zj5);
+ 		$v['wx'] = $re_1;
+ 
+@@ -3560,25 +3563,266 @@
+ 	$smarty->display('download_file.dwt');
+ }
+ 
++//店员照片列表
++elseif ($action == 'store_photos_list')
++{
++	$user_id=$_SESSION['user_id'];
++	
++    $sql = 'SELECT image_id,user_id,store_shop FROM ' . $ecs->table('images_upload') . ' WHERE user_id='.$user_id.' and store_shop !=""';
++    $store_photos_list = $db->getAll($sql);
++    
++    $sql = 'SELECT image_id,user_id,store_shops FROM ' . $ecs->table('images_upload') . ' WHERE user_id='.$user_id.' and store_shops !=""';
++    $store_photos_lists = $db->getAll($sql);
++    $smarty->assign('store_photos_list', $store_photos_list);
++    $smarty->assign('store_photos_lists', $store_photos_lists);
++	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
++
++	$smarty->display('store_photos_list.dwt');
++}
++//门店店招照，店铺形象添加
++elseif ($action == 'store_photos_add')
++{
++	
++	if(!empty($_FILES['name']['name']))
++   	{
++   		$user_id=$_SESSION['user_id'];
++		$sql = 'SELECT store_shop FROM ' . $ecs->table('images_upload') . ' WHERE user_id='.$user_id.' and store_shop !=""';
++		$store_photos_list = $db->getOne($sql);
++		if($store_photos_list!=''){
++			echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>你已有店招！！</b></font></center>";
++			echo "<script>setTimeout('location.href=\"user_c.php?act=store_photos_list\"',1000);          </script>";
++		}
++		else{
++   			$name=$_FILES['name']['name'];
++
++		  //图片上传
++	        $tmp=strrchr($name,'.');
++	        $newname=time().$tmp;
++	        $path="upload/".$newname;
++	        if(is_uploaded_file($_FILES['name']['tmp_name']))
++	        {
++	         if(move_uploaded_file($_FILES['name']['tmp_name'],$path))
++		    {
++			 $sql="insert into `ecs_images_upload` (`user_id`,`store_shop`) values ('".$user_id."','".$newname."')";
++			 $query=mysql_query($sql);
++			 if($query >0 ){
++			 	echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>添加成功</b></font></center>";
++		     	echo "<script>setTimeout('location.href=\"user_c.php?act=store_photos_list\"',1000);          </script>";
++			 }
++		    }
++			else
++			{
++			}
++	       }
++	   }
++	} 
++	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
++
++	$smarty->display('store_photos_add.dwt');
++}
++//门店店招照，店铺形象添加
++elseif ($action == 'store_photos_adds')
++{
++	$user_id=$_SESSION['user_id'];
++	if(!empty($_FILES['name']['name']))
++   	{
++   		$name=$_FILES['name']['name'];
++
++		  //图片上传
++	        $tmp=strrchr($name,'.');
++	        $newname=time().$tmp;
++	        $path="upload/".$newname;
++	        if(is_uploaded_file($_FILES['name']['tmp_name']))
++	        {
++	         if(move_uploaded_file($_FILES['name']['tmp_name'],$path))
++		    {
++			 $sql="insert into `ecs_images_upload` (`user_id`,`store_shops`) values ('".$user_id."','".$newname."')";
++			 $query=mysql_query($sql);
++			 if($query >0 ){
++			 	echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>添加成功</b></font></center>";
++		     	echo "<script>setTimeout('location.href=\"user_c.php?act=store_photos_list\"',1000);          </script>";
++			 }
++		    }
++			else
++			{
++			}
++	       }
++	   }
++	   
++	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
++
++	$smarty->display('store_photos_adds.dwt');
++}
++//门店照片修改显示
++elseif ($action == 'store_photos_update')
++{
++	$image_id=$_GET['id'];
++	
++    $sql = 'SELECT image_id,store_shop FROM ' . $ecs->table('images_upload') . ' WHERE image_id='.$image_id.'';
++    $store_photos_list = $db->getAll($sql);
++    foreach ($store_photos_list as $store_photos_lists){
++    	$image_id=$store_photos_lists['image_id'];
++    	$store_shop=$store_photos_lists['store_shop'];
++    }
++    /*$sql = 'SELECT image_id,user_id,store_shops FROM ' . $ecs->table('images_upload') . ' WHERE user_id='.$user_id.'';
++    $store_photos_lists = $db->getAll($sql);*/
++    $smarty->assign('image_id', $image_id);
++    $smarty->assign('store_shop', $store_shop);
++	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
++
++	$smarty->display('store_photos_update.dwt');
++}
++//门店照片修改显示
++elseif ($action == 'store_photos_updates')
++{
++	$image_id=$_GET['id'];
++	
++    $sql = 'SELECT image_id,store_shops FROM ' . $ecs->table('images_upload') . ' WHERE image_id='.$image_id.'';
++    $store_photos_list = $db->getAll($sql);
++    foreach ($store_photos_list as $store_photos_lists){
++    	$image_id=$store_photos_lists['image_id'];
++    	$store_shops=$store_photos_lists['store_shops'];
++    }
++    /*$sql = 'SELECT image_id,user_id,store_shops FROM ' . $ecs->table('images_upload') . ' WHERE user_id='.$user_id.'';
++    $store_photos_lists = $db->getAll($sql);*/
++    $smarty->assign('image_id', $image_id);
++    $smarty->assign('store_shops', $store_shops);
++	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
++
++	$smarty->display('store_photos_updates.dwt');
++}
++//门店照片修改执行
++elseif ($action == 'store_photos_query')
++{
++	$image_id=$_POST['name'];
++//添加店员形象
++	if(!empty($_FILES['name']['name']))
++   	{
++   		//图片上传
++		$sql="select `store_shop` from `ecs_images_upload` where `image_id`='".$image_id."'";
++	  	$query=mysql_query($sql);
++	  	$rs=mysql_fetch_array($query);
++	  	$path='upload/'.$rs['store_shop'];
++	     if(file_exists($path))
++	    	{
++		  	@unlink($path);
++		  	clearstatcache();
++		    $names=$_FILES['name']['name'];
++	        $tmp=strrchr($names,'.');
++	        $newname=time().$tmp;
++	        $path="upload/".$newname;
++	        if(is_uploaded_file($_FILES['name']['tmp_name']))
++	        {
++	         if(move_uploaded_file($_FILES['name']['tmp_name'],$path))
++		    {
++			 $db->query('UPDATE ' .$ecs->table('images_upload'). "SET store_shop='$newname' WHERE image_id='$image_id'" );
++			 echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>修改成功</b></font></center>";
++		     echo "<script>setTimeout('location.href=\"user_c.php?act=store_photos_list\"',1000);          </script>";
++		    }
++			else
++			{
++			 
++			}
++	       }
++	   }
++   	}else{
++	   //图片上传
++		    $names=$_POST['names'];
++			 $db->query('UPDATE ' .$ecs->table('images_upload'). "SET store_shop='$names' WHERE image_id='$image_id'" );
++		   if($db > 0)
++			{
++			 echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>修改成功</b></font></center>";
++		     echo "<script>setTimeout('location.href=\"user_c.php?act=store_photos_list\"',1000);          </script>";
++			}
++	   }
++
++	   //门店形象修改
++}
++//店铺形象修改执行
++elseif ($action == 'store_photos_querys')
++{
++	$image_id=$_POST['name'];
++//添加店员形象
++	if(!empty($_FILES['name']['name']))
++   	{
++   		//图片上传
++		$sql="select `store_shops` from `ecs_images_upload` where `image_id`='".$image_id."'";
++	  	$query=mysql_query($sql);
++	  	$rs=mysql_fetch_array($query);
++	  	$path='upload/'.$rs['store_shops'];
++	     if(file_exists($path))
++	    	{
++		  	@unlink($path);
++		  	clearstatcache();
++		    $names=$_FILES['name']['name'];
++	        $tmp=strrchr($names,'.');
++	        $newname=time().$tmp;
++	        $path="upload/".$newname;
++	        if(is_uploaded_file($_FILES['name']['tmp_name']))
++	        {
++	         if(move_uploaded_file($_FILES['name']['tmp_name'],$path))
++		    {
++			 $db->query('UPDATE ' .$ecs->table('images_upload'). "SET store_shops='$newname' WHERE image_id='$image_id'" );
++			 echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>修改成功</b></font></center>";
++		     echo "<script>setTimeout('location.href=\"user_c.php?act=store_photos_list\"',1000);          </script>";
++		    }
++			else
++			{
++			 
++			}
++	       }
++	   }
++   	}else{
++	   //图片上传
++		    $names=$_POST['names'];
++			 $db->query('UPDATE ' .$ecs->table('images_upload'). "SET store_shops='$names' WHERE image_id='$image_id'" );
++		   if($db > 0)
++			{
++			 echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>修改成功</b></font></center>";
++		     echo "<script>setTimeout('location.href=\"user_c.php?act=store_photos_list\"',1000);          </script>";
++			}
++	   }
++
++	   //门店形象修改
++}
++
++//店员的删除
++elseif ($action == 'store_photos_del')
++{
++	$user_id=$_SESSION['user_id'];
++	$image_id=$_GET['id'];
++    $db->query('DELETE FROM ' .$ecs->table('images_upload'). " WHERE image_id='$image_id' AND user_id ='$user_id'" );
++	if($db > 0){
++		 echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>删除成功</b></font></center>";
++		 echo "<script>setTimeout('location.href=\"user_c.php?act=store_photos_list\"',1000);</script>";
++	}
++	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
++}
+ /* 店员照片 */
+ elseif ($action == 'store_photos')
+ {
+ 	 $user_id=$_SESSION['user_id'];
+ 	//$username = isset($_POST['user_id']) ? trim($_POST['user_id']) : '';
++	 
+ 	if(!empty($_FILES['name']['name']))
+    	{
+    		$name=$_FILES['name']['name'];
+    		//删除原路径的图片
+-	  	$sql="select `store_shop` from `ecs_images_upload` where `user_id`='".$user_id."'";
++	   $sql="select `image_id`,`store_shop` from `ecs_images_upload` where `user_id`='".$user_id."'";
+ 	  	$query=mysql_query($sql);
+ 	  	$rs=mysql_fetch_array($query);
++	  	$store_shop=$rs['store_shop'];
++	   $sql="select `image_id` from `ecs_images_upload` where `store_shop`='".$store_shop."'";
++	  	$query=mysql_query($sql);
++	  	$row=mysql_fetch_array($query);
++	  	$image_id=$row['image_id'];
+ 	  	//判断是否为第一次添加
+-	  	if($rs){
+-	  	$path='upload/'.$rs['store_shop'];
++	  	if($store_shop){
++	  		$path='upload/'.$store_shop;
+ 	     if(file_exists($path))
+ 	    	{
+-		  @unlink($path);
+-		  clearstatcache();
++		  		@unlink($path);
++		  		clearstatcache();
+ 		  //图片上传
+ 		    //$n_photo=$_FILES["file"]["name"];
+ 	        $tmp=strrchr($name,'.');
+@@ -3588,8 +3832,8 @@
+ 	        {
+ 	         if(move_uploaded_file($_FILES['name']['tmp_name'],$path))
+ 		    {
+-			 $sql="update `ecs_images_upload` set `store_shop`='".$newname."' where `user_id`=".$user_id."";
+-			$query=mysql_query($sql);
++			 $sql="update `ecs_images_upload` set `store_shop`='".$newname."' where `user_id`=".$user_id." and `image_id`='".$image_id."'";
++		     $query=mysql_query($sql);
+ 		    }
+ 			else
+ 			{
+@@ -3599,7 +3843,7 @@
+ 	       }
+ 	     }
+ 	  	}
+-	  	else{
++	  	if($name){
+ 	  		$tmp=strrchr($name,'.');
+ 	        $newname=time().$tmp;
+ 	        $path="upload/".$newname;
+@@ -3607,8 +3851,8 @@
+ 	        {
+ 	         if(move_uploaded_file($_FILES['name']['tmp_name'],$path))
+ 		    {
+-			 $sql="update `ecs_images_upload` set `store_shop`='".$newname."' where `user_id`=".$user_id."";
+-			$query=mysql_query($sql);
++			 $sql="insert into `ecs_images_upload` (`user_id`,`store_shop`) values ('".$user_id."','".$newname."')";
++		     $query=mysql_query($sql);
+ 		    }
+ 			else
+ 			{
+@@ -3618,7 +3862,7 @@
+ 	       }
+ 	  	}
+ 	   }
+-	  //第二个图片上传
++  //第二个图片上传
+ 	if(!empty($_FILES['names']['name']))
+    	{
+ 		  //图片上传
+@@ -3630,8 +3874,8 @@
+ 	        {
+ 	         if(move_uploaded_file($_FILES['names']['tmp_name'],$path))
+ 		    {
+-			 echo $sql="insert into `ecs_images_upload` (`user_id`,`store_shops`) values ('".$user_id."','".$newname."')";
+-					$query=mysql_query($sql);
++			 $sql="insert into `ecs_images_upload` (`user_id`,`store_shops`) values ('".$user_id."','".$newname."')";
++			 $query=mysql_query($sql);
+ 		    }
+ 			else
+ 			{
+@@ -3645,6 +3889,103 @@
+ 	$smarty->display('user_store_photos.dwt');
+ }
+ 
++//店员列表
++elseif ($action == 'shop_assistant_list')
++{
++	$user_id=$_SESSION['user_id'];
++	$shop_explain=$_POST['shop_explain'];
++	
++    $sql = 'SELECT shop_id,user_id,shop_assistant,shop_explain FROM ' . $ecs->table('shop_assistant') . ' WHERE user_id='.$user_id.'';
++    $shop_assistant_list = $db->getAll($sql);
++    
++    $smarty->assign('shop_assistant_list', $shop_assistant_list);
++    
++	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
++	$smarty->display('user_shop_assistant_list.dwt');
++}
++
++//店员的删除
++elseif ($action == 'shop_assistant_del')
++{
++	$user_id=$_SESSION['user_id'];
++	$shop_id=$_GET['id'];
++    $db->query('DELETE FROM ' .$ecs->table('shop_assistant'). " WHERE shop_id='$shop_id' AND user_id ='$user_id'" );
++	if($db > 0){
++		 echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>删除成功</b></font></center>";
++		 echo "<script>setTimeout('location.href=\"user_c.php?act=shop_assistant_list\"',1000);</script>";
++	}
++	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
++}
++
++//店员修改显示
++elseif ($action == 'shop_assistant_update')
++{
++	$shop_id=$_GET['id'];
++	
++    $sql = 'SELECT shop_id,user_id,shop_assistant,shop_explain FROM ' . $ecs->table('shop_assistant') . ' WHERE shop_id='.$shop_id.'';
++    $shop_assistant_update = $db->getAll($sql);
++    foreach ($shop_assistant_update as $row){
++    	$shop_id=$row['shop_id'];
++    	$shop_assistant=$row['shop_assistant'];
++    	$shop_explain=$row['shop_explain'];
++    }
++    $smarty->assign('shop_id', $shop_id);
++    $smarty->assign('shop_assistant', $shop_assistant);
++    $smarty->assign('shop_explain', $shop_explain);
++    
++	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
++	$smarty->display('user_shop_assistant_update.dwt');
++}
++
++//店员修改执行
++elseif ($action == 'shop_assistant_update_query')
++{
++ 	$shop_id=$_POST['id'];
++	$shop_explain=$_POST['shop_explain'];
++	
++	//添加店员形象
++	if(!empty($_FILES['name']['name']))
++   	{
++		  //图片上传
++		$sql="select `shop_assistant` from `ecs_shop_assistant` where `shop_id`='".$shop_id."'";
++	  	$query=mysql_query($sql);
++	  	$rs=mysql_fetch_array($query);
++	  	//判断是否为第一次添加
++	  	$path='upload/'.$rs['shop_assistant'];
++	     if(file_exists($path))
++	    	{
++		  	@unlink($path);
++		  	clearstatcache();
++		    $names=$_FILES['name']['name'];
++	        $tmp=strrchr($names,'.');
++	        $newname=time().$tmp;
++	        $path="upload/".$newname;
++	        if(is_uploaded_file($_FILES['name']['tmp_name']))
++	        {
++	         if(move_uploaded_file($_FILES['name']['tmp_name'],$path))
++		    {
++			 $db->query('UPDATE ' .$ecs->table('shop_assistant'). "SET shop_assistant='$newname',shop_explain='$shop_explain' WHERE shop_id='$shop_id'" );
++			 echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>修改成功</b></font></center>";
++		     echo "<script>setTimeout('location.href=\"user_c.php?act=shop_assistant_list\"',1000);          </script>";
++		    }
++			else
++			{
++			 
++			}
++	       }
++	   }
++   	}else{
++	   //图片上传
++		    $names=$_POST['names'];
++			 $db->query('UPDATE ' .$ecs->table('shop_assistant'). "SET shop_explain='$shop_explain' WHERE shop_id='$shop_id'" );
++		if($db > 0)
++			{
++			 echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>修改成功</b></font></center>";
++		     echo "<script>setTimeout('location.href=\"user_c.php?act=shop_assistant_list\"',1000);          </script>";
++			}
++	   }
++	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
++}
+ //店员形象
+ elseif ($action == 'shop_assistant')
+ {
+@@ -3662,12 +4003,12 @@
+ 	        {
+ 	         if(move_uploaded_file($_FILES['name']['tmp_name'],$path))
+ 		    {
+-			 echo $sql="insert into `ecs_shop_assistant` (`user_id`,`shop_assistant`,`shop_explain`) values ('".$user_id."','".$newname."','".$shop_explain."')";
++			 $sql="insert into `ecs_shop_assistant` (`user_id`,`shop_assistant`,`shop_explain`) values ('".$user_id."','".$newname."','".$shop_explain."')";
+ 					$query=mysql_query($sql);
+ 		    }
+ 			else
+ 			{
+-			 echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>修改成功</b></font></center>";
++			 echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>t成功</b></font></center>";
+ 		     echo "<script>setTimeout('location.href=\"user_c.php?act=store_photos\"',1000);          </script>";
+ 			}
+ 	       }
+@@ -3676,7 +4017,98 @@
+ 
+ 	$smarty->display('user_shop_assistant.dwt');
+ }
+-//专享活动
++//专享活动列表
++elseif ($action == 'vip_activity_list'){
++	$user_id=$_SESSION['user_id'];
++	$shop_explain=$_POST['shop_explain'];
++	
++    $sql = 'SELECT vip_id,title,vip_image,event_details FROM ' . $ecs->table('vip_activity') . ' WHERE user_id='.$user_id.'';
++    $shop_assistant_list = $db->getAll($sql);
++    $smarty->assign('shop_assistant_list', $shop_assistant_list);
++    
++	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
++	$smarty->display('vip_activity_list.dwt');
++}
++//专享活动删除
++elseif ($action == 'vip_activity_del'){
++	$user_id=$_GET['id'];
++	$shop_explain=$_POST['shop_explain'];
++	
++    $db->query('DELETE FROM ' .$ecs->table('vip_activity'). " WHERE vip_id='$user_id'");
++	if($db > 0){
++		
++		echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>删除成功</b></font></center>";
++		echo "<script>setTimeout('location.href=\"user_c.php?act=vip_activity_list\"',1000);          </script>";
++	}
++    
++	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
++}
++//专享活动修改显示页面
++elseif ($action == 'vip_activity_update'){
++	$user_id=$_GET['id'];
++
++    $sql = 'SELECT vip_id,title,vip_image,event_details FROM ' . $ecs->table('vip_activity') . ' WHERE vip_id='.$user_id.'';
++    $shop_assistant_list = $db->getAll($sql);
++    
++    foreach ($shop_assistant_list as $row){
++    	$vip_id=$row['vip_id'];
++    	$title=$row['title'];
++    	$vip_image=$row['vip_image'];
++    	$event_details=$row['event_details'];
++    }
++    $smarty->assign('vip_id',$vip_id);
++    $smarty->assign('title', $title);
++    $smarty->assign('vip_image', $vip_image);
++	$smarty->assign('event_details', $event_details);
++    
++	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
++	$smarty->display('user_vip_update.dwt');
++}
++//专享活动修改执行
++elseif ($action == 'vip_activity_update_query'){
++	
++	$user_id=$_POST['id'];
++	$title=$_POST['title'];
++	$shop_explain=$_POST['shop_explain'];
++if(!empty($_FILES['name']['name']))
++   	{
++   		//图片上传
++		$sql="select `vip_image` from `ecs_vip_activity` where `image_id`='".$user_id."'";
++	  	$query=mysql_query($sql);
++	  	$rs=mysql_fetch_array($query);
++	  	$path='upload/'.$rs['vip_image'];
++	     if(file_exists($path))
++	    	{
++		  	@unlink($path);
++		  	clearstatcache();
++		    $names=$_FILES['name']['name'];
++	        $tmp=strrchr($names,'.');
++	        $newname=time().$tmp;
++	        $path="upload/".$newname;
++	        if(is_uploaded_file($_FILES['name']['tmp_name']))
++	        {
++	         if(move_uploaded_file($_FILES['name']['tmp_name'],$path))
++		    {
++			 $db->query('UPDATE ' .$ecs->table('vip_activity'). "SET title='$title',vip_image='$newname',event_details='$shop_explain' WHERE vip_id='$user_id'" );
++			 echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>修改成功</b></font></center>";
++		     echo "<script>setTimeout('location.href=\"user_c.php?act=vip_activity_list\"',1000);          </script>";
++		    }
++			else
++			{
++			 
++			}
++	       }
++	   }
++   	}else{
++			 $db->query('UPDATE ' .$ecs->table('vip_activity'). "SET title='$title',event_details='$shop_explain' WHERE vip_id='$user_id'" );
++		   if($db > 0)
++			{
++			 echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>修改成功</b></font></center>";
++		     echo "<script>setTimeout('location.href=\"user_c.php?act=vip_activity_list\"',1000);          </script>";
++			}
++	   }
++}
++//专享活动添加
+ elseif ($action == 'vip_activity')
+ {
+ 	$title=$_POST['title'];
+@@ -3751,11 +4183,11 @@
+ 	$query=mysql_query($sql);
+ 	if($query >0){
+ 		echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>删除成功</b></font></center>";
+-		echo "<script>setTimeout('location.href=\"user_c.php?act=evaluation_management\"',3000);</script>";
++		echo "<script>setTimeout('location.href=\"user_c.php?act=evaluation_management\"',1000);</script>";
+ 	}
+ 	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
+ }
+-//施工显示页面
++//施工团队评价显示页面
+ elseif ($action == 'construction_team')
+ {
+ 	$user_id=$_SESSION['user_id'];
+@@ -3783,7 +4215,6 @@
+ 		$user=count($rs['construction_id']);
+ 		$users+=$user;
+ 		$rss[]=$rs;
+-		$rss[]=$rs;
+ 	}
+ 	 $comment;//总和
+ 	  $users;//个数
+@@ -3799,10 +4230,49 @@
+ 
+ 	$smarty->display('user_construction_team.dwt');
+ }
++//施工团队列表页面
++elseif ($action == 'construction_team_list')
++{
++	$user_id=$_SESSION['user_id'];
++	$sql = 'SELECT construction_id,construction_name FROM user_construction_team WHERE user_id='.$user_id.'';
++    $construction_team_list = $db->getAll($sql);
++	$smarty->assign('construction_team_list', $construction_team_list);
++	$smarty->display('construction_team_list.dwt');
++}
++////修改施工团队显示页面
++elseif ($action == 'construction_team_update')
++{
++	$construction_id=$_GET['id'];
++	$sql = 'SELECT construction_id,construction_name FROM user_construction_team WHERE construction_id='.$construction_id.'';
++    $construction_team_list = $db->getAll($sql);
++    foreach($construction_team_list as $row){
++    	$construction_id=$row['construction_id'];
++    	$construction_name=$row['construction_name'];
++    }
++	$smarty->assign('construction_id', $construction_id);
++	$smarty->assign('construction_name', $construction_name);
++	$smarty->display('construction_team_update.dwt');
++}
++//处理修改施工团队处理执行
++elseif ($action == 'construction_team_updates')
++{
++	$id=$_POST['name'];
++	$title=$_POST['title'];
++	$db->query("UPDATE user_construction_team SET construction_name='$title' WHERE construction_id='$id'" );
++	if($db >0 ){
++		echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>修改成功</b></font></center>";
++		echo "<script>setTimeout('location.href=\"user_c.php?act=construction_team_list\"',1000);          </script>";
++	}
++	
++	$smarty->assign('rss', $rss);
++	$smarty->assign('user_id', $user_id);
++	$smarty->assign('pager', $pager);
++	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
++}
+ //添加施工团队显示页面
+ elseif ($action == 'construction_team_add')
+ {
+-	echo $user_id=$_GET['id'];
++	$user_id=$_GET['id'];
+ 	$smarty->assign('rss', $rss);
+ 	$smarty->assign('user_id', $user_id);
+ 	$smarty->assign('pager', $pager);
+@@ -3827,6 +4297,18 @@
+ 	$smarty->assign('pager', $pager);
+ 	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
+ }
++///删除施工团队
++elseif ($action == 'construction_team_del')
++{
++	$user_id=$_GET['id'];
++	$sql="DELETE FROM user_construction_team WHERE construction_id = '".$user_id."' ";
++	$query=mysql_query($sql);
++	if($query >0){
++		echo "<center><br/><br/><br/><br/><br/><font color='rad' size='+2'><b>删除成功</b></font></center>";
++		echo "<script>setTimeout('location.href=\"user_c.php?act=construction_team_list\"',1000);</script>";
++	}
++	$smarty->assign('surplus_amount', price_format($surplus_amount, false));
++}
+ function downLoad($filename,$imgname){
+ 	header('Content-type:image/jpeg');
+ 	header("Content-Disposition:attachment; filename=$imgname");

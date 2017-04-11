@@ -765,23 +765,6 @@ $data = array (
     'id' => '67',
     'name' => '场所分类',
   ),
-  81 => 
-  array (
-    'cat_id' => '81',
-    'cat_name' => '书房',
-    'measure_unit' => '',
-    'parent_id' => '67',
-    'is_show' => '1',
-    'show_in_nav' => '0',
-    'grade' => '0',
-    'sort_order' => '50',
-    'has_children' => '0',
-    'type_img' => '1489558928.jpg',
-    'goods_num' => 177,
-    'level' => 2,
-    'id' => '81',
-    'name' => '书房',
-  ),
   83 => 
   array (
     'cat_id' => '83',
@@ -816,10 +799,10 @@ $data = array (
     'id' => '79',
     'name' => '客厅',
   ),
-  82 => 
+  81 => 
   array (
-    'cat_id' => '82',
-    'cat_name' => '儿童房',
+    'cat_id' => '81',
+    'cat_name' => '书房',
     'measure_unit' => '',
     'parent_id' => '67',
     'is_show' => '1',
@@ -827,11 +810,11 @@ $data = array (
     'grade' => '0',
     'sort_order' => '50',
     'has_children' => '0',
-    'type_img' => '1489558971.jpg',
-    'goods_num' => 230,
+    'type_img' => '1489558928.jpg',
+    'goods_num' => 177,
     'level' => 2,
-    'id' => '82',
-    'name' => '儿童房',
+    'id' => '81',
+    'name' => '书房',
   ),
   84 => 
   array (
@@ -879,10 +862,27 @@ $data = array (
     'sort_order' => '50',
     'has_children' => '0',
     'type_img' => '1489558907.jpg',
-    'goods_num' => 942,
+    'goods_num' => 940,
     'level' => 2,
     'id' => '80',
     'name' => '卧室',
+  ),
+  82 => 
+  array (
+    'cat_id' => '82',
+    'cat_name' => '儿童房',
+    'measure_unit' => '',
+    'parent_id' => '67',
+    'is_show' => '1',
+    'show_in_nav' => '0',
+    'grade' => '0',
+    'sort_order' => '50',
+    'has_children' => '0',
+    'type_img' => '1489558971.jpg',
+    'goods_num' => 230,
+    'level' => 2,
+    'id' => '82',
+    'name' => '儿童房',
   ),
   69 => 
   array (
