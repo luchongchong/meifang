@@ -1,0 +1,155 @@
+<!-- $Id: goods_info.htm 17126 2010-04-23 10:30:26Z liuhui $ -->
+
+{include file="pageheader.htm"}
+{insert_scripts files="jquery-1.8.2.min.js,region.js"}
+{insert_scripts files="../js/utils.js,selectzone.js,colorselector.js,update_img.js"}
+<script type="text/javascript" src="../js/calendar.php?lang={$cfg_lang}"></script>
+<link href="../js/calendar/calendar.css" rel="stylesheet" type="text/css" />
+
+<!-- {if $step eq "add"} 开始施工队  编辑界面 -->
+<div class="tab-div">
+    <div id="tabbar-div">
+      <p>
+      </p>
+    </div>
+    <div id="tabbody-div">
+      <form enctype="multipart/form-data" action="construction.php" method="post" name="theForm" >
+        <table width="90%" id="store-table" align="center">
+	      <tr>
+	          <td class="label">施工队名:</td>
+	          <td><input name="construction_name" type="text" value="{$store_d.name}"></td>
+	      </tr>
+	      <tr>
+	          <td class="label">施工队负者人:</td>
+	          <td>
+	          <select name="userid"  >
+	            <option value="0">...请选择负责人名...</option>
+	            <!-- {foreach from=$user_list_1 item=user} -->
+	            <option value="{$user.user_id}" {if $user.user_id==1}selected{/if}>{$user.user_name}</option>
+	            <!-- {/foreach} -->
+	          </select>
+	        </td>
+	      </tr>
+	      <tr>
+	        <td align="right" class="label">选择区域:</td>
+	          <td align="left" ><select name="country" id="selCountries_{$sn}" onchange="region.changed(this, 1, 'selProvinces_{$sn}')" style="display:none;" >
+	              <option value="0">国家</option>
+	              <!-- {foreach from=$country_list item=country} -->
+	              <option value="{$country.region_id}" {if $country.region_id==1}selected{/if}>{$country.region_name}</option>
+	              <!-- {/foreach} -->
+	              </select>
+	              
+	              <select name="province" id="selProvinces_{$sn}" onchange="region.changed(this, 2, 'selCities_{$sn}')" >
+	              <option value="0">省份</option>
+	              <!-- {foreach from=$province_list item=province} -->
+	              <option value="{$province.region_id}">{$province.region_name}</option>
+	              <!-- {/foreach} -->
+	              </select>
+	              
+	              <select name="city" id="selCities_{$sn}" onchange="region.changed(this, 3, 'selDistricts_{$sn}')" >
+	              <option value="0">市</option>
+	              </select>
+	              
+	              <select name="district" id="selDistricts_{$sn}"  onchange="ajax_store(this.value)">
+	              <option value="0">区</option>
+	              </select>
+	         </td>
+	      </tr>
+	      
+      <tr>
+            <td class="label">电话:</td>
+            <td><input name="phone" type="text" value="{$store_d.tel}"></td>
+       </tr>
+       
+        <tr>
+            <td class="label">详细地址:</td>
+            <td><textarea name="address" style="height:50px">{$store_d.address}</textarea></td>
+        </tr>
+        
+        <!--<tr>
+            <td class="label">所在城市:</td>
+            <td><input name="city" type="text" value="{$store_d.city}"></td>
+        </tr>-->
+      </table>
+      
+     <div class="button-div">
+          <input type="submit" value="{$lang.button_submit}" class="button"/>
+     </div>
+	    {if $is_edit}
+		    <input type="hidden" name="act" value="edit_exe" />
+		    <input type="hidden" name="store_id" value="{$construction_d.construction_id}" />
+		{else}
+            <input type="hidden" name="act" value="add_exe" />
+        {/if}
+    </form>
+    </div>
+</div>
+<!-- {/if} -->
+<!-- {if $step eq "edit"} 开始施工队编辑界面 -->
+<div class="tab-div">
+    <div id="tabbody-div">
+      <form enctype="multipart/form-data" action="construction.php" method="post" name="theForm" >
+        <table width="90%" id="general-table" align="center">
+		  <tr>
+          <td class="label">施工队名字:</td>
+          <td><input name="construction_name" type="text" value="{$construction_d.construction_name}">{$construction_d.construction_name}</td>
+      </tr>
+      <tr>
+          <td class="label">施工队负者人名字:</td>
+          <td>
+          <select name="userid"  >
+            <option value="{$store_d.userid}">{$username.user_name}</option>
+            <!-- {foreach from=$user_list_1 item=user} -->
+            <option value="{$user.user_id}" {if $user.user_id==$construction_d.userid}selected{/if}>{$user.user_name}</option>
+            <!-- {/foreach} -->
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td align="right" class="label">选择区域:</td>
+              <td align="left" ><select name="country" id="selCountries_{$sn}" onchange="region.changed(this, 1, 'selProvinces_{$sn}')" style="display:none;" >
+                  <option value="0">国家</option>
+                  <!-- {foreach from=$country_list item=country} -->
+                  <option value="{$country.region_id}" {if $country.region_id==1}selected{/if}>{$country.region_name}</option>
+                  <!-- {/foreach} -->
+                  </select>
+                  
+                  <select name="province" id="selProvinces_{$sn}" onchange="region.changed(this, 2, 'selCities_{$sn}')" >
+                  <option value="0">省份</option>
+                  <!-- {foreach from=$province_list item=province} -->
+                  <option value="{$province.region_id}">{$province.region_name}</option>
+                  <!-- {/foreach} -->
+                  </select>
+                  
+                  <select name="city" id="selCities_{$sn}" onchange="region.changed(this, 3, 'selDistricts_{$sn}')" >
+                  <option value="0">市</option>
+                  </select>
+                  
+                  <select name="district" id="selDistricts_{$sn}"  onchange="ajax_store(this.value)">
+                  <option value="0">区</option>
+                  </select>
+             </td>
+      </tr>
+		  <tr>
+            <td class="label">电话:</td>
+            <td><input name="phone" type="text" value="{$construction_d.phone}"></td>
+          </tr>
+		   <tr>
+      </table>
+        
+        <div class="button-div">
+          <input type="submit" value="{$lang.button_submit}" class="button"/>
+        </div>
+		{if $is_edit}
+		<input type="hidden" name="act" value="edit_exe" />
+		<input type="hidden" name="construction_id" value="{$construction_d.construction_id}" />
+		{else}
+        <input type="hidden" name="act" value="add_exe" />
+      	{/if}
+	  </form>
+    </div>
+</div>
+
+<!-- {/if} -->
+{insert_scripts files="validator.js,tab.js"}
+{include file="pagefooter.htm"}

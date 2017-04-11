@@ -1,0 +1,214 @@
+<?php
+
+define('IN_ECS', true);
+require(dirname(__FILE__) . '/includes/init.php');
+
+/*------------------------------------------------------ */
+//-- 粉丝数据排名
+/*------------------------------------------------------ */
+
+if ($_REQUEST['act'] == 'list')
+{
+
+    $list = user_fans_data_rank_list();
+    $sql = "SELECT rank_id, rank_name, min_points FROM ".$ecs->table('user_rank')." ORDER BY min_points ASC ";
+    $rs = $db->query($sql);
+    $ranks = array();
+    while ($row = $db->FetchRow($rs))
+    {
+        if($row['rank_id']!=99) {
+            $ranks[$row['rank_id']] = $row['rank_name'];
+        }
+    }
+    foreach($list['user_list'] as &$v){
+        //微信昵称
+        $sql_nickname = "SELECT `nickname` FROM `ecs_weixin_user` WHERE `ecuid` = '".$v['user_id']."'";
+        $nickname = $db->getOne($sql_nickname);
+        $v['wx_nickname'] = $nickname;
+            //vip数量
+            $v['vip_number']=$db->getOne("SELECT COUNT(*) FROM " . $GLOBALS['ecs']->table('users') . "WHERE user_rank='99' and parent_id=".$v['user_id']);
+
+           //粉丝数量
+            $v['fans_number']=$db->getOne("SELECT COUNT(*) FROM " . $GLOBALS['ecs']->table('users') . "WHERE user_rank!='99' and user_rank='102' and user_rank='103' and parent_id=".$v['parent_id']);
+          //会员总数
+            $v['user_allnumber']=$db->getOne("SELECT COUNT(*) FROM " . $GLOBALS['ecs']->table('users') . "WHERE sell_id=".$v['user_id']);
+            $v['vip_helpnumber']=$v['user_allnumber']- $v['fans_number']-$v['vip_number'];
+    }
+
+    $smarty->assign('user_ranks',   $ranks);            //(服务商/加盟商)
+    $smarty->assign('user_list',    $list['user_list']);
+    $smarty->assign('filter',       $list['filter']);
+    $smarty->assign('record_count', $list['record_count']);
+    $smarty->assign('page_count',   $list['page_count']);
+    $smarty->assign('full_page',    1);
+
+    $smarty->display('user_fans_data_rank.htm');
+}
+/* 导出订单功能开始 */
+/**
+ *  author:royallu
+ *  function:会员数据导出成excel
+ */
+elseif (isset($_POST['export']))
+{
+    require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
+    require_once dirname(__FILE__) . '/Classes/PHPExcel/IOFactory.php';
+
+    error_reporting(E_ALL);
+    ini_set('display_errors', TRUE);
+    ini_set('display_startup_errors', TRUE);
+    ini_set('memory_limit', '1024M');
+    ini_set('max_execution_time', '0');
+// echo json_encode($parent_arr);
+
+// Create new PHPExcel object
+    $phpExcel = new PHPExcel();
+
+    $phpExcel->setActiveSheetIndex(0)
+        ->setCellValue('A3', '会员编号')
+        ->setCellValue('B3', '会员名称')
+        ->setCellValue('C3', '会员等级')
+        ->setCellValue('D3', '会员昵称')
+        ->setCellValue('E3', 'VIP数量')
+        ->setCellValue('F3', '粉丝数量')
+        ->setCellValue('G3', '会员总数')
+        ->setCellValue('H3', 'VIP帮助吸粉数');
+    //会员数据
+    $list = user_fans_data_rank_list_nowhere();
+    $sql = "SELECT rank_id, rank_name, min_points FROM ".$ecs->table('user_rank')." ORDER BY min_points ASC ";
+    $rs = $db->query($sql);
+    $ranks = array();
+    while ($row = $db->FetchRow($rs))
+    {
+        if($row['rank_id']!=99) {
+            $ranks[$row['rank_id']] = $row['rank_name'];
+        }
+    }
+    foreach($list['user_list'] as &$v){
+        //微信昵称
+        $sql_nickname = "SELECT `nickname` FROM `ecs_weixin_user` WHERE `ecuid` = '".$v['user_id']."'";
+        $nickname = $db->getOne($sql_nickname);
+        $v['wx_nickname'] = $nickname;
+        //vip数量
+        $v['vip_number']=$db->getOne("SELECT COUNT(*) FROM " . $GLOBALS['ecs']->table('users') . "WHERE user_rank='99' and parent_id=".$v['user_id']);
+
+        //粉丝数量
+        $v['fans_number']=$db->getOne("SELECT COUNT(*) FROM " . $GLOBALS['ecs']->table('users') . "WHERE user_rank!='99' and user_rank='102' and user_rank='103' and parent_id=".$v['parent_id']);
+        //会员总数
+        $v['user_allnumber']=$db->getOne("SELECT COUNT(*) FROM " . $GLOBALS['ecs']->table('users') . "WHERE sell_id=".$v['user_id']);
+        $v['vip_helpnumber']=$v['user_allnumber']-$v['fans_number']-$v['vip_number'];
+        //将数据设置到excel表中
+    }
+ //   var_dump($list['user_list']);exit();
+    $cell_index = 4;
+    foreach ($list['user_list'] as $v) {
+        $phpExcel->setActiveSheetIndex(0)
+                    ->setCellValue('A'.$cell_index, $v['user_id']."")
+                    ->setCellValue('B'.$cell_index, $v['user_name'])
+                    ->setCellValue('C'.$cell_index, $v['user_rank'])
+                    ->setCellValue('D'.$cell_index, $v['wx_nickname'])
+                    ->setCellValue('E'.$cell_index, $v['vip_number'])
+                    ->setCellValue('F'.$cell_index, $v['fans_number'])
+                    ->setCellValue('G'.$cell_index, $v['user_allnumber'])
+                    ->setCellValue('H'.$cell_index, $v['vip_helpnumber']);
+        //$phpExcel->setActiveSheetIndex(0)->getStyle('A'.$cell_index)->applyFromArray(array('alignment' => array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_LEFT)));
+        $cell_index++;
+    }
+// Redirect output to a client’s web browser (Excel5)
+    header('Content-Type: application/vnd.ms-excel');
+    header('Content-Disposition: attachment;filename="会员.xls"');
+    header('Cache-Control: max-age=0');
+// If you're serving to IE 9, then the following may be needed
+    header('Cache-Control: max-age=1');
+
+// If you're serving to IE over SSL, then the following may be needed
+    header ('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
+    header ('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); // always modified
+    header ('Cache-Control: cache, must-revalidate'); // HTTP/1.1
+    header ('Pragma: public'); // HTTP/1.0
+    $objWriter = PHPExcel_IOFactory::createWriter($phpExcel, 'Excel5');
+    $objWriter->setPreCalculateFormulas(false);
+    $objWriter->save('php://output');
+}
+/* 导出订单功能结束 */
+/**
+ *   author:royallu
+ *   function:ajax搜索
+ * */
+else if ($_REQUEST['act'] == 'query')
+{
+
+    $list = user_fans_data_rank_list();
+    $sql = "SELECT rank_id, rank_name, min_points FROM ".$ecs->table('user_rank')." ORDER BY min_points ASC ";
+    $rs = $db->query($sql);
+    $ranks = array();
+    while ($row = $db->FetchRow($rs))
+    {
+        if($row['rank_id']!=99&&$row['rank_id']!=1) {
+            $ranks[$row['rank_id']] = $row['rank_name'];
+        }
+    }
+    foreach($list['user_list'] as &$v){
+        //微信昵称
+        $sql_nickname = "SELECT `nickname` FROM `ecs_weixin_user` WHERE `ecuid` = '".$v['user_id']."'";
+        $nickname = $db->getOne($sql_nickname);
+        $v['wx_nickname'] = $nickname;
+        //vip数量
+        $v['vip_number']=$db->getOne("SELECT COUNT(*) FROM " . $GLOBALS['ecs']->table('users') . "WHERE user_rank='99' and parent_id=".$v['user_id']);
+
+        //粉丝数量
+        $v['fans_number']=$db->getOne("SELECT COUNT(*) FROM " . $GLOBALS['ecs']->table('users') . "WHERE user_rank!='99' and user_rank='102' and user_rank='103' and parent_id=".$v['parent_id']);
+        //会员总数
+        $v['user_allnumber']=$db->getOne("SELECT COUNT(*) FROM " . $GLOBALS['ecs']->table('users') . "WHERE sell_id=".$v['user_id']);
+        $v['vip_helpnumber']=$v['user_allnumber']- $v['fans_number']-$v['vip_number'];
+    }
+
+    $smarty->assign('user_ranks',   $ranks);            //(服务商/加盟商)
+    $smarty->assign('user_list',    $list['user_list']);
+    $smarty->assign('filter',       $list['filter']);
+    $smarty->assign('record_count', $list['record_count']);
+    $smarty->assign('page_count',   $list['page_count']);
+
+    make_json_result($smarty->fetch('user_fans_data_rank.htm'),'',array('filter' => $list['filter'], 'page_count' => $list['page_count']));
+}
+function user_fans_data_rank_list_nowhere(){
+    $sql = "SELECT user_id, user_name, email,parent_id, is_validated, user_money, frozen_money,user_rank,rank_points, pay_points, reg_time ".
+        " FROM " . $GLOBALS['ecs']->table('users');
+    $res = $GLOBALS['db']->getAll($sql);
+    $arr = array('user_list' => $res);
+    return $arr;
+}
+function user_fans_data_rank_list()
+{
+    $result = get_filter();
+    if ($result === false)
+    {
+        /* 过滤信息 */
+        $filter['user_rank'] = empty($_REQUEST['user_rank']) ? '' : trim($_REQUEST['user_rank']);
+        $where = ' WHERE 1 ';
+        if ($filter['user_rank'])
+        {
+            $where.=" AND user_rank=".$filter['user_rank'];
+        }
+        /* 记录总数 */
+        $filter['record_count'] = $GLOBALS['db']->getOne("SELECT COUNT(*) FROM " . $GLOBALS['ecs']->table('users') . $where);
+        $filter = page_and_size($filter);
+        $sql = "SELECT user_id, user_name, email,parent_id, is_validated, user_money, frozen_money,user_rank,rank_points, pay_points, reg_time ".
+            " FROM " . $GLOBALS['ecs']->table('users') . $where .
+         //  " ORDER by " . $filter['sort_by'] . ' ' . $filter['sort_order'] .
+            " LIMIT " . $filter['start'] . ',' . $filter['page_size'];
+        set_filter($filter, $sql);
+    }
+    else
+    {
+        $sql    = $result['sql'];
+        $filter = $result['filter'];
+    }
+
+    $arr = array();
+    $res = $GLOBALS['db']->getAll($sql);
+    //var_dump($res);exit();
+    $arr = array('user_list' => $res, 'filter' => $filter, 'page_count' => $filter['page_count'], 'record_count' => $filter['record_count']);
+    return $arr;
+}
+?>

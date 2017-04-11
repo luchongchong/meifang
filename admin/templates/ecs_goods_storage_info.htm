@@ -1,0 +1,80 @@
+<!-- $Id: goods_type_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,validator.js"}
+
+<div class="main-div">
+  <form action="" method="post" name="theForm" onsubmit="return validate();">
+    <table cellspacing="1" cellpadding="3" width="100%">
+      <tr>
+        <td class="label">商品名称:</td>
+        <td><input type="text" name="goods_name" value="{$goods_type.goods_name}" size="40" />
+        {$lang.require_field}
+        </td>
+      </tr>
+      <tr>
+        <td class="label">商品数量:</td>
+        <td><input type="text" name="goods_num" value="{$goods_type.goods_num}" size="40" />
+        {$lang.require_field}
+        </td>
+      </tr>
+            <tr>
+        <td class="label">商品单价:</td>
+        <td><input type="text" name="goods_price" value="{$goods_type.goods_num}" size="40" />
+        {$lang.require_field}
+        </td>
+      </tr>
+        <tr>
+        <td class="label">商品型号:</td>        
+        <td>
+        <input type="text" name="goods_attr" value="{$goods_type.goods_num}" size="40" />
+        {$lang.require_field}
+        </td>
+      </tr>
+      <tr>
+        <td class="label">选择供货商：</td>
+        <td>
+        
+        <select name="suppliers_id" id="suppliers_id">
+        <option value="0">不指定供货商属于本店商品</option>
+        {foreach from=$suppliers item=order key=okey}
+        <option value="{$order.suppliers_id}">{$order.suppliers_name}</option> 
+        {/foreach}   
+        </select>       
+        </td>
+      </tr>
+      <tr align="center">
+        <td colspan="2">
+          <input type="hidden" name="id" value="{$id}" />
+          <input type="submit" value="{$lang.button_submit}" class="button" />
+          <input type="reset" value="{$lang.button_reset}" class="button" />
+          <input type="hidden" name="act" value="{$form_act}" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<script type="text/javascript">
+<!--
+{literal}
+onload = function() {
+  document.forms['theForm'].elements['receive_people'].focus();
+  document.forms['theForm'].elements['handling_people'].focus();
+  startCheckOrder();
+}
+
+function validate()
+{
+  var validator = new Validator('theForm');
+  validator.required('goods_name', '商品名称不能为空！');
+  validator.required('goods_num', '商品数量不能为空！');
+  validator.required('goods_price', '商品单价不能为空！');
+  validator.required('goods_attr', '商品型号不能为空！');
+
+  return validator.passed();
+}
+{/literal}  
+//-->
+</script>
+
+{include file="pagefooter.htm"}

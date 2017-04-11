@@ -1,0 +1,75 @@
+<!-- $Id: goods_type.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
+{if $full_page}
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,listtable.js"}
+
+<form method="post" action="" name="listForm">
+<!-- start goods type list -->
+<div class="list-div" id="listDiv">
+{/if}
+
+<table width="100%" cellpadding="3" cellspacing="1" id="listTable">
+  <tr>
+    <th>银行账户简称</th>
+    <th>银行账号</th>
+    <th>开户银行</th>
+    <th>期初录入</th>
+    <th>{$lang.handler}</th>
+  </tr>
+  {foreach from=$goods_type_arr item=goods_type}
+  <tr>
+    <td class="first-cell">
+    <span >{$goods_type.bank_name}</span>
+    </td>
+    <td class="first-cell">
+    <span >{$goods_type.bank_account}</span>
+    </td>
+    <td class="first-cell">
+    <span >{$goods_type.bank_open}</span>
+    </td>
+        <td class="first-cell">
+    <span >{$goods_type.bank_input}</span>
+    </td>
+    <td align="center">
+      <a href="bank_name.php?act=edit&id={$goods_type.id}" title="{$lang.edit}">{$lang.edit}</a> |
+      <a href="javascript:;" onclick="listTable.remove({$goods_type.id}, '您确定要删除吗？')" title="{$lang.remove}">{$lang.remove}</a>
+    </td>
+  </tr>
+  {foreachelse}
+    <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+    {/foreach}
+    <tr>
+      <td align="right" nowrap="true" colspan="6">
+      {include file="page.htm"}
+      </td>
+    </tr>
+  </table>
+
+{if $full_page}
+</div>
+<!-- end goods type list -->
+</form>
+
+<script type="text/javascript" language="JavaScript">
+<!--
+  listTable.recordCount = {$record_count};
+  listTable.pageCount = {$page_count};
+
+  {foreach from=$filter item=item key=key}
+  listTable.filter.{$key} = '{$item}';
+  {/foreach}
+ 
+  {literal}
+  onload = function()
+  {
+    // 寮�妫�煡璁㈠崟
+    startCheckOrder();
+  }
+
+//-->
+</script>
+{/literal}
+
+{include file="pagefooter.htm"}
+{/if}

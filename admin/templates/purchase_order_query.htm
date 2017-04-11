@@ -1,0 +1,106 @@
+<!-- $Id: order_query.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,validator.js"}
+<script type="text/javascript" src="../js/calendar.php"></script>
+<link href="../js/calendar/calendar.css" rel="stylesheet" type="text/css" />
+<div class="main-div">
+<form action="" method="post" enctype="multipart/form-data" name="theForm" onsubmit="return validate();">
+  <table cellspacing="1" cellpadding="3" width="100%" id="gallery-table" name="attrTable">
+      <tr>
+      <td>工厂：
+      <select name="suppliers_id" id="select4">
+        <option value="0">{$lang.select_please}</option>
+        {foreach from=$row item=shipping}
+        <option value="{$shipping.suppliers_id}">{$shipping.suppliers_name}</option>
+        {/foreach}
+      </select>
+      </td>      
+    </tr>
+    <tr>
+            <td>
+              <a href="javascript:;" onclick="addImg(this)">[+]</a>
+              	商品名称
+              <input type="text" name="goods_name[]" size="20" />
+              	型号
+              <input type="text" name="goods_attr[]" size="20" />
+              	数量
+              <input type="text" name="goods_number[]" size="20" />
+              	单价
+              <input type="text" name="goods_price[]" size="20" />
+              	合计
+              <input type="text" name="goods_totals[]" size="20" />
+            </td>
+          </tr>
+      <tr>
+      <td>
+	     总价：
+      <input name="goods_total" type="text" id="order_sn" size="30">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><div align="center">
+        <input name="query" type="submit" class="button" id="query" value="添加" />
+        <input name="reset" type="reset" class='button' value='{$lang.button_reset}' />
+        <input type="hidden" name="act" value="{$form_act}" />
+      </div></td>
+      </tr>
+  </table>
+</form>
+</div>
+{insert_scripts files="../js/transport.js,../js/region.js"}
+{literal}
+<script language="JavaScript">
+region.isAdmin = true;
+onload = function()
+{
+		  document.forms['theForm'].elements['goods_total'].focus();
+		  startCheckOrder();
+  // 寮�妫�煡璁㈠崟
+  startCheckOrder();
+}
+
+function validate()
+{
+  var validator = new Validator('theForm');
+  validator.required('goods_total', '总价不能为空！');
+
+  return validator.passed();
+}
+
+function addImg(obj)
+{
+    var src  = obj.parentNode.parentNode;
+    var idx  = rowindex(src);
+    var tbl  = document.getElementById('gallery-table');
+    var row  = tbl.insertRow(idx + 1);
+    var cell = row.insertCell(-1);
+    cell.innerHTML = src.cells[0].innerHTML.replace(/(.*)(addImg)(.*)(\[)(\+)/i, "$1removeImg$3$4-");
+}
+
+
+function addSpec(obj)
+{
+    var src   = obj.parentNode.parentNode;
+    var idx   = rowindex(src);
+    var tbl   = document.getElementByclassname('attrTable');
+    var row   = tbl.insertRow(idx + 1);
+    var cell1 = row.insertCell(-1);
+    var cell2 = row.insertCell(-1);
+    var regx  = /<a([^>]+)<\/a>/i;
+
+    cell1.className = 'label';
+    cell1.innerHTML = src.childNodes[0].innerHTML.replace(/(.*)(addSpec)(.*)(\[)(\+)/i, "$1removeSpec$3$4-");
+    cell2.innerHTML = src.childNodes[1].innerHTML.replace(/readOnly([^\s|>]*)/i, '');
+}
+
+
+function removeSpec(obj)
+{
+    var row = rowindex(obj.parentNode.parentNode);
+    var tbl = document.getElementByclassname('attrTable');
+
+    tbl.deleteRow(row);
+}
+</script>
+{/literal}
+{include file="pagefooter.htm"}

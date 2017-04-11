@@ -1,0 +1,156 @@
+<!-- $Id: sale_list.htm 15848 2009-04-24 07:07:13Z liubo $ -->
+{if $full_page}
+{include file="pageheader.htm"}
+<script type="text/javascript" src="../js/calendar.php?lang={$cfg_lang}"></script>
+<link href="../js/calendar/calendar.css" rel="stylesheet" type="text/css" />
+{insert_scripts files="../js/utils.js,listtable.js"}
+<div class="form-div">
+  <form name="TimeInterval"  action="javascript:getList()" style="margin:0px">
+    {$lang.start_date}&nbsp;
+    <input name="start_date" type="text" id="start_date" size="15" value='{$start_date}' readonly="readonly" />
+    <input name="selbtn1" type="button" id="selbtn1" onclick="return showCalendar('start_date', '%Y-%m-%d', false, false, 'selbtn1');" value="{$lang.btn_select}" class="button"/>
+    &nbsp;&nbsp;
+    {$lang.end_date}&nbsp;
+    <input name="end_date" type="text" id="end_date" size="15" value='{$end_date}' readonly="readonly" />
+    <input name="selbtn2" type="button" id="selbtn2" onclick="return showCalendar('end_date', '%Y-%m-%d', false, false, 'selbtn2');" value="{$lang.btn_select}" class="button"/>
+    &nbsp;&nbsp;
+    加盟商
+    <input type="text" name="facilitator_id" size="15" />
+    
+    结算状态
+     <select name="jiesuan" >     
+      <option value="">请选择...</option>
+      <option value="1">日结</option>
+      <option value="2">月结</option>
+    </select>
+    工厂名称
+    <select name="suppliers_id" >     
+      <option value="">{$lang.select_please}</option>
+      {foreach from=$row item=list}
+      <option value="{$list.suppliers_id}">
+      {$list.suppliers_name}
+      </option>
+      {/foreach}
+    </select>
+    <input type="submit" name="submit" value="{$lang.query}" class="button" />
+  </form>
+</div>
+<form method="POST" action="" name="listForm">
+<div class="list-div" id="listDiv">
+{/if}
+  <table width="100%" cellspacing="1" cellpadding="3">
+     <tr>
+       <th>
+      <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
+      <a href="javascript:listTable.sort('goods_id'); ">{$lang.record_id}</a>{$sort_goods_id}
+    </th>
+     <th>工厂名称</th>
+     <th>加盟商</th>
+      <th>商品名称</th>
+      <th>数量</th>
+      <th>单价</th>
+      <th>成本价</th>
+      <th>小计</th>
+      <th>运费</th>
+      <th>总价</th>
+      <th>结款方式</th>
+      <th>采购时间</th>
+      <th>付款时间</th>
+      <th>订单状态</th>
+      <th>操作</th>
+    </tr>
+  {foreach from=$goods_sales_list item=list}
+    <tr align="center">
+     <td><input type="checkbox" name="checkboxes[]" value="{$list.buy_id}" />{$list.goods_id}</td>
+      <td>{$list.suppliers_name}</td>     
+      <td>{$list.user_name}</td>
+      <td>{$list.goods_name}</td>
+      <td align="right">{$list.goods_number}</td>
+      <td align="center">{$list.goods_price}</td>
+      <td align="center">{$list.cost_price}</td>
+      <td align="center">{$list.subtotal}</td>
+      <td align="center">{$list.payable}</td>
+      <td align="center">{$list.zongjia}</td>
+      <td align="center">{if $list.jiesuan_status==1}日结{elseif $list.jiesuan_status==2}月结{/if}</td>
+      <td align="center">{$list.add_time}</td>
+      <td align="center">{$list.payment_time}</td>
+      <td align="center">{if $list.pay_status==1}已付款{elseif $list.pay_status==2}待付款{elseif $list.pay_status==0}未付款{/if}</td>
+      <td align="center">
+      <a href="purchase_order_payment.php?act=update&buy_id={$list.buy_id}">修改</a>
+      {if $list.pay_status!=1}
+      |
+      <a href="purchase_order_payment.php?act=jiesuan&buy_id={$list.buy_id}">确认付款</a>
+      {/if}
+      </td>
+    </tr>
+  {/foreach}
+  </table>
+  <table id="page-table" cellspacing="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td align="right" nowrap="true">
+    {include file="page.htm"}
+    </td>
+  </tr>
+  </table>
+{if $full_page}
+</div>
+  <div>
+    <input name="remove" type="submit" id="btnSubmit3" value="月结" class="button" disabled="true" />
+    <input name="act" type="hidden" value="batch" />
+  </div>
+</form>
+
+<script type="Text/Javascript" language="JavaScript">
+listTable.recordCount = {$record_count};
+listTable.pageCount = {$page_count};
+{foreach from=$filter item=item key=key}
+listTable.filter.{$key} = '{$item}';
+{/foreach}
+{literal}
+<!--
+onload = function()
+{
+  // 开始检查订单
+  startCheckOrder();
+  getDownUrl();
+}
+
+function getList()
+{
+    var frm =  document.forms['TimeInterval'];
+    listTable.filter['start_date'] = frm.elements['start_date'].value;
+    listTable.filter['end_date'] = frm.elements['end_date'].value;
+    listTable.filter['facilitator_id'] = frm.elements['facilitator_id'].value;
+    listTable.filter['jiesuan'] = frm.elements['jiesuan'].value;
+    listTable.filter['suppliers_id'] = frm.elements['suppliers_id'].value;
+    listTable.filter['page'] = 1;
+    listTable.loadList();
+    getDownUrl();
+}
+
+function getDownUrl()
+{
+  var aTags = document.getElementsByTagName('A');
+  for (var i = 0; i < aTags.length; i++)
+  { 
+    if (aTags[i].href.indexOf('download') >= 0)
+    {
+      if (listTable.filter['start_date'] == "")
+      {
+        var frm =  document.forms['TimeInterval'];
+        listTable.filter['start_date'] = frm.elements['start_date'].value;
+        listTable.filter['end_date'] = frm.elements['end_date'].value;
+        listTable.filter['facilitator_id'] = frm.elements['facilitator_id'].value;
+        listTable.filter['jiesuan'] = frm.elements['jiesuan'].value;
+        listTable.filter['suppliers_id'] = frm.elements['suppliers_id'].value;
+      }
+      aTags[i].href = "purchase_order_payment.php?act=download&start_date=" + listTable.filter['start_date'] + "&end_date=" + listTable.filter['end_date']+ "&facilitator_id=" + listTable.filter['facilitator_id']+ "&suppliers_id=" + listTable.filter['suppliers_id']+ "&jiesuan=" + listTable.filter['jiesuan'];
+    }
+  }
+}
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}
+{/if}

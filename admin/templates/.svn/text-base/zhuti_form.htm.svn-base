@@ -1,0 +1,138 @@
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,selectzone.js,colorselector.js,update_img.js"}
+{insert_scripts files="../js/jquery.min.js"}
+<div class="main-div">
+<form enctype="multipart/form-data" action="{$form_action}" method="post" name="theForm" >
+  <table>
+      <!--主题名字-->
+      <tr>
+      <td  class="label">{$lang.theme_name}:</td>
+      <td><input type="text" name="temp_name" value="{$result.theme}"></td>
+    </tr>
+      <!--封面-->
+    <tr>
+
+      <td  class="label">{$lang.covers_pic}:</td>
+      <td><input type="file" name="image_name" value="{$result.facepath}"></td>
+    </tr>
+      <!--设计师-->
+    <tr>
+      <td  class="label">{$lang.theme_designer}:</td>
+      <td><input type="text" name="stylist" value="{$result.designer}"></td>
+    </tr>
+      <!--设计师介绍-->
+    <tr>
+      <td  class="label">{$lang.theme_designer_intro}:</td>
+      <td><textarea name="specification" style="width:216px;height:131px;">{$result.design}</textarea></td>
+    </tr>
+    <tr>
+      <td  class="label">是否显示:</td>
+      <td><input type="radio" value="0" name="display" {if $result.display eq 0} checked="checked" {/if}>是<input type="radio" value="1" name="display" {if $result.display eq 1} checked="checked" {/if}>否</td>
+    <!--图片描述-->
+      {if $code eq "edit"}
+        {foreach from=$result_cycle_img key=id item=cycle}
+      <tr>
+          <td  class="label">第{$id}张图片描述:</td>
+          <td><input type="text" name="cption[]" value="{$cycle.caption}"></td>
+      </tr>
+        {/foreach}
+      {else}
+      <tr>
+          <td  class="label">{$lang.first_pic_describe}:</td>
+          <td><input type="text" name="cption[]"></td>
+      </tr>
+      <tr>
+          <td  class="label">{$lang.second_pic_describe}:</td>
+          <td><input type="text" name="cption[]"></td>
+      </tr>
+      <tr>
+          <td  class="label">{$lang.three_pic_describe}:</td>
+          <td><input type="text" name="cption[]"></td>
+      </tr>
+      <tr>
+          <td  class="label">{$lang.four_pic_describe}:</td>
+          <td><input type="text" name="cption[]"></td>
+      </tr>
+      {/if}
+    </tr>
+        <tr>
+          <td  class="label">{$lang.goods_album}：</td>
+           <td width="710" align="right">
+                 <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="710" height="330" id="update" align="middle">     
+                <param name="allowFullScreen" value="false" />     
+                <param name="allowScriptAccess" value="always" /> 
+                <param name="movie" value="update.swf" /> 
+                <param name="quality" value="high" /> 
+                <param name="bgcolor" value="#ffffff" /> 
+                <embed src="update.swf" quality="high" bgcolor="#ffffff" width="710" height="320" name="update" align="middle" allowScriptAccess="always" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /> 
+                </object>
+                </td> 
+                <td>
+            </td>
+        </tr>
+      {if $code eq "add"}
+        <tr>
+          <td  class="label">选择商品:</td>
+          <td><div style="width:260px; height:21px;  border:1px solid #000; float:left;" id="text" contenteditable="true"></div>&nbsp;
+           <a href="javascript:;" style="padding:1px 5px 1px 4px; border:1px solid #000; color:#000;background:-webkit-gradient(linear, left bottom, left top, color-stop(0, #dddddd), color-stop(1, #ffffff));text-decoration:none;" id="srac">查询</a></td>
+        </tr>
+      <tr>
+          <td></td>
+          <td>
+              <div class="list-div" id="list_bg">
+          </div>
+          </td>
+      </tr>
+      {/if}
+      <div id="show" style="margin-top:20px; width:300px; text-align:left;"></div>
+      <tr>
+          <td colspan="2" align="center">
+              <input type="submit" value="{$lang.button_submit}" class="button" />
+              <input type="reset" value="{$lang.button_reset}" class="button" />
+              <!--<input type="hidden" name="act" value="{$form_action}" />-->
+              <!--<input type="hidden" name="id" value="{$user.user_id}" />   -->
+              {if $code eq "edit"}
+              <input type="hidden" name="theme_id" value="{$theme_id}">
+              {/if}
+          </td>
+      </tr>
+  </table>
+
+    </form>
+</div>
+{insert_scripts files="../js/utils.js,validator.js"}
+{literal}
+<script>
+$(function(){
+    $('#srac').click(function(){
+    var text  = $("#text").text();
+    var tmp_data = new Array();
+    $.ajax({
+      type:'get',
+      url:"theme.php?act=goodsc&text="+text,
+      async:false, //设置同步
+      dataType:"json",
+      success:function(data){
+        tmp_data = data;
+
+      }
+    })
+        var str='<table cellpadding="3" cellspacing="1">';
+        str+="<tr><th>序号</th><th>产品分类</th><th>产品名称</th><th>产品价格</th><th>勾选</th></tr>";
+        for(var i=0;i<tmp_data.length;i++){
+            str += "<tr>";
+            str += "<td align='center'>"+tmp_data[i].goods_id+"</td>";
+            str += "<td align='center'>"+tmp_data[i].cat_name+"</td>";
+            str += "<td align='center'>"+tmp_data[i].goods_name+"</td>";
+            str += "<td align='center'>"+tmp_data[i].shop_price+"</td>";
+            str += "<td align='center'><input type='checkbox' name='goods_id[]' value="+tmp_data[i].goods_id+"></td>";
+            str += "</tr>";
+        }
+        /*添加分页*/
+        str+= "</table>";
+        $("#list_bg").html(str);
+  })
+})
+</script>
+{/literal}
+{include file="pagefooter.htm"}

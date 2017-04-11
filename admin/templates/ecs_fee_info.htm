@@ -1,0 +1,429 @@
+<!-- $Id -->
+
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,../js/transport.js,validator.js",listtable.js}
+{if $step eq "consignee"}
+{insert_scripts files="../js/region.js"}
+{/if}
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/calendar.php?lang={$cfg_lang}"></script>
+<link href="../js/calendar/calendar.css" rel="stylesheet" type="text/css" />
+<form name="theForm" action="ecs_fee.php?act=inserts" method="post">
+<div class="list-div">
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th scope="col">日期</th>
+    <th scope="col">费用科目</th>
+    <th scope="col">费用金额</th>
+    <th scope="col">备注</th>
+    <th scope="col">领取人</th>
+    <th scope="col">经办人</th>
+    <th scope="col">{$lang.handler}</th>
+  </tr>
+  {foreach from=$fees item=feess name="feess"}
+  <tr>
+    <td>
+    {$feess.start_date}
+    </td>
+    <td>{$feess.expense_account}</td>
+    <td>
+    {$feess.fee_money}
+    </td>
+    <td>{$feess.fee_remarks}</td>
+    <td>{$feess.receive_people}</td>
+    <td align="right">{$feess.handling_people}</td>
+    <td>
+    <a href="ecs_fee.php?act=remove&id={$feess.id}" onclick="listTable.remove({$feess.id}, '您确定要删除吗？')" title="{$lang.remove}">{$lang.remove}</a>
+    </td>
+  </tr>
+  {/foreach}
+  <tr>
+    <td colspan="7" style="text-align: center">
+    <input name="edit_goods" type="submit" value="确定" />
+    <input name="id[]" type="hidden" value="{$feess.id}" />
+    </td>
+  </tr>
+</table>
+</div>
+</form>
+</br>
+<form name="goodsForm" action="ecs_fee.php?act=insert" method="post" onsubmit="return addToOrder()">
+<div class="list-div">
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="100">日期</th>
+    <td id="goods_name">
+    <input name="start_date" type="text" id="start_date" size="15" value='{$start_date}' readonly="readonly" />
+    <input name="selbtn1" type="button" id="selbtn1" onclick="return showCalendar('start_date', '%Y-%m-%d', false, false, 'selbtn1');" value="{$lang.btn_select}" class="button"/>
+    </td>
+  </tr>
+  <tr>
+    <th>费用科目</th>
+    <td id="goods_sn">    
+    <select name="expense_account" id="expense_account">
+    <option value="-1">{$lang.select_please}</option>
+    {foreach from=$subject item=list}
+      <option value="{$list.id}">{$list.expense_account}</option>
+      {/foreach}
+    </select>
+    </td>
+  </tr>
+  <tr>
+    <th>费用金额</th>
+    <td id="goods_cat"> <input name="fee_money" type="text"  size="15"/></td>
+  </tr>
+  <tr>
+    <th>备注</th>
+    <td id="goods_brand"><input name="fee_remarks" type="text"  size="30"/></td>
+  </tr>
+  <tr>
+    <th>领取人</th>
+    <td id="add_price">
+
+    <select name="receive_people" id="expense_account">
+    <option value="-1">{$lang.select_please}</option>
+    {foreach from=$person item=list}
+      <option value="{$list.id}">{$list.receive_people}</option>
+    {/foreach}
+    </select>
+    </td>
+  </tr>
+  <tr>
+    <th>经办人</th>
+    <td id="goods_attr">
+    <select name="handling_people" id="expense_account">
+      <option value="-1">{$lang.select_please}</option>
+      {foreach from=$person item=list}
+      <option value="{$list.id}">{$list.handling_people}</option>
+    {/foreach}
+    </select>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+    <input name="add_goods" type="submit" value="添加" />
+    </td>
+  </tr>
+</table>
+</div>
+</form>
+
+<script language="JavaScript">
+  var step = '{$step}';
+  var orderId = {$order_id};
+  var act = '{$smarty.get.act}';
+{literal}
+{foreach from=$filter item=item key=key}
+listTable.filter.{$key} = '{$item}';
+{/foreach}
+  function checkUser()
+  {
+    var eles = document.forms['theForm'].elements;
+
+    /* 婵″倹鐏夐幖婊呭偍娴兼艾鎲抽敍灞绢棏閺屻儲妲搁崥锔藉閸掞拷*/
+    if (document.getElementById('user_useridname').checked && eles['user'].options.length == 0)
+    {
+      alert(pls_search_user);
+      return false;
+    }
+    return true;
+  }
+
+  function checkGoods()
+  {
+    var eles = document.forms['theForm'].elements;
+
+    if (eles['goods_count'].value <= 0)
+    {
+      alert(pls_search_goods);
+      return false;
+    }
+    return true;
+  }
+
+  function checkConsignee()
+  {
+    var eles = document.forms['theForm'].elements;
+
+    if (eles['country'].value <= 0)
+    {
+      alert(pls_select_area);
+      return false;
+    }
+    if (eles['province'].options.length > 1 && eles['province'].value <= 0)
+    {
+      alert(pls_select_area);
+      return false;
+    }
+    if (eles['city'].options.length > 1 && eles['city'].value <= 0)
+    {
+      alert(pls_select_area);
+      return false;
+    }
+    if (eles['district'].options.length > 1 && eles['district'].value <= 0)
+    {
+      alert(pls_select_area);
+      return false;
+    }
+    return true;
+  }
+
+  function checkShipping()
+  {
+    if (!radioChecked('shipping'))
+    {
+      alert(pls_select_shipping);
+      return false;
+    }
+    return true;
+  }
+
+  function checkPayment()
+  {
+    if (!radioChecked('payment'))
+    {
+      alert(pls_select_payment);
+      return false;
+    }
+    return true;
+  }
+
+  /**
+   * 鏉╂柨娲栭弻锟絩adio 閺勵垰鎯佺悮顐︼拷娑擃厺绔存稉锟�   * @param string radioName
+   */
+  function radioChecked(radioName)
+  {
+    var eles = document.forms['theForm'].elements;
+
+    for (var i = 0; i < eles.length; i++)
+    {
+      if (eles[i].name == radioName && eles[i].checked)
+      {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * 閹稿鏁ら幋椋庣椽閸欓攱鍨ㄩ悽銊﹀煕閸氬秵鎮崇槐銏㈡暏閹达拷
+   */
+  function searchUser()
+  {
+    var eles = document.forms['theForm'].elements;
+
+    /* 婵夘偄鍘栭崚妤勩� */
+    var idName = Utils.trim(eles['keyword'].value);
+    if (idName != '')
+    {
+      Ajax.call('order.php?act=search_users&id_name=' + idName, '', searchUserResponse, 'GET', 'JSON');
+    }
+  }
+
+  function searchUserResponse(result)
+  {
+    if (result.message.length > 0)
+    {
+      alert(result.message);
+    }
+
+    if (result.error == 0)
+    {
+      var eles = document.forms['theForm'].elements;
+
+      /* 濞撳懘娅庨崚妤勩� */
+      var selLen = eles['user'].options.length;
+      for (var i = selLen - 1; i >= 0; i--)
+      {
+        eles['user'].options[i] = null;
+      }
+      var arr = result.userlist;
+      var userCnt = arr.length;
+
+      for (var i = 0; i < userCnt; i++)
+      {
+        var opt = document.createElement('OPTION');
+        opt.value = arr[i].user_id;
+        opt.text = arr[i].user_name;
+        eles['user'].options.add(opt);
+      }
+    }
+  }
+
+  /**
+   * 閹稿鏅㈤崫浣虹椽閸欓攱鍨ㄩ崯鍡楁惂閸氬秶袨閹存牕鏅㈤崫浣芥彛閸欓攱鎮崇槐銏犳櫌閸濓拷
+   */
+  function searchGoods()
+  {
+    var eles = document.forms['goodsForm'].elements;
+
+    /* 婵夘偄鍘栭崚妤勩� */
+    var keyword = Utils.trim(eles['keyword'].value);
+    if (keyword != '')
+    {
+      Ajax.call('order.php?act=search_goods&keyword=' + keyword, '', searchGoodsResponse, 'GET', 'JSON');
+    }
+  }
+
+  function searchGoodsResponse(result)
+  {
+    if (result.message.length > 0)
+    {
+      alert(result.message);
+    }
+
+    if (result.error == 0)
+    {
+      var eles = document.forms['goodsForm'].elements;
+
+      /* 濞撳懘娅庨崚妤勩� */
+      var selLen = eles['goodslist'].options.length;
+      for (var i = selLen - 1; i >= 0; i--)
+      {
+        eles['goodslist'].options[i] = null;
+      }
+
+      var arr = result.goodslist;
+      var goodsCnt = arr.length;
+      if (goodsCnt > 0)
+      {
+        for (var i = 0; i < goodsCnt; i++)
+        {
+          var opt = document.createElement('OPTION');
+          opt.value = arr[i].goods_id;
+          opt.text = arr[i].name;
+          eles['goodslist'].options.add(opt);
+        }
+        getGoodsInfo(arr[0].goods_id);
+      }
+      else
+      {
+        getGoodsInfo(0);
+      }
+    }
+  }
+
+  /**
+   * 閸欐牕绶遍弻鎰櫌閸濅椒淇婇幁锟�   * @param int goodsId 閸熷棗鎼d
+   */
+  function getGoodsInfo(goodsId)
+  {
+    if (goodsId > 0)
+    {
+      Ajax.call('order.php?act=json&func=get_goods_info', 'goods_id=' + goodsId, getGoodsInfoResponse, 'get', 'json');
+    }
+    else
+    {
+      document.getElementById('goods_name').innerHTML = '';
+      document.getElementById('goods_sn').innerHTML = '';
+      document.getElementById('goods_cat').innerHTML = '';
+      document.getElementById('goods_brand').innerHTML = '';
+      document.getElementById('add_price').innerHTML = '';
+      document.getElementById('goods_attr').innerHTML = '';
+    }
+  }
+  function getGoodsInfoResponse(result)
+  {
+    var eles = document.forms['goodsForm'].elements;
+
+    // 閺勫墽銇氶崯鍡楁惂閸氬秶袨閵嗕浇鎻ｉ崣鏋拷閸掑棛琚妴浣告惂閻楋拷
+    document.getElementById('goods_name').innerHTML = result.goods_name;
+    document.getElementById('goods_sn').innerHTML = result.goods_sn;
+    document.getElementById('goods_cat').innerHTML = result.cat_name;
+    document.getElementById('goods_brand').innerHTML = result.brand_name;
+
+    // 閺勫墽銇氭禒閿嬬壐閿涙艾瀵橀幏顒�閸﹁桨鐜妴浣规拱鎼存ぞ鐜敍鍫滅妇闁匡拷鐜敍澶堬拷娴兼艾鎲虫禒锟�    var priceHtml = '<input type="radio" name="add_price" value="' + result.market_price + '" />鐢倸婧�禒锟絒' + result.market_price + ']<br />' +
+      '<input type="radio" name="add_price" value="' + result.goods_price + '" checked />閺堫剙绨垫禒锟絒' + result.goods_price + ']<br />';
+    for (var i = 0; i < result.user_price.length; i++)
+    {
+      priceHtml += '<input type="radio" name="add_price" value="' + result.user_price[i].user_price + '" />' + result.user_price[i].rank_name + ' [' + result.user_price[i].user_price + ']<br />';
+    }
+    priceHtml += '<input type="radio" name="add_price" value="user_input" />' + input_price + '<input type="text" name="input_price" value="" /><br />';
+    document.getElementById('add_price').innerHTML = priceHtml;
+
+    // 閺勫墽銇氱仦鐐达拷
+    var specCnt = 0; // 鐟欏嫭鐗搁惃鍕殶闁诧拷
+    var attrHtml = '';
+    var attrType = '';
+    var attrTypeArray = '';
+    var attrCnt = result.attr_list.length;
+    for (i = 0; i < attrCnt; i++)
+    {
+      var valueCnt = result.attr_list[i].length;
+
+      // 鐟欏嫭鐗�
+      if (valueCnt > 1)
+      {
+        attrHtml += result.attr_list[i][0].attr_name + ': ';
+        for (var j = 0; j < valueCnt; j++)
+        {
+          switch (result.attr_list[i][j].attr_type)
+          {
+            case '0' :
+            case '1' :
+              attrType = 'radio';
+              attrTypeArray = '';
+            break;
+
+            case '2' :
+              attrType = 'checkbox';
+              attrTypeArray = '[]';
+            break;
+          }
+          attrHtml += '<input type="' + attrType + '" name="spec_' + specCnt + attrTypeArray + '" value="' + result.attr_list[i][j].goods_attr_id + '"';
+          if (j == 0)
+          {
+            attrHtml += ' checked';
+          }
+          attrHtml += ' />' + result.attr_list[i][j].attr_value;
+          if (result.attr_list[i][j].attr_price > 0)
+          {
+            attrHtml += ' [+' + result.attr_list[i][j].attr_price + ']';
+          }
+          else if (result.attr_list[i][j].attr_price < 0)
+          {
+            attrHtml += ' [-' + Math.abs(result.attr_list[i][j].attr_price) + ']';
+          }
+        }
+        attrHtml += '<br />';
+        specCnt++;
+      }
+      // 鐏炵偞锟�
+      else
+      {
+        attrHtml += result.attr_list[i][0].attr_name + ': ' + result.attr_list[i][0].attr_value + '<br />';
+      }
+    }
+    eles['spec_count'].value = specCnt;
+    document.getElementById('goods_attr').innerHTML = attrHtml;
+  }
+
+  /**
+   * 閹跺﹤鏅㈤崫浣稿閸忋儴顓归崡锟�   */
+  function addToOrder()
+  {
+    var eles = document.forms['goodsForm'].elements;
+
+    // 濡拷鐓￠弰顖氭儊闁瀚ㄦ禍鍡楁櫌閸濓拷
+    if (eles['goodslist'].options.length <= 0)
+    {
+      alert(pls_search_goods);
+      return false;
+    }
+    return true;
+  }
+
+  /**
+   * 鏉炶棄鍙嗛弨鎯版彛閸︽澘娼�
+   * @param int addressId 閺�儼鎻ｉ崷鏉挎絻id
+   */
+  function loadAddress(addressId)
+  {
+{/literal}
+    location.href += 'order.php?act={$smarty.get.act}&order_id={$smarty.get.order_id}&step={$smarty.get.step}&address_id=' + addressId;
+{literal}
+  }
+</script>
+{/literal}
+
+{include file="pagefooter.htm"}

@@ -1,0 +1,50 @@
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,../js/transport.js,validator.js"}
+{if $step eq "consignee"}
+{insert_scripts files="../js/region.js"}
+{/if}
+
+<div id="tabbody-div">
+      <form enctype="multipart/form-data" action="" method="post" name="theForm" >
+        <!-- 閺堚偓婢堆勬瀮娴犲爼妾洪崚 -->
+        <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
+        <!-- 闁氨鏁ゆ穱鈩冧紖 -->
+        <table width="90%" id="general-table" align="center">
+
+          <tr>
+            <td class="label">样本编号</td>
+            <td><input type="text" name="goods_name" value="" style="float:left;color:{$goods_name_color};" size="30" /><div style="background-color:{$goods_name_color};float:left;margin-left:2px;" id="font_color" onclick="ColorSelecter.Show(this);"></div>
+            </td>
+          </tr>
+
+           <tr>
+            <td class="label">样本数量</td>
+            <td><input type="text" name="goods_number" value="" style="float:left;color:{$goods_name_color};" size="30" /><div style="background-color:{$goods_name_color};float:left;margin-left:2px;" id="font_color" onclick="ColorSelecter.Show(this);"></div>
+            </td>
+          </tr>
+
+           <tr>
+            <td class="label">样本单价</td>
+            <td><input type="text" name="goods_price" value="" style="float:left;color:{$goods_name_color};" size="30" /><div style="background-color:{$goods_name_color};float:left;margin-left:2px;" id="font_color" onclick="ColorSelecter.Show(this);"></div>
+            </td>
+          </tr>
+
+           <tr>
+            <td class="label">合计金额</td>
+            <td><input type="text" name="goods_name" value="{$goods.goods_name|escape}" style="float:left;color:{$goods_name_color};" size="30" /><div style="background-color:{$goods_name_color};float:left;margin-left:2px;" id="font_color" onclick="ColorSelecter.Show(this);"></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="label">&nbsp;</td>
+            <td>
+              <input type="submit" value="确定" name="submit" style="float:left;color:{$goods_name_color};" />
+              <input type="hidden" name="act" value="add_exe"/>
+            </td>
+          </tr>
+          
+
+         
+        </table>
+       
+        </form>
+        </div>

@@ -1,0 +1,107 @@
+<style>
+  .temp_info_bg{width:800px; height:600px;}
+</style>
+{insert_scripts files="../js/utils.js,selectzone.js,colorselector.js,update_img.js"}
+{insert_scripts files="jquery-1.8.2.min.js,selectzone.js,colorselector.js,update_img.js"}
+<div class="temp_info_bg">
+<form enctype="multipart/form-data" action="temp.php?act=goadd" method="post" name="theForm" >
+  <table>
+    <tr>
+      <td style="height:30px;color:#1C1E1F">主题上传</td>
+    </tr>
+    <tr>
+      <td>主题名称:</td>
+      <td><input type="text" name="temp_name"></td>
+    </tr>
+    <tr>
+      <td>封面图片:</td>
+      <td><input type="file" name="image_name"></td>
+    </tr>
+    <tr>
+      <td>设计师:</td>
+      <td><input type="text" name="stylist"></td>
+    </tr>
+    <tr>
+      <td>设计说明:</td>
+      <td><textarea name="specification" style="width:216px;height:131px;"></textarea></td>
+    </tr>
+    <tr>
+      <td>是否显示:</td>
+      <td><input type="radio" value="0" name="display" checked="checked">是<input type="radio" value="1" name="display">否</td>
+     <tr>
+       <td>第一张图片描述:</td>
+       <td><input type="text" name="cption[]"></td>
+     </tr>
+          <tr>
+       <td>第二张图片描述:</td>
+       <td><input type="text" name="cption[]"></td>
+     </tr>
+          <tr>
+       <td>第三张图片描述:</td>
+       <td><input type="text" name="cption[]"></td>
+     </tr>
+          <tr>
+       <td>第四张图片描述:</td>
+       <td><input type="text" name="cption[]"></td>
+     </tr>
+    </tr>
+        <tr>
+          <td>商品相册：</td>
+           <td width="710" align="right">
+                 <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="710" height="330" id="update" align="middle">     
+                <param name="allowFullScreen" value="false" />     
+                <param name="allowScriptAccess" value="always" /> 
+                <param name="movie" value="update.swf" /> 
+                <param name="quality" value="high" /> 
+                <param name="bgcolor" value="#ffffff" /> 
+                <embed src="update.swf" quality="high" bgcolor="#ffffff" width="710" height="320" name="update" align="middle" allowScriptAccess="always" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /> 
+                </object>
+                </td> 
+                <td>
+            </td>
+        </tr>
+        <tr>
+          <td>选择商品:</td>
+          <td><div style="width:260px; height:21px;  border:1px solid #000; float:left;" id="text" contenteditable="true"></div>&nbsp;
+           <a href="javascript:;" style="padding:1px 5px 1px 4px; border:1px solid #000; color:#000;background:-webkit-gradient(linear, left bottom, left top, color-stop(0, #dddddd), color-stop(1, #ffffff));text-decoration:none;" id="srac">查询</a></td>
+        </tr>
+        <tr>
+        <td></td>
+          <td><div style="width:700px;" id="list_bg"></div></td>
+        </tr>
+  </table>
+  <div id="show" style="margin-top:20px; width:300px; text-align:left;"></div>
+  <input type="submit" value="提交" style="margin-left:160px;">
+</div>
+<script>
+$(function(){
+    $('#srac').click(function(){
+    var text  = $("#text").text();
+    var tmp_data = new Array();
+    $.ajax({
+      type:'get',
+      url:"temp.php?act=goodsc&text="+text,
+      async:false, //设置同步
+      dataType:"json",
+      success:function(data){
+        tmp_data = data;
+
+      }
+    })
+        var str="<table>";
+        str+="<tr><th>序号</th><th>产品分类</th><th>产品名称</th><th>产品价格</th><th>勾选</th></tr>";
+        for(var i=0;i<tmp_data.length;i++){
+          str += "<tr>";
+          str += "<td align='center'>"+tmp_data[i].goods_id+"</td>";
+          str += "<td align='center'>"+tmp_data[i].cat_name+"</td>";
+          str += "<td align='center'>"+tmp_data[i].goods_name+"</td>";
+          str += "<td align='center'>"+tmp_data[i].shop_price+"</td>";
+          str += "<td align='center'><input type='checkbox' name='goods_id[]' value="+tmp_data[i].goods_id+"></td>";
+          str += "</tr>";
+        }
+        str+="</table>";
+        $("#list_bg").html(str);
+  })
+})
+</script>
+</form>

@@ -1,0 +1,66 @@
+<!-- {if $full_page} -->
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,listtable.js"}
+<div class="form-div">
+{if $smarty.get.auid}
+{$lang.show_affiliate_orders}
+{else}
+<form action="affiliate.php?act=inventory">
+
+<input type="hidden" name="act" value="inventory" />
+订单号<input name="order_sn" type="text" id="order_sn" size="15"> 会员名称<input name="user_name" type="text" id="user_name" size="15"><input type="submit" value="{$lang.button_search}" class="button" />
+</form>
+{/if}
+</div>
+<form method="post" action="" name="listForm">
+<div class="list-div" id="listDiv">
+<!-- {/if} -->
+<table cellspacing='1' cellpadding='3'>
+<tr>
+  <th width="20%">订单号</th>
+  <th width="8%">会员编号</th>
+  <th width="8%">会员名称</th>
+  <th width="8%">分利金额</th>
+  <th >分利说明</th>
+  <th width="10%">分利时间</th>
+</tr>
+<!-- {foreach from=$logdb item=val} -->
+<tr>
+  <td align="center"><a href="order.php?act=info&order_id={$val.order_id}">{$val.order_sn}</a></td>
+  <td>{$val.user_id}</td>
+  <td>{$val.user_name}</td>
+  <td>{$user_money}</td>
+  <td>{$val.change_desc}</td>
+  <td>
+  </td>
+</tr>
+    <!-- {foreachelse} -->
+    <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+<!-- {/foreach} -->
+</table>
+  <table cellpadding="4" cellspacing="0">
+    <tr>
+      <td align="right">{include file="page.htm"}</td>
+    </tr>
+  </table>
+<!-- {if $full_page} -->
+</div>
+</form>
+<script type="Text/Javascript" language="JavaScript">
+listTable.recordCount = {$record_count};
+listTable.pageCount = {$page_count};
+
+{foreach from=$filter item=item key=key}
+listTable.filter.{$key} = '{$item}';
+{/foreach}
+
+<!-- {literal} -->
+onload = function()
+{
+  // 开始检查订单
+  startCheckOrder();
+}
+<!-- {/literal} -->
+</script>
+{include file="pagefooter.htm"}
+<!-- {/if} -->

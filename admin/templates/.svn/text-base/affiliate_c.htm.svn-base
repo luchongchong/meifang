@@ -1,0 +1,66 @@
+{if $full_page}
+<!-- $Id: users_list.htm 15617 2009-02-18 05:18:00Z sunxiaodong $ -->
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,listtable.js"}
+
+<div class="form-div" style="height: 15px;">
+<span class="action-span" style="float:right;"><a href="affiliate.php?act=add_c">增加策略</a></span>
+</div>
+
+<form method="POST" action="" name="listForm">
+
+<!-- start users list -->
+<div class="list-div" id="listDiv">
+{/if}
+<!--鐢ㄦ埛鍒楄〃閮ㄥ垎-->
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    
+    <th>序号</th>
+    <th>{$lang.affiliate_name}</th>
+    <th>{$lang.top_sell}</th>
+    <th>{$lang.top_service}</th>
+    <th>{$lang.parent}</th>
+    <th>{$lang.install_1}</th>
+    <th>{$lang.sell}</th>
+    <th>{$lang.introduce}</th>
+    <th>操作</th>
+  <tr>
+  {foreach from=$affiliate_list item=affilate}
+  <tr>
+    <td>{$affilate.id}</td>
+    <td class="first-cell">{$affilate.affiliate_name}</td>
+    <td class="first-cell">{$affilate.top_sell}</td>
+    <td><span >{$affilate.top_service}</span></td>
+    <td align="center">{$affilate.parent}</td>
+    <td>{$affilate.install}</td>
+    <td>{$affilate.sell}</td>
+    <td>{$affilate.introduce}</td>
+    <td align="center">
+      <a href="affiliate.php?act=edit&id={$affilate.id}" title="{$lang.edit}"><img src="images/icon_edit.gif" border="0" height="16" width="16" /></a>
+      <a href="javascript:confirm_redirect('{$lang.remove_confirm}', 'affiliate.php?act=remove&id={$affilate.id}')" title="{$lang.remove}"><img src="images/icon_drop.gif" border="0" height="16" width="16" /></a>
+    </td>
+  </tr>
+  {foreachelse}
+  <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+  {/foreach}
+</table>
+
+{if $full_page}
+</div>
+<!-- end users list -->
+</form>
+<script type="text/javascript" language="JavaScript">
+<!--
+{literal}
+onload = function()
+{
+    document.forms['searchForm'].elements['keyword'].focus();
+    // 寮�妫�煡璁㈠崟
+    startCheckOrder();
+}
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}
+{/if}

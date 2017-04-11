@@ -1,0 +1,130 @@
+<!-- $Id: sale_list.htm 15848 2009-04-24 07:07:13Z liubo $ -->
+{if $full_page}
+{include file="pageheader.htm"}
+<script type="text/javascript" src="../js/calendar.php?lang={$cfg_lang}"></script>
+<link href="../js/calendar/calendar.css" rel="stylesheet" type="text/css" />
+{insert_scripts files="../js/utils.js,listtable.js"}
+<div class="form-div">
+  <form name="TimeInterval"  action="javascript:getList()" style="margin:0px">
+    {$lang.start_date}&nbsp;
+    <input name="start_date" type="text" id="start_date" size="15" value='{$start_date}' readonly="readonly" />
+    <input name="selbtn1" type="button" id="selbtn1" onclick="return showCalendar('start_date', '%Y-%m-%d', false, false, 'selbtn1');" value="{$lang.btn_select}" class="button"/>
+    &nbsp;&nbsp;
+    {$lang.end_date}&nbsp;
+    <input name="end_date" type="text" id="end_date" size="15" value='{$end_date}' readonly="readonly" />
+    <input name="selbtn2" type="button" id="selbtn2" onclick="return showCalendar('end_date', '%Y-%m-%d', false, false, 'selbtn2');" value="{$lang.btn_select}" class="button"/>
+    &nbsp;&nbsp;
+     科目
+    <select name="expense_account" id="status">
+      <option value="-1">请选择...</option>
+      {foreach from=$subject item=list}
+      <option value="{$list.id}">{$list.expense_account}</option>
+      {/foreach}
+    </select>
+        领取人
+    <select name="receive_people" id="status">
+      <option value="-1">请选择...</option>
+      {foreach from=$person item=list}
+      <option value="{$list.id}">{$list.receive_people}</option>
+    {/foreach}
+    </select>
+        经办人
+    <select name="handling_people" id="status">
+      <option value="-1">请选择...</option>
+         {foreach from=$person item=list}
+      <option value="{$list.id}">{$list.handling_people}</option>
+    {/foreach}
+    </select>
+    <input type="submit" name="submit" value="{$lang.query}" class="button" />
+  </form>
+</div>
+<form method="POST" action="" name="listForm">
+<div class="list-div" id="listDiv">
+{/if}
+  <table width="100%" cellspacing="1" cellpadding="3">
+     <tr>
+      <th>日期</th>
+      <th>科目</th>
+      <th>金额</th>
+      <th>备注</th>
+      <th>领取人</th>
+      <th>经办人</th>
+    </tr>
+  {foreach from=$goods_sales_list item=list}
+    <tr align="center">
+      <td align="left">{$list.sales_time}</td>
+      <td>{$list.expense_account}</td>
+      <td>{$list.fee_money}</td>
+      <td>{$list.fee_remarks}</td>
+      <td align="right">{$list.receive_people}</td>
+      <td align="right">{$list.handling_people}</td>
+    </tr>
+  {foreachelse}
+    <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+  {/foreach}
+  </table>
+  <table id="page-table" cellspacing="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td align="right" nowrap="true">
+    {include file="page.htm"}
+    </td>
+  </tr>
+  </table>
+{if $full_page}
+</div>
+</form>
+
+<script type="Text/Javascript" language="JavaScript">
+listTable.recordCount = {$record_count};
+listTable.pageCount = {$page_count};
+{foreach from=$filter item=item key=key}
+listTable.filter.{$key} = '{$item}';
+{/foreach}
+{literal}
+<!--
+onload = function()
+{
+  // 开始检查订单
+  startCheckOrder();
+  getDownUrl();
+}
+
+function getList()
+{
+    var frm =  document.forms['TimeInterval'];
+    listTable.filter['start_date'] = frm.elements['start_date'].value;
+    listTable.filter['end_date'] = frm.elements['end_date'].value;
+    listTable.filter['expense_account'] = frm.elements['expense_account'].value;
+    listTable.filter['receive_people'] = frm.elements['receive_people'].value;
+    listTable.filter['handling_people'] = frm.elements['handling_people'].value;
+    listTable.filter['page'] = 1;
+    listTable.loadList();
+    getDownUrl();
+}
+
+function getDownUrl()
+{
+  var aTags = document.getElementsByTagName('A');
+  for (var i = 0; i < aTags.length; i++)
+  { 
+    if (aTags[i].href.indexOf('download') >= 0)
+    {
+      if (listTable.filter['start_date'] == "")
+      {
+        var frm =  document.forms['TimeInterval'];
+        listTable.filter['start_date'] = frm.elements['start_date'].value;
+        listTable.filter['end_date'] = frm.elements['end_date'].value;
+        listTable.filter['expense_account'] = frm.elements['expense_account'].value;
+        listTable.filter['receive_people'] = frm.elements['receive_people'].value;
+        listTable.filter['handling_people'] = frm.elements['handling_people'].value;
+      }
+      aTags[i].href = "ecs_fee.php?act=download&start_date=" + listTable.filter['start_date'] + "&end_date=" + listTable.filter['end_date']+"&expense_account=" + listTable.filter['expense_account']+"&receive_people=" + listTable.filter['receive_people']+"&handling_people=" + listTable.filter['handling_people'];
+    }
+  }
+}
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}
+{/if}

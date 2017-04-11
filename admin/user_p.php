@@ -1,0 +1,340 @@
+<?php
+
+/**
+ * MEIFANG 会员中心
+ * ============================================================================ 
+ * 版权所有 2005-2014 上海优辉商务，并保留所有权利。
+ * 网站地址: http://www.j345.net
+ * ----------------------------------------------------------------------------
+ * 优辉网络,共创你我
+ * ============================================================================
+ * $Author: liubo $
+ * $Id: user_p.php 17217 2011-01-19 06:29:08Z liubo $
+*/
+
+define('IN_ECS', true);
+require(dirname(__FILE__) . '/includes/init.php');
+
+
+
+/* 用户登录界面 */
+/*if ($_REQUEST['act'] == '')
+{
+    //var_dump($smarty);die();
+    $smarty->display('user_passport_p.dwt');
+}*/
+
+
+/* 处理会员的登录 */
+/*elseif ($_REQUEST['act'] == 'act_login')
+{	
+  
+    $username = isset($_POST['username']) ? trim($_POST['username']) : '';
+    $password = isset($_POST['password']) ? md5(trim($_POST['password'])) : '';
+    $back_act = isset($_POST['back_act']) ? trim($_POST['back_act']) : '';	
+ 
+    $sql_zj1 = "select * from ".$ecs->table('suppliers')." where username = '".$username."'";
+
+    $re = $db->getRow($sql_zj1);
+	$psd = $re['password'];	
+	if ( $psd == $password)
+    {
+    	$username = $_POST['username'];
+    	//exit;
+    	header('location:user_p.php?act=list&username='.$username);	
+    }
+    else
+    {
+    	
+        $_SESSION['login_fail'] ++ ;
+        show_message_c($_LANG['p_login_failure'], $_LANG['relogin_lnk'], 'user_p.php', 'error');
+    }
+}*/
+/* 退出会员中心 */
+/*elseif ($_REQUEST['act'] == 'logout')
+{
+	header('location:user_p.php');
+}*/
+
+/*------------------------------------------------------ */
+//-- 翻页、搜索、排序   工厂列表页
+/*------------------------------------------------------ */
+if ($_REQUEST['act'] == 'list')
+{
+	//var_dump($_GET);
+	
+	$username = $_SESSION['admin_name'];
+	$status = isset($_GET['status']) ? trim($_GET['status']) : '';
+	//$sql = "select `suppliers_id` from".$ecs->table('suppliers')."where username='".$username."'" ;
+    //$suppliers_id = $db->getOne($sql);
+    $list = get_123_list($suppliers_id);
+    //var_dump($list); 
+
+    foreach ($list['item'] as $k8 => $v8) {
+    		$list['item'][$k8]['add_time'] = date('Y-m-d',$v8['add_time']);
+    		$list['item'][$k8]['send_time'] = date('Y-m-d',$v8['send_time']);
+    	}  
+
+    //var_dump($list['item']);
+
+    foreach ($list['item'] as $key => $value) {
+        $goos_attr = $value['goods_attr'];
+        $list['item'][$key]['goods_attr'] = substr($goos_attr,7);
+    	}
+
+
+    $smarty->assign('goods_list', $list['item']);
+    $smarty->assign('filter',       $list['filter']);
+    $smarty->assign('pageSize',    $list['filter']['pageSize']);//共多少也
+    $smarty->assign('page',    $list['filter']['page']);//每页显示
+    $smarty->assign('up',    $list['filter']['up']);//上一页
+    $smarty->assign('next',    $list['filter']['next']);//下一页
+    $smarty->assign('pageMax',    $list['filter']['pageMax']);//最大页
+    $smarty->assign('full_page',    1);
+    $smarty->assign('username', $username );
+    //print_r($list['filter']);
+    $smarty->display('123.dwt');
+}
+
+/*确认发货*/
+elseif ($_REQUEST['act'] == 'check')
+{
+	include_once(ROOT_PATH . './includes/lib_rebate.php');
+	$send_company = $_GET['send_company']?$_GET['send_company']:'';
+   	$send_sn      = $_GET['send_sn']?$_GET['send_sn']:'';
+    $send_fee     = $_GET['send_fee']?$_GET['send_fee']:'';
+
+
+    $send_time = time();
+    $id = $_GET['id'];
+    //$username = $_GET['username'];
+    $result = $GLOBALS['db']->getRow("select `send_status`,`order_sn` from".$ecs->table('factory')."where id='".$id."'");
+    $send_status = $result['send_status'];
+    $order_sn = $result['order_sn'];
+    
+    //查询订单是否已经分利
+    $sql = "select `is_gain_rebate` from ".$ecs->table('order_info')." where order_sn=".$order_sn;
+    $is_gain_rebate = $db->getOne($sql);
+    if($is_gain_rebate!=1){
+    	//通过订单流水获取订单id 进行分利
+	    $sql = "select `order_id` from ".$ecs->table('order_info')." where order_sn=".$order_sn ;
+	    $order_id = $db->getOne($sql);
+
+    }
+   $fw_time = time();
+    $jx_time = time();
+    if($send_status == 1){
+        $sql1 = "update ". $ecs->table('factory') . " set `status`=4,`fw_time`='$fw_time',`jx_time`='$jx_time',`send_sn`='$send_sn',`send_fee`='$send_fee',`send_company`='$send_company',`send_time`='$send_time' where id=".$id;
+        $db->query($sql1);
+        $sql2 = "update ". $ecs->table('order_info') . " set `order_status`=5 ,`shipping_status`=1,`pay_status`=2 where order_sn=".$order_sn;
+        $db->query($sql2);
+        
+    }else{
+        $sql1 = "update ". $ecs->table('factory') . " set `send_status`=2,`status`=2,`send_sn`='$send_sn',`send_fee`='$send_fee',`send_company`='$send_company',`send_time`='$send_time' where id=".$id;
+        $db->query($sql1);
+        $sql2 = "update ". $ecs->table('order_info') . " set `shipping_status`=1 where order_sn=".$order_sn;
+        $db->query($sql2);    
+    }
+   	rebate($order_id);
+
+	 /*---20160908--将下完订单的普通会员改为VIP会员，并给二维码*/
+   	 $user_id = $db->getOne("select user_id from ".$ecs->table('order_info')." where order_sn=".$order_sn);
+   	 $user_info = $db->getRow("select * from ".$ecs->table('users')." where user_id= ".$user_id);
+   	 if($user_info['user_rank'] == 0){
+        
+   	 $biaoji = $db->query("update ".$ecs->table('users')." set `user_rank` = 99 where user_id= ".$user_info['user_id']);
+   	 if($biaoji){
+          	 $new_user_info = $db->getRow("select * from ".$ecs->table('users')." where user_id= ".$user_id);
+        	//查看用户有没有二维码
+       		 $is_add_qr = $GLOBALS['db']->getRow("SELECT * FROM `wxch_qr` WHERE `function` = 'tuijian_self' and affiliate = ".$new_user_info['user_id']);
+       	 if($is_add_qr){
+            if($new_user_info['rank']=='99'){
+                $arr['rank']=$new_user_info['rank'];
+                    $arr['scene'] = $new_user_info['user_name'];
+                    $arr['affiliate']= $new_user_info['user_id'];
+                    add_qr($arr);
+            }
+        }
+    }
+  }
+    /**
+     *  author:royallu
+     *  func:将商品的运费进行合计
+     *  time:20161116
+     * */
+   // $order_sn
+    $sql='select * from ecs_factory where order_sn='.$order_sn;
+    $res  = $GLOBALS['db']->getAll($sql);
+    foreach ($res as $key=>$val){
+        $shipping_fee+=$val['send_fee'];
+    }
+    $sql1 = "update ". $ecs->table('due') . " set `shipping_sn`='$send_sn',`shipping_fee`='$shipping_fee' where order_sn=".$order_sn;
+    $db->query($sql1);
+
+    /*---20160908---end---*/
+    header('location:user_p.php?act=list&username='.$username);	
+}
+
+
+/**
+ * 获取订单商品列表
+ * @access  public
+ * @return  array
+ */
+function get_123_list($suppliers_id)
+{
+    $where = '1';
+	if($_GET['page'])
+	{
+		$filter['page']=$_GET['page'];
+	}
+	else
+	{
+		$filter['page']=1;
+	}
+    /* 查询条件 */
+    $filter['start_time']     = empty($_REQUEST['start_time']) ? 0 : strtotime(trim($_REQUEST['start_time']));
+    $filter['end_time']     = empty($_REQUEST['end_time']) ? 0 : (strtotime(trim($_REQUEST['end_time']))+86400);
+    $filter['status']     = empty($_REQUEST['status']) ? 0 : trim($_REQUEST['status']);
+    $filter['send_company']     = empty($_REQUEST['send_company']) ? 0 : trim($_REQUEST['send_company']);
+    $filter['keywords']     = empty($_REQUEST['keywords']) ? 0 : trim($_REQUEST['keywords']);
+   /* if (isset($_REQUEST['is_ajax']) && $_REQUEST['is_ajax'] == 1)
+    {
+        $filter['status'] = json_str_iconv($filter['status']);
+    }*/
+    $where .= (!empty($filter['start_time'])) ? " AND add_time >=" . $filter['start_time'] : '';
+    $where .= (!empty($filter['end_time'])) ? " AND add_time <=" . $filter['end_time'] : '';
+    
+    //判断发货状态是否点击 默认选择未发货状态
+    if($filter['status']){
+    	if(!empty($filter['status']) && $filter['status']==2){
+    		$where .=  " AND status>=2 ";
+    	}else{
+    		$where .=  " AND status<=1 ";
+    	}
+    }else{
+    	//$where .=  " AND status<=1";
+    }
+    $where .= (!empty($filter['send_company'])) ? " AND send_company=" . $filter['send_company'] : '';
+    //$where .= (!empty($filter['keywords'])) ? " AND concat(`goods_sn`,`c_address`,`c_name`,`send_sn`,`suppliers_name`) LIKE '%" . $filter['keywords']. "%' " : '';
+    $where .= (!empty($filter['keywords'])) ? " AND `order_sn` LIKE '%" . $filter['keywords']. "%' " : '';
+    $where .= (!empty($suppliers_id)) ? " AND suppliers_id=" . $suppliers_id : '';
+    $sql = "SELECT count(*) FROM " .$GLOBALS['ecs']->table('factory'). " as f
+    left join " .$GLOBALS['ecs']->table('suppliers'). " as s on f.suppliers_id=s.suppliers_id
+    WHERE $where";
+    $filter['record_count'] = $GLOBALS['db']->getOne($sql);
+	$filter['record_count'];
+    /* 分页大小 */
+	$filter['pageSize']=100;
+	$filter['pageMax']=ceil($filter['record_count']/$filter['pageSize']);
+
+    //$filter = page_and_sizes($filter);
+    //var_dump($filter);
+
+    /* 获取数据 */
+    $arr = array();
+    $sql  = "SELECT * FROM " .$GLOBALS['ecs']->table('factory'). " as f
+    left join " .$GLOBALS['ecs']->table('suppliers'). " as s on f.suppliers_id=s.suppliers_id
+    WHERE $where and pay_status='2' ORDER BY  add_time DESC,status ASC  LIMIT  ".(($filter['page']-1)*100).",100";
+    $res  = $GLOBALS['db']->getAll($sql);
+	if($filter['page']<$filter['pageMax'])
+	{
+		$filter['next']=$filter['page']+1;
+	}
+	else
+	{
+		$filter['next']=$filter['pageMax'];
+	}
+	if($filter['page']==1)
+	{
+		$filter['up']=$filter['page'];
+	}
+	else
+	{
+		$filter['up']=$filter['page']-1;
+	}
+    $filter['keywords'] = stripslashes($filter['keywords']);
+    $arr = array('item' => $res, 'filter' => $filter, 'page_count' => $filter['page_count'], 'record_count' => $filter['record_count']);
+    return $arr;
+}
+
+/**
+ * 分页的信息加入条件的数组
+ *
+ * @access  public
+ * @return  array
+ */
+function page_and_sizes($filter)
+{
+    if (isset($_REQUEST['page_size']) && intval($_REQUEST['page_size']) > 0)
+    {
+        $filter['page_size'] = intval($_REQUEST['page_size']);
+    }
+    elseif (isset($_COOKIE['ECSCP']['page_size']) && intval($_COOKIE['ECSCP']['page_size']) > 0)
+    {
+        $filter['page_size'] = intval($_COOKIE['ECSCP']['page_size']);
+    }
+    else
+    {
+        $filter['page_size'] = 5;
+    }
+	
+    
+    //每页显示 
+    $filter['page'] = (empty($_REQUEST['page']) || intval($_REQUEST['page']) <= 0) ? 1 : intval($_REQUEST['page']);
+
+    //page 总数
+    $filter['page_count'] = (!empty($filter['record_count']) && $filter['record_count'] > 0) ? ceil($filter['record_count'] / $filter['page_size']) : 1;
+
+    //边界处理
+    if ($filter['page'] > $filter['page_count'])
+    {
+        $filter['page'] = $filter['page_count'];
+    }
+
+    $filter['start'] = ($filter['page'] - 1) * $filter['page_size'];
+
+    return $filter;
+}
+/**
+ *
+ *
+ * @access  public
+ * @param
+ * @return  void
+ */
+/*function make_json_result($content, $message='', $append=array())
+{
+    make_json_response($content, 0, $message, $append);
+}*/
+/**
+ * 创建一个JSON格式的数据
+ *
+ * @access  public
+ * @param   string      $content
+ * @param   integer     $error
+ * @param   string      $message
+ * @param   array       $append
+ * @return  void
+ */
+/*function make_json_response($content='', $error="0", $message='', $append=array())
+{
+    include_once(ROOT_PATH . 'includes/cls_json.php');
+
+    $json = new JSON;
+
+    $res = array('error' => $error, 'message' => $message, 'content' => $content);
+
+    if (!empty($append))
+    {
+        foreach ($append AS $key => $val)
+        {
+            $res[$key] = $val;
+        }
+    }
+
+    $val = $json->encode($res);
+
+    exit($val);
+}*/
+?>

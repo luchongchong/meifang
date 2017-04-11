@@ -1,0 +1,129 @@
+<!-- $Id: sale_list.htm 15848 2009-04-24 07:07:13Z liubo $ -->
+{if $full_page}
+{include file="pageheader.htm"}
+<script type="text/javascript" src="../js/calendar.php?lang={$cfg_lang}"></script>
+<link href="../js/calendar/calendar.css" rel="stylesheet" type="text/css" />
+{insert_scripts files="../js/utils.js,listtable.js"}
+<div class="form-div">
+  <form name="TimeInterval"  action="javascript:getList()" style="margin:0px">
+  所有分类
+  <select name="cat_id"><option value="0">{$lang.goods_cat}</option>{$cat_list}</select>
+  商品品牌
+  <select name="brand_id">
+  <option value="0">商品品牌</option>
+  {foreach from=$brand_list item=list}
+  <option value="{$list.brand_id}">{$list.brand_name}</option>
+  {/foreach}
+  </select>
+    商品名称
+    <input type="text" name="goods_name" value=""  />
+    商品型号
+    <input type="text" name="goods_attr" value=""  />
+    
+        厂家名称
+    <input type="text" name="suppliers_name" value=""  />
+    
+    <input type="submit" name="submit" value="{$lang.query}" class="button" />
+  </form>
+</div>
+<form method="POST" action="" name="listForm">
+<div class="list-div" id="listDiv">
+{/if}
+  <table width="100%" cellspacing="1" cellpadding="3">
+     <tr>
+     <th>应付单号</th>
+     <th>商品名称</th>
+     <th>商品编号</th>
+      
+      <th>商品型号</th>
+      <th>商品数量</th>
+      <th>商品单价</th> 
+      <th>厂家名称</th>     
+      <!--  <th>操作</th>-->
+    </tr>
+  {foreach from=$goods_sales_list item=list}
+    <tr align="center">
+      <td align="left">{$list.order_sn}</td>
+      <td align="right">{$list.goods_name}</td>
+      <td align="right">{$list.goods_sn}</td>
+      
+      <td align="right">{$list.goods_attr}</td>
+      <td align="right">{$list.goods_amount}</td>
+      <td align="right">{$list.goods_price}</td>
+      <td align="right">{$list.suppliers_name}</td>
+      <!--  
+      <td align="center">
+      <a href="ecs_goods_storage.php?act=add&id={$list.rec_id}" title="{$lang.edit}">{$lang.edit}</a> |
+      <a href="javascript:;" onclick="listTable.remove({$list.rec_id}, '您确定要删除吗？')" title="{$lang.remove}">{$lang.remove}</a>
+    </td>-->
+    </tr>
+  {foreachelse}
+    <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+  {/foreach}
+  </table>
+  <table id="page-table" cellspacing="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td align="right" nowrap="true">
+    {include file="page.htm"}
+    </td>
+  </tr>
+  </table>
+{if $full_page}
+</div>
+</form>
+
+<script type="Text/Javascript" language="JavaScript">
+listTable.recordCount = {$record_count};
+listTable.pageCount = {$page_count};
+{foreach from=$filter item=item key=key}
+listTable.filter.{$key} = '{$item}';
+{/foreach}
+{literal}
+<!--
+onload = function()
+{
+  // 开始检查订单
+  startCheckOrder();
+  getDownUrl();
+}
+
+function getList()
+{
+    var frm =  document.forms['TimeInterval'];
+    listTable.filter['cat_id'] = frm.elements['cat_id'].value;
+    listTable.filter['brand_id'] = frm.elements['brand_id'].value;
+    listTable.filter['goods_name'] = frm.elements['goods_name'].value;
+    listTable.filter['goods_attr'] = frm.elements['goods_attr'].value;
+    listTable.filter['suppliers_name'] = frm.elements['suppliers_name'].value;
+    listTable.filter['page'] = 1;
+    listTable.loadList();
+    getDownUrl();
+}
+
+function getDownUrl()
+{
+  var aTags = document.getElementsByTagName('A');
+  for (var i = 0; i < aTags.length; i++)
+  { 
+    if (aTags[i].href.indexOf('download') >= 0)
+    {
+      if (listTable.filter['start_date'] == "")
+      {
+        var frm =  document.forms['TimeInterval'];
+        listTable.filter['start_date'] = frm.elements['start_date'].value;
+        listTable.filter['end_date'] = frm.elements['end_date'].value;
+        listTable.filter['expense_account'] = frm.elements['expense_account'].value;
+        listTable.filter['receive_people'] = frm.elements['receive_people'].value;
+        listTable.filter['handling_people'] = frm.elements['handling_people'].value;
+        listTable.filter['suppliers_name'] = frm.elements['suppliers_name'].value;
+      }
+      aTags[i].href = "ecs_goods_storage.php?act=download&cat_id=" + listTable.filter['cat_id'] + "&brand_id=" + listTable.filter['brand_id']+"&goods_name=" + listTable.filter['goods_name']+"&goods_attr=" + listTable.filter['goods_attr']+"&suppliers_name=" + listTable.filter['suppliers_name'];
+    }
+  }
+}
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}
+{/if}

@@ -1,0 +1,148 @@
+<!-- $Id: sale_list.htm 15848 2009-04-24 07:07:13Z liubo $ -->
+{if $full_page}
+{include file="pageheader.htm"}
+<script type="text/javascript" src="../js/calendar.php?lang={$cfg_lang}"></script>
+<link href="../js/calendar/calendar.css" rel="stylesheet" type="text/css" />
+{insert_scripts files="../js/utils.js,listtable.js"}
+<div class="form-div">
+  <form name="TimeInterval"  action="javascript:getList()" style="margin:0px">
+    {$lang.start_date}&nbsp;
+    <input name="start_date" type="text" id="start_date" size="15" value='{$start_date}' readonly="readonly" />
+    <input name="selbtn1" type="button" id="selbtn1" onclick="return showCalendar('start_date', '%Y-%m-%d', false, false, 'selbtn1');" value="{$lang.btn_select}" class="button"/>
+    &nbsp;&nbsp;
+    {$lang.end_date}&nbsp;
+    <input name="end_date" type="text" id="end_date" size="15" value='{$end_date}' readonly="readonly" />
+    <input name="selbtn2" type="button" id="selbtn2" onclick="return showCalendar('end_date', '%Y-%m-%d', false, false, 'selbtn2');" value="{$lang.btn_select}" class="button"/>
+    &nbsp;&nbsp;
+        单位名称
+    <input type="text" name="unit_name" size="15" />
+            部门名称
+    <input type="text" name="bank_department" size="15" />
+    金额区间
+    <input type="text" name="money" size="10" />
+    ~
+    <input type="text" name="moneys" size="10" />
+    摘要
+    <input type="text" name="column_name" size="15" />
+       银行账户
+    <select name="bank_name" id="status">
+      <option value="">请选择...</option>
+      {foreach from=$bank_name item=list}
+      <option value="{$list.id}">{$list.bank_name}</option>
+      {/foreach}
+    </select>
+    <input type="submit" name="submit" value="{$lang.query}" class="button" />
+  </form>
+</div>
+<form method="POST" action="" name="listForm">
+<div class="list-div" id="listDiv">
+{/if}
+  <table width="100%" cellspacing="1" cellpadding="3">
+     <tr>
+     <th>时间</th>     
+      <th>银行名称</th>
+      <th>部门名称</th>
+      <th>费用名称</th>
+      <th>摘要</th>
+      <th>单位名称</th>     
+      <th>借贷方向</th>
+      <th>金额(借)</th>
+      <th>金额(贷)</th>
+      <th>余额</th>
+      <th>操作</th>
+    </tr>
+  {foreach from=$goods_sales_list item=list}
+    <tr align="center">
+    <td align="left">{$list.time}</td>
+      <td>{$list.bank_name}      </td>
+      <td align="right">{$list.bank_department}</td>
+      <td align="right">{$list.cost_name}</td>
+      <td>{$list.column_name}</td>      
+      <td align="left">{$list.unit_name}</td>  
+      <td>          
+       {if $list.to_loan==1}
+      借
+      {elseif $list.to_loan==2}
+      贷
+      {/if}
+      </td>
+      <td>{$list.money_min}</td>
+      <td>{$list.money_max}</td>
+      <td>{$list.bank_balance}</td>
+      <td align="center">
+      <a href="bank_account.php?act=edit&id={$list.id}" title="{$lang.edit}">{$lang.edit}</a> |
+      <a href="javascript:;" onclick="listTable.remove({$list.id}, '您确定要删除吗？')" title="{$lang.remove}">{$lang.remove}</a>
+    </td>
+    </tr>
+  {/foreach}
+  </table>
+  <table id="page-table" cellspacing="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td align="right" nowrap="true">
+    {include file="page.htm"}
+    </td>
+  </tr>
+  </table>
+{if $full_page}
+</div>
+</form>
+
+<script type="Text/Javascript" language="JavaScript">
+listTable.recordCount = {$record_count};
+listTable.pageCount = {$page_count};
+{foreach from=$filter item=item key=key}
+listTable.filter.{$key} = '{$item}';
+{/foreach}
+{literal}
+<!--
+onload = function()
+{
+  // 开始检查订单
+  startCheckOrder();
+  getDownUrl();
+}
+
+function getList()
+{
+    var frm =  document.forms['TimeInterval'];
+    listTable.filter['start_date'] = frm.elements['start_date'].value;
+    listTable.filter['end_date'] = frm.elements['end_date'].value;
+    listTable.filter['unit_name'] = frm.elements['unit_name'].value;
+    listTable.filter['bank_department'] = frm.elements['bank_department'].value;
+    listTable.filter['money'] = frm.elements['money'].value;
+    listTable.filter['moneys'] = frm.elements['moneys'].value;
+    listTable.filter['column_name'] = frm.elements['column_name'].value;
+    listTable.filter['bank_name'] = frm.elements['bank_name'].value;
+    listTable.filter['page'] = 1;
+    listTable.loadList();
+    getDownUrl();
+}
+
+function getDownUrl()
+{
+  var aTags = document.getElementsByTagName('A');
+  for (var i = 0; i < aTags.length; i++)
+  { 
+    if (aTags[i].href.indexOf('download') >= 0)
+    {
+      if (listTable.filter['start_date'] == "")
+      {
+        var frm =  document.forms['TimeInterval'];
+        listTable.filter['start_date'] = frm.elements['start_date'].value;
+        listTable.filter['end_date'] = frm.elements['end_date'].value;
+        listTable.filter['unit_name'] = frm.elements['unit_name'].value;
+        listTable.filter['bank_department'] = frm.elements['bank_department'].value;
+        listTable.filter['money'] = frm.elements['money'].value;
+        listTable.filter['column_name'] = frm.elements['column_name'].value;
+        listTable.filter['bank_name'] = frm.elements['bank_name'].value;
+      }
+      aTags[i].href = "bank_account.php?act=download&start_date=" + listTable.filter['start_date'] + "&end_date=" + listTable.filter['end_date']+"&unit_name=" + listTable.filter['unit_name']+"&bank_department=" + listTable.filter['bank_department']+"&money=" + listTable.filter['money']+"&moneys=" + listTable.filter['moneys']+"&column_name=" + listTable.filter['column_name']+"&bank_name=" + listTable.filter['bank_name'];
+    }
+  }
+}
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}
+{/if}

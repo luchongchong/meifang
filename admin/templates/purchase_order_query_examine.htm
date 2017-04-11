@@ -1,0 +1,63 @@
+<!-- $Id: order_query.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{include file="pageheader.htm"}
+<script type="text/javascript" src="../js/calendar.php"></script>
+<link href="../js/calendar/calendar.css" rel="stylesheet" type="text/css" />
+<div class="main-div">
+<form action="" method="post" enctype="multipart/form-data" name="searchForm">
+  <table cellspacing="1" cellpadding="3" width="100%">
+  {if $freight}
+      <tr>
+      <td>
+      <div align="right">
+      <strong>运费：</strong>
+      </div>
+      </td>
+      <td colspan="3">
+      <input name="freight" type="text" id="order_sn" size="30" value="">
+      </td>
+    </tr>
+    
+  {else}
+      <tr>
+      <td>工厂：
+      <select name="suppliers_id" id="select4">
+        <option value="0">{$lang.select_please}</option>
+        {foreach from=$rows item=shipping}
+        <option value="{$shipping.suppliers_id}" {if $shipping.suppliers_id==$row.suppliers_id}selected{/if}>{$shipping.suppliers_name}</option>
+        {/foreach}
+      </select>
+      </td>    
+    </tr>
+          <tr>
+      <td>
+      <strong>快递单号：</strong>
+      <input name="courier_number" type="text" id="order_sn" size="30" value="{$row.courier_number}">
+      </td>
+    </tr>
+    {/if}
+    <tr>
+      <td colspan="4">
+      <div align="center">
+      	<input type="hidden" name="act" value="{$form_act}" />
+      	<input type="hidden" name="id" value="{$row.id}" />
+      	<input type="hidden" name="buy_id" value="{$buy_id}" />
+        <input name="query" type="submit" class="button" id="query" value="确定" />
+        <input name="reset" type="reset" class='button' value='{$lang.button_reset}' />       
+      </div></td>
+      </tr>
+      
+  </table>
+</form>
+</div>
+{insert_scripts files="../js/transport.js,../js/region.js"}
+{literal}
+<script language="JavaScript">
+region.isAdmin = true;
+onload = function()
+{
+  // 寮�妫�煡璁㈠崟
+  startCheckOrder();
+}
+</script>
+{/literal}
+{include file="pagefooter.htm"}

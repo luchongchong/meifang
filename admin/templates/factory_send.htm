@@ -1,0 +1,43 @@
+
+   <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+   <script src="./assets/js/jquery.min.js"></script>
+   <script src="./assets/js/bootstrap.min.js"></script>
+ 
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+   开始演示模态框
+</button>
+ 
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close"
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               发货信息输入
+            </h4>
+         </div>
+         <div class="modal-body">
+            物流公司：<input type="text" class="am-modal-prompt-input">
+         </div>
+         <div class="modal-body">
+            物流单号：<input type="text" class="am-modal-prompt-input">
+         </div>
+
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default"
+               data-dismiss="modal">关闭
+            </button>
+            <button type="button" class="btn btn-primary">
+               确定发货
+            </button>
+
+
+         </div>
+      </div><!-- /.modal-content -->
+</div><!-- /.modal -->
+ 

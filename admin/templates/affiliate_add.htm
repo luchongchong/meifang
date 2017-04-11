@@ -1,0 +1,56 @@
+
+{include file="pageheader.htm"}
+<div id="separate">
+<div class="form-div">
+<form method="post" action="affiliate.php">
+            <table width="100%" border="0" cellspacing="0" cellpadding="4">
+                <tr>
+                    <td align="right" class="label"><a href="javascript:showNotice('notice2');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}" /></a>{$lang.affiliate_name} </td>
+                    <td><input type="text" name="affiliate_name" maxlength="150" size="10" value="{$affiliate.affiliate_name}" />
+                    <br/>
+                    <span class="notice-span" style="display:block" id="notice3">订单金额的此百分比部分作为分成用金额。</span></td>
+                </tr>
+                <tr>
+                    <td align="right" class="label"><a href="javascript:showNotice('notice3');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}" /></a>{$lang.top_sell} </td>
+                    <td><input type="text" name="top_service" maxlength="150" size="10" value="{$affiliate.top_service}" />
+                    <br />
+                    <span class="notice-span" style="display:block" id="notice3">订单金额的此百分比部分作为分成用金额。</span></td>
+                </tr>
+                <tr>
+                    <td align="right" class="label"><a href="javascript:showNotice('notice4');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}" /></a>{$lang.top_service}</td>
+                    <td><input type="text" name="top_sell" maxlength="150" size="10" value="{$affiliate.top_sell}" />
+                    <br />
+                    <span class="notice-span" style="display:block" id="notice3">订单金额的此百分比部分作为分成用金额。</span></td>
+                </tr>
+                <tr>
+                    <td align="right" class="label"><a href="javascript:showNotice('notice5');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}" /></a>{$lang.parent}</td>
+                    <td><input type="text" name="parent" maxlength="150" size="10" value="{$affiliate.parent}" />
+                    <br />
+                    <span class="notice-span" style="display:block" id="notice3">订单金额的此百分比部分作为分成用金额。</span></td>
+                <tr>
+                <tr>
+                    <td align="right" class="label"><a href="javascript:showNotice('notice5');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}" /></a>{$lang.install_1}</td>
+                    <td><input type="text" name="install" maxlength="150" size="10" value="{$affiliate.install}" />
+                    <br />
+                    <span class="notice-span" style="display:block" id="notice3">订单金额的此百分比部分作为分成用金额。</span></td>
+                <tr>
+                <tr>
+                    <td align="right" class="label"><a href="javascript:showNotice('notice5');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}" /></a>{$lang.sell}</td>
+                    <td><input type="text" name="sell" maxlength="150" size="10" value="{$affiliate.sell}" />
+                    <br />
+                    <span class="notice-span" style="display:block" id="notice3">订单金额的此百分比部分作为分成用金额。</span></td>
+                <tr>
+                <tr>
+                    <td align="right" class="label"><a href="javascript:showNotice('notice5');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}" /></a>{$lang.introduce}</td>
+                    <td><input type="text" name="introduce" maxlength="150" size="10" value="{$affiliate.introduce}" />
+                    <br />
+                    <span class="notice-span" style="display:block" id="notice3">订单金额的此百分比部分作为分成用金额。</span></td>
+                <tr>
+                <td></td>
+                    <td><input type="hidden" name="id" value="{$affiliate.id}" /><input type="hidden" name="act" value="{$act}" /><input type="submit" value="{$lang.button_submit}" class="button" /></td>
+                </tr>
+                </tr>
+            </table>
+    </form>
+
+

@@ -1,0 +1,32 @@
+
+{include file="pageheader.htm"}
+{insert_scripts files="topbar.js,../js/utils.js,listtable.js,selectzone.js,../js/common.js"}
+<div class="main-div">
+
+  <form method="post" action="{$form_action}" name="theForm" onsubmit="return validate()">
+    <table width="100%" >
+      <tr>
+        <td class="label">管理员备注:</td>
+        <td>
+          <textarea name="admin_mark"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">审核状态:</td>
+        <td>
+          <input type="radio" name="review_stauts" value="0" checked="checked" />未处理
+          <input type="radio" name="review_stauts" value="2" />拒绝
+          <input type="radio" name="review_stauts" value="1" />通过
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="submit" value="确认" class="button" />
+          <input type="reset" value="重置" class="button" />
+          <input type="hidden" name="rec_id" value="{$rec_id}" />    </td>
+      </tr>
+    </table>
+
+  </form>
+
+{include file="pagefooter.htm"}

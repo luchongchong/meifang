@@ -1,0 +1,87 @@
+{if $full_page}
+<!-- $Id: users_list.htm 15617 2009-02-18 05:18:00Z sunxiaodong $ -->
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,listtable.js"}
+{insert_scripts files="../js/jquery.min.js"}
+    <!-- start users list -->
+    <div class="list-div" id="listDiv">
+        {/if}
+        <!--用户列表部分-->
+        <table cellpadding="3" cellspacing="1">
+            <tr>
+                <th>序号</th>
+                <th>产品分类</th>
+                <th>产品名称</th>
+                <th>产品价格</th>
+                <th>操作</th>
+            <tr>
+                {foreach from=$goods_list item=goods}
+            <tr>
+                <td align="center">{$goods.goods_id}</td>
+
+                <td align="center">{$goods.cat_name}</td>
+                <td align="center">{$goods.goods_name}</td>
+                <td align="center"><span >{$goods.shop_price}</span></td>
+        <td align="center">
+            <a href="theme.php?act=del_goods&goodsid={$goods.goods_id}&themeid={$themeid}" title="{$lang.del}"><img src="images/icon_drop.gif" width="16" height="16" border="0" /></a>
+        </td>
+        </tr>
+
+            {foreachelse}
+            <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+            {/foreach}
+
+        </table>
+        <!--添加主题商品-->
+            <div  class="label">选择商品:</div>
+           <div style="width:260px; height:21px;  border:1px solid #000; float:left;" id="text" contenteditable="true"></div>&nbsp;
+            <a href="javascript:;" style="padding:1px 5px 1px 4px; border:1px solid #000; color:#000;background:-webkit-gradient(linear, left bottom, left top, color-stop(0, #dddddd), color-stop(1, #ffffff));text-decoration:none;" id="srac">查询</a>
+
+        <form enctype="multipart/form-data" action="{$form_action}" method="post" name="theForm" >
+
+            <div class="list-div" id="list_bg"></div>
+        </form>
+
+
+
+        {if $full_page}
+    </div>
+    <!-- end users list -->
+{literal}
+<script>
+    $(function(){
+        $('#srac').click(function(){
+            var text  = $("#text").text();
+            var tmp_data = new Array();
+            $.ajax({
+                type:'get',
+                url:"theme.php?act=goodsc&text="+text,
+                async:false, //设置同步
+                dataType:"json",
+                success:function(data){
+                    tmp_data = data;
+                }
+            })
+            var str='<table cellpadding="3" cellspacing="1">';
+            str+="<tr><th>序号</th><th>产品分类</th><th>产品名称</th><th>产品价格</th><th>勾选</th></tr>";
+            for(var i=0;i<tmp_data.length;i++){
+                str += "<tr>";
+                str += "<td align='center'>"+tmp_data[i].goods_id+"</td>";
+                str += "<td align='center'>"+tmp_data[i].cat_name+"</td>";
+                str += "<td align='center'>"+tmp_data[i].goods_name+"</td>";
+                str += "<td align='center'>"+tmp_data[i].shop_price+"</td>";
+                str += "<td align='center'><input type='checkbox' name='goods_id[]' value="+tmp_data[i].goods_id+"></td>";
+                str += "</tr>";
+            }
+            /*添加分页*/
+            str+='<input type="hidden" name="themeid" value="{$themeid}">'
+            str+= "</table>";
+            str+='   <div style="float:right;"><input type="submit" value="{$lang.button_submit}" class="button" /></div>';
+            $("#list_bg").html(str);
+        })
+    })
+</script>
+{/literal}
+{include file="pagefooter.htm"}
+{/if}
+

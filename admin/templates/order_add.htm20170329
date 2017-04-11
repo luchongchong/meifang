@@ -1,0 +1,452 @@
+<!-- $Id -->
+
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,../js/transport.js,validator.js"}
+{if $step eq "consignee"}
+{insert_scripts files="../js/region.js"}
+{/if}
+
+
+<form name="theForm" action="order_add.php?act=step_post&step={$step}&order_id={$order_id}&step_act={$step_act}" method="post" onsubmit="return checkUser()">
+<div class="main-div" style="padding: 15px">
+  <label>{$lang.by_useridname}</label>
+  <input name="keyword" type="text" value="" />
+  <input type="button" class="button" name="search" value="{$lang.button_search}" onclick="searchUser();" />
+  <select name="user"></select>
+    <input name="submit" type="submit" class="button" value="确定" />
+</div>
+</form>
+
+
+<form name="Form2" action="order_add.php?act=step_post&step=edit_goods&order_id={$order_id}&step_act={$step_act}" method="post"
+onsubmit="return checkData()">
+<div class="list-div">
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th align="left">收货人</th>
+    <td><input name="consignee" type="text" value="{$address.consignee}" />
+    </td>
+  </tr>
+  <tr>
+    <th align="left">{$lang.label_tel}</th>
+    <td><input name="mobile" type="text" value="{$address.tel}" />
+    </td>
+  </tr>
+  <tr>
+    <th align="left">收货地址</th>
+    <td><input name="address" type="text" value="{$address.address}" /></td>
+  </tr>
+</table>
+</div>
+
+
+<table>
+<tr><td valign="top">
+<div class="list-div" style="width:450px;">
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="25px">&nbsp;</th>
+    <th width="150px">{$lang.name}</th>
+    <th width="150px">{$lang.shipping_fee}</th>
+  </tr>
+  {foreach from=$shipping_list item=shipping}
+  <tr>
+    <td>
+    <!--  <input name="shipping" type="radio" value="{$shipping.shipping_id}" {if $order.shipping_id eq $shipping.shipping_id}checked{/if} onclick="" />-->
+    <input name="shipping" type="radio" value="{$shipping.shipping_id}" />
+    </td>
+    <td>{$shipping.shipping_name}</td>
+    <td><div align="right">{$shipping.format_shipping_fee}</div></td>
+  </tr>
+  {/foreach}
+</table>
+</div>
+</td>
+<td valign="top">
+
+<div class="list-div" style="width:450px;">
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="25">&nbsp;</th>
+    <th width="150">{$lang.name}</th>
+    <th width="150">{$lang.pay_fee}</th>
+  </tr>
+  {foreach from=$payment_list item=payment}
+  <tr>
+    <td><input type="radio" name="payment" value="{$payment.pay_id}" {if $order.pay_id eq $payment.pay_id}checked{/if} /></td>
+    <td>{$payment.pay_name}</td>
+    <td align="right">{$payment.pay_fee}</td>
+  </tr>
+  {/foreach}
+</table>
+</div>
+</td></tr></table>
+
+
+
+<div class="list-div">
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th scope="col">{$lang.goods_name}</th>
+    <th scope="col">{$lang.goods_sn}</th>
+    <th scope="col">{$lang.goods_price}</th>
+    <th scope="col">{$lang.goods_number}</th>
+    <th scope="col">{$lang.goods_attr}</th>
+    <th scope="col">{$lang.subtotal}</th>
+    <th scope="col">{$lang.handler}</th>
+  </tr>
+  {foreach from=$goods_list item=goods name="goods"}
+  <tr>
+    <td>
+    {if $goods.goods_id gt 0 && $goods.extension_code neq 'package_buy'}
+    <a href="#" onclick="getGoodsInfo({$goods.goods_id});">{$goods.goods_name}</a>
+    {elseif $goods.goods_id gt 0 && $goods.extension_code eq 'package_buy'}
+    {$goods.goods_name}
+    {/if}
+    </td>
+    <td>{$goods.goods_sn}<input name="rec_id[]" type="hidden" value="{$goods.rec_id}" /></td>
+    <td><input name="goods_price[]" type="text" style="text-align:right" value="{$goods.goods_price}" size="10" />
+        <input name="goods_id[]" type="hidden" style="text-align:right" value="{$goods.goods_id}" size="10" /></td>
+    <td><input name="goods_number[]" type="text" style="text-align:right" value="{$goods.goods_number}" size="6" /></td>
+    <td><textarea name="goods_attr[]" cols="30" rows="{$goods.rows}">{$goods.goods_attr}</textarea></td>
+    <td align="right">{$goods.subtotal}</td>
+    <td><a href="javascript:confirm_redirect(confirm_drop, 'order_add.php?act=process&func=drop_order_goods&rec_id={$goods.rec_id}&step_act={$step_act}&order_id={$order_id}')">{$lang.drop}</a></td>
+  </tr>
+  {/foreach}
+  <tr>
+    <td colspan="4"><span class="require-field">{$lang.price_note}</span></td>
+    <td align="right"><strong>{$lang.label_total}</strong></td>
+    <td align="right">{$goods_amount}</td>
+    <td>{if $smarty.foreach.goods.total > 0}<input name="edit_goods" type="submit" value="生成订单" />
+     {/if}
+      <input type="button" value="{$lang.button_cancel}" class="button" onclick="location.href='order.php?act=process&func=cancel_order&order_id={$order_id}&step_act={$step_act}'" />
+    
+    <input name="goods_count" type="hidden" value="{$smarty.foreach.goods.total}" /></td>
+  </tr>
+</table>
+</div>
+</form>
+
+<form name="goodsForm" action="order_add.php?act=step_post&step=add_goods&order_id={$order_id}&step_act={$step_act}" method="post" onsubmit="return addToOrder()">
+<p>
+  {$lang.search_goods}
+  <input type="text" name="keyword" value="" />
+  <input type="button" name="search" value="{$lang.button_search}" onclick="searchGoods();" />
+  <select name="goodslist" onchange="getGoodsInfo(this.value)"></select>
+</p>
+<div class="list-div">
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="20%">{$lang.goods_name}</th>
+    <td width="30%" id="goods_name">&nbsp;</td>
+    <th width="20%">{$lang.goods_sn}</th>
+    <td width="30%" id="goods_sn">&nbsp;</td>
+  </tr>
+  <tr>
+    <th>{$lang.category}</th>
+    <td id="goods_cat">&nbsp;</td>
+    <th>{$lang.brand}</th>
+    <td id="goods_brand">&nbsp;</td>
+  </tr>
+  <tr>
+    <th>{$lang.goods_price}</th>
+    <td colspan="3" id="add_price">&nbsp;</td>
+  </tr>
+  <tr>
+    <th>{$lang.goods_attr}<input type="hidden" name="spec_count" value="0" /></th>
+    <td colspan="3" id="goods_attr">&nbsp;</td>
+  </tr>
+  <tr>
+    <th>{$lang.goods_number}</th>
+    <td colspan="3">
+      <input name="add_number" type="text" value="1" size="10">
+      <input name="add_goods" type="submit" value="{$lang.add_to_order}" />
+    </td>
+  </tr>
+</table>
+</div>
+</form>
+
+
+<script language="JavaScript">
+  var step = '{$step}';
+  var orderId = {$order_id};
+  var act = '{$smarty.get.act}';
+{literal}
+  function checkUser()
+  {
+    var eles = document.forms['theForm'].elements;
+
+    /* 濡傛灉鎼滅储浼氬憳锛屾鏌ユ槸鍚︽壘鍒�*/
+    if (document.getElementById('user_useridname').checked && eles['user'].options.length == 0)
+    {
+      alert(pls_search_user);
+      return false;
+    }
+    return true;
+  }
+
+
+  function checkData()
+  {
+    /*if (!radioChecked('shipping'))
+    {
+      alert(pls_select_shipping);
+      return false;
+    }*/
+    if (!radioChecked('payment'))
+    {
+      alert(pls_select_payment);
+      return false;
+    }
+    return true;
+  }
+
+  /**
+   * 杩斿洖鏌�radio 鏄惁琚�涓竴涓�
+   * @param string radioName
+   */
+  function radioChecked(radioName)
+  {
+    var eles = document.forms['Form2'].elements;
+
+    for (var i = 0; i < eles.length; i++)
+    {
+      if (eles[i].name == radioName && eles[i].checked)
+      {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * 鎸夌敤鎴风紪鍙锋垨鐢ㄦ埛鍚嶆悳绱㈢敤鎴�
+   */
+  function searchUser()
+  {
+    var eles = document.forms['theForm'].elements;
+
+    /* 濉厖鍒楄〃 */
+    var idName = Utils.trim(eles['keyword'].value);
+    if (idName != '')
+    {
+      Ajax.call('order_add.php?act=search_users&id_name=' + idName, '', searchUserResponse, 'GET', 'JSON');
+    }
+  }
+
+  function searchUserResponse(result)
+  {
+    if (result.message.length > 0)
+    {
+      alert(result.message);
+    }
+
+    if (result.error == 0)
+    {
+      var eles = document.forms['theForm'].elements;
+
+      /* 娓呴櫎鍒楄〃 */
+      var selLen = eles['user'].options.length;
+      for (var i = selLen - 1; i >= 0; i--)
+      {
+        eles['user'].options[i] = null;
+      }
+      var arr = result.userlist;
+      var userCnt = arr.length;
+
+      for (var i = 0; i < userCnt; i++)
+      {
+        var opt = document.createElement('OPTION');
+        opt.value = arr[i].user_id;
+        opt.text = arr[i].user_name;
+        eles['user'].options.add(opt);
+      }
+    }
+  }
+
+  /**
+   * 鎸夊晢鍝佺紪鍙锋垨鍟嗗搧鍚嶇О鎴栧晢鍝佽揣鍙锋悳绱㈠晢鍝�
+   */
+  function searchGoods()
+  {
+    var eles = document.forms['goodsForm'].elements;
+
+    /* 濉厖鍒楄〃 */
+    var keyword = Utils.trim(eles['keyword'].value);
+    if (keyword != '')
+    {
+      Ajax.call('order_add.php?act=search_goods&keyword=' + keyword, '', searchGoodsResponse, 'GET', 'JSON');
+    }
+  }
+
+  function searchGoodsResponse(result)
+  {
+    if (result.message.length > 0)
+    {
+      alert(result.message);
+    }
+
+    if (result.error == 0)
+    {
+      var eles = document.forms['goodsForm'].elements;
+
+      /* 娓呴櫎鍒楄〃 */
+      var selLen = eles['goodslist'].options.length;
+      for (var i = selLen - 1; i >= 0; i--)
+      {
+        eles['goodslist'].options[i] = null;
+      }
+
+      var arr = result.goodslist;
+      var goodsCnt = arr.length;
+      if (goodsCnt > 0)
+      {
+        for (var i = 0; i < goodsCnt; i++)
+        {
+          var opt = document.createElement('OPTION');
+          opt.value = arr[i].goods_id;
+          opt.text = arr[i].name;
+          eles['goodslist'].options.add(opt);
+        }
+        getGoodsInfo(arr[0].goods_id);
+      }
+      else
+      {
+        getGoodsInfo(0);
+      }
+    }
+  }
+
+  /**
+   * 鍙栧緱鏌愬晢鍝佷俊鎭�
+   * @param int goodsId 鍟嗗搧id
+   */
+  function getGoodsInfo(goodsId)
+  {
+    if (goodsId > 0)
+    {
+      Ajax.call('order_add.php?act=json&func=get_goods_info', 'goods_id=' + goodsId, getGoodsInfoResponse, 'get', 'json');
+    }
+    else
+    {
+      document.getElementById('goods_name').innerHTML = '';
+      document.getElementById('goods_sn').innerHTML = '';
+      document.getElementById('goods_cat').innerHTML = '';
+      document.getElementById('goods_brand').innerHTML = '';
+      document.getElementById('add_price').innerHTML = '';
+      document.getElementById('goods_attr').innerHTML = '';
+    }
+  }
+  function getGoodsInfoResponse(result)
+  {
+    var eles = document.forms['goodsForm'].elements;
+
+
+    document.getElementById('goods_name').innerHTML = result.goods_name;
+    document.getElementById('goods_sn').innerHTML = result.goods_sn;
+    document.getElementById('goods_cat').innerHTML = result.cat_name;
+    document.getElementById('goods_brand').innerHTML = result.brand_name;
+
+
+    var priceHtml = '<input type="radio" name="add_price" value="' + result.market_price + '" />产品价格[' + result.market_price + ']<br />' +
+      '<input type="radio" name="add_price" value="' + result.goods_price + '" checked />样本价格[' + result.goods_price + ']<br />';
+
+    for (var i = 0; i < result.user_price.length; i++)
+    {
+      priceHtml += '<input type="radio" name="add_price" value="' + result.user_price[i].user_price + '" />' + result.user_price[i].rank_name + ' [' + result.user_price[i].user_price + ']<br />';
+      priceHtml += '<input type="radio" name="wallpaper_price" value="' + result.user_price[i].user_price + '" />' + result.user_price[i].rank_name + ' [' + result.user_price[i].user_price + ']<br />';
+
+    }
+    priceHtml += '<input type="radio" name="add_price" value="user_input" />' + '墙纸价格' + '<input type="text" name="wallpaper_price" value="" /><br />';
+    priceHtml += '<input type="radio" name="add_price" value="user_input" />' + input_price + '<input type="text" name="input_price" value="" /><br />';
+
+    document.getElementById('add_price').innerHTML = priceHtml;
+
+
+    var specCnt = 0;
+    var attrHtml = '';
+    var attrType = '';
+    var attrTypeArray = '';
+    var attrCnt = result.attr_list.length;
+    for (i = 0; i < attrCnt; i++)
+    {
+      var valueCnt = result.attr_list[i].length;
+
+
+      if (valueCnt > 1)
+      {
+        attrHtml += result.attr_list[i][0].attr_name + ': ';
+        for (var j = 0; j < valueCnt; j++)
+        {
+          switch (result.attr_list[i][j].attr_type)
+          {
+            case '0' :
+            case '1' :
+              attrType = 'radio';
+              attrTypeArray = '';
+            break;
+
+            case '2' :
+              attrType = 'checkbox';
+              attrTypeArray = '[]';
+            break;
+          }
+          attrHtml += '<input type="' + attrType + '" name="spec_' + specCnt + attrTypeArray + '" value="' + result.attr_list[i][j].goods_attr_id + '"';
+          if (j == 0)
+          {
+            attrHtml += ' checked';
+          }
+          attrHtml += ' />' + result.attr_list[i][j].attr_value;
+          if (result.attr_list[i][j].attr_price > 0)
+          {
+            attrHtml += ' [+' + result.attr_list[i][j].attr_price + ']';
+          }
+          else if (result.attr_list[i][j].attr_price < 0)
+          {
+            attrHtml += ' [-' + Math.abs(result.attr_list[i][j].attr_price) + ']';
+          }
+        }
+        attrHtml += '<br />';
+        specCnt++;
+      }
+      // 灞炴�
+      else
+      {
+        attrHtml += result.attr_list[i][0].attr_name + ': ' + result.attr_list[i][0].attr_value + '<br />';
+      }
+    }
+    eles['spec_count'].value = specCnt;
+    document.getElementById('goods_attr').innerHTML = attrHtml;
+  }
+
+  /**
+   * 鎶婂晢鍝佸姞鍏ヨ鍗�
+   */
+  function addToOrder()
+  {
+    var eles = document.forms['goodsForm'].elements;
+
+    // 妫�煡鏄惁閫夋嫨浜嗗晢鍝�
+    if (eles['goodslist'].options.length <= 0)
+    {
+      alert(pls_search_goods);
+      return false;
+    }
+    return true;
+  }
+
+  /**
+   * 杞藉叆鏀惰揣鍦板潃
+   * @param int addressId 鏀惰揣鍦板潃id
+   */
+  function loadAddress(addressId)
+  {
+{/literal}
+    location.href += 'order_add.php?act={$smarty.get.act}&order_id={$smarty.get.order_id}&step={$smarty.get.step}&address_id=' + addressId;
+{literal}
+  }
+</script>
+{/literal}
+
+{include file="pagefooter.htm"}

@@ -1,0 +1,60 @@
+<!-- $Id: goods_type_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,validator.js"}
+
+<div class="main-div">
+  <form action="" method="post" name="theForm" onsubmit="return validate();">
+    <table cellspacing="1" cellpadding="3" width="100%">
+      <tr>
+        <td class="label">银行账户简称:</td>
+        <td><input type="text" name="bank_name" value="{$goods_type.bank_name|escape}" size="40" />
+        </td>
+      </tr>
+      <tr>
+        <td class="label">银行账号:</td>
+        <td><input type="text" name="bank_account" value="{$goods_type.bank_account|escape}" size="40" />
+        </td>
+      </tr>
+      <tr>
+        <td class="label">开户银行:</td>
+        <td><input type="text" name="bank_open" value="{$goods_type.bank_open|escape}" size="40" />
+        </td>
+      </tr>
+      <tr>
+        <td class="label">期初录入:</td>
+        <td><input type="text" name="bank_input" value="{$goods_type.bank_input|escape}" size="40" />
+        </td>
+      </tr>
+      <tr align="center">
+        <td colspan="2">
+          <input type="hidden" name="cat_id" value="{$goods_type.id}" />
+          <input type="submit" value="{$lang.button_submit}" class="button" />
+          <input type="reset" value="{$lang.button_reset}" class="button" />
+          <input type="hidden" name="act" value="{$form_act}" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<script type="text/javascript">
+<!--
+{literal}
+onload = function() {
+  document.forms['theForm'].elements['expense_account'].focus();
+  startCheckOrder();
+}
+
+function validate()
+{
+  var validator = new Validator('theForm');
+  validator.required('bank_name', '银行账户不能为空！');
+
+  return validator.passed();
+}
+{/literal}  
+//-->
+</script>
+
+{include file="pagefooter.htm"}

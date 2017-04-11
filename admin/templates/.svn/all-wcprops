@@ -1,0 +1,1463 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/meifang/!svn/ver/979/trunk/03_Source/admin/templates
+END
+gen_goods_script.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/gen_goods_script.htm
+END
+category_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/category_info.htm
+END
+goods_batch_confirm.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/goods_batch_confirm.htm
+END
+get_pwd.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/get_pwd.htm
+END
+order_delivery_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/order_delivery_info.htm
+END
+pack_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/pack_info.htm
+END
+affiliate_details.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/meifang/!svn/ver/839/trunk/03_Source/admin/templates/affiliate_details.htm
+END
+affiliate_ck_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/meifang/!svn/ver/779/trunk/03_Source/admin/templates/affiliate_ck_list.htm
+END
+users_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/974/trunk/03_Source/admin/templates/users_list.htm
+END
+msg_add.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/msg_add.htm
+END
+message_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/message_info.htm
+END
+integrates_check.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/integrates_check.htm
+END
+guest_stats.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/guest_stats.htm
+END
+ebao_select.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/ebao_select.htm
+END
+articlecat_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/articlecat_list.htm
+END
+sms_send_ui.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sms_send_ui.htm
+END
+goods_export.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/goods_export.htm
+END
+goods_type.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/goods_type.htm
+END
+goods_show_image.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/goods_show_image.htm
+END
+sms_send_history_query_ui.htm
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sms_send_history_query_ui.htm
+END
+message_view.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/message_view.htm
+END
+tag_edit.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/tag_edit.htm
+END
+brand_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/brand_list.htm
+END
+agency_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/agency_info.htm
+END
+sms_sign.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sms_sign.htm
+END
+adsense.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/adsense.htm
+END
+tag_manage.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/tag_manage.htm
+END
+print_index.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/print_index.htm
+END
+goods_batch_add.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/goods_batch_add.htm
+END
+package_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/package_list.htm
+END
+group_buy_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/group_buy_info.htm
+END
+batch_card_confirm.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/batch_card_confirm.htm
+END
+db_restore.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/db_restore.htm
+END
+flashplay_add.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/flashplay_add.htm
+END
+repay_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/repay_info.htm
+END
+snatch_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/snatch_info.htm
+END
+template_setup.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/template_setup.htm
+END
+sms_send_history.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sms_send_history.htm
+END
+integrates_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/integrates_list.htm
+END
+construction_add.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/construction_add.htm
+END
+ad_position_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/ad_position_list.htm
+END
+order_surplus_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/order_surplus_list.htm
+END
+replenish_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/replenish_info.htm
+END
+account_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/account_info.htm
+END
+payment_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/payment_list.htm
+END
+topic_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/topic_list.htm
+END
+snatch_view.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/snatch_view.htm
+END
+goods_batch_select.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/goods_batch_select.htm
+END
+integrates_modify.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/integrates_modify.htm
+END
+auction_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/auction_info.htm
+END
+comment_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/comment_info.htm
+END
+affiliate_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/affiliate_list.htm
+END
+sale_order.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sale_order.htm
+END
+shop_config_mail_settings.htm
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/shop_config_mail_settings.htm
+END
+shopinfo_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/shopinfo_list.htm
+END
+msg_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/msg_list.htm
+END
+favourable_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/favourable_list.htm
+END
+bonus_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/bonus_list.htm
+END
+shop_config_form.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/shop_config_form.htm
+END
+email_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/email_list.htm
+END
+message.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/message.htm
+END
+setting_first.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/setting_first.htm
+END
+flashplay_custom_add.htm
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/flashplay_custom_add.htm
+END
+integrates_uc_import.htm
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/integrates_uc_import.htm
+END
+store_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/store_list.htm
+END
+templates_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/templates_list.htm
+END
+sql_dump_msg.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sql_dump_msg.htm
+END
+merge_order.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/merge_order.htm
+END
+navigator.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/navigator.htm
+END
+affiliate_add.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/affiliate_add.htm
+END
+users_order.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/users_order.htm
+END
+wholesale_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/wholesale_info.htm
+END
+attention_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/attention_list.htm
+END
+category_move.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/category_move.htm
+END
+store_add.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/887/trunk/03_Source/admin/templates/store_add.htm
+END
+menu.htm
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/menu.htm
+END
+login.htm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/login.htm
+END
+shipping_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/shipping_list.htm
+END
+picture_batch.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/picture_batch.htm
+END
+flashplay_custom.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/flashplay_custom.htm
+END
+order_status.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/order_status.htm
+END
+order_refund.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/order_refund.htm
+END
+delivery_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/delivery_list.htm
+END
+shophelp_article_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/shophelp_article_list.htm
+END
+privilege_allot.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/meifang/!svn/ver/822/trunk/03_Source/admin/templates/privilege_allot.htm
+END
+sms_my_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sms_my_info.htm
+END
+card_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/card_info.htm
+END
+batch_card_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/batch_card_info.htm
+END
+order_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/776/trunk/03_Source/admin/templates/order_info.htm
+END
+exchange_goods_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/exchange_goods_info.htm
+END
+link_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/link_list.htm
+END
+order_templates.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/order_templates.htm
+END
+order_operate.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/order_operate.htm
+END
+file_priv.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/file_priv.html
+END
+role_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/role_list.htm
+END
+shophelp_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/shophelp_info.htm
+END
+magazine_list_add.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/magazine_list_add.htm
+END
+sql.htm
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sql.htm
+END
+goods_search.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/goods_search.htm
+END
+ebao_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/ebao_list.htm
+END
+ads_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/ads_list.htm
+END
+sms_register_ui.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sms_register_ui.htm
+END
+booking_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/booking_info.htm
+END
+ads_js.htm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/ads_js.htm
+END
+shophelp_cat_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/shophelp_cat_list.htm
+END
+user_account_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/user_account_info.htm
+END
+shipping_config.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/shipping_config.htm
+END
+goods_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/goods_list.htm
+END
+vote_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/vote_list.htm
+END
+page.htm
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/page.htm
+END
+admin_logs.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/admin_logs.htm
+END
+goods_trash.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/goods_trash.htm
+END
+article_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/article_list.htm
+END
+integrate_sync.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/integrate_sync.htm
+END
+view_sendlist.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/view_sendlist.htm
+END
+suppliers_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/suppliers_list.htm
+END
+privilege_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/privilege_list.htm
+END
+license.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/license.htm
+END
+convert_main.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/convert_main.htm
+END
+flashplay_ccustom_edit.htm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/flashplay_ccustom_edit.htm
+END
+articlecat_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/articlecat_info.htm
+END
+user_account_check.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/user_account_check.htm
+END
+user_fans_data_rank.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/meifang/!svn/ver/979/trunk/03_Source/admin/templates/user_fans_data_rank.htm
+END
+back_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/back_list.htm
+END
+shop_config.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/shop_config.htm
+END
+dodolink_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/dodolink_list.htm
+END
+attribute_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/attribute_list.htm
+END
+template_library.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/template_library.htm
+END
+order_query.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/order_query.htm
+END
+integrates_points.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/integrates_points.htm
+END
+brand_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/brand_info.htm
+END
+search_log_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/search_log_list.htm
+END
+bonus_type_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/bonus_type_info.htm
+END
+user_account_manage.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/user_account_manage.htm
+END
+reg_fields.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/reg_fields.htm
+END
+shipping_area_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/shipping_area_list.htm
+END
+order_step.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/order_step.htm
+END
+package_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/package_info.htm
+END
+pageheader2.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/pageheader2.htm
+END
+category_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/category_list.htm
+END
+flashplay_tab.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/flashplay_tab.htm
+END
+pack_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/pack_list.htm
+END
+db_backup.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/db_backup.htm
+END
+users1_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/users1_list.htm
+END
+message_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/message_list.htm
+END
+sale_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sale_list.htm
+END
+loginbf.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/loginbf.htm
+END
+report_pv.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/report_pv.htm
+END
+ad_position_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/ad_position_info.htm
+END
+templates_backup.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/templates_backup.htm
+END
+integrates_setup.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/integrates_setup.htm
+END
+pageheader.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/pageheader.htm
+END
+print.htm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/print.htm
+END
+optimize.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/optimize.htm
+END
+shopinfo_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/shopinfo_info.htm
+END
+msg_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/msg_info.htm
+END
+integrates_sync.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/integrates_sync.htm
+END
+favourable_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/favourable_info.htm
+END
+agency_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/agency_list.htm
+END
+navigator_add.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/navigator_add.htm
+END
+area_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/area_list.htm
+END
+group_buy_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/group_buy_list.htm
+END
+cron_edit.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/cron_edit.htm
+END
+index.htm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/index.htm
+END
+searchengine_stats.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/searchengine_stats.htm
+END
+captcha_manage.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/captcha_manage.htm
+END
+snatch_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/snatch_list.htm
+END
+language_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/language_list.htm
+END
+temp_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/temp_info.htm
+END
+about_us.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/about_us.htm
+END
+sms_pages.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sms_pages.htm
+END
+replenish_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/replenish_list.htm
+END
+flow_stats.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/flow_stats.htm
+END
+affiliate_c.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/973/trunk/03_Source/admin/templates/affiliate_c.htm
+END
+account_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/account_list.htm
+END
+user_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/user_info.htm
+END
+pagefooter.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/pagefooter.htm
+END
+reg_field_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/reg_field_info.htm
+END
+auction_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/auction_list.htm
+END
+comment_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/comment_list.htm
+END
+delivery_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/delivery_info.htm
+END
+sitemap.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sitemap.htm
+END
+auction_log.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/auction_log.htm
+END
+user_rank_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/user_rank_info.htm
+END
+link_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/link_info.htm
+END
+sms_charge_ui.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sms_charge_ui.htm
+END
+brand_search.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/brand_search.htm
+END
+role_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/role_info.htm
+END
+mail_template.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/mail_template.htm
+END
+sms_charge_history_query_ui.htm
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sms_charge_history_query_ui.htm
+END
+wholesale_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/wholesale_list.htm
+END
+goods_batch_edit.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/goods_batch_edit.htm
+END
+plugins.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/plugins.htm
+END
+ads_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/ads_info.htm
+END
+affiliate.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/affiliate.htm
+END
+virtual_card_change.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/virtual_card_change.htm
+END
+construction_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/construction_list.htm
+END
+goods_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/858/trunk/03_Source/admin/templates/goods_info.htm
+END
+goods_type_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/goods_type_info.htm
+END
+bonus_type.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/bonus_type.htm
+END
+vote_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/vote_info.htm
+END
+calculator.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/calculator.htm
+END
+order_stats.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/order_stats.htm
+END
+user_rank.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/user_rank.htm
+END
+product_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/product_info.htm
+END
+bonus_by_print.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/bonus_by_print.htm
+END
+cron_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/cron_list.htm
+END
+sms_charge_history.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sms_charge_history.htm
+END
+start.htm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/start.htm
+END
+article_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/article_info.htm
+END
+zhuti_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/977/trunk/03_Source/admin/templates/zhuti_list.htm
+END
+zhuti_goods.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/863/trunk/03_Source/admin/templates/zhuti_goods.htm
+END
+wholesale_batch_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/wholesale_batch_info.htm
+END
+privilege_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/privilege_info.htm
+END
+suppliers_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/suppliers_info.htm
+END
+top.htm
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/top.htm
+END
+goods_auto.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/goods_auto.htm
+END
+card_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/card_list.htm
+END
+order_operate_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/order_operate_info.htm
+END
+vote_option.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/vote_option.htm
+END
+order_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/order_list.htm
+END
+setting_third.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/setting_third.htm
+END
+exchange_goods_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/exchange_goods_list.htm
+END
+setting_second.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/setting_second.htm
+END
+back_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/back_info.htm
+END
+bonus_by_goods.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/bonus_by_goods.htm
+END
+shipping_template.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/shipping_template.htm
+END
+filecheck.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/filecheck.htm
+END
+drag.htm
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/drag.htm
+END
+flashplay_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/flashplay_list.htm
+END
+attribute_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/attribute_info.htm
+END
+bonus_by_user.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/bonus_by_user.htm
+END
+user_address_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/user_address_list.htm
+END
+visit_sold.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/visit_sold.htm
+END
+order_goods_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/order_goods_info.htm
+END
+sale_general.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/sale_general.htm
+END
+payment_edit.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/payment_edit.htm
+END
+booking_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/booking_list.htm
+END
+topic_edit.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/topic_edit.htm
+END
+shipping_area_info.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/shipping_area_info.htm
+END
+user_account_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/user_account_list.htm
+END
+magazine_list.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/meifang/!svn/ver/774/trunk/03_Source/admin/templates/magazine_list.htm
+END
+zhuti_form.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/863/trunk/03_Source/admin/templates/zhuti_form.htm
+END

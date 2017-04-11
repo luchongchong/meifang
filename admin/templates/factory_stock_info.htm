@@ -1,0 +1,88 @@
+<!-- $Id: order_info.htm 17060 2010-03-25 03:44:42Z liuhui $ -->
+
+{include file="pageheader.htm"}
+{insert_scripts files="topbar.js,../js/utils.js,listtable.js,selectzone.js,../js/common.js"}
+<form action="factory_stock.php?act=operate" method="post" name="theForm">
+
+<div class="list-div" style="margin-bottom: 5px">
+<table width="100%" cellpadding="3" cellspacing="1">
+  <tr>
+    <th colspan="8" scope="col">{$lang.goods_info}<a href="factory_stock.php?act=edit&order_sn={$order_sn}&step=goods" class="special">{$lang.edit}</a></th>
+    </tr>
+  <tr>
+    <td scope="col"><div align="center"><strong>应付单号</strong></div></td>
+    <td scope="col"><div align="center"><strong>商品编号</strong></div></td>
+    <td scope="col"><div align="center"><strong>商品名称[品牌]</strong></div></td>
+    <td scope="col"><div align="center"><strong>型号</strong></div></td>
+    <td scope="col"><div align="center"><strong>数量</strong></div></td>
+    <td scope="col"><div align="center"><strong>单价</strong></div></td>
+  </tr>
+  {foreach from=$due_info_list item=due_info}
+  <tr>
+    <td align="center">{$due_info.order_sn}</td>
+    <td align="center">{$due_info.goods_sn}</td>
+    <td align="center">{$due_info.goods_name}</td>
+    <td><div align="center">{$due_info.goods_attr|nl2br}</div></td>
+    <td><div align="center">{$due_info.goods_amount}</div></td>
+    <td align="center">{$due_info.goods_price}</td>
+  </tr>
+  {/foreach}
+
+</table>
+</div>
+
+<div class="list-div" style="margin-bottom: 5px">
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th colspan="6">{$lang.action_info}</th>
+  </tr>
+  <tr>
+    <td><div align="right"><strong>{$lang.label_action_note}</strong></div></td>
+  <td colspan="5"><textarea name="action_note" cols="80" rows="3"></textarea></td>
+  </tr>
+
+  <tr>
+    <td><div align="right"></div>
+      <div align="right"><strong>{$lang.label_operable_act}</strong> </div></td>
+    <td colspan="5">
+      <input name="confirm" type="submit" value="确认付款" class="button" />
+        <!--<input name="order_id" type="hidden" value="{$smarty.request.order_id}"></td>-->
+      <input name="order_sn" type="hidden" value="{$order_sn}"></td>
+    </tr>
+
+</table>
+</div>
+</form>
+{literal}
+<script language="JavaScript">
+{/literal}
+  var oldAgencyId = {$order.agency_id|default:0};
+{literal}
+  onload = function()
+  {
+    // 开始检查订单
+    startCheckOrder();
+  }
+
+  /**
+   * 把订单指派给某办事处
+   * @param int agencyId
+   */
+  function assignTo(agencyId)
+  {
+    if (agencyId == 0)
+    {
+      alert(pls_select_agency);
+      return false;
+    }
+    if (oldAgencyId != 0 && agencyId == oldAgencyId)
+    {
+      alert(pls_select_other_agency);
+      return false;
+    }
+    return true;
+  }
+</script>
+{/literal}
+
+{include file="pagefooter.htm"}
