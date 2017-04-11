@@ -1,0 +1,239 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/meifang/!svn/ver/999/trunk/03_Source/includes
+END
+lib_ecmoban.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/lib_ecmoban.php
+END
+cls_error.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/cls_error.php
+END
+lib.debug.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/lib.debug.php
+END
+lib_uc.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/lib_uc.php
+END
+shopex_json.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/shopex_json.php
+END
+lib_code.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/lib_code.php
+END
+lib_base.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/lib_base.php
+END
+lib_order.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/meifang/!svn/ver/996/trunk/03_Source/includes/lib_order.php
+END
+lib_goods.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/meifang/!svn/ver/993/trunk/03_Source/includes/lib_goods.php
+END
+lib_payment.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/lib_payment.php
+END
+lib_license.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/lib_license.php
+END
+lib_article.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/lib_article.php
+END
+cls_template.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/meifang/!svn/ver/991/trunk/03_Source/includes/cls_template.php
+END
+cls_sql_executor.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/cls_sql_executor.php
+END
+inc_constant.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/inc_constant.php
+END
+cls_session.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/cls_session.php
+END
+lib_time.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/lib_time.php
+END
+cls_template.php_bak
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/cls_template.php_bak
+END
+lib_insert.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/meifang/!svn/ver/994/trunk/03_Source/includes/lib_insert.php
+END
+cls_transport.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/cls_transport.php
+END
+lib_transaction_ykq.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/lib_transaction_ykq.php
+END
+lib_clips.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/meifang/!svn/ver/992/trunk/03_Source/includes/lib_clips.php
+END
+lib_passport.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/meifang/!svn/ver/997/trunk/03_Source/includes/lib_passport.php
+END
+init.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/meifang/!svn/ver/971/trunk/03_Source/includes/init.php
+END
+cls_sms.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/cls_sms.php
+END
+cls_captcha.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/cls_captcha.php
+END
+cls_mysql.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/cls_mysql.php
+END
+cls_rss.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/cls_rss.php
+END
+lib_main.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/meifang/!svn/ver/999/trunk/03_Source/includes/lib_main.php
+END
+cls_json.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/cls_json.php
+END
+lib_transaction.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/meifang/!svn/ver/998/trunk/03_Source/includes/lib_transaction.php
+END
+lib_common.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/lib_common.php
+END
+cls_iconv.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/cls_iconv.php
+END
+cls_ecshop.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/cls_ecshop.php
+END
+cls_image.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/cls_image.php
+END
+lib_compositor.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/lib_compositor.php
+END
+cls_smtp.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/cls_smtp.php
+END
+lib_rebate.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/meifang/!svn/ver/879/trunk/03_Source/includes/lib_rebate.php
+END
+lib_transaction.php_bak
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/lib_transaction.php_bak
+END

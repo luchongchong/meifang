@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/meifang/!svn/ver/888/trunk/03_Source/includes/modules/payment/WxPayPubHelper
+END
+WxPayPubHelper.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/meifang/!svn/ver/888/trunk/03_Source/includes/modules/payment/WxPayPubHelper/WxPayPubHelper.php
+END
+WxPay.pub.config.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/meifang/!svn/ver/888/trunk/03_Source/includes/modules/payment/WxPayPubHelper/WxPay.pub.config.php
+END
+SDKRuntimeException.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/meifang/!svn/ver/888/trunk/03_Source/includes/modules/payment/WxPayPubHelper/SDKRuntimeException.php
+END

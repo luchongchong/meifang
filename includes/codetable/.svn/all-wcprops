@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/codetable
+END
+big5-gb.table
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/codetable/big5-gb.table
+END
+big5_utf8.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/codetable/big5_utf8.php
+END
+gb-big5.table
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/codetable/gb-big5.table
+END
+gb_utf8.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/codetable/gb_utf8.php
+END
+ipdata.dat
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/meifang/!svn/ver/774/trunk/03_Source/includes/codetable/ipdata.dat
+END
